@@ -1,0 +1,100 @@
+.default-font (@size: 12px) {
+	font-family: 'Lucida Grande', 'Tahoma', 'BreuerTextRegular', sans-serif;
+	font-size: @size;
+}
+
+#top-panel {
+	right: 0 !important;
+	margin-top: 30px !important;
+}
+
+#main-panel {
+	float: left;
+	width: 100%;
+	position: relative;
+	right: 50%;				/* right column width */
+}
+
+#left-panel, #right-panel {
+	float: left;
+	position: relative;
+	height: 500px;
+	background: #d2d2d2;
+	
+	overflow-y: scroll;
+	overflow-x: hidden;
+	-ms-overflow-y: scroll;
+	-ms-overflow-x: hidden;
+	
+	-webkit-box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, .3);
+	-moz-box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, .3);
+	box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, .3);
+}
+
+#left-panel {
+	width: 50%;			/* left column content width (column width minus left and right padding) */
+	left: 50%;				/* right column width plus left column left padding */
+}
+
+#right-panel {
+	width: 50%;			/* right column content width (column width minus left and right padding) */
+	left: 50%;				/* (right column width) plus (left column left and right padding) plus (right column left padding) */
+}
+
+#left-wrap, #right-wrap {
+	width: 100%;
+}
+
+#top-panel {
+	div {
+		display: inline-block;
+		.default-font(1.25em);
+		
+		&.btn {
+			float: none;
+		}
+		
+		select {
+			.default-font(1.05em);
+			height: 30px;
+			margin: 10px 15px 15px 0;
+		  	color:#555;
+			background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6) );
+			background:-moz-linear-gradient( center top, #ffffff 5%, #f6f6f6 100% );
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6');
+		}
+	}
+}
+
+.entry {
+	width: 100%;
+	&.youtube {.assetType {background: url('../images/socialmediaicon.png') no-repeat 0 -100px;}}
+	&.weibo {.assetType {background: url('../images/socialmediaicon.png') no-repeat -38px -100px;}}
+	&.twitter {.assetType {background: url('../images/socialmediaicon.png') no-repeat -76px -100px;}}
+	&.linkedin {.assetType {background: url('../images/socialmediaicon.png') no-repeat -114px -100px;}}
+	&.facebook {.assetType {background: url('../images/socialmediaicon.png') no-repeat -152px -100px;}}
+	
+	td{border: 1px solid red;}
+	
+	.assetType {
+		width: 20px;
+		height: 20px;
+	}
+}	
+
+#caseMade {
+	.caseCreated {background: url('../images/socialEngage.png') no-repeat -78px -98px;}
+}
+
+.postAction {
+	.icon {
+		width: 17px;
+		height: 15px;
+	}
+	
+	&#like{.icon {background: url('../images/socialEngage.png') no-repeat -103px -76px;}}
+	&#comment{.icon {background: url('../images/socialEngage.png') no-repeat -128px -76px;}}
+	&#posted{.icon {background: url('../images/socialEngage.png') no-repeat -153px -76px;}}
+	&#modified{.icon {background: url('../images/socialEngage.png') no-repeat -178px -76px;}}
+	&#createCase{.icon {background: url('../images/socialEngage.png') no-repeat -203px -76px;}}
+}

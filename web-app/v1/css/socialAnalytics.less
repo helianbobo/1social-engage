@@ -1,0 +1,531 @@
+.default-font (@size: 12px) {
+	font-family: 'Lucida Grande', 'Tahoma', 'BreuerTextRegular', sans-serif;
+	font-size: @size;
+}
+
+#chart {
+	.panels.top {height: 90px;}
+	.panels.main {height: 500px;}
+	.panels.foot {height: 20px;}
+	
+	#chartLeft {
+		float: left; 
+		width: 100%;
+
+		#chartLeftWrap {
+			margin-right: 308px;
+			
+			#chartTop{
+				height: 30px;
+				border-bottom: 2px solid #555;
+				margin-top: 40px;
+				margin-bottom: 18px;
+				width: 97.5%;
+				
+				div {display: inline-block;}
+				
+				#menuItem {			
+					select {
+						width: 350px;
+						height: 30px;
+					  	-webkit-appearance: none;
+					  	border: none;
+						.default-font(1.25em);
+						background: #fff;
+						color: #555;
+					}
+					
+					#uniform-menuItemSelect {
+						.default-font(1.25em);
+						width: 350px;
+						height: 30px;
+					  	color: #fff;
+						background: #004892 url('../images/dropdownwhite.png') no-repeat 330px 10px;
+						
+						-moz-border-radius-topleft: 5px;
+						-moz-border-radius-topright: 5px;
+						-moz-border-radius-bottomright: 0px;
+						-moz-border-radius-bottomleft: 0px;
+						-webkit-border-radius: 5px 5px 0px 0px;
+						border-radius: 5px 5px 0px 0px;
+						
+						span {
+							width: 350px;
+					  		color:#fff;
+					  		text-shadow: none;
+						}
+					}
+				}
+
+				#chartOption {
+					float: right;
+					margin: 10px 30px 0 0;
+				}
+			}
+			
+			#chartMain{
+				background: #fff;
+				
+				-moz-border-radius-topleft: 15px;
+				-moz-border-radius-topright: 0px;
+				-moz-border-radius-bottomright: 0px;
+				-moz-border-radius-bottomleft: 15px;
+				-webkit-border-radius: 15px 0px 0px 15px;
+				border-radius: 15px 0px 0px 15px;
+				
+				-webkit-box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, .3);
+				-moz-box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, .3);
+				box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, .3);
+
+				#chartContainer {
+					width: 95%;
+					height: 460px;
+					padding: 10px;
+				}
+			}
+			
+			#channelListTable {}
+		    #chartDataGrid {}
+		}
+	}
+		
+	#chartRight {
+		float: left;
+		width: 308px;
+		margin-left: -308px;
+		
+		#chartRightWrap {
+			#filterTop {		
+				background: #d2d2d2; /* Old browsers */
+				background: -moz-linear-gradient(top, #d2d2d2 0%, #c6c6c6 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d2d2d2), color-stop(100%,#c6c6c6)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top, #d2d2d2 0%,#c6c6c6 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top, #d2d2d2 0%,#c6c6c6 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top, #d2d2d2 0%,#c6c6c6 100%); /* IE10+ */
+				background: linear-gradient(top, #d2d2d2 0%,#c6c6c6 100%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2d2d2', endColorstr='#c6c6c6',GradientType=0 ); /* IE6-9 */
+			}
+			
+			#filterMain {
+				text-align: center;
+				
+				background: #d2d2d2; /* Old browsers */
+				background: -moz-linear-gradient(top, #c6c6c6 0%, #838383 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c6c6c6), color-stop(100%,#838383)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top, #c6c6c6 0%,#838383 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top, #c6c6c6 0%,#838383 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top, #c6c6c6 0%,#838383 100%); /* IE10+ */
+				background: linear-gradient(top, #c6c6c6 0%,#838383 100%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c6c6', endColorstr='#838383',GradientType=0 ); /* IE6-9 */
+			}
+			
+			#filterFoot {
+				-moz-border-radius-topleft: 0px;
+				-moz-border-radius-topright: 0px;
+				-moz-border-radius-bottomright: 15px;
+				-moz-border-radius-bottomleft: 15px;
+				-webkit-border-radius: 0px 0px 15px 15px;
+				border-radius: 0px 0px 15px 15px;
+	
+				background: #d2d2d2; /* Old browsers */
+				background: -moz-linear-gradient(top, #838383 0%, #808080 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#838383), color-stop(100%,#808080)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top, #838383 0%,#808080 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top, #838383 0%,#808080 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top, #838383 0%,#808080 100%); /* IE10+ */
+				background: linear-gradient(top, #838383 0%,#808080 100%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#838383', endColorstr='#808080',GradientType=0 ); /* IE6-9 */
+			}
+		}
+	}
+}
+
+.detailsTable {
+	display: none;
+	
+	&#chartDetails {
+		#foot-panel {margin-bottom: 30px;}
+	}
+	
+	&#voiceDetails, &#channelDetails {
+		#main-panel {
+			right: 0;
+		}
+	}
+	
+	#postSort {
+		border-bottom: 2px solid #555;
+		width: 97.5%;
+		
+		#sortBy {
+			color: #555;
+			cursor: default;
+		}
+	}
+	
+	#pagination {
+		float: right !important;
+		margin-right: 15px;
+		
+		.btn {
+			margin-right: 0;
+		}
+	}
+}
+
+.post {
+	width: 100%;
+	background: #fff;
+
+	&.active {background: #fff;}
+	&.inactive {background: #d2d2d2;}
+
+	-webkit-box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, .3);
+	-moz-box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, .3);
+	box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, .3);
+		
+	tr {
+		height: 70px;
+		
+		td {
+			text-align: center;
+			vertical-align: middle;
+						
+			&#sentiment {
+				width: 50px;
+				vertical-align: top;
+				
+				.color {
+					margin-left: 15px;
+					height: 60px;
+					width: 20px;
+					
+					-webkit-box-shadow: 1px -1px 1px 1px rgba(0, 0, 0, .3);
+					-moz-box-shadow: 1px -1px 1px 1px rgba(0, 0, 0, .3);
+					box-shadow: 1px -1px 1px 1px rgba(0, 0, 0, .3);
+					
+					&#veryPos {background: url('../images/socialAnalyticsInsight.png') no-repeat 0 0;}
+					&#Pos {background: url('../images/socialAnalyticsInsight.png') no-repeat -22px 0;}
+					&#Neu {background: url('../images/socialAnalyticsInsight.png') no-repeat -44px 0;}
+					&#Neg {background: url('../images/socialAnalyticsInsight.png') no-repeat -66px 0;}
+					&#veryNeg {background: url('../images/socialAnalyticsInsight.png') no-repeat -88px 0;}
+				}
+			}
+			&#channelType {
+				vertical-align: top;
+				padding-right: 15px;
+				
+				.channelName{
+					color: #fff;
+					width: auto;
+					float: right;
+					padding: 5px 10px;
+					
+					-webkit-box-shadow: inset -1px -1px 1px 1px rgba(0, 0, 0, 0.3);
+					-moz-box-shadow: inset -1px -1px 1px 1px rgba(0, 0, 0, 0.3);
+					box-shadow: inset -1px -1px 1px 1px rgba(0, 0, 0, 0.3);
+
+					&#MICROBLOG {background: #a05096;}
+					&#BLOG {background: #007fad;}
+					&#FORUM {background: #9094bb;}
+					&#NEWS {background: #beaf87;}
+					&#IMAGE {background: #c86b84;}
+					&#VIDEO {background: #5e1404;}
+					&#QA {background: #c6d92d;}
+					&#REVIEWS {background: #33518f;}
+					&#SOCIAL_NETWORKING_SITE {background: #a4a4a4;}
+					&#MAGAZINE {background: #a2b8ae;}
+					&#MICROSITE {background: #a77c0e;}
+					&#E_STORE {background: #637117;}
+				}
+			}
+			&#heightCtrl {
+				width: 50px;
+				vertical-align: top;
+				cursor: pointer;
+				
+				.icon {
+					width: 22px;
+					height: 22px;
+					margin: 30px 0 0 15px;
+					background: url('../images/socialAnalyticsInsight.png') no-repeat 0 -62px;
+					
+					&.collapse {background: url('../images/socialAnalyticsInsight.png') no-repeat -22px -62px;}
+				}
+				
+			}
+			&#articleComment {
+				width: 30px;
+				padding-top: 5px;
+				vertical-align: top;
+				
+				div {height: 30px;}
+				.icon {background: url('../images/socialAnalyticsInsight.png') no-repeat 0 -84px;}
+				.isArticle {background: url('../images/socialAnalyticsInsight.png') no-repeat -44px -84px;}
+			}
+			&#country {
+				width: 30px;
+				
+				div {height: 30px;}
+				
+				#AE	/*	United Arab Emirates	*/	{background: url('../images/country.png') no-repeat -32px -448px;}
+				#AF	/*	Afghanistan	*/	{background: url('../images/country.png') no-repeat -0px -0px;}
+				#AM	/*	Armenia	*/	{background: url('../images/country.png') no-repeat -288px -0px;}
+				#AN	/*	Netherlands Antilles	*/	{background: url('../images/country.png') no-repeat -160px -288px;}
+				#AO	/*	Angola	*/	{background: url('../images/country.png') no-repeat -160px -0px;}
+				#AR	/*	Argentina	*/	{background: url('../images/country.png') no-repeat -256px -0px;}
+				#ASIA	/*	Asia	*/	{background: url('../images/country.png') no-repeat -352px -0px;}
+				#AT	/*	Austria	*/	{background: url('../images/country.png') no-repeat -416px -0px;}
+				#AU	/*	Australia	*/	{background: url('../images/country.png') no-repeat -384px -0px;}
+				#AX	/*	Aland Islands	*/	{background: url('../images/country.png') no-repeat -0px -480px;}
+				#AZ	/*	Azerbaijan	*/	{background: url('../images/country.png') no-repeat -448px -0px;}
+				#BA	/*	Bosnia and Herzegovina	*/	{background: url('../images/country.png') no-repeat -320px -32px;}
+				#BD	/*	Bangladesh	*/	{background: url('../images/country.png') no-repeat -32px -32px;}
+				#BE	/*	Belgium	*/	{background: url('../images/country.png') no-repeat -128px -32px;}
+				#BG	/*	Bulgaria	*/	{background: url('../images/country.png') no-repeat -32px -64px;}
+				#BH	/*	Bahrain	*/	{background: url('../images/country.png') no-repeat -0px -32px;}
+				#BN	/*	Brunei	*/	{background: url('../images/country.png') no-repeat -0px -64px;}
+				#BR	/*	Brazil	*/	{background: url('../images/country.png') no-repeat -416px -32px;}
+				#BT	/*	Bhutan	*/	{background: url('../images/country.png') no-repeat -256px -32px;}
+				#BY	/*	Belarus	*/	{background: url('../images/country.png') no-repeat -96px -32px;}
+				#BZ	/*	Belize	*/	{background: url('../images/country.png') no-repeat -160px -32px;}
+				#CA	/*	Canada	*/	{background: url('../images/country.png') no-repeat -224px -64px;}
+				#CH	/*	Switzerland	*/	{background: url('../images/country.png') no-repeat -448px -384px;}
+				#CL	/*	Chile	*/	{background: url('../images/country.png') no-repeat -384px -64px;}
+				#CN	/*	China	*/	{background: url('../images/country.png') no-repeat -416px -64px;}
+				#CO	/*	Colombia	*/	{background: url('../images/country.png') no-repeat -0px -96px;}
+				#CR	/*	Costa Rica	*/	{background: url('../images/country.png') no-repeat -96px -96px;}
+				#CS	/*	Serbia	*/	{background: url('../images/country.png') no-repeat -416px -352px;}
+				#CU	/*	Cuba	*/	{background: url('../images/country.png') no-repeat -192px -96px;}
+				#CV	/*	Cape Verde	*/	{background: url('../images/country.png') no-repeat -256px -64px;}
+				#CY	/*	Cyprus	*/	{background: url('../images/country.png') no-repeat -224px -96px;}
+				#CZ	/*	Czech Republic	*/	{background: url('../images/country.png') no-repeat -256px -96px;}
+				#DE	/*	Germany	*/	{background: url('../images/country.png') no-repeat -0px -160px;}
+				#DK	/*	Denmark	*/	{background: url('../images/country.png') no-repeat -320px -96px;}
+				#DO	/*	Dominican Republic	*/	{background: url('../images/country.png') no-repeat -416px -96px;}
+				#DZ	/*	Algeria	*/	{background: url('../images/country.png') no-repeat -64px -0px;}
+				#EC	/*	Ecuador	*/	{background: url('../images/country.png') no-repeat -448px -96px;}
+				#EE	/*	Estonia	*/	{background: url('../images/country.png') no-repeat -128px -128px;}
+				#EG	/*	Egypt	*/	{background: url('../images/country.png') no-repeat -480px -96px;}
+				#ER	/*	Eritrea	*/	{background: url('../images/country.png') no-repeat -96px -128px;}
+				#ES	/*	Spain	*/	{background: url('../images/country.png') no-repeat -256px -384px;}
+				#FI	/*	Finland	*/	{background: url('../images/country.png') no-repeat -320px -128px;}
+				#FJ	/*	Fiji	*/	{background: url('../images/country.png') no-repeat -288px -128px;}
+				#FR	/*	France	*/	{background: url('../images/country.png') no-repeat -352px -128px;}
+				#GB	/*	United Kingdom	*/	{background: url('../images/country.png') no-repeat -64px -448px;}
+				#GE	/*	Georgia	*/	{background: url('../images/country.png') no-repeat -480px -128px;}
+				#GH	/*	Ghana	*/	{background: url('../images/country.png') no-repeat -32px -160px;}
+				#GI	/*	Gibraltar	*/	{background: url('../images/country.png') no-repeat -64px -160px;}
+				#GR	/*	Greece	*/	{background: url('../images/country.png') no-repeat -96px -160px;}
+				#GT	/*	Guatemala	*/	{background: url('../images/country.png') no-repeat -224px -160px;}
+				#HK	/*	Hong Kong	*/	{background: url('../images/country.png') no-repeat -448px -160px;}
+				#HN	/*	Honduras	*/	{background: url('../images/country.png') no-repeat -416px -160px;}
+				#HR	/*	Croatia	*/	{background: url('../images/country.png') no-repeat -160px -96px;}
+				#HU	/*	Hungary	*/	{background: url('../images/country.png') no-repeat -480px -160px;}
+				#ID	/*	Indonesia	*/	{background: url('../images/country.png') no-repeat -64px -192px;}
+				#IE	/*	Ireland	*/	{background: url('../images/country.png') no-repeat -192px -192px;}
+				#IL	/*	Israel	*/	{background: url('../images/country.png') no-repeat -256px -192px;}
+				#IN	/*	India	*/	{background: url('../images/country.png') no-repeat -32px -192px;}
+				#INTL	/*	International	*/	{background: url('../images/country.png') no-repeat -96px -192px;}
+				#IQ	/*	Iraq	*/	{background: url('../images/country.png') no-repeat -160px -192px;}
+				#IR	/*	Iran	*/	{background: url('../images/country.png') no-repeat -128px -192px;}
+				#IS	/*	Iceland	*/	{background: url('../images/country.png') no-repeat -0px -192px;}
+				#IT	/*	Italy	*/	{background: url('../images/country.png') no-repeat -288px -192px;}
+				#JM	/*	Jamaica	*/	{background: url('../images/country.png') no-repeat -320px -192px;}
+				#JO	/*	Jordan	*/	{background: url('../images/country.png') no-repeat -384px -192px;}
+				#JP	/*	Japan	*/	{background: url('../images/country.png') no-repeat -352px -192px;}
+				#KE	/*	Kenya	*/	{background: url('../images/country.png') no-repeat -448px -192px;}
+				#KG	/*	Kyrgyzstan	*/	{background: url('../images/country.png') no-repeat -96px -224px;}
+				#KH	/*	Cambodia	*/	{background: url('../images/country.png') no-repeat -160px -64px;}
+				#KR	/*	South Korea	*/	{background: url('../images/country.png') no-repeat -224px -384px;}
+				#KW	/*	Kuwait	*/	{background: url('../images/country.png') no-repeat -64px -224px;}
+				#KY	/*	Cayman Islands	*/	{background: url('../images/country.png') no-repeat -288px -64px;}
+				#KZ	/*	Kazakhstan	*/	{background: url('../images/country.png') no-repeat -416px -192px;}
+				#LB	/*	Lebanon	*/	{background: url('../images/country.png') no-repeat -192px -224px;}
+				#LI	/*	Liechtenstein	*/	{background: url('../images/country.png') no-repeat -320px -224px;}
+				#LK	/*	Sri Lanka	*/	{background: url('../images/country.png') no-repeat -288px -384px;}
+				#LT	/*	Lithuania	*/	{background: url('../images/country.png') no-repeat -352px -224px;}
+				#LU	/*	Luxembourg 	*/	{background: url('../images/country.png') no-repeat -384px -224px;}
+				#LV	/*	Latvia	*/	{background: url('../images/country.png') no-repeat -160px -224px;}
+				#LY	/*	Libya	*/	{background: url('../images/country.png') no-repeat -288px -224px;}
+				#MA	/*	Morocco	*/	{background: url('../images/country.png') no-repeat -0px -288px;}
+				#MD	/*	Moldova	*/	{background: url('../images/country.png') no-repeat -352px -256px;}
+				#MK	/*	Macedonia	*/	{background: url('../images/country.png') no-repeat -448px -224px;}
+				#MN	/*	Mongolia	*/	{background: url('../images/country.png') no-repeat -416px -256px;}
+				#MS	/*	Montserrat	*/	{background: url('../images/country.png') no-repeat -480px -256px;}
+				#MX	/*	Mexico	*/	{background: url('../images/country.png') no-repeat -288px -256px;}
+				#MY	/*	Malaysia	*/	{background: url('../images/country.png') no-repeat -32px -256px;}
+				#MZ	/*	Mozambique	*/	{background: url('../images/country.png') no-repeat -32px -288px;}
+				#NC	/*	New Caledonia	*/	{background: url('../images/country.png') no-repeat -32px -480px;}
+				#NI	/*	Nicaragua	*/	{background: url('../images/country.png') no-repeat -256px -288px;}
+				#NL	/*	Netherlands	*/	{background: url('../images/country.png') no-repeat -192px -288px;}
+				#NO	/*	Norway	*/	{background: url('../images/country.png') no-repeat -480px -288px;}
+				#NP	/*	Nepal	*/	{background: url('../images/country.png') no-repeat -128px -288px;}
+				#NZ	/*	New Zealand	*/	{background: url('../images/country.png') no-repeat -224px -288px;}
+				#OM	/*	Oman	*/	{background: url('../images/country.png') no-repeat -0px -320px;}
+				#PE	/*	Peru	*/	{background: url('../images/country.png') no-repeat -224px -320px;}
+				#PH	/*	Philippines	*/	{background: url('../images/country.png') no-repeat -256px -320px;}
+				#PK	/*	Pakistan	*/	{background: url('../images/country.png') no-repeat -32px -320px;}
+				#PL	/*	Poland	*/	{background: url('../images/country.png') no-repeat -320px -320px;}
+				#PS	/*	Occupied Palestinian Territory	*/	{background: url('../images/country.png') no-repeat -96px -320px;}
+				#PT	/*	Portugal	*/	{background: url('../images/country.png') no-repeat -352px -320px;}
+				#PY	/*	Paraguay	*/	{background: url('../images/country.png') no-repeat -192px -320px;}
+				#QA	/*	Qatar	*/	{background: url('../images/country.png') no-repeat -416px -320px;}
+				#RO	/*	Romania	*/	{background: url('../images/country.png') no-repeat -480px -320px;}
+				#RU	/*	Russia	*/	{background: url('../images/country.png') no-repeat -0px -352px;}
+				#SA	/*	Saudi Arabia	*/	{background: url('../images/country.png') no-repeat -320px -352px;}
+				#SE	/*	Sweden	*/	{background: url('../images/country.png') no-repeat -416px -384px;}
+				#SG	/*	Singapore	*/	{background: url('../images/country.png') no-repeat -0px -384px;}
+				#SI	/*	Slovenia	*/	{background: url('../images/country.png') no-repeat -64px -384px;}
+				#SK	/*	Slovakia	*/	{background: url('../images/country.png') no-repeat -32px -384px;}
+				#SY	/*	Syria	*/	{background: url('../images/country.png') no-repeat -480px -384px;}
+				#TC	/*	Turks and Caicos Islands	*/	{background: url('../images/country.png') no-repeat -416px -416px;}
+				#TH	/*	Thailand	*/	{background: url('../images/country.png') no-repeat -128px -416px;}
+				#TL	/*	East Timor	*/	{background: url('../images/country.png') no-repeat -64px -480px;}
+				#TN	/*	Tunisia	*/	{background: url('../images/country.png') no-repeat -320px -416px;}
+				#TR	/*	Turkey	*/	{background: url('../images/country.png') no-repeat -352px -416px;}
+				#TW	/*	Taiwan	*/	{background: url('../images/country.png') no-repeat -0px -416px;}
+				#UA	/*	Ukraine	*/	{background: url('../images/country.png') no-repeat -0px -448px;}
+				#US	/*	United States	*/	{background: url('../images/country.png') no-repeat -96px -448px;}
+				#UY	/*	Uruguay	*/	{background: url('../images/country.png') no-repeat -128px -448px;}
+				#UZ	/*	Uzbekistan	*/	{background: url('../images/country.png') no-repeat -160px -448px;}
+				#VE	/*	Venezuela	*/	{background: url('../images/country.png') no-repeat -256px -448px;}
+				#VN	/*	Vietnam	*/	{background: url('../images/country.png') no-repeat -288px -448px;}
+				#ZA	/*	South Africa	*/	{background: url('../images/country.png') no-repeat -160px -384px;}
+			}
+			&#dateTime {
+				width: 120px;
+				text-align: right;
+				padding-right: 15px;
+			}
+			&#content, &#title, &#details {
+				text-align: left; 
+				padding-left: 15px;
+			}	
+			&#title {
+				padding-right: 15px;
+				
+				.title {
+					.default-font(1.25em); 
+					padding-top: 5px;
+					cursor: pointer;
+				
+					.match {color: blue; font-weight: bold;}
+				}
+				
+				#postedBy {
+					padding: 5px 0 15px 0;
+					
+					.title {
+						.default-font(1em); 
+						font-weight: bold;
+						min-width: 80px;
+					}
+				}
+			}
+			&#details {
+				.detailsCol {
+					display: inline-block;
+					//padding-top: 15px;
+					padding-right: 15px;
+				
+					.title {
+						font-weight: bold; 
+						min-width: 80px;
+					}
+					&:last-child {
+						float: right;
+						width: auto; 
+						text-align: right; 
+						padding-top: 0;
+					}
+					
+					#influence, #commentCount {
+						display: inline-block;
+						text-align: center;
+						border: 2px solid #555;
+					
+						.title {
+							color: #fff;
+							width: auto;
+							background: #555;
+							padding: 5px 10px;
+							border: 1px solid #fff;
+						}
+						
+						.count {
+							.default-font(3.5em);
+							//padding: 0 5px 5px 5px;
+						}
+					}
+				}
+			}
+			&#content {
+				padding: 15px;
+				cursor: pointer;
+				
+				#content-expand {
+					font-weight: bold; 
+					cursor: pointer; 
+					color: #004892; 
+					text-align: right;
+				}
+				
+				.match {color: blue; font-weight: bold;}
+				.pos {color: green; font-weight: bold;}
+				.neg {color: red; font-weight: bold;}
+			}
+		}
+		
+		&.top1 {height: 25px;}
+		&.top2 {height: 45px;}
+		&.mid, &.btm {display: none;}
+	}
+}
+
+.postContext {
+	width: 100%;
+	background: #d2d2d2;
+	
+	&.active {background: #fff;}
+
+	-webkit-box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, .3);
+	-moz-box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, .3);
+	box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, .3);
+		
+	tr {
+		height: 70px;
+		
+		td {
+			vertical-align: middle;
+			
+			&#articleComment {
+				width: 30px;
+				padding-left: 15px;
+				
+				div {height: 30px;}
+				.icon {background: url('../images/socialAnalyticsInsight.png') no-repeat 0 -84px;}
+				.isArticle {background: url('../images/socialAnalyticsInsight.png') no-repeat -44px -84px;}
+			}
+			&#content, &#title, &#details {
+				text-align: left; 
+				padding: 15px; 
+				
+				#content-expand {
+					font-weight: bold; 
+					cursor: pointer; 
+					color: #004892; 
+					text-align: right;
+				}
+			}	
+			&#details {
+				text-align: right; 
+				padding-right: 15px; 
+				width: 160px; 
+				
+				.title {font-weight: bold;}
+			}	
+			&#title {.default-font(1.25em);}
+		}
+	}
+}

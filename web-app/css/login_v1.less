@@ -1,0 +1,177 @@
+.default-font (@size: 1em) {
+	font-family: 'BreuerTextRegular';
+	font-size: @size;
+	color: #555;
+}
+
+.btn {
+	cursor: pointer;	
+	.default-font(.875em);
+}
+				
+#yes {
+	float: right;
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background-color:#ededed;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:2px solid #dcdcdc;
+	display:inline-block;
+	color:#555;
+	padding:6px 25px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ffffff;
+}#yes:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+	background-color:#dfdfdf;
+}#yes:active {
+	position:relative;
+	top:1px;
+}
+
+#no {
+	padding: 6px 0;
+	float: left;
+	color: #004892;
+}
+
+body {
+	.default-font(1.2em);
+	text-align: center;
+	background-color: #f5f5f5;
+	
+	header {
+		background-image: url('../images/headerbg.png');
+		background-repeat: repeat-x;
+		background-position: 0 bottom;
+		background-color: #fff;
+		margin: 0 auto;
+		padding-top: 5%;
+		
+		#slogo {
+			margin: 0 auto;
+			width: 400px;
+			height: 114px;
+			background-image: url('../images/1socialbg.png');
+			background-repeat: no-repeat;
+		}
+		
+		/* 1-Social logo in @font-face
+		#slogo {
+			.default-font(7em);
+			font-weight: bold;
+			text-shadow: 2px 2px 3px #555;
+			text-shadow: -2px -2px #555;
+
+			#one {
+				color:#323D81;
+			}
+			
+			#social {
+				color:#8BBDE3;
+			}	
+		}*/
+		
+		#language {
+			margin: 0 auto;
+			//text-align: right;
+			margin-top: 30px;
+			.default-font(.875em);
+			
+			li {
+				list-style: none;
+    			display: inline-block;			
+    		}
+		}
+	}	
+		
+	#container{
+		background-image: url('../images/bodybg.png');
+		background-repeat: repeat-x;
+		margin: 0 auto;
+		
+		#dialog {
+			width: 380px;
+			margin: 0 auto;
+			padding: 20px;
+			margin-bottom: 30px;
+			
+			div {
+				display: inline-block;
+			
+				input {
+					.default-font;
+					width: 360px;
+					height: 30px;
+					margin-bottom: 10px;
+					border:0;
+					padding: 5px 10px;
+					color: #B3B3B3;
+	
+					-webkit-border-radius: 5px;
+					-moz-border-radius: 5px;
+					border-radius: 5px;
+					-webkit-box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, .3);
+					-moz-box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, .3);
+					box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, .3);
+				}
+				
+				#pw {
+					display: none;
+				}
+			}
+			
+			#login {
+
+			}
+			
+			#forgotpw {
+				display: none;
+			}
+			
+			#clientselect {
+				display: none;
+				
+				select {
+					.default-font;
+					width: 380px;
+					height: 20px;
+					margin-bottom: 10px;
+				}
+			}
+
+			#message {
+				.default-font(.875em);
+				color: #f00;
+				margin-top: 30px;
+
+				span {
+					display: none;
+				}
+			}
+		}
+
+		#footer {
+			height: 50px;
+			position: absolute;
+			bottom: 50px;
+			left: 50%;
+			
+			#blogo {
+				margin: 0 auto;
+				width: 50px;
+				height: 76px;
+				background-image: url('../images/brandtologybg.png');
+				background-repeat: no-repeat;
+			}
+		}
+	}
+}

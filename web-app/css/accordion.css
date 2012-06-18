@@ -1,0 +1,334 @@
+
+
+.ac-container{
+	width:100%;
+	margin:auto;
+	text-align:center;
+	 z-index:-1;
+	 height:500px;
+	 font-family: 'BreuerTextRegular';
+
+  /* IE6-9 */
+}
+
+.ac-container label{
+	
+
+	padding: 5px 20px;
+	position: relative;
+	/*z-index: 20;   */
+	display: block;
+	height: 30px;
+	cursor: pointer;
+	color: #777;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+	line-height: 33px;
+	font-size: 1.25em;
+background: #666666;
+	color: #ffffff;
+	text-shadow: 0px 1px 1px rgba(255,255,255, 0.6);
+	box-shadow: 
+		0px 0px 0px 1px rgba(155,155,155,0.3), 
+		0px 2px 2px rgba(0,0,0,0.1);
+}
+
+
+
+.yesbtn{
+	
+    width:100%;
+   height:50px;
+   text-align:center;
+	padding-top:5px;
+	padding-bottom:10px;
+	
+	margin-right:50px;
+	z-index: 20;
+	display: block;
+	height: 30px;
+	cursor: pointer;
+	color: #777;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+	line-height: 33px;
+	font-size: 1.25em;
+	background: #666666;
+	color: #ffffff;
+	text-shadow: 0px 1px 1px rgba(255,255,255, 0.6);
+	box-shadow: 
+		0px 0px 0px 1px rgba(155,155,155,0.3), 
+		0px 2px 2px rgba(0,0,0,0.1);
+}
+
+
+.yesbtn:hover{
+	
+   	background: #fff;
+	color: #666;
+	}
+
+ .top-corner{
+
+}
+
+.ac-container label.bottom{
+ -webkit-border-bottom-left-radius: 20px;
+-webkit-border-bottom-right-radius: 20px;
+-moz-border-radius-bottomleft: 20px;
+-moz-border-radius-bottomright: 20px;
+border-bottom-left-radius: 20px;
+border-bottom-right-radius: 20px;
+	
+}
+
+.ac-container label:hover{
+	background: #fff;
+	color: #666;
+	
+}
+.ac-container input:checked + label,
+.ac-container input:checked + label:hover{
+
+	background: #666666;
+	color: #ffffff;
+	text-shadow: 0px 1px 1px rgba(255,255,255, 0.6);
+	box-shadow: 
+		0px 0px 0px 1px rgba(155,155,155,0.3), 
+		0px 2px 2px rgba(0,0,0,0.1);
+}
+
+
+.ac-container #bottom>input:checked{
+border-radius: 0px;
+	background: #666666;
+	color: #ffffff;
+	text-shadow: 0px 1px 1px rgba(255,255,255, 0.6);
+	box-shadow: 
+		0px 0px 0px 1px rgba(155,155,155,0.3), 
+		0px 2px 2px rgba(0,0,0,0.1);
+}
+
+
+
+
+.ac-container label:hover:after,
+.ac-container input:checked + label:hover:after{
+	content: '';
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	right: 13px;
+	top: 7px;
+
+}
+
+.ac-container  input[type="radio"] {
+	display:none;
+}
+
+
+.ac-container article{
+	  background: #d2d2d2;
+  /* Old browsers */
+
+  background: -moz-linear-gradient(top, #d2d2d2 0%, #c6c6c6 100%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d2d2d2), color-stop(100%, #c6c6c6));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #d2d2d2 0%, #c6c6c6 100%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #d2d2d2 0%, #c6c6c6 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top, #d2d2d2 0%, #c6c6c6 100%);
+  /* IE10+ */
+
+  background: linear-gradient(top, #d2d2d2 0%, #c6c6c6 100%);
+  /* W3C */
+
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#d2d2d2', endColorstr='#c6c6c6', GradientType=0);
+  /* IE6-9 */
+	margin-top: -1px;
+	overflow:hidden;
+	height: 0px;
+	position: relative;
+	z-index: 10;
+
+}
+
+.ac-container article.last{
+	  background: #d2d2d2;
+  /* Old browsers */
+
+  background: -moz-linear-gradient(top, #d2d2d2 0%, #c6c6c6 100%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d2d2d2), color-stop(100%, #c6c6c6));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #d2d2d2 0%, #c6c6c6 100%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #d2d2d2 0%, #c6c6c6 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top, #d2d2d2 0%, #c6c6c6 100%);
+  /* IE10+ */
+
+  background: linear-gradient(top, #d2d2d2 0%, #c6c6c6 100%);
+  /* W3C */
+
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#d2d2d2', endColorstr='#c6c6c6', GradientType=0);
+  /* IE6-9 */
+	margin-top: -1px;
+	overflow:hidden;
+	height: 0px;
+	position: relative;
+	z-index: 10;
+	
+	overflow-y:scroll;
+
+}
+
+.ac-container article p{
+	
+	color: #777;
+	line-height: 23px;
+	font-size: 14px;
+	padding: 7px;
+
+}
+
+.ac-container input:checked ~ article{
+	-webkit-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+	-moz-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+	-o-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+	-ms-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+	transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+   }
+
+.ac-container input:checked ~ article.ac-small{
+	height:auto;
+
+ }
+
+
+.ac-container input:checked ~ article.ac-last{
+	height:200px;
+    overflow-y:scroll;
+	overflow-x:hidden;
+	text-align:left;
+ }
+
+
+.ac-container input:checked ~ article{
+	height:auto;
+	
+}
+.ac-container input:checked ~ article.ac-medium{
+	height: auto;
+}
+.ac-container input:checked ~ article.ac-large{
+	height:auto;
+}
+
+
+
+ .AccordionTitle, .AccordionContent, .AccordionContainer
+      {
+          position: relative;
+
+          font-family: 'BreuerTextRegular';
+
+      }
+      .AccordionTitle
+      {
+
+
+
+	padding: 5px 20px;
+	position: relative;
+	/*z-index: 20;   */
+	display: block;
+	height: 30px;
+	cursor: pointer;
+	color: #777;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+	line-height: 33px;
+	font-size: 1.25em;
+    background: #666666;
+	color: #ffffff;
+	text-shadow: 0px 1px 1px rgba(255,255,255, 0.6);
+	box-shadow:
+		0px 0px 0px 1px rgba(155,155,155,0.3),
+		0px 2px 2px rgba(0,0,0,0.1);
+
+
+        }
+
+
+        .AccordionTitle:hover
+              {
+
+
+	background: #fff;
+	color: #666;
+
+
+                }
+
+        .AccordionContent
+        {
+            height: 0px;
+            overflow: hidden; /*display: none;  */
+
+        }
+
+
+
+         .AccordionContent_
+                {
+                   color: #666;
+                   	line-height: 23px;
+
+                   	padding: 7px;
+                   	text-align:center;
+                    background-color:#cccccc;
+
+                }
+
+
+                .AccordionContent4_
+
+                {
+                   color: #666;
+
+                  	padding: 7px;
+                  	text-align:left;
+                   background-color:#cccccc;
+                   height:170px;
+                   overflow-y:scroll;
+                   	overflow-x:hidden;
+                }
+
+    	.AccordionContent_ .scroll
+        {
+
+    		 overflow-y:scroll;
+            	overflow-x:hidden;
+
+
+        }
+
+        .AccordionContainer
+        {
+
+    	text-align: center;
+
+
+    	width:100%;
+
+
+        }

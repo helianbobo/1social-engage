@@ -1,0 +1,22 @@
+<script id="weiboRetweetTemplate" type="text/x-jsrender">
+    {{for data}}
+    <table class="post">
+        <tr class="postDetailTable">
+            <td id="postBlank"></td>
+
+            <td id="postAvatar">
+                <a href="{{:userURL}}" target="_blank"><div id="avatarImg"
+                                                            style="background-image: url('{{:avatarPic}}');"></div>
+
+                    <div id="followerCount">{{:~formatNumber(userFollowerCount)}}</div></a>
+            </td>
+
+            <td id="postContent">
+                <a href="{{:userURL}}" target="_blank"><span id="postName">{{:username}}</span></a><span
+                    id="postMsg">{{:content}}<br/><span id="postDateTime">{{:~formatDateTime(datetimePost)}}</span>
+            </span>
+            </td>
+        </tr>
+    </table>
+    {{/for}}
+</script>

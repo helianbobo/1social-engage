@@ -1,0 +1,512 @@
+.default-font (@size: 12px) {
+	font-family: 'Lucida Grande', 'Tahoma', 'BreuerTextRegular', sans-serif;
+	font-size: @size;
+}
+
+section {
+	.panels {
+		&#top-panel {
+			right: 0 !important;
+			margin-top: 30px !important;
+			
+			#addAsset {			
+				float: right;
+				margin-bottom: 10px;
+				width: 100%;
+				border-bottom: 2px solid #555;
+				
+				#addName {
+					display: inline-block;
+					margin-bottom: 10px;
+				}
+				
+				.addIcon {
+					display: inline-block;
+					width: 20px;
+					height: 20px;
+					margin: 0 5px;
+					cursor: pointer;
+					
+					&#youtube {background: url('../images/socialmediaicon.png') no-repeat 0 -100px;}
+					&#weibo {background: url('../images/socialmediaicon.png') no-repeat -38px -100px;}
+					&#twitter {background: url('../images/socialmediaicon.png') no-repeat -76px -100px;}
+					&#linkedin {background: url('../images/socialmediaicon.png') no-repeat -114px -100px;}
+					&#facebook {background: url('../images/socialmediaicon.png') no-repeat -152px -100px;}
+					
+					&:active {
+						position:relative;
+						bottom:1px;
+						//margin-bottom: 1px;
+					}
+				}
+			}
+		}
+	
+		&#main-panel {
+			right: 0 !important;
+			margin-top: 0 !important;
+		}
+		
+		table {
+			width: 100%;
+			
+			&.highlightYes {background: #fff;}
+			
+			&.highlightNo {background: #d2d2d2;}
+			
+			tr {
+				width: 100%;
+				height: 60px;
+				
+				td {
+					text-align: center;
+					padding: 5px;
+					vertical-align: middle;
+					
+					&.active {
+						.title {
+							background: #fff !important;
+							color: #004892 !important;
+							font-weight: bold;
+							border: 2px solid #004892 !important;
+							border-bottom: none !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.asset {
+	border: 1px solid #d2d2d2;
+	-webkit-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, .3);
+	-moz-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, .3);
+	box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, .3);
+	
+	.top1, .top2 {
+		height: 30px;
+	}
+	
+	.mid {display: none;}
+
+	#channelPlatform {
+		vertical-align: top;
+		width: 52px;
+		padding: 0;
+		
+		.banner {
+			margin-left: 10px;
+			height: 60px;
+			width: 32px;
+			
+			-webkit-box-shadow: 1px -1px 1px 1px rgba(0, 0, 0, .3);
+			-moz-box-shadow: 1px -1px 1px 1px rgba(0, 0, 0, .3);
+			box-shadow: 1px -1px 1px 1px rgba(0, 0, 0, .3);
+					
+			&#youtube {background: url('../images/socialmediaicon.png') no-repeat 0 0;}
+			&#weibo {background: url('../images/socialmediaicon.png') no-repeat -40px 0;}
+			&#twitter {background: url('../images/socialmediaicon.png') no-repeat -78px 0;}
+			&#linkedin {background: url('../images/socialmediaicon.png') no-repeat -116px 0;}
+			&#facebook {background: url('../images/socialmediaicon.png') no-repeat -154px 0;}
+		}
+	}
+	
+	#assetDetails {
+		text-align: left;
+		padding-left: 15px;
+		
+		div {display: inline-block;}
+		.details2 {margin-left: 15px;}
+		
+		#assetAvatar {
+			width: 50px;
+			height: 50px;
+			background-position: center;
+			
+			-webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .3);
+			-moz-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .3);
+			box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .3);
+		}
+		
+		#assetName {
+			.default-font(1.25em);
+			font-weight: bold;
+			padding-bottom: 15px;
+		}
+	}
+	
+	#follower, #following, #postCount, #like, #retweet, #comment, #pending {
+		width: 175px;
+		padding: 0;
+		cursor: pointer;
+		
+		.title {
+			color: #fff;
+			width: auto;
+			background: #004892;
+			padding: 5px 10px;
+			border: 1px solid #fff;
+		}
+		
+		.count {
+			.default-font(3.5em);
+			padding-bottom: 5px;
+		}
+	}
+	
+	#pending {
+		width: 150px;
+		.count {.default-font(2em);}
+	}
+	
+	#like {cursor: default;}
+	
+	.assetAction {
+		//width: 190px; 
+		text-align: right;
+		
+		div{
+			display: inline-block;
+			float: none;
+			
+			.icon {
+				width: 10px;
+				height: 15px;
+				display: inline-block;
+				margin-right: 5px;
+			
+				&#reauthenticate {background: url('../images/socialAssets.png') no-repeat -48px 0;}
+				&#compare {background: url('../images/socialAssets.png') no-repeat -32px 0;}
+			}
+			
+			.actionName {.default-font(1.25em);}
+		}			
+	}
+	
+	.header {
+		color: #fff;
+		background: #004892;
+		width: 100%;
+		padding: 5px 0px;
+
+		-moz-border-radius-topleft: 5px;
+		-moz-border-radius-topright: 5px;
+		-moz-border-radius-bottomright: 0px;
+		-moz-border-radius-bottomleft: 0px;
+		-webkit-border-radius: 5px 5px 0px 0px;
+		border-radius: 5px 5px 0px 0px;
+
+		div {
+			display: inline-block;
+
+			&.export {
+				width: 12px;
+				height: 15px;
+				background: url('../images/socialAssets.png') no-repeat -112px 0;
+				margin-left: 10px;
+				cursor: pointer;
+			}
+		}
+
+	}
+	
+    .chartSort, .tableSort {
+		padding-top: 15px;
+		border-bottom: 2px solid #555;
+		border-left: 1px solid #d2d2d2;
+		border-right: 1px solid #d2d2d2;
+
+		div {display: inline-block;}
+	}
+
+    .tableSort {
+        text-align: left;
+        .tab:first-child {margin-left: 30px;}
+        .tab:last-child {margin-right: 0;}
+
+        #pagination {
+            float: right;
+            margin-top: -10px;
+            margin-right: 15px;
+
+            .btn {padding: 6px 5px;}
+        }
+    }
+	
+	.gender {
+		table {
+			width: 100%;
+			
+			.human {
+				height: 85px;
+												
+				td {
+					width: 45px;
+					
+					div {
+						width: 39px;
+						height: 80px;
+						background: url('../images/socialAssets.png') no-repeat 0 -22px;
+						
+						&.male {
+							background: url('../images/socialAssets.png') no-repeat -44px -22px;
+						}
+					}
+				}
+			}
+			
+			.stats {
+				td {
+					span {padding: 0 5px 0 5px;}
+				
+					.title {.default-font(1.25em);}
+					.count {.default-font(3.5em);}
+					
+					&#male {color: #323d80; text-align: left;}
+					&#female {color: #730032; text-align: right;}
+				}
+			}
+		}
+	}
+
+	#assetFollow {
+		text-align: left;
+		padding-left: 30px;
+		padding-right: 30px;
+			
+		#assetFollowTable, #assetFollowChart {
+			text-align: center;
+			display: inline-block;
+			width: 49.5%;
+		}
+		
+		#assetFollowTable {
+			.tableSort {
+				height: 20px;
+			}
+		
+				tr {
+					border: 1px solid #d2d2d2;
+					border-top: none;
+					background: #fff;
+					
+					&:nth-child(even) {background: #d2d2d2;}
+					
+					td {
+						padding-bottom: 0;
+						text-align: left;
+							
+						&#followerAvatar {
+							width: 50px;
+							padding-left: 36px;
+		
+							#avatarImg {
+								width: 50px;
+								height: 50px;
+								background-position: center;
+							}
+					
+							#followerCount {
+								background: #fff;
+								display: block;
+								text-align: right;
+								float: right;
+								position: relative;
+								bottom: 10px;
+								border: 1px solid #555;
+								padding: 0 2px 0 2px;
+							}
+						}
+						
+						&#followerName {font-weight: bold;}
+					}
+				}
+		}		
+
+		#assetFollowChart {
+			float: right;
+		
+			#places, .gender {
+				border: 1px solid #d2d2d2;
+				border-top: none;
+			}
+			
+			.gender {
+				margin-bottom: 105px;
+				padding: 30px 0;
+			}
+			
+			#places {
+				height: 400px;
+				
+				/*min-width: 600px;
+			
+				div {
+					display: block;
+					width: 200px;
+					
+					&.col {display: inline-block;}
+					
+					span {
+						display: inline-block;
+						width: 50px;
+						text-align: left;
+						
+						&.title {font-weight: bold; .default-font(1em); height: auto;}
+					}
+				}*/
+			}
+		}
+	}
+}
+
+.bottom {	
+    display: none;
+
+	#postDetailMain, #postDetailTop {
+		float: left;
+		width: 100%;
+		position: relative;
+		right: 50%;				/* right column width */
+	}
+
+	#postDetailLeft, #postDetailRight, #postDetailTopLeft, #postDetailTopRight {
+		float: left;
+		position: relative;
+		height: 500px;
+		border: 1px solid #d2d2d2;
+		border-top: none;
+
+		overflow-y: auto;
+		overflow-x: hidden;
+		-ms-overflow-y: auto;
+		-ms-overflow-x: hidden;
+	}
+
+	#postDetailTopLeft, #postDetailTopRight {
+		height: auto;
+		border: none;
+
+		overflow-y: hidden;
+		-ms-overflow-y: hidden;
+	}
+
+	#postDetailLeft, #postDetailTopLeft {
+		width: 49%;			/* left column content width (column width minus left and right padding) */
+		left: 50.5%;				/* right column width plus left column left padding */
+	}
+
+	#postDetailRight, #postDetailTopRight {
+		width: 49%;			/* right column content width (column width minus left and right padding) */
+		left: 51.5%;				/* (right column width) plus (left column left and right padding) plus (right column left padding) */
+	}
+
+	#postDetailTopLeft, #postDetailTopRight {
+		width: 49.15%;
+	}
+
+	#postDetailLeftWrap, #postDetailRightWrap, #postDetailTopLeftWrap, #postDetailTopRightWrap {
+		width: 100%;
+	}
+	
+	#postAvatar {
+		width: 50px;
+
+		#avatarImg {
+			width: 50px;
+			height: 50px;
+			background-position: center;
+		}
+
+		#followerCount {
+			background: #fff;
+			display: block;
+			text-align: right;
+			float: right;
+			position: relative;
+			bottom: 10px;
+			border: 1px solid #555;
+			padding: 0 2px 0 2px;
+		}
+	}
+
+	#postContent {
+		text-align: left;
+		line-height: 18px;
+		padding-left: 15px;
+		padding-right: 10px;
+
+		#postName {
+			font-weight: bold;
+			padding-right: 5px;
+		}
+
+		#postDateTime {float: right;}
+	}
+
+	.btm1 {
+		border-top: 1px solid #d2d2d2;
+		&:first-child {border-top: none;}
+			
+		#postBlank {
+			width: 52px;
+		}
+
+		#postImg {
+			width: 120px;
+			vertical-align: bottom;
+
+			#contentImg {
+				width: 120px;
+				height: 85px;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+		}
+
+		#retweet, #comment {vertical-align: bottom;}
+
+	}
+
+	.btm2 {
+		display: none;
+
+		#postBlank {
+			width: 44px;
+		}
+
+		.post {
+			background: #fff;
+			&:nth-child(even) {background: #d2d2d2;}
+		}
+		
+		.chart {
+			display: none;
+			width: 100%;
+			height: 450px;
+			
+			&.gender {
+				table {margin-top: 150px;}
+			}
+			
+			&.active {display: inline-block;}
+		}
+
+		#influenceTable{				
+			tr {
+				height: 30px;
+				background: #fff;
+				
+				&#header {background: #f5f5f5;}
+				&:nth-child(even) {background: #d2d2d2;}
+				
+				td {
+					width: 50%;
+					
+					&.title {font-weight: bold;}
+				}
+			}
+		}		
+	}
+}

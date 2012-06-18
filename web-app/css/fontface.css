@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'BreuerTextRegular';
+    src: url('breuertext-regular-webfont.eot');
+    src: url('breuertext-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('breuertext-regular-webfont.woff') format('woff'),
+         url('breuertext-regular-webfont.ttf') format('truetype'),
+         url('breuertext-regular-webfont.svg#BreuerTextRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

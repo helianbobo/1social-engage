@@ -1,0 +1,414 @@
+/*
+ 
+ * 
+ * -----------------
+ * TABLE OF CONTENTS
+ * -----------------
+ * 
+ * 1) Generic
+ * 2) Validation
+ * 3) Grid
+ * 4) Inline Label
+ * 5) Search-Form
+ * 6) Uniform Theme
+ */
+
+/* ==================================================
+ * 1) Generic
+ * ================================================== */
+
+.form p.inline-label, .form p.inline-medium-label, .form p.inline-small-label {
+	padding-right: 10px;
+	
+}
+
+
+.form  input[type="date"] {
+	
+		   background:url(../images//drop-down.png) no-repeat top left transparent;
+			display: inline-block;
+	        padding: 2px 4px 0px;
+			
+			color: #666;
+			border:1px solid #ccc;
+			text-decoration: none;
+			font-weight: bold;
+			line-height: 1.5em;
+            /*border-radius: 5px;
+			
+			-moz-box-shadow: 0 1px 3px #999;*/
+			
+			position: relative;
+			cursor: pointer;
+			outline:none;
+			width:200px;
+			height:28px;
+			text-align:center;
+}
+
+
+.form fieldset {
+	border: 1px solid #b7c4d1;
+	border-radius: 3px 3px 3px 3px;
+	padding: 0px 10px 10px 10px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.form fieldset p.inline-label, .form fieldset p.inline-medium-label, .form fieldset p.inline-small-label {
+	padding-right: 0;
+}
+
+/*
+.form fieldset legend {
+	background: url("../img/forms/legend-bg.png") repeat-x scroll top left #dcdcdc;
+	padding: 5px 10px;
+	line-height: 16px;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+	border: 1px solid #fff;
+	border-radius: 5px 5px 5px 5px;
+}*/
+
+.form label, .form .label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+
+
+.form input[type="text"], .form input[type="password"], .form textarea{
+	border: 1px solid #D1D1D1;
+	border-radius: 3px 3px 3px 3px;
+	line-height: 1.5em;
+	padding: 5px 0px;
+	background:#fff;
+	width:170px;
+    font-family:arial;
+	font-size:12px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+	text-justify:auto;
+}
+
+.form select{
+	border: 1px solid #D1D1D1;
+	border-radius: 3px 3px 3px 3px;
+	line-height: 1.5em;
+	padding: 1px 0px;
+	background:#fff;
+	width:200px;
+	height:25px;
+    font-family:arial;
+	font-size:12px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+
+	
+};
+
+
+.form input[type="checkbox"]{
+	border: 1px solid #D1D1D1;
+	border-radius: 3px 3px 3px 3px;
+	line-height: 1.5em;
+	padding: 1px 0px;
+	background:#fff;
+	width:200px;
+	height:25px;
+    font-family:arial;
+	font-size:12px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+
+	
+};
+
+.form input[type="text"]:hover, .form select:hover,.form input[type="password"]:hover, .form textarea:hover {
+	border-color: #a3a3a3;
+}
+
+.form input[type="text"]:focus, .form input[type="password"]:focus, .form textarea:focus {
+	border-color: #666666;
+}
+
+
+
+form input[type="submit"]{
+			background: url(../../images//buttons.png) left -34px;
+		border: 1px solid #CCC;
+	/*+text-shadow:0px -1px #FFFFFF;*/
+	-moz-text-shadow: 0px -1px #FFFFFF;
+	-webkit-text-shadow: 0px -1px #FFFFFF;
+	-o-text-shadow: 0px -1px #FFFFFF;
+	text-shadow: 0px -1px #FFFFFF;
+	/*+box-shadow:0px 1px 5px #EAEAEA;*/
+	-moz-box-shadow: 0px 1px 5px #EAEAEA;
+	-webkit-box-shadow: 0px 1px 5px #EAEAEA;
+	-o-box-shadow: 0px 1px 5px #EAEAEA;
+	box-shadow: 0px 1px 5px #EAEAEA;
+	color: #666; font-weight:bold;
+}
+
+form input[type="submit"]:hover{
+	background: #323232;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.form input[type="button"]{
+		background: url(../../images//buttons.png) left -34px;
+		border: 1px solid #CCC;
+	/*+text-shadow:0px -1px #FFFFFF;*/
+	-moz-text-shadow: 0px -1px #FFFFFF;
+	-webkit-text-shadow: 0px -1px #FFFFFF;
+	-o-text-shadow: 0px -1px #FFFFFF;
+	text-shadow: 0px -1px #FFFFFF;
+	/*+box-shadow:0px 1px 5px #EAEAEA;*/
+	-moz-box-shadow: 0px 1px 5px #EAEAEA;
+	-webkit-box-shadow: 0px 1px 5px #EAEAEA;
+	-o-box-shadow: 0px 1px 5px #EAEAEA;
+	box-shadow: 0px 1px 5px #EAEAEA;
+	color: #666; font-weight:bold;
+}
+
+
+
+
+
+.form input[type="button"]:hover{
+	background: #323232;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+
+.button-assets
+{
+
+	background: #000000;
+	color: #FFFFFF;
+	text-decoration: none;
+
+}
+
+
+.button-assets:hover
+{
+
+	background: #323232;
+	color: #FFFFFF;
+	text-decoration: none;
+
+}
+
+/* ==================================================
+ * 2) Validation
+ * ================================================== */
+
+div.error {
+	color: #740000;
+	font-weight: 700;
+}
+
+div.jGrowl div.error {
+	color: #fff;
+	font-weight: 400;
+}
+
+input[type=text].error, input[type=password].error, textarea.error {
+	border-color: #bf0000 !important;
+}
+
+p.inline-small-label label.error {
+	margin-left: 0 !important;
+}
+
+
+
+
+
+/* ==================================================
+ * 3) Grid
+ * ================================================== */
+
+._25 {
+    width: 22%;
+    display: inline;
+    float: left;
+    margin-left: 2%;
+    margin-right: 2%;
+
+}
+
+._30 {
+    width: 36%;
+    display: inline;
+    float: left;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+
+._50 {
+    width: 46%;
+    display: inline;
+    float: left;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+._75 {
+    width: 71%;
+    display: inline;
+    float: left;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+._100 {
+    width: 96%;
+    display: inline;
+    float: left;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+/*
+input, textarea, select {
+    width: 100%;
+}*/
+
+p.no-top-margin {
+	margin-top: 0;
+}
+
+
+
+/* ==================================================
+ * 4) Inline Label
+ * ================================================== */
+
+.inline-label label, .inline-label .label, .inline-medium-label label, .inline-medium-label .label, .inline-small-label label, .inline-small-label .label, .inline-mini-label label, .inline-mini-label .label {
+	float: left;
+	display: block;
+	padding: 4px 0 0 4px;
+}
+
+p.inline-label { padding-left: 200px; }
+.inline-label label, .inline-label .label { margin-left: -200px; }
+
+p.inline-medium-label { padding-left: 150px; }
+.inline-medium-label label, .inline-medium-label .label { margin-left: -150px; }
+
+p.inline-small-label { padding-left: 100px; }
+.inline-small-label label, .inline-small-label .label { margin-left: -100px; }
+
+p.inline-mini-label { padding-left: 70px; }
+.inline-mini-label label, .inline-mini-label .label { margin-left: -70px; }
+
+
+
+
+
+
+/* ==================================================
+ * 5) Search-Form
+ * ================================================== */
+
+#search-form input[type="text"] {
+	background: url("../img/icons/misc/search.png") no-repeat scroll 8px 6px #fff;
+	margin-top: 8px;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-top: 4px;
+	padding-left: 25px;
+	padding-right: 10px;
+	padding-bottom: 4px;
+	border: 1px solid #b3b3b3;
+	border-radius: 20px 20px 20px 20px;
+	width: 205px;
+}
+
+
+
+/* Progress bars
+---------------------------------------------------------------------*/
+
+.progress {
+    border: 1px solid #ccc;
+    position: relative;
+    display: block;
+    height: 22px;
+    padding: 0;
+    min-width: 100px;
+    margin:4px 0;
+    background: #DEDEDE;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#e9e9e9));
+    background: -moz-linear-gradient(top, #ccc, #e9e9e9);
+    -pie-background: linear-gradient(top, #ccc, #e9e9e9);
+
+    -moz-box-shadow:0 1px 0 #fff;
+    -webkit-box-shadow:0 1px 0 #fff;
+    box-shadow:0 1px 0 #fff;
+
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+    position: relative;
+}
+.progress span {
+    display: block;
+    height: 20px;
+    margin: 0;
+    text-align:center;
+    padding: 0;
+    position: relative;
+    width:0;
+    
+    -moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+    -webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+}
+.progress span b {
+    color:#fff;
+    line-height:20px;
+    padding-left:2px;
+    text-shadow:0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.progress.progress-blue span {
+    border: 1px solid #0078a5; 
+    background-color: #5C9ADE;
+    background: -moz-linear-gradient(top, #00adee 10%, #0078a5 90%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.1, #00adee), color-stop(0.9, #0078a5));
+    -pie-background: linear-gradient(top, #00adee 10%, #0078a5 90%);
+}
+
+.progress.progress-green span {
+    border: 1px solid #5c9425; 
+    background-color: #77AF3F;
+    background: -moz-linear-gradient(top, #8fc857 10%, #5c9425 90%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.1, #8fc857), color-stop(0.9, #5c9425));
+    -pie-background: linear-gradient(top, #8fc857 10%, #5c9425 90%);
+}
+.progress-orange span {
+    border: 1px solid #f47a20; 
+    background-color: #faa51a;
+    background: -moz-linear-gradient(top, #faa51a 10%, #f47a20 90%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.1, #faa51a), color-stop(0.9, #f47a20));
+    -pie-background: linear-gradient(top, #faa51a 10%, #f47a20 90%);
+}
+.progress-red span {
+    border: 1px solid #A92C2C; 
+    background-color: #C44747;
+	width:20%;
+    background: -moz-linear-gradient(top, #DD5F5F 10%, #A92C2C 90%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.1, #DD5F5F), color-stop(0.9, #A92C2C));
+    -pie-background: linear-gradient(top, #DD5F5F 10%, #A92C2C 90%);
+}
+
+
+
+
+
