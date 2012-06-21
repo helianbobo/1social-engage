@@ -15,7 +15,7 @@ class UrlMappings {
             }
         }
 
-        "/"(controller: 'socialAnalytics', action: 'index')
+        "/"(view: 'index')
         "/sandbox"(view: "/sandbox")
         "500"(view: '/error')
     }

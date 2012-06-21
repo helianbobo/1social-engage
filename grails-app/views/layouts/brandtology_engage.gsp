@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en-US">
 
 <head>
-    <g:render template="/share/title" model="[currentModule: 'socialEngage', currentSubModule: currentSubModule]"/>
     <g:render template="/share/head"/>
-
-    <title><g:layoutTitle/></title>
+    <g:render template="/share/title" 
+    		model="[currentModule: 'socialEngage', currentSubModule: currentSubModule]"/>
 
     <r:require module="engage"/>
 
     <g:layoutHead/>
     <r:layoutResources/>
 
-    <g:render template="/share/session" model="[currentModule: 'socialEngage', currentSubModule: currentSubModule]" />
+    <g:render template="/share/session" 
+    		model="[currentModule: 'socialEngage', currentSubModule: currentSubModule]" />
 </head>
 
 <body>
 
-<g:render template="/share/header"
-          model="[subModules:['posts','cases'], currentModule: 'socialEngage', currentSubModule:currentSubModule]"/>
+	<g:render template="/share/header"
+        	model="[subModules:['posts','cases'], currentModule: 'socialEngage', currentSubModule:currentSubModule]"/>
 
+	<g:layoutBody/>
 
-
-<g:layoutBody/>
-
-<r:layoutResources/>
+	<r:layoutResources/>
 </body>
 </html>
