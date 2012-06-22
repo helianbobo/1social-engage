@@ -29,7 +29,7 @@ modules = {
     }
 
     brandtology_v1 {
-        dependsOn 'jquery, jquery-ui, jsViews, preloader, highcharts'
+        dependsOn 'jquery, jsViews, preloader, highcharts' // , jquery-ui
 
         //resource url: 'v1/js/ajax.js'
         //resource url: 'js/json2.js'
