@@ -1,0 +1,17 @@
+LESS_DIR = ./less
+CSS_DIR = ./css
+
+build:
+	mkdir -p css
+	lessc ${LESS_DIR}/engage.less > ${CSS_DIR}/engage.css
+	lessc ${LESS_DIR}/app-post.less > ${CSS_DIR}/app-post.css
+
+node:
+	mkdir -p css
+	node compile-css.js	
+
+watch:
+	echo "Watching less files..."
+	watchr -e "watch('less/.*\.less') { system 'make' }"
+
+.PHONY: build node watch

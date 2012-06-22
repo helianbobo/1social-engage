@@ -30,6 +30,7 @@ modules = {
 
     brandtology_v1 {
         dependsOn 'jquery, jsViews, preloader, highcharts' // , jquery-ui
+        defaultBundle 'ui'
 
         //resource url: 'v1/js/ajax.js'
         //resource url: 'js/json2.js'
@@ -43,7 +44,8 @@ modules = {
         //resource url: 'css/redmond/jquery-ui-1.7.1.custom.css'
         //resource url: 'css/jquery.treeview.css'
 
-        //resource url: 'v1/css/reset.less', attrs: [rel: "stylesheet/less", type: 'css']
+        resource url: 'less/engage.less', attrs: [rel: "stylesheet/less", type: 'css']//, bundle: 'bundle_ui'
+        resource url: 'less/app-post.less', attrs: [rel: "stylesheet/less", type: 'css']
         //resource url: 'v1/css/fontface.less', attrs: [rel: "stylesheet/less", type: 'css']
         //resource url: 'v1/css/layout.less', attrs: [rel: "stylesheet/less", type: 'css']
 

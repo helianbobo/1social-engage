@@ -1,0 +1,24 @@
+@import "variables.less";
+@import "mixins.less";
+
+.app-post {
+  height: 100%;
+  width: 100%;
+}
+
+.tab-app-header {
+  .tab-style(0, ~'4px 0 0 0');
+  border-bottom: 1px solid @grayLight;
+  li {
+  }
+  a {
+    background-color: @grayLighter;
+    display: block;
+    padding: 6px 40px;
+  }
+  .active a,
+  a:hover {
+    background-color: @white;
+    text-decoration: none;
+  }
+}
