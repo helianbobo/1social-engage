@@ -10,16 +10,21 @@
   .tab-style(0, ~'4px 0 0 0');
   border-bottom: 1px solid @grayLight;
   li {
+    margin-right: 2px;
   }
   a {
     background-color: @grayLighter;
+    color: @grayLight;
     display: block;
     line-height: 20px;
-    padding: 6px 40px;
+    padding: 6px 35px;
+  }
+  .active a {
+    background-color: @white;
   }
   .active a,
   a:hover {
-    background-color: @white;
+    color: @gray;
     text-decoration: none;
   }
   i {
@@ -27,20 +32,22 @@
   }
 }
 
-.icon-facebook,
-.icon-weibo,
-.icon-twitter {
+.icon-facebook-s,
+.icon-weibo-s,
+.icon-twitter-s {
   display: inline-block;
   .size(20px, 20px);
   vertical-align: top;
+  background-image: url(../images/icon-socialmedia.png);
   background-repeat: no-repeat;
+  background-position-y: -100px;
 }
-.icon-facebook {
-  background-image: url(../images/icon-facebook-20x20.png);
+.icon-facebook-s {
+  background-position-x: -152px;
 }
-.icon-weibo {
-  background-image: url(../images/icon-weibo-20x20.png);
+.icon-weibo-s {
+  background-position-x: -38px;
 }
-.icon-twitter {
-  background-image: url(../images/icon-twitter-20x20.png);
+.icon-twitter-s {
+  background-position-x: -76px;
 }
