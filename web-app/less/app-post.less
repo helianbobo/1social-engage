@@ -9,7 +9,7 @@
 
 .app-tabs {
   border-bottom: 1px solid #ddd;
-  margin-top: 0;
+  margin: 0;
   padding-top: 8px;
 }
 .app-tabs > li {
@@ -34,6 +34,76 @@
 .app-tabs > .active > a:hover {
   background-color: @white;
 }
+
+// Toolbar
+// -----
+
+.toolbar {
+  .clearfix();
+  border-bottom: 1px solid #ddd;
+}
+.batch-actions {
+  button {
+    display: inline-block;
+    margin: 8px 4px;
+  }
+  .input-select {
+    margin: 8px 12px;
+  }
+}
+.refresh-actions,
+.filter-actions,
+.pagination-actions,
+.sort-actions {
+  margin: 0 10px;
+  a:hover {
+    background-color: @bodyBackground;
+    text-decoration: none;
+  }
+  button {
+    display: inline-block;
+    margin: 8px 4px;
+  }
+  span {
+    display: inline-block;
+    padding: 10px 4px;
+  }
+}
+.filter-actions {
+  .nav {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+  .nav > li {
+      display: inline-block;
+  }
+  .nav > li > a {
+    padding: 10px 10px;
+  }
+}
+.pagination-actions {
+  a {
+    display: inline-block;
+    padding: 10px;
+  }
+  .disabled {
+    cursor: default;
+    &:hover {
+      background-color: transparent;
+      color: @linkColor;
+    }
+  }
+}
+.sort-actions {
+  a {
+    display: inline-block;
+    padding: 10px;
+  }
+}
+
+// ICONS
+// -----
 
 .icon-facebook-s,
 .icon-weibo-s,

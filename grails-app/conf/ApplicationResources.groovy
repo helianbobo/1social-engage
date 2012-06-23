@@ -64,6 +64,8 @@ modules = {
         //TODO: new social engage resources
 
         resource url: 'less/engage.less', attrs: [rel: "stylesheet/less", type: 'css']//, bundle: 'bundle_ui'
+
+        resource url: 'js/bootstrap-dropdown.js'
         //resource url: 'engage/js/engage.js'
         //resource url: 'engage/css/engage.css'
     }
