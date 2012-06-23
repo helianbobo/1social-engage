@@ -14,4 +14,8 @@ $(document.body).ready(function() {
   var tmpl = $('.post-list li')
   for(var i = 0; i < 100; i++) $('.post-list').append(tmpl.clone())
 
+  $('.post-item').delegate('.show-case', 'click', function() {
+    console.log('hi')
+    $('.modal').modal()
+  })
 })

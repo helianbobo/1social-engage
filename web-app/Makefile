@@ -5,6 +5,7 @@ build:
 	mkdir -p css
 	lessc ${LESS_DIR}/engage.less > ${CSS_DIR}/engage.css
 	lessc ${LESS_DIR}/app-post.less > ${CSS_DIR}/app-post.css
+	lessc ${LESS_DIR}/app-case.less > ${CSS_DIR}/app-case.css
 
 node:
 	mkdir -p css
