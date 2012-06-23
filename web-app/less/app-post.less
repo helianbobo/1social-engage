@@ -37,7 +37,7 @@
 }
 
 // Toolbar
-// -----
+// ----------------------------------------------
 
 .toolbar {
   .clearfix();
@@ -48,7 +48,7 @@
     display: inline-block;
     margin: 8px 4px;
   }
-  .input-select {
+  .input-all-selector {
     margin: 8px 12px;
   }
 }
@@ -84,6 +84,8 @@
   }
 }
 .pagination-actions {
+  text-align: center;
+  width: 140px;
   a {
     display: inline-block;
     padding: 10px;
@@ -98,8 +100,99 @@
 }
 .sort-actions {
   a {
+    display: block;
+    line-height: 22px;
+    min-width: 24px;
+    padding: 8px 13px;
+    text-align: center;
+  }
+  .datetime {
+    width: 134px;
+  }
+  .nav {
     display: inline-block;
-    padding: 10px;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+  }
+  .nav > li {
+    display: inline-block;
+  }
+}
+
+// Post-list
+// --------------------------------------------------
+
+@leftMargin: (@gridColumnWidth + @gridGutterWidth) * 2;
+@rightMargin: (-@gridGutterWidth) + (@gridColumnWidth + @gridGutterWidth) * 7;
+.post-list-wrap {
+  overflow: auto;
+}
+.post-list {
+  margin: 0;
+  padding: 0;
+}
+.post-item {
+  list-style: none;
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+  position: relative;
+  .content {
+    margin: 0 @rightMargin 0 @leftMargin;
+    min-height: 60px;
+    padding: 10px 0;
+  }
+  .input-item-selector {
+    left: 10px;
+    position: absolute;
+    top: 15px;
+  }
+  .meta {
+    right: 161px;
+    position: absolute;
+    top: 15px;
+    .count {
+      display: inline-block;
+      padding-top: 12px;
+      text-align: center;
+      vertical-align: top;
+      width: 50px;
+    }
+    .datetime {
+      display: inline-block;
+      text-align: center;
+      width: 160px;
+      p {
+        margin: 0 0 3px;
+      }
+    }
+  }
+  .actions {
+    right: 0;
+    position: absolute;
+    top: 15px;
+    width: @leftMargin - @gridGutterWidth;
+    button {
+      margin: 0 0 6px;
+      width: @leftMargin - @gridGutterWidth * 2;
+    }
+  }
+  .type {
+    background-color: @grayLighter;
+    height: 50px;
+    left: 35px;
+    position: absolute;
+    top: 10px;
+    width: 50px;
+  }
+  .user-pic {
+    left: 100px;
+    position: absolute;
+    top: 10px;
+  }
+  .user-name {
+    font-weight: bold;
+    padding: 0 4px;
   }
 }
 
@@ -114,14 +207,31 @@
   vertical-align: top;
   background-image: url(../images/icon-socialmedia.png);
   background-repeat: no-repeat;
-  background-position-y: -100px;
 }
 .icon-facebook-s {
-  background-position-x: -152px;
+  background-position: -152px -100px;
 }
 .icon-weibo-s {
-  background-position-x: -38px;
+  background-position: -38px -100px;
 }
 .icon-twitter-s {
-  background-position-x: -76px;
+  background-position: -76px -100px;
+}
+
+.icon-like,
+.icon-comment,
+.icon-share {
+  display: inline-block;
+  height: 22px;
+  text-indent: -9999px;
+  width: 24px;
+}
+.icon-like {
+  background: url(../images/icon-social-engage.png) no-repeat -107px -7px;
+}
+.icon-comment {
+  background: url(../images/icon-social-engage.png) no-repeat -131px -7px;
+}
+.icon-share {
+  background: url(../images/icon-social-engage.png) no-repeat -156px -7px;
 }

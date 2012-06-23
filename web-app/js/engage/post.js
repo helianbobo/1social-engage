@@ -5,11 +5,13 @@ $(document.body).ready(function() {
   }
 
   function updateListHeight() {
-	 $('.post-list-wrap').height(getListHeight())
+    $('.post-list-wrap').height(getListHeight())
   }
 
   $(window).resize(updateListHeight)
   updateListHeight()
 
-  
+  var tmpl = $('.post-list li')
+  for(var i = 0; i < 100; i++) $('.post-list').append(tmpl.clone())
+
 })

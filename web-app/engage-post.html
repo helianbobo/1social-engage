@@ -27,7 +27,7 @@ restart grails server.
 
             <div class="toolbar">
               <div class="pull-left batch-actions">
-                <input type="checkbox" class="input-select">
+                <input type="checkbox" class="input-all-selector">
                 <button>Mark as read</button>
                 <button>Mark as unread</button>
               </div>
@@ -92,15 +92,43 @@ restart grails server.
               </div>
               <div class="pull-right sort-actions">
                 <span>Sort by: </span>
-                <a href="#">like</a>
-                <a href="">comment</a>
-                <a href="">page</a>
-                <a href="">Date/Time Posted</a>
+                <ul class="nav">
+                  <li><a href="#"><i class="icon-like">like</i></a></li>
+                  <li><a href="#"><i class="icon-comment">comment</i></a></li>
+                  <li><a href="#"><i class="icon-share">share</i></a></li>
+                  <li><a href="#" class="datetime">Date/Time Posted</a></li>
+                </ul>
               </div>
             </div>
 
             <div class="post-list-wrap">
-              <div class="post-list"></div>
+              <ul class="post-list">
+                <li class="post-item">
+                  <div class="content">
+                    <a class="user-name" href="">Brandtology</a>
+                    How The World Spends Its Time Online [INFOGRAPHIC] <a href="http://buff.ly/LATWXi" target="_blank">http://buff.ly/LATWXi</a>
+                  </div>
+                  <input type="checkbox" class="input-item-selector" >
+                  <div class="type">
+                    <span class="type-item-1-1"></span>
+                    <span class="type-item-1-2"></span>
+                    <span class="type-item-2-1"></span>
+                    <span class="type-item-2-2"></span>
+                  </div>
+                  <span class="user-pic"><img src="test-asset/user-pic.jpg" alt=""></span>
+
+                  <div class="meta">
+                    <div class="count">15</div>
+                    <div class="count">-</div>
+                    <div class="count">-</div>
+                    <div class="datetime"><p>13:56:55</p><p>20 June 2012</p></div>
+                  </div>
+                  <div class="actions">
+                    <button>Action</button>
+                    <button>Mark as read</button>
+                  </div>
+                </li>
+              </ul>
             </div>
 
           </div>
