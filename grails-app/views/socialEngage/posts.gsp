@@ -97,7 +97,9 @@
               </div>
             </div>
 
-            <div class="post-list"></div>
+            <div class="post-list-wrap">
+              <div class="post-list"></div>
+            </div>
 
           </div>
         </div>
