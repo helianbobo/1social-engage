@@ -6,35 +6,30 @@
   width: 100%;
 }
 
-.tab-app-header {
-  .tab-style(0, ~'4px 0 0 0');
-  border-bottom: 1px solid @grayLight;
-  li {
-    margin-bottom: -1px;
-    margin-right: 2px;
-  }
-  a {
+.app-tabs {
+  border-bottom: 1px solid #ddd;
+}
+.app-tabs > li {
+  margin-bottom: -1px;
+}
+.app-tabs > li > a {
+  background-color: #fafafa;
+  border: 1px solid transparent;
+  border-color: @grayLighter @grayLighter #ddd;
+  color: @grayLight;
+  line-height: 20px;
+  padding: 6px 35px;
+  &:hover {
     background-color: @grayLighter;
-    border: 1px solid transparent;
-    border-bottom-color: @grayLight;
-    color: @grayLight;
-    display: block;
-    line-height: 20px;
-    padding: 6px 35px;
-  }
-  .active a {
-    background-color: @white;
-  }
-  .active a,
-  a:hover {
     color: @gray;
-    border: 1px solid @grayLight;
-    border-bottom-color: transparent;
-    text-decoration: none;
   }
   i {
     padding-right: 6px;
   }
+}
+.app-tabs > .active > a,
+.app-tabs > .active > a:hover {
+  background-color: @white;
 }
 
 .icon-facebook-s,
