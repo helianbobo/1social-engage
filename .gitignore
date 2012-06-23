@@ -1,4 +1,4 @@
 target
 *.DS_Store
-web-app/css/app-post.css
+web-app/css/app-*.css
 web-app/css/engage.css
