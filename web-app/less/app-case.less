@@ -113,6 +113,18 @@
 .case-details > .nav-tabs {
   margin-top: 0;
 }
+.case-details > .nav-tabs > li > a {
+  background-color: #fcfcfc;
+  border-color: #ddd;
+}
+.case-details > .nav-tabs > li > a:hover {
+  background-color: @white;
+}
+.case-details > .nav-tabs > .active > a,
+.case-details > .nav-tabs > .active > a:hover {
+  background-color: @caseBoxBackground;
+  border-color: #ddd #ddd transparent;
+}
 .case-details > .tab-content > .tab-pane {
   background-color: @caseBoxBackground;
   min-height: 480px;
@@ -149,6 +161,7 @@
   .box-shadow(0 1px 2px rgba(0,0,0,.25));
 }
 .conversation {
+  font-size: 11px;
   .post {
     padding: 6px 0;
     position: relative;
@@ -157,24 +170,58 @@
       margin-left: 80px;
       margin-right: 6px;
     }
-    .meta {
-      border-top: 1px solid @grayLight;
-      line-height: 22px;
+    .meta {      
       margin-top: 6px;
       margin-bottom: 6px;
-      text-align: right;
-      i {
-        vertical-align: middle;
-      }
-      .count {
-        padding: 3px 6px;
-      }
     }
     .user-pic {
       left: 15px;
       position: absolute;
       top: 6px;
     }
+  }
+
+  .comments {
+    height: 250px;
+    padding: 0 6px 0 80px;
+    overflow: auto;
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .comment {
+    background-color: @bodyBackground;
+    list-style: none;
+    margin-bottom: 3px;
+    position: relative;
+    .content {
+      margin-left: 60px;
+      padding-top: 4px;
+    }
+    .meta {
+      margin: 4px 0 0 60px;
+    }
+    .user-pic {
+      left: 5px;
+      position: absolute;
+      top: 5px;
+    }
+  }
+  .meta {
+    border-top: 1px solid @grayLight;
+    line-height: 22px;
+    text-align: right;
+    i {
+      vertical-align: middle;
+    }
+    .count {
+      padding: 3px 6px;
+    }
+  }
+  .user-name {
+    font-weight: bold;
+    padding-right: 6px;
   }
 }
 
