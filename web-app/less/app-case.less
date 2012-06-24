@@ -2,11 +2,45 @@
 @import "mixins.less";
 
 .app-case {
+  background-color: @bodyBackground;
+  padding-top: 12px;
 }
+
 .app-case-modal {
   margin-left: -480px;
   width: 960px;
   .modal-body {
     padding: 0;
+  }
+}
+
+.post-info {
+  background-color: #ddd;
+  padding: 6px 0;
+  position: relative;
+  .asset-pic {
+    top: -12px;
+    left: 15px;
+    position: absolute;
+    .social-media {
+      bottom: -8px;
+      position: absolute;
+      right: 5px;
+    }
+  }
+  .content {
+    border-top: 1px solid @grayLight;
+    margin: 0 6px 0 120px;
+    padding: 8px 0;
+  }
+  .user {
+    margin-left: 120px;
+    padding-bottom: 12px;
+  }
+  .user-pic {
+    display: inline-block;
+  }
+  .user-name {
+    display: inline-block;
   }
 }
