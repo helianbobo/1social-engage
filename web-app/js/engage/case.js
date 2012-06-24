@@ -1,8 +1,11 @@
 $(document.body).ready(function() {
-  function copy(ul) {
-    var li = ul.find('li');
-    for(var i = 0; i < 12; i++) ul.append(li.clone())
+  function repeat(ul, max) {
+    var li = ul.find('li')
+      , max = max || 12
+
+    for(var i = 0; i < max; i++) ul.append(li.clone())
   }
 
-  copy($('.comments ul'))
+  repeat($('.comments ul'))
+  repeat($('.case-history-wrap ul'), 50)
 })

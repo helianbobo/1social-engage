@@ -74,13 +74,13 @@
         <div class="span6">
           <div class="case-details">
             <ul class="nav nav-tabs case-tabs">
-              <li><a href="#conversation" data-toggle="tab">Conversation</a></li>
-              <li class="active"><a href="#case-history" data-toggle="tab">Case History</a></li>
+              <li class="active"><a href="#conversation" data-toggle="tab">Conversation</a></li>
+              <li><a href="#case-history" data-toggle="tab">Case History</a></li>
               <li><a href="#social-profile" data-toggle="tab">Social Profile</a></li>
             </ul>
 
             <div class="tab-content">
-              <div class="tab-pane" id="conversation">
+              <div class="tab-pane active" id="conversation">
                 <div class="conversation-wrap">
                   <div class="conversation">
                     <ul class="toolbar">
@@ -125,13 +125,16 @@
                 </div>
               </div>
 
-              <div class="tab-pane active" id="case-history">
+              <div class="tab-pane" id="case-history">
                 <div class="case-history-wrap">
                   <ul class="case-history">
-                    <li>history</li>
+                    <li>
+                      <a href="#" class="user-name">Unicon</a>
+                      Save the cheer leader, save the world!
+                    </li>
                   </ul>
-                  <div class="case-history no-history-wrap">
-                    <div class="no-history">
+                  <div class="case-history no-case-history hide">
+                    <div class="no-case-history-info">
                       ---== No Case History Found ==---
                     </div>
                   </div>

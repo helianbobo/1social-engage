@@ -6,7 +6,6 @@
 
 .app-case {
   background-color: @bodyBackground;
-  padding-top: 12px;
   .form-actions {
     background-color: transparent;
     border: 0;
@@ -21,10 +20,23 @@
 }
 
 .app-case-modal {
-  margin-left: -480px;
-  width: 960px;
-  .modal-body {
+  background-color: @bodyBackground;
+  margin-left: -490px;
+  margin-top: -275px;
+  width: 980px;
+  .modal-header {
     padding: 0;
+    border: 0;
+    .close {
+      .absolute-top-right(10px, 10px);
+      background: @white;
+      border: 2px solid #ccc;
+      .border-radius(12px);
+    }
+  }
+  .modal-body {
+    max-height: 550px;
+    padding: 20px 0;
   }
 }
 
@@ -34,12 +46,16 @@
   position: relative;
   .asset-pic {
     .absolute-top-left(-12px, 15px);
+    img {
+      border: 1px solid @grayLighter;
+    }
     .social-media {
       .absolute-bottom-right(-8px, 5px);
     }
   }
   .content {
     border-top: 1px solid @grayLight;
+    font-size: 11px;
     margin: 0 6px 0 120px;
     padding: 8px 0;
   }
@@ -217,10 +233,24 @@
   }
 }
 
-.no-history-wrap {
+.case-history {
+  font-size: 11px;
+  max-height: 405px;
+  overflow: auto;
+  padding: @panelPadding 0 @panelPadding @panelPadding;
+  li {
+    list-style: none;
+    padding: 4px 0;
+  }
+  .user-name {
+    font-weight: bold;
+    padding: 0 6px;
+  }
+}
+.no-case-history {
   padding: @panelPadding;
 }
-.no-history {
+.no-case-history-info {
   .border-radius(10px);
   .box-shadow(0 1px 4px rgba(0,0,0,.25));
   padding: 140px 0;
