@@ -1,9 +1,19 @@
 @import "variables.less";
 @import "mixins.less";
 
+@caseBoxBackground: #d2d2d2;
+@panelPadding: 12px;
+
 .app-case {
   background-color: @bodyBackground;
   padding-top: 12px;
+  .form-actions {
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    padding: 5px 0;
+    text-align: right;
+  }
 }
 
 .app-case-modal {
@@ -15,7 +25,7 @@
 }
 
 .post-info {
-  background-color: #ddd;
+  background-color: @caseBoxBackground;
   padding: 6px 0;
   position: relative;
   .asset-pic {
@@ -42,5 +52,79 @@
   }
   .user-name {
     display: inline-block;
+  }
+}
+
+.case-tabs {
+  margin-bottom: 0;
+}
+.case-tabs > .active > a,
+.case-tabs > .active > a:hover {
+  background-color: @caseBoxBackground;
+}
+
+.case-form {
+  @boxWidth: (@gridColumnWidth + @gridGutterWidth) * 6 - @gridGutterWidth;
+  background-color: @caseBoxBackground;
+  padding: @panelPadding;
+  input,
+  textarea,
+  .create-response {
+    .box-sizing(border-box);
+    width: 100%;
+  }
+  input {
+    height: 28px;
+  }
+  label {
+    display: inline-block;
+  }
+  .field {
+    padding: 4px 0 6px;
+  }
+}
+
+.prioritys {
+  display: inline-block;
+  margin: 0;
+  padding: 0 0 0 12px;
+}
+.prioritys > li {
+  display: inline-block;
+  list-style: none;
+}
+.prioritys > li > a {
+  background: url(../images/icon-flags.png) no-repeat -50px 0;
+  display: inline-block;
+  height: 25px;
+  text-indent: -9999px;
+  vertical-align: text-top;
+  width: 25px;
+}
+.prioritys > .active > a,
+.prioritys > li > a:hover {
+  background-position: 0 0;
+}
+
+.case-details > .nav-tabs {
+  margin-top: 0;
+}
+.case-details > .tab-body > .tab-pane {
+  background-color: @caseBoxBackground;
+}
+
+.contact-details-wrap {
+  padding: @panelPadding;
+  input {
+    .box-sizing(border-box);
+    height: 28px;
+    width: 100%;
+  }
+  .nav-tabs {
+    margin-bottom: 0;
+  }
+  .tab-pane {
+    background-color: @white;
+    padding: @panelPadding;
   }
 }
