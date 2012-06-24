@@ -328,6 +328,28 @@
   filter: ~"alpha(opacity=@{opacity})";
 }
 
+// Absolute Position
+.absolute-top-left(@top, @left) {
+  left: @left;
+  position: absolute;
+  top: @top;
+}
+.absolute-top-right(@top, @right) {
+  position: absolute;
+  right: @right;
+  top: @top;
+}
+.absolute-bottom-left(@bottom, @left) {
+  bottom: @bottom;
+  left: @left;
+  position: absolute;
+}
+.absolute-bottom-right(@bottom, @right) {
+  bottom: @bottom;
+  position: absolute;
+  right: @right;
+}
+
 // COMPONENT MIXINS
 // --------------------------------------------------
 

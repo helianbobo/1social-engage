@@ -33,13 +33,9 @@
   padding: 6px 0;
   position: relative;
   .asset-pic {
-    top: -12px;
-    left: 15px;
-    position: absolute;
+    .absolute-top-left(-12px, 15px);
     .social-media {
-      bottom: -8px;
-      position: absolute;
-      right: 5px;
+      .absolute-bottom-right(-8px, 5px);
     }
   }
   .content {
@@ -175,9 +171,7 @@
       margin-bottom: 6px;
     }
     .user-pic {
-      left: 15px;
-      position: absolute;
-      top: 6px;
+      .absolute-top-left(6px, 15px);
     }
   }
 
@@ -203,9 +197,7 @@
       margin: 4px 0 0 60px;
     }
     .user-pic {
-      left: 5px;
-      position: absolute;
-      top: 5px;
+      .absolute-top-left(5px, 5px);
     }
   }
   .meta {
