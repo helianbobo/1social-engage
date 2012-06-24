@@ -18,7 +18,7 @@
             </div>
             <div class="user">
               <div class="user-pic">
-                <img src="test-asset/user-pic.jpg" alt="">
+                <img src="test-asset/user-pic.jpg" width="50" height="50" alt="">
               </div>
               <div class="user-name">User name</div>
             </div>
@@ -29,10 +29,10 @@
 
           <div class="case-wrap">
             <ul class="nav nav-tabs case-tabs">
-              <li class="active"><a href="">Create New Case</a></li>
+              <li class="active"><a href="#new-case" data-toggle="tab">Create New Case</a></li>
             </ul>
-            <div class="tab-body">
-              <tab class="pane">
+            <div class="tab-content">
+              <div class="tab-pane active" id="new-case">
                 <div class="case-form">
                   <div class="field">
                     <input type="text" placeholder="Case Name" />
@@ -53,7 +53,7 @@
                     <button class="create-response">Write A New Response</button>
                     <div class="reponse-wrap hide">
                       <textarea name="response" rows="3" class="response" placeholder="Write A New Response"></textarea>
-                      <span>xxx Characters Left</span>
+                      <span class="help-inline">140 Characters Left</span>
                     </div>
                   </div>
 
@@ -66,7 +66,7 @@
                     <button>Create Case</button>
                   </div>
                 </div>
-              </tab>
+              </div>
             </div>
           </div>
         </div>
@@ -74,26 +74,41 @@
         <div class="span6">
           <div class="case-details">
             <ul class="nav nav-tabs case-tabs">
-              <li class="active"><a href="#">Conversation</a></li>
-              <li><a href="#">Case History</a></li>
-              <li><a href="#">Social Profile</a></li>
+              <li class="active"><a href="#conversation" data-toggle="tab">Conversation</a></li>
+              <li><a href="#case-history" data-toggle="tab">Case History</a></li>
+              <li><a href="#social-profile" data-toggle="tab">Social Profile</a></li>
             </ul>
 
-            <div class="tab-body">
-              <div class="tab-pane">
+            <div class="tab-content">
+              <div class="tab-pane active" id="conversation">
                 <div class="conversation-wrap">
-                  <div class="toolbar">
-                    <ul>
+                  <div class="conversation">
+                    <ul class="toolbar">
                       <li><a href="#">Sort All Posts</a></li>
                       <li><a href="">Show Posts by User Only</a></li>
                     </ul>
+                    <div class="post">
+                      <div class="user-pic">
+                        <img src="test-asset/user-pic.jpg" width="50" height="50" alt="">
+                      </div>
+                      <div class="content">
+                        <span class="user-name">Singtel</span>
+                        The HTC One X allows for lightning-fast web browsing, remarkable picture quality and seamless gaming visual with its power0ful quad-cor1e0p2r2ocessor. Receive a free Energizer portable 20 June 2012
+￼￼￼￼charger worth $69.90 and enjoy additional $30 off when you purchase online between 9pm and Mark as Read 9am daily. For details and price plans: <a href="#">http://bit.ly/KMQFTj</a>
+                      </div>
+                      <div class="meta">
+                        <span class="count"><i class="icon-like"></i> 20</span>
+                        <span class="count"><i class="icon-comment"></i> 10</span>
+                        <span class="count"><i class="icon-share"></i> 799</span>
+                        <span class="date">13:14:15 21 Jun 2012</span>
+                      </div>
+                    </div>
+                    <div class="comments">comments</div>
                   </div>
-                  <div class="post">post content</div>
-                  <div class="comments">comments</div>
                 </div>
               </div>
 
-              <div class="tab-pane">
+              <div class="tab-pane" id="case-history">
                 <div class="case-history-wrap">
                   <ul class="case-history">
                     <li>history</li>
@@ -101,14 +116,14 @@
                 </div>
               </div>
 
-              <div class="tab-pane">
-                <div class="contact-details-wrap">
+              <div class="tab-pane" id="social-profile">
+                <div class="social-profile-wrap">
                   <div class="basic-contact">
                     <ul class="nav nav-tabs">
-                      <li class="active"><a href="#">Contact Details</a></li>
+                      <li class="active"><a href="#contact-details" data-toggle="tab">Contact Details</a></li>
                     </ul>
-                    <div class="tab-body">
-                      <div class="tab-pane">
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="contact-details">
                         <div class="form-contact form form-horizontal">
                           <div class="control-group">
                             <label class="control-label" for="">Name</label>
@@ -149,12 +164,12 @@
                   
                   <div class="social-contact">
                     <ul class="nav nav-tabs">
-                      <li class="active"><a href="#contact-twitter">Twitter</a></li>
-                      <li><a href="#contact-facebook">Facebook</a></li>
-                      <li><a href="#contact-weibo">Sina Weibo</a></li>
+                      <li class="active"><a href="#contact-twitter" data-toggle="tab">Twitter</a></li>
+                      <li><a href="#contact-facebook" data-toggle="tab">Facebook</a></li>
+                      <li><a href="#contact-weibo" data-toggle="tab">Sina Weibo</a></li>
                     </ul>
-                    <div class="tab-body">
-                      <div class="tab-pane" id="contact-twitter">
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="contact-twitter">
                         <div class="form-contact form form-horizontal">
                           <div class="control-group">
                             <label class="control-label" for="">User Name</label>
@@ -231,5 +246,6 @@
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
   </body>
 </html>
