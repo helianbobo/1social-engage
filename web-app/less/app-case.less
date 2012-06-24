@@ -217,6 +217,16 @@
   }
 }
 
+.no-history-wrap {
+  padding: @panelPadding;
+}
+.no-history {
+  .border-radius(10px);
+  .box-shadow(0 1px 4px rgba(0,0,0,.25));
+  padding: 140px 0;
+  text-align: center;
+}
+
 .social-profile-wrap {
   padding: @panelPadding;
   input {
@@ -235,10 +245,14 @@
     margin-top: 4px;
     padding-left: 6px;
   }
+  .tab-content {
+    overflow: visible;
+  }
   .tab-pane {
     background-color: @white;
     padding: @panelPadding;
     .border-bottom-left-radius(6px);
     .border-bottom-right-radius(6px);
+    .box-shadow(0 1px 3px rgba(0,0,0,.3));
   }
 }
