@@ -19,7 +19,7 @@ $(document.body).ready(function() {
 
   // Variables
   // -----
-  
+
   var appFrame = new AppFrame()
     , ids = 0
     , modalQueue = new ElementQueue({ max: 3 })
@@ -53,7 +53,10 @@ $(document.body).ready(function() {
     $.ajax({
       url: url,
       success: function(data) {
-        el.replaceWith(data)
+        var newEl = $(data)
+
+        el.replaceWith(newEl)
+        loadTemplates(newEl)
         appFrame.set({'templateLoaded': el.attr('class')})
       }
     })
