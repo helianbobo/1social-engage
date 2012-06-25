@@ -6,7 +6,7 @@
     <g:render template="/share/title" 
     		model="[currentModule: 'socialEngage', currentSubModule: currentSubModule]"/>
 
-    <r:require module="engage-post"/>
+    <r:require modules="engage-post, engage-case"/>
 
     <g:layoutHead/>
     <r:layoutResources/>

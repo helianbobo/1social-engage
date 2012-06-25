@@ -48,7 +48,7 @@ $(document.body).ready(function() {
   }
 
   function loadTemplate(el) {
-    var url = joinPath($.rootPath, '/tmpl/' + getTemplatePath(el.attr('tmpl')))
+    var url = joinPath($.contextPath, '/tmpl/' + getTemplatePath(el.attr('tmpl')))
 
     $.ajax({
       url: url,
