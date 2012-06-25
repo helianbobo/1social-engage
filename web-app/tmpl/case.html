@@ -64,22 +64,22 @@
     <div class="span6">
       <div class="case-details">
         <ul class="nav nav-tabs case-tabs">
-          <li class="active"><a href="#conversation" data-toggle="tab">Conversation</a></li>
+          <li><a href="#case-conversation" data-toggle="tab">Conversation</a></li>
           <li><a href="#case-history" data-toggle="tab">Case History</a></li>
-          <li><a href="#social-profile" data-toggle="tab">Social Profile</a></li>
+          <li><a href="#case-social-profile" data-toggle="tab">Social Profile</a></li>
         </ul>
 
         <div class="tab-content">
-          <div class="tab-pane active" id="conversation">
-            <div class="conversation-wrap" tmpl="case-conversation"></div>
+          <div class="tab-pane" name="case-conversation">
+            <div class="conversation-wrap" tmpl="case-conversation" tmpl-load-timing="manual"></div>
           </div>
 
-          <div class="tab-pane" id="case-history">
-            <div class="case-history-wrap" tmpl="case-history"></div>
+          <div class="tab-pane" name="case-history">
+            <div class="case-history-wrap" tmpl="case-history" tmpl-load-timing="manual"></div>
           </div>
 
-          <div class="tab-pane" id="social-profile">
-            <div class="social-profile-wrap" tmpl="case-social-profile"></div>
+          <div class="tab-pane" name="case-social-profile">
+            <div class="social-profile-wrap" tmpl="case-social-profile" tmpl-load-timing="manual"></div>
           </div>
         </div>
 
