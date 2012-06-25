@@ -61,6 +61,11 @@
 
       $target = $(selector)
 
+      // if #id not found, try [name=id]:first
+      if ($target.length === 0) {
+        $target = $ul.parent().find('[name=' + selector.split('#')[1] + ']:first')
+      }
+
       this.activate($this.parent('li'), $ul)
       this.activate($target, $target.parent(), function () {
         $this.trigger({
