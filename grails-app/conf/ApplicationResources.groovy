@@ -76,6 +76,7 @@ modules = {
         resource url: 'js/bootstrap-dropdown.js'
         resource url: 'js/bootstrap-tab.js'
         resource url: 'js/bootstrap-modal.js'
+        resource url: 'js/jquery-x.js'
         //resource url: 'engage/js/engage.js'
         //resource url: 'engage/css/engage.css'
     }

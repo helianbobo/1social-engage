@@ -1,6 +1,14 @@
 
 // Namespaces
-var engage = {}
+var engage = {
+      appFrame: _.extend({}, Backbone.Events)
+    , repeat: function (ul, max) {
+        var li = ul.find('li')
+          , max = max || 10
+
+        for (var i = 0; i < max; i++) ul.append(li.clone())
+      }
+    }
 
 $(document.body).ready(function() {
   // constants
@@ -22,7 +30,7 @@ $(document.body).ready(function() {
   // Variables
   // -----
 
-  var appFrame = _.extend({}, Backbone.Events)
+  var appFrame = engage.appFrame
     , ids = 0
     , modalQueue = new ElementQueue({ max: 3 })
     , tmpls = {
@@ -66,16 +74,18 @@ $(document.body).ready(function() {
   function loadTemplates(el, filter) {
     filter = filter || DEFAULT_TEMPLATE_FILTER
     var callback = function(placeholder, el) {
-      loadTemplates(el, filter)
-      appFrame.trigger('templateLoaded', placeholder.attr('class'), el)
-    }
+          loadTemplates(el, filter)
+          appFrame.trigger('templateLoaded', placeholder.attr('class'), el)
+        }
+      , load = function(i, it) {
+          var el = $(it)
 
-    el.find('[tmpl]').each(function(i, it) {
-      var el = $(it)
+          if (!filter) loadTemplate(el, callback)
+          filter(el) && loadTemplate(el, callback)
+        }
 
-      if (!filter) loadTemplate(el, callback)
-      filter(el) && loadTemplate(el, callback)
-    })
+    if (el.hasClass('tmpl')) load(0, el)
+    else el.find('[tmpl]').each(load)
   }
 
   function newId(prefix, suffix) {
@@ -88,13 +98,6 @@ $(document.body).ready(function() {
     el.attr('id', newId('modal-'))
     $(document.body).append(el)
     return el
-  }
-
-  function repeat(ul, max) {
-    var li = ul.find('li')
-      , max = max || 50
-
-    for (var i = 0; i < max; i++) ul.append(li.clone())
   }
 
   function updateListHeight() {
@@ -155,5 +158,5 @@ $(document.body).ready(function() {
   window.loadTemplates = loadTemplates
 
   // TODO remove it after test
-  repeat($('.post-list'))
+  engage.repeat($('.post-list'), 50)
 })

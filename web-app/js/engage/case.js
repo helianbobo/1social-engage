@@ -2,14 +2,22 @@
 
 // Models
 // -----
-engage.CaseApp = Backbone.View.extend(
-    {
+engage.CaseApp = Backbone.View.extend({
       initialize: function(options) {
         var _t = this;
+
+        this.childs = {}
+
         this.$('.case-details .nav-tabs a').one('show', function() {
           var tab = $(this)
 
           loadTemplates(_t.findPane(tab.attr('href')), function() { return true })
+        })
+
+        engage.appFrame.on('templateLoaded', function(className, el) {
+          var name = el.parent().attr('name')
+
+          _t.childs[name] = new engage[capitalize(toCamelCase(name))]({ el: el })
         })
 
         this.$('.case-details a:first').click();
@@ -29,14 +37,23 @@ engage.CaseApp = Backbone.View.extend(
     }
   )
 
-$(document.body).ready(function() {
-  function repeat(ul, max) {
-    var li = ul.find('li')
-      , max = max || 12
+engage.CaseConversation = Backbone.View.extend({
+      initialize: function(options) {
+        engage.repeat(this.$('.comments ul'))
+      }
+    }
+  )
 
-    for(var i = 0; i < max; i++) ul.append(li.clone())
-  }
+engage.CaseHistory = Backbone.View.extend({
+      initialize: function(options) {
+        engage.repeat($('.case-history-wrap ul'), 50)
+      }
+    }
+  )
 
-  repeat($('.comments ul'))
-  repeat($('.case-history-wrap ul'), 50)
-})
+engage.CaseSocialProfile = Backbone.View.extend({
+      initialize: function(options) {
+
+      }
+    }
+  )
