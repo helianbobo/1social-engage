@@ -1,22 +1,11 @@
 $(document.body).ready(function() {
+  var AppFrame = Backbone.Model.extend({})
+
+  var appFrame = new AppFrame()
 
   function getListHeight() {
     return $(window).height() - $('.app-tabs').outerHeight() - $('.toolbar').outerHeight() - 30
   }
-
-  function updateListHeight() {
-    $('.post-list-wrap').height(getListHeight())
-  }
-
-  $(window).resize(updateListHeight)
-  // updateListHeight()
-
-  var tmpl = $('.post-list li')
-  for(var i = 0; i < 100; i++) $('.post-list').append(tmpl.clone())
-
-  $('.post-item').delegate('.show-case', 'click', function() {
-    $('.modal').modal()
-  })
 
   function getTemplatePath(path) {
     return path.indexOf('.') > 0 ? path : path + '.html'
@@ -28,9 +17,9 @@ $(document.body).ready(function() {
     return s1 + '/' + s2;
   }
 
-  function loadTemplate(el, fn) {
+  function loadTemplate(el) {
     var url = joinPath($.rootPath, '/tmpl/' + getTemplatePath(el.attr('tmpl')))
-    console.log(url)
+
     $.ajax({
       url: url,
       success: function(data) {
@@ -40,15 +29,29 @@ $(document.body).ready(function() {
     })
   }
 
-  var AppFrame = Backbone.Model.extend({})
+  function repeat(ul) {
+    var li = ul.find('li')
 
-  var appFrame = new AppFrame()
+    for (var i = 0; i < 100; i++) ul.append(li.clone())
+  }
+
+  function updateListHeight() {
+    $('.post-list-wrap').height(getListHeight())
+  }
 
   appFrame.on('change:templateLoaded', function(model, className) {
     var arr = className.split(' ')
 
     if (_.find(arr, function(it) { return it === 'toolbar'})) updateListHeight()
   })
+
+  $('.post-item').delegate('.show-case', 'click', function() {
+    $('.modal').modal()
+  })
+
+  $(window).resize(updateListHeight)
+  updateListHeight()
+  repeat($('.post-list'))
 
   $('[tmpl]').each(function(i, it) {
     loadTemplate($(it))
