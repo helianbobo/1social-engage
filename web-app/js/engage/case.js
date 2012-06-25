@@ -14,11 +14,10 @@ engage.CaseApp = Backbone.View.extend({
                 var name = el.parent().attr('name')
 
                 _t.childs[name] = new engage[capitalize(toCamelCase(name))]({ el: el })
-                engage.appFrame.off('templateLoaded', loaded)
               }
 
           loadTemplates(_t.findPane(tab.attr('href')), function() { return true })
-          engage.appFrame.on('templateLoaded', loaded)
+          engage.appFrame.one('templateLoaded', loaded)
         })
 
         this.$('.case-details a:first').click();
