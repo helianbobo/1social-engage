@@ -10,14 +10,15 @@ engage.CaseApp = Backbone.View.extend({
 
         this.$('.case-details .nav-tabs a').one('show', function() {
           var tab = $(this)
+            , loaded = function(className, el) {
+                var name = el.parent().attr('name')
+
+                _t.childs[name] = new engage[capitalize(toCamelCase(name))]({ el: el })
+                engage.appFrame.off('templateLoaded', loaded)
+              }
 
           loadTemplates(_t.findPane(tab.attr('href')), function() { return true })
-        })
-
-        engage.appFrame.on('templateLoaded', function(className, el) {
-          var name = el.parent().attr('name')
-
-          _t.childs[name] = new engage[capitalize(toCamelCase(name))]({ el: el })
+          engage.appFrame.on('templateLoaded', loaded)
         })
 
         this.$('.case-details a:first').click();
@@ -46,7 +47,7 @@ engage.CaseConversation = Backbone.View.extend({
 
 engage.CaseHistory = Backbone.View.extend({
       initialize: function(options) {
-        engage.repeat($('.case-history-wrap ul'), 50)
+        engage.repeat(this.$('ul'), 50)
       }
     }
   )
