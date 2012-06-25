@@ -18,15 +18,14 @@ restart grails server.
       <div class="app-post">
       
         <ul class="nav nav-tabs app-tabs">
-          <li class="active"><a href="#facebook"><i class="icon-facebook-s"></i> Facebook</a></li>
-          <li><a href="#weibo"><i class="icon-weibo-s"></i> Sina Weibo</a></li>
-          <li><a href="#twitter"><i class="icon-twitter-s"></i> Twitter</a></li>
-          <li><a href="#forums">Forums</a></li>
+          <li class="active"><a href="#facebook" data-toggle="tab"><i class="icon-facebook-s"></i> Facebook</a></li>
+          <li><a href="#weibo" data-toggle="tab"><i class="icon-weibo-s"></i> Sina Weibo</a></li>
+          <li><a href="#twitter" data-toggle="tab"><i class="icon-twitter-s"></i> Twitter</a></li>
+          <li><a href="#forums" data-toggle="tab">Forums</a></li>
         </ul>
         
-        <div class="tab-body">
-          <div class="tab-pane">
-
+        <div class="tab-content">
+          <div class="tab-pane active" id="facebook">
             <div class="toolbar" tmpl="post-toolbar"></div>
 
             <div class="post-list-wrap">
@@ -58,14 +57,16 @@ restart grails server.
                 </li>
               </ul>
             </div>
-
           </div>
+
+          <div class="tab-pane" id="weibo"></div>
+          <div class="tab-pane" id="twitter"></div>
         </div>
 
       </div>
     </div>
 
-    <div class="modal hide app-case-modal">
+    <div class="modal fade hide app-case-modal">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">×</button>
       </div>
@@ -74,7 +75,7 @@ restart grails server.
       </div>
     </div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="js/jquery-1.7.2.min.js"></script>
     <script src="js/underscore-min.js"></script>
     <script src="js/backbone-min.js"></script>
     <script>
