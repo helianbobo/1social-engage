@@ -2,7 +2,9 @@ $(document.body).ready(function() {
   // constants
   var DEFAULT_TEMPLATE_FILTER = function(el) { return el.attr('tmpl-load-timing') != 'manual' }
 
-  // models
+  // Models
+  // -----
+
   var AppFrame = Backbone.Model.extend({})
 
   var ElementQueue = Backbone.Model.extend({
@@ -15,7 +17,9 @@ $(document.body).ready(function() {
     }
   })
 
-  // variables
+  // Variables
+  // -----
+  
   var appFrame = new AppFrame()
     , ids = 0
     , modalQueue = new ElementQueue({ max: 3 })
