@@ -3,6 +3,16 @@ modules = {
         //resource url: 'js/application.js'
     }
 
+    backbone {
+        dependsOn 'jquery, underscore'
+
+        resource id: 'backbone', url: 'js/backbone-min.js', exclude:'minify'
+    }
+
+    underscore {
+        resource id: 'underscore', url: 'js/underscore-min.js', exclude:'minify'
+    }
+
     requirejs{
         //resource url: 'v1/js/require.min.js'
         //resource url: 'v1/js/text.js'
@@ -57,15 +67,15 @@ modules = {
         //resource url: 'v1/css/tipTip.css'
     }
 
-
-
     engage {
-        dependsOn 'brandtology_v1'
+        dependsOn 'backbone'
         //TODO: new social engage resources
 
         resource url: 'less/engage.less', attrs: [rel: "stylesheet/less", type: 'css']//, bundle: 'bundle_ui'
 
         resource url: 'js/bootstrap-dropdown.js'
+        resource url: 'js/bootstrap-tab.js'
+        resource url: 'js/bootstrap-modal.js'
         //resource url: 'engage/js/engage.js'
         //resource url: 'engage/css/engage.css'
     }
@@ -80,6 +90,10 @@ modules = {
 
     'engage-case' {
         dependsOn 'engage'
+
+        resource url: 'less/app-case.less', attrs: [rel: "stylesheet/less", type: 'css']
+
+        resource url: 'js/engage/case.js'
     }
 
 
