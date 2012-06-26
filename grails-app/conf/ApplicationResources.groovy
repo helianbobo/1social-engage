@@ -84,9 +84,9 @@ modules = {
     'engage-post' {
         dependsOn 'engage'
         
-        resource url: 'less/app-post.less', attrs: [rel: "stylesheet/less", type: 'css']
+        resource url: 'less/app-posts.less', attrs: [rel: "stylesheet/less", type: 'css']
 
-        resource url: 'js/engage/post.js'
+        resource url: 'js/engage/posts.js'
     }
 
     'engage-case' {
