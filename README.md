@@ -3,6 +3,8 @@
 
 Break down apps into small pieces, load dynamically.
 
+FP
+
 Now it goes without header.
 
 Post list can auto resize to fit the screen height. I can't understand what the #page bottom margin for, but keep it.
