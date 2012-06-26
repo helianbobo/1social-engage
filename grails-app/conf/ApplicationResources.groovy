@@ -6,7 +6,7 @@ modules = {
     backbone {
         dependsOn 'jquery, underscore'
 
-        resource id: 'backbone', url: 'js/backbone-min.js', exclude:'minify'
+        resource id: 'backbone', url: 'js/backbone.js'
     }
 
     underscore {

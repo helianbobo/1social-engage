@@ -28,6 +28,23 @@ function capitalize(str) {
   return str.replace(/^[a-z]/, function(a) { return a.toUpperCase() })
 }
 
+/**
+ * Examples:
+ * 
+ * joinPath('aaa/', '/bbb') // 'aaa/bbb'
+ * joinPath('aaa', 'bbb', '', 'ccc', '/', 'ddd') // 'aaa/bbb/ccc/ddd'
+ */
+function joinPath(p1, p2 /* [, px] */) {
+  return _.reduce(arguments, function(s1, s2) {
+        s1 = s1.replace(/\/$/, '')
+        s2 = s2.replace(/^\//, '')
+        if (!s1) return s2
+        if (!s2) return s1
+        return s1.replace(/\/$/, '') + '/' + s2.replace(/^\//, '')
+      }
+    )
+}
+
 function toCamelCase(str) {
   return str.replace(/\-([a-z])/g, function(a, b) { return b.toUpperCase() })
 }

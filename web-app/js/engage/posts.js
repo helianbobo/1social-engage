@@ -2,6 +2,8 @@
 // Namespaces
 var engage = {
       appFrame: _.extend({}, Backbone.Events)
+    , model: {}
+
     , repeat: function (ul, max) {
         var li = ul.find('li')
           , max = max || 10
@@ -16,7 +18,6 @@ $(document.body).ready(function() {
 
   // Models
   // -----
-
   var ElementQueue = Backbone.Model.extend(
       {
         push: function(obj) {
@@ -29,12 +30,76 @@ $(document.body).ready(function() {
       }
     )
 
-  // Variables
+  var Post = Backbone.Model.extend(
+        {
+        }
+      )
+
+    , Posts = Backbone.Collection.extend(
+        {
+          model: Post
+
+        , parse: function(response) {
+            return response.data
+          }
+
+        , url: function() {
+            return joinPath($.contextPath, 'socialEngage/getAllPosts')
+          }
+        }
+      )
+    
+    , PostList = Backbone.View.extend(
+        {
+          initialize: function(options) {
+            // prepare template
+            this.$li = this.$('li').remove()
+
+            this.collection.on('sync', this.render, this)
+          }
+
+        , append: function(model) {
+            var li = this.$li.clone()
+
+            li.find('.user-pic img').attr('src', model.get('voicePic'))
+            li.find('.content').html('<a class="user-name" href="javascript:;">' + model.get('voiceName') + '</a>' + model.get('content'))
+            li.find('.meta .like').html(model.get('likeCount'))
+            li.find('.meta .comment').html(model.get('commentCount'))
+            var date = model.get('datetimePosted').split(/[TZ]/)
+            li.find('.meta .datetime').html('<p>' + date[1] + '</p><p>' + date[0] + '</p>')
+            this.$el.append(li)
+          }
+
+        , render: function(collection, data) {
+            var _t = this
+
+            collection.forEach(function(it) {
+              _t.append(it)
+            })
+          }
+        }
+      )
+
+  _.extend(engage.model, {
+      'Post': Post
+    , 'Posts': Posts
+    }
+  )
+
+
+  // Objects
   // -----
 
   var appFrame = engage.appFrame
     , ids = 0
     , modalQueue = new ElementQueue({ max: 3 })
+    , posts = engage.posts = new engage.model.Posts()
+    , postList = new PostList(
+        {
+          collection: posts
+        , el: $('.post-list')
+        }
+      )
     , tmpls = {
         'app-case-modal': $('.app-case-modal').remove()
       , get: function(name) {
@@ -45,6 +110,8 @@ $(document.body).ready(function() {
         }
       }
 
+  // Handlers
+  // -----
   function getListHeight(el) {
     // 30 is the #page margin bottom
     return $(window).height() - $.position(el).y - 30
@@ -52,12 +119,6 @@ $(document.body).ready(function() {
 
   function getTemplatePath(path) {
     return path.indexOf('.') > 0 ? path : path + '.html'
-  }
-
-  function joinPath(s1, s2) {
-    s1 = s1.replace(/\/$/, '')
-    s2 = s2.replace(/^\//, '')
-    return s1 + '/' + s2;
   }
 
   function loadTemplate(el, callback) {
@@ -160,6 +221,7 @@ $(document.body).ready(function() {
   loadTemplates($('#page'))
   window.loadTemplates = loadTemplates
 
-  // TODO remove it after test
-  engage.repeat($('.post-list'), 50)
+  engage.posts.fetch()
+
+  // engage.repeat($('.post-list'), 50)
 })
