@@ -17,15 +17,17 @@ $(document.body).ready(function() {
   // Models
   // -----
 
-  var ElementQueue = Backbone.Model.extend({
-    push: function(obj) {
-      var arr = []
+  var ElementQueue = Backbone.Model.extend(
+      {
+        push: function(obj) {
+          var arr = []
 
-      this.get('queue') && arr.push.apply(arr, this.get('queue'))
-      arr.push(obj)
-      this.set('queue', arr)
-    }
-  })
+          this.get('queue') && arr.push.apply(arr, this.get('queue'))
+          arr.push(obj)
+          this.set('queue', arr)
+        }
+      }
+    )
 
   // Variables
   // -----
@@ -43,8 +45,9 @@ $(document.body).ready(function() {
         }
       }
 
-  function getListHeight() {
-    return $(window).height() - $('.app-tabs').outerHeight() - $('.toolbar').outerHeight() - 30
+  function getListHeight(el) {
+    // 30 is the #page margin bottom
+    return $(window).height() - $.position(el).y - 30
   }
 
   function getTemplatePath(path) {
@@ -101,7 +104,7 @@ $(document.body).ready(function() {
   }
 
   function updateListHeight() {
-    $('.post-list-wrap').height(getListHeight())
+    $('.post-list-wrap').height(getListHeight($('.post-list-wrap')))
   }
 
   // Event listeners

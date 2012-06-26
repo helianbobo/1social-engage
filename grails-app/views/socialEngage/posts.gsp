@@ -11,7 +11,7 @@
 </content>
 --%>
     <div id="page">
-      <div class="app-post">
+      <div class="app-posts">
       
         <ul class="nav nav-tabs app-tabs">
           <li class="active"><a href="#facebook" data-toggle="tab"><i class="icon-facebook-s"></i> Facebook</a></li>
