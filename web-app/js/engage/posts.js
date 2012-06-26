@@ -65,17 +65,8 @@ $(document.body).ready(function() {
 
             data.date = date[0]
             data.time = date[1]
-            // data.voicePic = 'src="' + data.voicePic + '"'
 
-            var li = $(Mustache.render(this.$li, data))
-            this.$el.append(li)
-            li.find('img').each(function(i, it) {
-              var img = $(it)
-
-              img.attr('src', img.attr('data-original'))
-            })
-            // lazy load has some bug when image inside a scrollable div
-            // li.find('img').lazyload()
+            this.$el.append(Mustache.render(this.$li, data))            
           }
 
         , render: function(collection, data) {
@@ -84,6 +75,13 @@ $(document.body).ready(function() {
             collection.forEach(function(it) {
               _t.append(it)
             })
+
+            this.$('img').lazyload(
+                {
+                  container: this.$el.parents(".post-list-wrap")
+                , effect: "fadeIn"
+                }
+              )
           }
         }
       )
