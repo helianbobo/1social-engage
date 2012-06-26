@@ -20,10 +20,16 @@
 }
 
 .app-case-modal {
-  background-color: @bodyBackground;
+  background-color: transparent;
+  border: 4px solid transparent;
+  .box-shadow(0 0px 18px rgba(0,0,0,0.4));
   margin-left: -490px;
   margin-top: -275px;
   width: 980px;
+  .modal-body {
+    max-height: 550px;
+    padding: 20px 0;
+  }
   .modal-header {
     padding: 0;
     border: 0;
@@ -34,9 +40,9 @@
       .border-radius(12px);
     }
   }
-  .modal-body {
-    max-height: 550px;
-    padding: 20px 0;
+  .modal-inner {
+    background-color: @bodyBackground;
+    .border-radius(6px);
   }
 }
 
