@@ -53,21 +53,19 @@ $(document.body).ready(function() {
         {
           initialize: function(options) {
             // prepare template
-            this.$li = this.$('li').remove()
+            this.$li = this.$el.html() //this.$('li').remove()
+            this.$el.empty()
 
             this.collection.on('sync', this.render, this)
           }
 
         , append: function(model) {
-            var li = this.$li.clone()
+            var data = model.toJSON()
+              , date = data.datetimePosted.split(/[TZ]/)
 
-            li.find('.user-pic img').attr('src', model.get('voicePic'))
-            li.find('.content').html('<a class="user-name" href="javascript:;">' + model.get('voiceName') + '</a>' + model.get('content'))
-            li.find('.meta .like').html(model.get('likeCount'))
-            li.find('.meta .comment').html(model.get('commentCount'))
-            var date = model.get('datetimePosted').split(/[TZ]/)
-            li.find('.meta .datetime').html('<p>' + date[1] + '</p><p>' + date[0] + '</p>')
-            this.$el.append(li)
+            data.date = date[0]
+            data.time = date[1]
+            this.$el.append(Mustache.render(this.$li, data))
           }
 
         , render: function(collection, data) {
