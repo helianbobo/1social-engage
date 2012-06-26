@@ -43,7 +43,7 @@ restart grails server.
                     <span class="type-item-2-2"></span>
                   </div>
                   <span class="user-pic">
-                    <img src="{{voicePic}}{{^voicePic}}http://placehold.it/50x50/ccc{{/voicePic}}" width="50" height="50" alt="">
+                    <img data-original="{{voicePic}}" width="50" height="50" alt="">
                   </span>
 
                   <div class="meta">
@@ -83,6 +83,7 @@ restart grails server.
     <script src="js/underscore-min.js"></script>
     <script src="js/backbone.js"></script>
     <script src="js/mustache.js"></script>
+    <script src="js/jquery.lazyload.js"></script>
     <script src="js/jquery-x.js"></script>
     <script>
       $.contextPath = ''

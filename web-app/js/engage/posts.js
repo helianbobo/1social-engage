@@ -65,7 +65,17 @@ $(document.body).ready(function() {
 
             data.date = date[0]
             data.time = date[1]
-            this.$el.append(Mustache.render(this.$li, data))
+            // data.voicePic = 'src="' + data.voicePic + '"'
+
+            var li = $(Mustache.render(this.$li, data))
+            this.$el.append(li)
+            li.find('img').each(function(i, it) {
+              var img = $(it)
+
+              img.attr('src', img.attr('data-original'))
+            })
+            // lazy load has some bug when image inside a scrollable div
+            // li.find('img').lazyload()
           }
 
         , render: function(collection, data) {
@@ -112,7 +122,7 @@ $(document.body).ready(function() {
   // -----
   function getListHeight(el) {
     // 30 is the #page margin bottom
-    return $(window).height() - $.position(el).y - 30
+    return $(window).height() - el.offset().top - 30
   }
 
   function getTemplatePath(path) {
