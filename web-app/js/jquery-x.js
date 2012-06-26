@@ -51,5 +51,7 @@ if (Backbone) {
   Backbone.View.prototype.reset = function() {
       delete this.$el
       delete this.el
+      this.trigger('reset')
+      this.off()
     }
 }
