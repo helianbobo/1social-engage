@@ -46,4 +46,10 @@ if (Backbone) {
 
       _t.on(event, fn)
     }
+
+  Backbone.View.prototype.destroy =
+  Backbone.View.prototype.reset = function() {
+      delete this.$el
+      delete this.el
+    }
 }

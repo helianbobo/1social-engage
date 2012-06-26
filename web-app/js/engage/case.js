@@ -4,11 +4,12 @@
 // -----
 engage.CaseApp = Backbone.View.extend({
       initialize: function(options) {
-        var _t = this;
+        var _t = this
+          , details = this.$('.case-details')
 
         this.childs = {}
 
-        this.$('.case-details .nav-tabs a').one('show', function() {
+        details.find('.nav-tabs a').one('show', function() {
           var tab = $(this)
             , loaded = function(className, el) {
                 var name = el.parent().attr('name')
@@ -20,12 +21,14 @@ engage.CaseApp = Backbone.View.extend({
           engage.appFrame.one('templateLoaded', loaded)
         })
 
-        this.$('.case-details a:first').click();
+        // load the content of first tab
+        details.find('.nav-tabs a:first').click();
       }
     , destroy: function() {
+        _.each(this.childs, function(it) { it.destroy() })
+        
         this.$el.remove()
-        delete this.el
-        delete this.$el
+        this.reset()
       }
     , findPane: function(id) {
         var el = $(id)
