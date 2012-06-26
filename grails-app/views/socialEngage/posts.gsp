@@ -28,8 +28,8 @@
               <ul class="post-list">
                 <li class="post-item">
                   <div class="content">
-                    <a class="user-name" href="">Brandtology</a>
-                    How The World Spends Its Time Online [INFOGRAPHIC] <a href="http://buff.ly/LATWXi" target="_blank">http://buff.ly/LATWXi</a>
+                    <a class="user-name" href="">{{voiceName}}</a>
+                    {{content}}
                   </div>
                   <input type="checkbox" class="input-item-selector" >
                   <div class="type">
@@ -39,14 +39,14 @@
                     <span class="type-item-2-2"></span>
                   </div>
                   <span class="user-pic">
-                    <img src="http://placehold.it/50x50/ccc" width="50" height="50" alt="">
+                    <img data-original="{{voicePic}}" width="50" height="50" alt="">
                   </span>
 
                   <div class="meta">
-                    <div class="count">15</div>
-                    <div class="count">-</div>
-                    <div class="count">-</div>
-                    <div class="datetime"><p>13:56:55</p><p>20 June 2012</p></div>
+                    <div class="count">{{likeCount}}{{^likeCount}}-{{/likeCount}}</div>
+                    <div class="count">{{commentCount}}{{^commentCount}}-{{/commentCount}}</div>
+                    <div class="count">{{shareCount}}{{^shareCount}}-{{/shareCount}}</div>
+                    <div class="datetime"><p>{{time}}</p><p>{{date}}</p></div>
                   </div>
                   <div class="actions">
                     <button class="show-case">Action</button>
