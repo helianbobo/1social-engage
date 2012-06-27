@@ -107,7 +107,7 @@
     text-align: center;
   }
   .datetime {
-    width: 134px;
+    width: 114px;
   }
   .nav {
     display: inline-block;
@@ -134,13 +134,17 @@
   font-size: 12px;
 }
 .post-item {
-  list-style: none;
+  background-color: #fafafa;
   border-bottom: 1px solid #ddd;
+  list-style: none;
   overflow: hidden;
   position: relative;
+  &:hover {
+    background-color: @white;
+  }
   .content {
     margin: 0 @rightMargin 0 @leftMargin;
-    min-height: 60px;
+    min-height: 80px;
     padding: 10px 0;
   }
   .input-item-selector {
@@ -162,7 +166,7 @@
     .datetime {
       display: inline-block;
       text-align: center;
-      width: 160px;
+      width: 140px;
       p {
         margin: 0 0 3px;
       }
@@ -174,6 +178,8 @@
     top: 15px;
     width: @leftMargin - @gridGutterWidth;
     button {
+      font-size: 12px;
+      line-height: 16px;
       margin: 0 0 6px;
       width: @leftMargin - @gridGutterWidth * 2;
     }
