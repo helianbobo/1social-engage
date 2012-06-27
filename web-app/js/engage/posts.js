@@ -57,6 +57,21 @@ $(document.body).ready(function() {
             this.$el.empty()
 
             this.collection.on('sync', this.render, this)
+
+            $('.post-list').delegate('.show-case', 'click', function() {
+              var attrName = 'modal-id'
+                , btn = $(this)
+                , el = $('#' + btn.attr(attrName))
+
+              if (el.length === 0) {
+                el = prepareModal('app-case-modal')
+                btn.attr(attrName, el.attr('id'))
+                modalQueue.push(el.attr('id'))
+                el.one('show', function() { loadTemplates(el) })
+              }
+              
+              el.modal()
+            })
           }
 
         , append: function(model) {
@@ -100,12 +115,6 @@ $(document.body).ready(function() {
     , ids = 0
     , modalQueue = new ElementQueue({ max: 3 })
     , posts = engage.posts = new engage.model.Posts()
-    , postList = new PostList(
-        {
-          collection: posts
-        , el: $('.post-list')
-        }
-      )
     , tmpls = {
         'app-case-modal': $('.app-case-modal').remove()
       , get: function(name) {
@@ -113,6 +122,32 @@ $(document.body).ready(function() {
 
           if (!el) throw 'could not get template named ' + name
           return el.clone()
+        }
+      }
+      
+    , templateListeners = {
+      /**
+       * If the listener return false, it will be off
+       */
+        'case': function(tmplName, el) {
+          var obj = new engage.CaseApp({el: el})
+          el.parents('.modal').on('remove', function() {
+            obj.destroy()
+            obj = null
+          })
+        }
+      , 'posts': function(tmplName, el) {
+          new PostList(
+            {
+              collection: posts
+            , el: el.find('.post-list')
+            }
+          )
+          return false
+        }
+      , 'posts-toolbar': function(tmplName, el) {
+          updateListHeight()
+          return false
         }
       }
 
@@ -145,7 +180,7 @@ $(document.body).ready(function() {
     filter = filter || DEFAULT_TEMPLATE_FILTER
     var callback = function(placeholder, el) {
           loadTemplates(el, filter)
-          appFrame.trigger('templateLoaded', placeholder.attr('class'), el)
+          appFrame.trigger('templateLoaded', placeholder.attr('tmpl'), el)
         }
       , load = function(i, it) {
           var el = $(it)
@@ -177,22 +212,17 @@ $(document.body).ready(function() {
   // Event listeners
   // -----
 
-  appFrame.on('templateLoaded', function(className, el) {
-    var arr = className.split(' ')
+  _.each(templateListeners, function(callback, tmplName) {
+        var fn = function(tmpl) {
+              if (tmpl !== tmplName) return
 
-    function has(obj) {
-      return _.find(arr, function(it) { return it === obj })
-    }
-
-    if (has('toolbar')) updateListHeight()
-    if (has('app-case')) {
-      var obj = new engage.CaseApp({el: el})
-      el.parents('.modal').on('remove', function() {
-        obj.destroy()
-        obj = null
-      })
-    }
-  })
+              if (callback.apply(this, arguments) === false) {
+                appFrame.off('templateLoaded', fn)
+              }
+            }
+        appFrame.on('templateLoaded', fn)
+      }
+    )
 
   modalQueue.on('change:queue', function(model, queue) {
     if (queue.length > model.get('max')) {
@@ -204,26 +234,11 @@ $(document.body).ready(function() {
     }
   })
 
-  $('.post-list').delegate('.show-case', 'click', function() {
-    var attrName = 'modal-id'
-      , btn = $(this)
-      , el = $('#' + btn.attr(attrName))
-
-    if (el.length === 0) {
-      el = prepareModal('app-case-modal')
-      btn.attr(attrName, el.attr('id'))
-      modalQueue.push(el.attr('id'))
-      el.on('show', _.once(function() { loadTemplates(el) }))
-    }
-    
-    el.modal()
-  })
-
   // Page setup
   // -----
 
   $(window).resize(updateListHeight)
-  updateListHeight()
+  // updateListHeight()
   loadTemplates($('#page'))
   window.loadTemplates = loadTemplates
 
