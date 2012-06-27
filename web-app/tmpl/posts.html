@@ -31,13 +31,15 @@
               <span class="type-item-1-1 {{^caseCreated}}inactive{{/caseCreated}}">
                 <i class="icon-case"></i>
               </span>
-              <span class="type-item-1-2 inactive">
+              <span class="type-item-1-2 {{#comment}}inactive{{/comment}}">
                 <i class="icon-page"></i>
               </span>
               <span class="type-item-2-1 {{^readStatus}}inactive{{/readStatus}}">
                 <i class="icon-read"></i>
               </span>
-              <span class="type-item-2-2"></span>
+              <span class="type-item-2-2">
+                <img data-original="{{assetsPic}}" width="24" height="24" alt="" >
+              </span>
             </div>
             <span class="user-pic">
               <img data-original="{{voicePic}}" width="50" height="50" alt="{{voiceName}}" title="{{voiceName}}">

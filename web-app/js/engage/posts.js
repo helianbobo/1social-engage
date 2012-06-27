@@ -179,6 +179,17 @@ $(document.body).ready(function() {
         }
       , 'posts-toolbar': function(tmplName, el) {
           updateListHeight()
+          el.delegate('a', 'click', function() {
+              var el = $(this)
+
+              if (el.hasClass('asc')) {
+                el.removeClass('asc').addClass('desc')
+              } else {
+                el.removeClass('desc').addClass('asc')
+              }
+              return false
+            }
+          )
           return false
         }
       }

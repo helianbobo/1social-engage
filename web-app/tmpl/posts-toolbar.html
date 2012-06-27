@@ -1,11 +1,11 @@
 <div class="toolbar">
   <div class="pull-left batch-actions">
     <input type="checkbox" class="input-all-selector">
-    <button>Mark as read</button>
-    <button>Mark as unread</button>
+    <button class="btn">Mark as read</button>
+    <button class="btn">Mark as unread</button>
   </div>
   <div class="pull-left refresh-actions">
-    <button>refresh</button>
+    <a class="btn btn-refresh" title="Refresh"><i class="icon-refresh"></i></a>
   </div>
   <div class="pull-left filter-actions">
     <span>Filter by: </span>
@@ -66,10 +66,34 @@
   <div class="pull-right sort-actions">
     <span>Sort by: </span>
     <ul class="nav">
-      <li><a href="#"><i class="icon-like">like</i></a></li>
-      <li><a href="#"><i class="icon-comment">comment</i></a></li>
-      <li><a href="#"><i class="icon-share">share</i></a></li>
-      <li><a href="#" class="datetime">Date/Time Posted</a></li>
+      <li>
+        <a href="#like">
+          <i class="icon-like">like</i>
+          <b class="caret-reverse"></b>
+          <b class="caret"></b>
+        </a>
+      </li>
+      <li>
+        <a href="#comment">
+          <i class="icon-comment">comment</i>
+          <b class="caret-reverse"></b>
+          <b class="caret"></b>
+        </a>
+      </li>
+      <li>
+        <a href="#share">
+          <i class="icon-share">share</i>
+          <b class="caret-reverse"></b>
+          <b class="caret"></b>
+        </a>
+      </li>
+      <li>
+        <a href="#datetime" class="datetime">
+          Date/Time Posted
+          <b class="caret-reverse"></b>
+          <b class="caret"></b>
+        </a>
+      </li>
     </ul>
   </div>
 </div>
