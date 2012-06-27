@@ -76,8 +76,20 @@ $(document.body).ready(function() {
 
         , append: function(model) {
             var data = model.toJSON()
-              , date = data.datetimePosted.split(/[TZ]/)
 
+            if (data.comment.length > 0) {
+              _.extend(data, 
+                  _.pick(
+                      data.comment[0]
+                    , 'likeCount'
+                    , 'commentCount'
+                    , 'datetimePosted'
+                    )
+                )
+            }
+
+            // split date & time
+            var date = data.datetimePosted.split(/[TZ]/)
             data.date = date[0]
             data.time = date[1]
 
@@ -124,7 +136,7 @@ $(document.body).ready(function() {
           return el.clone()
         }
       }
-      
+
     , templateListeners = {
       /**
        * If the listener return false, it will be off

@@ -124,7 +124,7 @@
 // --------------------------------------------------
 
 @leftMargin: (@gridColumnWidth + @gridGutterWidth) * 2;
-@rightMargin: (-@gridGutterWidth) + (@gridColumnWidth + @gridGutterWidth) * 7;
+@rightMargin: (-@gridGutterWidth) + (@gridColumnWidth + @gridGutterWidth) * 6;
 .post-list-wrap {
   overflow: auto;
 }
@@ -142,10 +142,29 @@
   &:hover {
     background-color: @white;
   }
+  .actions {
+    right: 0;
+    position: absolute;
+    top: 15px;
+    width: @leftMargin - @gridGutterWidth;
+    button {
+      font-size: 12px;
+      line-height: 16px;
+      margin: 0 0 6px;
+      width: @leftMargin - @gridGutterWidth * 2;
+    }
+  }
+  .comment {
+    border-top: 1px solid @grayLight;
+    padding: 4px 0 4px 20px;
+  }
   .content {
     margin: 0 @rightMargin 0 @leftMargin;
     min-height: 80px;
-    padding: 10px 0;
+    padding: 10px 20px 10px 0;
+  }
+  .init-post {
+    margin-bottom: 6px;
   }
   .input-item-selector {
     left: 10px;
@@ -172,17 +191,9 @@
       }
     }
   }
-  .actions {
-    right: 0;
-    position: absolute;
-    top: 15px;
-    width: @leftMargin - @gridGutterWidth;
-    button {
-      font-size: 12px;
-      line-height: 16px;
-      margin: 0 0 6px;
-      width: @leftMargin - @gridGutterWidth * 2;
-    }
+  .trim {
+    height: 18px;
+    .text-overflow();
   }
   .type {
     background-color: @grayLighter;
