@@ -65,11 +65,13 @@
     </div>
 
     <div class="modal fade hide app-case-modal">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">×</button>
-      </div>
-      <div class="modal-body">
-        <div class="app-case container" tmpl="case"></div>
+      <div class="modal-inner">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        <div class="modal-body">
+          <div class="app-case container" tmpl="case"></div>
+        </div>
       </div>
     </div>
 
