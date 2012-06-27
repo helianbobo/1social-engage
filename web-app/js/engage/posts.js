@@ -49,13 +49,42 @@ $(document.body).ready(function() {
         }
       )
     
+    , PostItem = Backbone.View.extend(
+        {
+          initialize: function(options) {
+            this.li = options.li
+            this.render()
+          }
+        , render : function() {
+            var data = this.model.toJSON()
+
+            if (data.comment.length > 0) {
+              _.extend(data, 
+                  _.pick(
+                      data.comment[0]
+                    , 'likeCount'
+                    , 'commentCount'
+                    , 'datetimePosted'
+                    )
+                )
+            }
+
+            // split date & time
+            var date = data.datetimePosted.split(/[TZ]/)
+            data.date = date[0]
+            data.time = date[1]
+
+            this.setElement($(Mustache.render(this.li, data)))
+          }
+        }
+      )
+
     , PostList = Backbone.View.extend(
         {
           initialize: function(options) {
             // prepare template
-            this.$li = this.$el.html() //this.$('li').remove()
-            this.$el.empty()
-
+            this.childs = []
+            this.$li = this.$el.html()
             this.collection.on('sync', this.render, this)
 
             $('.post-list').delegate('.show-case', 'click', function() {
@@ -75,30 +104,21 @@ $(document.body).ready(function() {
           }
 
         , append: function(model) {
-            var data = model.toJSON()
-
-            if (data.comment.length > 0) {
-              _.extend(data, 
-                  _.pick(
-                      data.comment[0]
-                    , 'likeCount'
-                    , 'commentCount'
-                    , 'datetimePosted'
-                    )
+            var item = new PostItem(
+                  {
+                    li: this.$li
+                  , model: model
+                  }
                 )
-            }
 
-            // split date & time
-            var date = data.datetimePosted.split(/[TZ]/)
-            data.date = date[0]
-            data.time = date[1]
-
-            this.$el.append(Mustache.render(this.$li, data))            
+            this.childs.push(item)
+            this.$el.append(item.$el)
           }
 
         , render: function(collection, data) {
             var _t = this
 
+            this.$el.empty()
             collection.forEach(function(it) {
               _t.append(it)
             })
