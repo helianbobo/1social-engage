@@ -28,9 +28,15 @@
             </div>
             <input type="checkbox" class="input-item-selector" >
             <div class="type">
-              <span class="type-item-1-1"></span>
-              <span class="type-item-1-2"></span>
-              <span class="type-item-2-1"></span>
+              <span class="type-item-1-1 {{^caseCreated}}inactive{{/caseCreated}}">
+                <i class="icon-case"></i>
+              </span>
+              <span class="type-item-1-2 inactive">
+                <i class="icon-page"></i>
+              </span>
+              <span class="type-item-2-1 {{^readStatus}}inactive{{/readStatus}}">
+                <i class="icon-read"></i>
+              </span>
               <span class="type-item-2-2"></span>
             </div>
             <span class="user-pic">

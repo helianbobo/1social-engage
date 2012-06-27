@@ -196,12 +196,43 @@
     .text-overflow();
   }
   .type {
-    background-color: @grayLighter;
+    background-color: @white;
+    .border-radius(6px);
     height: 50px;
     left: 35px;
     position: absolute;
     top: 10px;
     width: 50px;
+    .inactive {
+      background-color: transparent;
+    }
+    .inactive i {
+      display: none;
+    }
+  }
+  .type-item-1-1,
+  .type-item-1-2, 
+  .type-item-2-1,
+  .type-item-2-2 {
+    display: block;
+    float: left;
+    height: 18px;
+    padding: 3px;
+    width: 18px;
+  }
+  .type-item-1-1 {
+    background: #ccc;
+    .border-top-left-radius(6px);
+    margin: 0 2px 2px 0;
+  }
+  .type-item-1-2 {
+    background: #ccc;
+    .border-top-right-radius(6px);
+  }
+  .type-item-2-1 {
+    background: #ccc;
+    .border-bottom-left-radius(6px);
+    margin: 0 2px 0 0;
   }
   .user-pic {
     left: 100px;
