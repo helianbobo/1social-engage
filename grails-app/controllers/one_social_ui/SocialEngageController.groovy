@@ -36,6 +36,11 @@ class SocialEngageController {
 
 
     def getAllPosts() {
+        /*
+        clientAccountId=969&
+        type=facebook&
+        page=1
+         */
 
         response.contentType = 'application/json'
         render '''{
@@ -227,19 +232,179 @@ class SocialEngageController {
 
     }
 
+    def showConversation(){
+
+        /*
+        articleId=98685085344_196710807123445&
+        voiceId=719707536&
+        type=facebook&
+        commentId=98685085344_196710807123445_518623
+         */
+
+        render '''{
+  "url": "http://www.facebook.com/permalink.php?story_fbid=196710807123445&id=98685085344",
+  "username": "Channel 8",
+  "content": "ü£?ìÑ? debuts tomorrow!! Here's a look at the meet & greet we had at Eastpoint Mall last weekend!\\n Joys of Life ü£?ìÑ? - äÄâ¢?Øü? Meet & Greet at Eastpoint Mall!",
+  "fbId": "98685085344_196710807123445",
+  "likesCount": 109,
+  "voiceId": "98685085344",
+  "comments":
+  [
+    {
+      "content": "yes finally can watch it",
+      "isOriginal": 1,
+      "isUser": 1,
+      "dateTimePosted": "2012-06-25T10:19:40Z",
+      "fbid": "98685085344_196710807123445_518623",
+      "username": "Xavienne Chew Lah Sia",
+      "userpic": "https://graph.facebook.com/719707536/picture",
+      "likesCount": 0,
+      "voiceId": "719707536"
+    },
+    {
+      "content": "episode 1 last part the somebody cutting Rui En hairs i think",
+      "isUser": 1,
+      "dateTimePosted": "2012-06-25T10:20:13Z",
+      "fbid": "98685085344_196710807123445_518624",
+      "username": "Xavienne Chew Lah Sia",
+      "userpic": "https://graph.facebook.com/719707536/picture",
+      "likesCount": 0,
+      "voiceId": "719707536"
+    },
+    {
+      "content": "26hrs 35mins more to #joysoflife",
+      "dateTimePosted": "2012-06-25T10:24:23Z",
+      "fbid": "98685085344_196710807123445_518630",
+      "username": "Swee Heng Tan",
+      "userpic": "https://graph.facebook.com/100002676015109/picture",
+      "likesCount": 1,
+      "voiceId": "100002676015109"
+    },
+    {
+      "content": "Let's trend #joysoflife tmr at 9pm on twitter! :)",
+      "dateTimePosted": "2012-06-25T10:42:35Z",
+      "fbid": "98685085344_196710807123445_518683",
+      "username": "Joys of Life ü£?ìÑ?",
+      "userpic": "https://graph.facebook.com/345262218830470/picture",
+      "likesCount": 3,
+      "voiceId": "345262218830470"
+    },
+    {
+      "content": "Xiao gui acting skills is real good. 2 thumps up for him..",
+      "dateTimePosted": "2012-06-25T10:55:48Z",
+      "fbid": "98685085344_196710807123445_518704",
+      "username": "Kitty Catty",
+      "userpic": "https://graph.facebook.com/624748319/picture",
+      "likesCount": 2,
+      "voiceId": "624748319"
+    },
+    {
+      "content": "I love XiaoGui ^^ ",
+      "dateTimePosted": "2012-06-25T11:00:48Z",
+      "fbid": "98685085344_196710807123445_518714",
+      "username": "Jesslyn Tu",
+      "userpic": "https://graph.facebook.com/100000140890216/picture",
+      "likesCount": 0,
+      "voiceId": "100000140890216"
+    },
+    {
+      "content": "Where is Xiao Gui now ? Singapore or Taiwan ?",
+      "dateTimePosted": "2012-06-25T12:01:14Z",
+      "fbid": "98685085344_196710807123445_518888",
+      "username": "Xian Ning",
+      "userpic": "https://graph.facebook.com/100000066130303/picture",
+      "likesCount": 0,
+      "voiceId": "100000066130303"
+    },
+    {
+      "content": "I Love Rui En,:)\\nepisode 1 last part the somebody cutting Rui En hairs i think:)",
+      "dateTimePosted": "2012-06-25T14:00:46Z",
+      "fbid": "98685085344_196710807123445_519311",
+      "username": "Heng XinYing",
+      "userpic": "https://graph.facebook.com/100001907864504/picture",
+      "likesCount": 0,
+      "voiceId": "100001907864504"
+    },
+    {
+      "content": "^^ One more day!",
+      "dateTimePosted": "2012-06-25T10:17:52Z",
+      "fbid": "98685085344_196710807123445_518620",
+      "username": "Joys of Life ü£?ìÑ?",
+      "userpic": "https://graph.facebook.com/345262218830470/picture",
+      "likesCount": 4,
+      "voiceId": "345262218830470"
+    }
+  ]
+}'''
+    }
+
+    def markStatus(){
+        /*
+        commentId=0&
+        articleId=98685085344_10150933571490345&
+        status=true&
+        userId=661&
+        type=facebook
+         */
+    }
+
     def getAllCase() {
 
     }
 
     def createCase() {
+        /*
+        articleId=98685085344_196710807123445&
+        type=facebook&
+        commentId=98685085344_196710807123445_518623&
+        name=hello&
+        priority=3&
+        assignTo=661&
+         */
 
+        render '''{
+  "data": {"caseId":"9691340720753581"}
+}'''
     }
+
+    def addMemo(){
+        /*
+        caseId=9691340714194928&
+        type=facebook&
+        memo=hello3&
+         */
+
+        render '''{"response":"ok"}'''
+    }
+
+    def updateCase(){
+        /*
+        caseId=9691340714194928&
+        type=facebook&
+        name=newTitle&
+         */
+        render '''{"response":"ok"}'''
+    }
+
+    def responseCase(){
+        /*
+        caseId=9691340714194928&
+        type=facebook&
+        response=responding&
+         */
+        render '''{"response":"ok"}'''
+    }
+
 
     def getCaseHistory() {
 
     }
 
     def closeCase() {
+        /*
+        caseId=9691340714194928&
+        type=facebook&
+         */
 
     }
 
