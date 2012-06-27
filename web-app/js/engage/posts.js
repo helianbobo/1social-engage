@@ -181,11 +181,14 @@ $(document.body).ready(function() {
           updateListHeight()
           el.delegate('a', 'click', function() {
               var el = $(this)
+                , title = el.attr('title').replace(/ (asc|desc)/i, '')
 
-              if (el.hasClass('asc')) {
+              if (!el.hasClass('desc')) {
                 el.removeClass('asc').addClass('desc')
+                el.attr('title', title + ' DESC')
               } else {
                 el.removeClass('desc').addClass('asc')
+                el.attr('title', title + ' ASC')
               }
               return false
             }
