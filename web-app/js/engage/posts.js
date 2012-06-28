@@ -53,7 +53,13 @@ $(document.body).ready(function() {
         {
           initialize: function(options) {
             this.li = options.li
+
+            this.model.on('change:selected', this.select, this)
             this.render()
+          }
+
+        , select: function(model, selected) {
+            this.$('.input-item-selector').attr('checked', selected ? 'checked' : false)
           }
         , render : function() {
             var data = this.model.toJSON()
@@ -134,6 +140,43 @@ $(document.body).ready(function() {
           }
         }
       )
+    
+    , Toolbar = Backbone.View.extend(
+        {
+          initialize: function(options) {
+            this.childs = []
+            this.childs['batch-actions'] = new Toolbar.BatchActions(
+              {
+                collection: this.collection
+              , el: this.$el.find('.batch-actions')
+              }
+            )
+          }
+        }
+      )
+
+  Toolbar.BatchActions = Backbone.View.extend(
+    {
+      initialize: function(options) {
+      }
+
+    , events: {
+        'click .input-all-selector': 'select'
+      , 'click .mark': 'mark'
+      }
+
+    , mark: function() {
+        console.log(this, arguments)
+      }
+    , select: function(evt) {
+        // console.log(this, arguments)
+        var selected = !!$(evt.target).attr('checked')
+        this.collection.forEach(function(model) {
+          model.set('selected', selected)
+        })
+      }
+    }
+  )
 
   _.extend(engage.model, {
       'Post': Post
@@ -181,6 +224,7 @@ $(document.body).ready(function() {
         }
       , 'posts-toolbar': function(tmplName, el) {
           updateListHeight()
+
           el.delegate('a', 'click', function() {
               var el = $(this)
                 , title = el.attr('title').replace(/ (asc|desc)/i, '')
@@ -195,8 +239,12 @@ $(document.body).ready(function() {
               return false
             }
           )
+
+          new Toolbar({ collection: posts, el: el })
+
           return false
         }
+
       }
 
   // Handlers
