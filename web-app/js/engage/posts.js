@@ -239,16 +239,15 @@ $(document.body).ready(function() {
         var el = $(evt.currentTarget)
           , title = el.attr('title').replace(/ (asc|desc)/i, '')
 
-        if (!el.hasClass('desc')) {
-          this.reset()
-          el.removeClass('asc').addClass('desc')
-          el.attr('title', title + ' DESC')
-        } else {
-          this.reset()
-          el.removeClass('desc').addClass('asc')
-          el.attr('title', title + ' ASC')
-        }
+        // default sort desc
+        this.updateStatus(el, !el.hasClass('desc') ? 'desc' : 'asc', title)
         return false
+      }
+      
+    , updateStatus: function(el, flag, title) {
+        this.reset()
+        el.addClass(flag)
+        el.attr('title', title + ' ' + flag.toUpperCase())
       }
     }
   )
