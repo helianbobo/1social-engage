@@ -30,10 +30,23 @@ $(document.body).ready(function() {
       }
     )
 
-  var Post = Backbone.Model.extend(
+  var Asset = Backbone.Model.extend({})
+
+    , Assets = Backbone.Collection.extend(
         {
+          model: Asset
+
+        , parse: function(response) {
+            return response.data[0].pageData
+          }
+
+        , url: function() {
+            return joinPath($.contextPath, 'socialAssets/getAllAssets')
+          }
         }
       )
+
+    , Post = Backbone.Model.extend({})
 
     , Posts = Backbone.Collection.extend(
         {
@@ -94,6 +107,7 @@ $(document.body).ready(function() {
             // clear the template
             this.$el.empty()
             this.collection.on('sync', this.render, this)
+            this.collection.fetch()
 
             $('.post-list').delegate('.show-case', 'click', function() {
               var attrName = 'modal-id'
@@ -151,16 +165,19 @@ $(document.body).ready(function() {
               , el: this.$el.find('.batch-actions')
               }
             )
+            this.childs['filter-actions'] = new Toolbar.FilterActions(
+              {
+                collection: this.collection
+              , el: this.$el.find('.filter-actions')
+              }
+            )
           }
         }
       )
 
   Toolbar.BatchActions = Backbone.View.extend(
     {
-      initialize: function(options) {
-      }
-
-    , events: {
+      events: {
         'click .input-all-selector': 'select'
       , 'click .mark': 'mark'
       }
@@ -169,7 +186,6 @@ $(document.body).ready(function() {
         console.log(this, arguments)
       }
     , select: function(evt) {
-        // console.log(this, arguments)
         var selected = !!$(evt.target).attr('checked')
         this.collection.forEach(function(model) {
           model.set('selected', selected)
@@ -178,8 +194,29 @@ $(document.body).ready(function() {
     }
   )
 
+  Toolbar.FilterActions = Backbone.View.extend(
+    {
+      initialize: function(options) {
+        this.$asset = this.$('.assets li:last').remove()[0].outerHTML
+        this.assets = assets
+        this.assets.on('sync', this.renderAssets, this)
+        this.assets.fetch()
+      }
+
+    , renderAssets: function(collection, data) {
+        var li = this.$asset
+          , ul = this.$('.assets')
+        collection.each(function(model) {
+          ul.append(Mustache.render(li, model.toJSON()))
+        })
+      }
+    }
+  )
+
   _.extend(engage.model, {
-      'Post': Post
+      'Asset': Asset
+    , 'Assets': Assets
+    , 'Post': Post
     , 'Posts': Posts
     }
   )
@@ -191,6 +228,7 @@ $(document.body).ready(function() {
   var appFrame = engage.appFrame
     , ids = 0
     , modalQueue = new ElementQueue({ max: 3 })
+    , assets = engage.assets = new engage.model.Assets()
     , posts = engage.posts = new engage.model.Posts()
     , tmpls = {
         'app-case-modal': $('.app-case-modal').remove()
@@ -225,7 +263,7 @@ $(document.body).ready(function() {
       , 'posts-toolbar': function(tmplName, el) {
           updateListHeight()
 
-          el.delegate('a', 'click', function() {
+          el.find('.sort-actions').delegate('a', 'click', function() {
               var el = $(this)
                 , title = el.attr('title').replace(/ (asc|desc)/i, '')
 
@@ -338,7 +376,7 @@ $(document.body).ready(function() {
   loadTemplates($('#page'))
   window.loadTemplates = loadTemplates
 
-  engage.posts.fetch()
+  // engage.posts.fetch()
 
   // engage.repeat($('.post-list'), 50)
 })
