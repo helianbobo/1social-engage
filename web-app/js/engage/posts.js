@@ -85,6 +85,8 @@ $(document.body).ready(function() {
             // prepare template
             this.childs = []
             this.$li = this.$el.html()
+            // clear the template
+            this.$el.empty()
             this.collection.on('sync', this.render, this)
 
             $('.post-list').delegate('.show-case', 'click', function() {
