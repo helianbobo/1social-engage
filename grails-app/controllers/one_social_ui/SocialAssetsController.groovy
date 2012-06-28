@@ -4,6 +4,11 @@ class SocialAssetsController {
 
     def getAllAssets() {
 
+        /*
+        clientAccountId=733&
+        type=facebook
+         */
+
         render '''{
   "data":
   [
