@@ -220,11 +220,19 @@ $(document.body).ready(function() {
     }
   )
 
+  Toolbar.RefreshActions = Backbone.View.extend(
+    {
+      events: { 'click .btn-refresh': 'refresh' }
+
+    , refresh: function() {
+        this.collection.fetch()
+      }
+    }
+  )
+
   Toolbar.SortActions = Backbone.View.extend(
     {
-      events: {
-        'click a': 'sort'
-      }
+      events: { 'click a': 'sort' }
 
     , reset: function() {
         this.$('a').each(function(i, it) {
@@ -243,7 +251,7 @@ $(document.body).ready(function() {
         this.updateStatus(el, !el.hasClass('desc') ? 'desc' : 'asc', title)
         return false
       }
-      
+
     , updateStatus: function(el, flag, title) {
         this.reset()
         el.addClass(flag)
