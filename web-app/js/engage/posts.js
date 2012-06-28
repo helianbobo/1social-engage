@@ -158,17 +158,24 @@ $(document.body).ready(function() {
     , Toolbar = Backbone.View.extend(
         {
           initialize: function(options) {
+            var _t = this
+
             this.childs = []
-            this.childs['batch-actions'] = new Toolbar.BatchActions(
-              {
-                collection: this.collection
-              , el: this.$el.find('.batch-actions')
+
+            this.$el.children().each(function(i, it) {
+                _t.createChild($(it).attr('class').split(/\s+/)[0])
               }
             )
-            this.childs['filter-actions'] = new Toolbar.FilterActions(
+          }
+
+        , createChild: function(name) {
+            var className = capitalize(toCamelCase(name))
+
+            if (!/\-actions$/.test(name) || !Toolbar[className]) return;
+            this.childs[name] = new Toolbar[className](
               {
                 collection: this.collection
-              , el: this.$el.find('.filter-actions')
+              , el: this.$el.find('.' + name)
               }
             )
           }
@@ -209,6 +216,39 @@ $(document.body).ready(function() {
         collection.each(function(model) {
           ul.append(Mustache.render(li, model.toJSON()))
         })
+      }
+    }
+  )
+
+  Toolbar.SortActions = Backbone.View.extend(
+    {
+      events: {
+        'click a': 'sort'
+      }
+
+    , reset: function() {
+        this.$('a').each(function(i, it) {
+          var el = $(it)
+
+          el.removeClass('asc desc')
+          el.attr('title', el.attr('title').replace(/ (asc|desc)$/i, ''))
+        })
+      }
+
+    , sort: function(evt) {
+        var el = $(evt.currentTarget)
+          , title = el.attr('title').replace(/ (asc|desc)/i, '')
+
+        if (!el.hasClass('desc')) {
+          this.reset()
+          el.removeClass('asc').addClass('desc')
+          el.attr('title', title + ' DESC')
+        } else {
+          this.reset()
+          el.removeClass('desc').addClass('asc')
+          el.attr('title', title + ' ASC')
+        }
+        return false
       }
     }
   )
@@ -262,21 +302,6 @@ $(document.body).ready(function() {
         }
       , 'posts-toolbar': function(tmplName, el) {
           updateListHeight()
-
-          el.find('.sort-actions').delegate('a', 'click', function() {
-              var el = $(this)
-                , title = el.attr('title').replace(/ (asc|desc)/i, '')
-
-              if (!el.hasClass('desc')) {
-                el.removeClass('asc').addClass('desc')
-                el.attr('title', title + ' DESC')
-              } else {
-                el.removeClass('desc').addClass('asc')
-                el.attr('title', title + ' ASC')
-              }
-              return false
-            }
-          )
 
           new Toolbar({ collection: posts, el: el })
 
@@ -348,7 +373,7 @@ $(document.body).ready(function() {
 
   _.each(templateListeners, function(callback, tmplName) {
         var fn = function(tmpl) {
-              if (tmpl !== tmplName) return
+              if (tmpl !== tmplName) return;
 
               if (callback.apply(this, arguments) === false) {
                 appFrame.off('templateLoaded', fn)
