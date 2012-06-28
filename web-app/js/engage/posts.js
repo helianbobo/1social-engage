@@ -46,6 +46,8 @@ $(document.body).ready(function() {
         }
       )
 
+    , Pagination = Backbone.Model.extend({})
+
     , Post = Backbone.Model.extend({})
 
     , Posts = Backbone.Collection.extend(
@@ -53,7 +55,17 @@ $(document.body).ready(function() {
           model: Post
 
         , parse: function(response) {
+            this.updatePagination(response)
             return response.data
+          }
+
+        , updatePagination: function(response) {
+            var data = _.pick(response, 'offset', 'max')
+            if ('pagination' in this) {
+              this.pagination.set(data)
+            } else {
+              this.pagination = new Pagination(data)
+            }
           }
 
         , url: function() {

@@ -47,6 +47,8 @@ class SocialEngageController {
 
         response.contentType = 'application/json'
         render '''{
+          "offset": 0,
+          "max": 10,
   "data":
   [
     {
