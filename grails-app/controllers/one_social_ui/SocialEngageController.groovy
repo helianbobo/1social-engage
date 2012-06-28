@@ -39,7 +39,10 @@ class SocialEngageController {
         /*
         clientAccountId=969&
         type=facebook&
-        page=1
+        sort=dateCreated&
+        order=asc&
+        max=20&
+        offset=0&
          */
 
         response.contentType = 'application/json'
@@ -346,9 +349,78 @@ class SocialEngageController {
         userId=661&
         type=facebook
          */
+
+        render '''{"response":"ok"}'''
     }
 
     def getAllCase() {
+        /*
+        sort=dateCreated&
+        order=asc&
+        max=20&
+        offset=0&
+        platform=everything&
+        assetId=everything
+
+        Case SortBy:
+            Params                                 UI
+
+            assignee                              Agent
+            caseStatus                          Status
+            priority                                 Priority
+            datetimePosted               Datetime Posted
+            dateCreated                      Datetime Created
+         */
+
+        render '''{
+  "data":
+  [
+    {
+      "caseId": "9691340801189916",
+      "title": "hello",
+      "priority": 3,
+      "dateCreated": "2012-06-27T12:46:29Z",
+      "articleId": "98685085344_10150933571490345",
+      "commentId": "0",
+      "caseStatus": 1,
+      "assignTo": "Tan Weijian - SG",
+      "createdBy": "Tan Weijian - SG",
+      "type": "facebook",
+      "articleContent": "we're on episode 3 of Share Something ä²?Íë? on Channel 8 from 15:28 to 19:10 :) catch it on xinmsn!\\n Episode 3",
+      "articleVoiceName": "Manicurious",
+      "articleVoicePicture": "https://graph.facebook.com/180911745311892/picture",
+      "articleDateTimePost": "2012-06-25T12:16:59Z",
+      "articleVoiceId": "180911745311892",
+      "assetId": "98685085344",
+      "assetPic": "http://graph.facebook.com/98685085344/picture",
+      "comment":
+      [
+      ]
+    },
+    {
+      "caseId": "9691340812250263",
+      "title": "hello",
+      "priority": 3,
+      "dateCreated": "2012-06-27T15:50:50Z",
+      "articleId": "98685085344_196710807123445",
+      "commentId": "0",
+      "caseStatus": 1,
+      "assignTo": "Tan Weijian - SG",
+      "createdBy": "Tan Weijian - SG",
+      "type": "facebook",
+      "articleContent": "ü£?ìÑ? debuts tomorrow!! Here's a look at the meet & greet we had at Eastpoint Mall last weekend!\\n Joys of Life ü£?ìÑ? - äÄâ¢?Øü? Meet & Greet at Eastpoint Mall!",
+      "articleVoiceName": "Channel 8",
+      "articleVoicePicture": "https://graph.facebook.com/98685085344/picture",
+      "articleDateTimePost": "2012-06-25T10:16:33Z",
+      "articleVoiceId": "98685085344",
+      "assetId": "98685085344",
+      "assetPic": "http://graph.facebook.com/98685085344/picture",
+      "comment":
+      [
+      ]
+    }
+  ]
+}'''
 
     }
 
@@ -397,6 +469,65 @@ class SocialEngageController {
 
 
     def getCaseHistory() {
+        /*
+        caseId=9691340720753581
+         */
+
+        def caseHistoryDataJson = '''{
+  "data":
+  [
+    {
+      "createdBy": "Tan Weijian - SG",
+      "createDate": "2012-06-27T12:46:29Z",
+      "indicator": 3,
+      "params": {
+        "caseId": "9691340801189916",
+        "caseState": 1
+      }
+    },
+    {
+      "createdBy": "Tan Weijian - SG",
+      "createDate": "2012-06-27T12:46:29Z",
+      "indicator": 4,
+      "params":{
+          "caseId": "9691340801189916",
+          "assignee": "Tan Weijian - SG"
+       }
+
+    },
+    {
+      "createdBy": "Tan Weijian - SG",
+      "createDate": "2012-06-27T12:46:29Z",
+      "indicator": 5,
+      "params": {
+        "caseId": "9691340801189916",
+        "priority": 3
+      }
+    },
+    {
+      "createdBy": "Tan Weijian - SG",
+      "createDate": "2012-06-27T12:46:29Z",
+      "indicator": 1,
+      "params": {
+        "caseId": "9691340801189916",
+        "caseName": "hello"
+      }
+    }
+  ]
+}'''
+        def result = [:]
+        def caseHistoryData = JSON.parse(caseHistoryDataJson)
+        result.data = caseHistoryData.data.collect {caseHistoryEntry->
+
+            def args = [caseHistoryEntry.createDate, caseHistoryEntry.createdBy]
+            args.addAll(caseHistoryEntry.params.values() as List)
+
+            g.message(
+                    code: "brandtology.engage.case.history.CH${caseHistoryEntry.indicator}",
+                    args: args)
+        }
+
+        render result as JSON
 
     }
 
@@ -406,6 +537,64 @@ class SocialEngageController {
         type=facebook&
          */
 
+        render '''{"response":"ok"}'''
+    }
+
+    def updateVoiceDetails(){
+        /*
+        voiceId=9691340801140613.1340801141467&
+        name=hello&
+        identifier=iden&
+        email=a&
+        phone=12345&
+         */
+
+        render '''{"response":"ok"}'''
+
+    }
+
+    def updateSocialProfile(){
+        /*
+        voiceId=9691340801140613.1340801141467&
+        name=hi&
+        url=www.twitter.com/bye&
+        type=twitter&
+         */
+    }
+
+    def getVoiceProfile(){
+        /*
+        voiceId=9691340801140613.1340801141467
+         */
+        render '''{
+  "data": {
+    "class": "com.brandtology.mongo.Voice",
+    "clientAccountId": 969,
+    "email": "a",
+    "fbId": "180911745311892",
+    "fbName": "Manicurious",
+    "fbUrl": "http://www.facebook.com/180911745311892",
+    "id": {
+      "class": "org.bson.types.ObjectId",
+      "inc": 877359895,
+      "machine": -1351019594,
+      "new": false,
+      "time": 1340801141000,
+      "timeSecond": 1340801141
+    },
+    "identifier": "iden",
+    "name": "bye",
+    "phone": "12345",
+    "twitterId": null,
+    "twitterSN": "hi",
+    "twitterURL": "www.twitter.com/bye",
+    "version": 0,
+    "voiceId": "9691340801140613.1340801141467",
+    "weiboId": null,
+    "weiboSN": null,
+    "weiboURL": null
+  }
+}'''
     }
 
     def post() {
