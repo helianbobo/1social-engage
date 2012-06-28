@@ -13,15 +13,15 @@
 
       <div class="post-list-wrap">
         <ul class="post-list">
-          <li class="post-item">
+          <li class="post-item" fbid="{{fbId}}">
             <div class="content">
               <div class="init-post {{#comment}}trim{{/comment}}">
-                <a class="user-name" href="">{{voiceName}}</a>
+                <span class="user-name" href="">{{voiceName}}</span>
                 {{content}}
               </div>
               {{#comment}}
               <div class="comment">
-                <a class="user-name" href="">{{voiceName}}</a>
+                <span class="user-name" href="">{{voiceName}}</span>
                 {{content}}
               </div>
               {{/comment}}
@@ -34,7 +34,7 @@
               <span class="type-item-1-2 {{#comment}}inactive{{/comment}}">
                 <i class="icon-page"></i>
               </span>
-              <span class="type-item-2-1 {{^readStatus}}inactive{{/readStatus}}">
+              <span class="type-item-2-1 {{^readStatus}}inactive{{/readStatus}}" title="{{#readBy}}Read by {{readBy}}{{/readBy}}">
                 <i class="icon-read"></i>
               </span>
               <span class="type-item-2-2">
