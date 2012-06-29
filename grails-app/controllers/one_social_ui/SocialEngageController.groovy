@@ -39,7 +39,7 @@ class SocialEngageController {
         /*
         clientAccountId=969&
         type=facebook&
-        sort=dateCreated&
+        sort=datetimePosted&
         order=asc&
         max=20&
         offset=0&
