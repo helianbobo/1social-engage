@@ -361,7 +361,7 @@ $(document.body).ready(function() {
       , { 
           order: 'desc'
         , pageSize: 20
-        , sort: 'datetimePosted'
+        , sort: 'datetimeSort'
         , type: 'facebook' 
         }
       )
