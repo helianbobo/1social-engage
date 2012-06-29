@@ -37,203 +37,612 @@ class SocialEngageController {
 
     def getAllPosts() {
         /*
-        clientAccountId=969&
         type=facebook&
-        sort=dateCreated&
+        sort=datetimeSort|lCount(likes Count)|cCount(comment count)
         order=asc&
         max=20&
         offset=0&
+        postType=Article|Comment
+        assetsId=everything
+        readStatus=read|unread
+        caseCreated=true|false
+
          */
 
-        response.contentType = 'application/json'
         render '''{
-          "offset": 0,
-          "total": 10,
+  "offset": 0,
+  "total": 10,
   "data":
   [
     {
-      "content": "Short buzz cuts for men¡¯s hair are back in style?!\\n http://redirect.pepperconn.net/eq",
-      "voiceName": "Channel 8",
-      "datetimePosted": "2012-06-25T06:24:30Z",
-      "fbId": "98685085344_10150933171645345",
-      "voicePic": "https://graph.facebook.com/98685085344/picture",
+      "content": "??ÊŠì€î€YOUTUBEÊ×Óðü£?ìÑ??£¿öáUPLOAD?£¡£¡Ê§Ê§£¡£¡???£¡:)",
+      "voiceName": "Diane Timothea Ng",
+      "datetimePosted": "2012-06-28T09:33:38Z",
+      "fbId": "98685085344_10150940547215345",
+      "voicePic": "https://graph.facebook.com/100001293120297/picture",
       "commentCount": 0,
-      "likeCount": 9,
-      "caseCreated": true,
-      "readStatus": true,
-      "readBy": "weijian",
+      "likeCount": 0,
+      "voiceId": "100001293120297",
+      "caseCreated": false,
+      "readStatus": "unread",
       "comment":
       [
       ],
-      "assetsPic": "https://graph.facebook.com/98685085344/picture"
+      "assetsPic": "https://graph.facebook.com/98685085344/picture",
+      "assetsId": "98685085344"
     },
     {
-      "content": "Watch these kids as they come together to honor every living thing and help save Mother Earth. öá?Ê×Ê×ÊŠ?îÜ?ÔÛ?åýùŒî÷?ÙéÝïßæÙ€Õô£¬?ñõÏ­ò¢Ï¹íÂõóÒœÕô£¡\\n http://www.facebook.com/MediaCorpSavingGaia",
+      "content": "Behind-the-scenes shots of the artistes going 'all out' for the battle and having fun! ^_^",
       "voiceName": "Channel 8",
-      "datetimePosted": "2012-06-25T01:30:59Z",
-      "fbId": "98685085344_319577704796315",
+      "datetimePosted": "2012-06-28T07:22:15Z",
+      "fbId": "98685085344_10150940394490345",
       "voicePic": "https://graph.facebook.com/98685085344/picture",
-      "commentCount": 2,
-      "likeCount": 48,
+      "commentCount": 18,
+      "likeCount": 1098,
+      "voiceId": "98685085344",
       "caseCreated": false,
-      "readStatus": true,
-      "readBy": "weijian",
+      "readStatus": "unread",
       "comment":
       [
         {
-          "content": "í»ðôá³QQüåñËñýý­£¬ðÎßÓÜšÔðÌÚé»æ¶ûÕÖõ ><~~ ÍÅÕçû¿Îù£¬ÌœïÒõÌÐÎöŠ\\nÕÎìýâ¢Ó€äÑ ^^",
-          "voiceName": "Presath Wedagedara",
-          "datetimePosted": "2012-06-25T04:06:14Z",
-          "likeCount": 1,
-          "relatedCase":
-          [
-            "9691337237017561"
-          ]
-        }
-      ],
-      "assetsPic": "https://graph.facebook.com/98685085344/picture"
-    },
-    {
-      "content": "Food for thought for Marketers.",
-      "voiceName": "Brandtology",
-      "datetimePosted": "2012-06-25T03:44:58Z",
-      "fbId": "104681096700_10150886023251701",
-      "voicePic": "https://graph.facebook.com/104681096700/picture",
-      "commentCount": 0,
-      "likeCount": 5,
-      "caseCreated": false,
-      "readStatus": true,
-      "readBy": "weijian",
-      "comment":
-      [
-      ],
-      "assetsPic": "https://graph.facebook.com/98685085344/picture"
-    },
-    {
-      "content": "Watch these kids as they come together to honor every living thing and help save Mother Earth. öá?Ê×Ê×ÊŠ?îÜ?ÔÛ?åýùŒî÷?ÙéÝïßæÙ€Õô£¬?ñõÏ­ò¢Ï¹íÂõóÒœÕô£¡\\n http://www.facebook.com/MediaCorpSavingGaia",
-      "voiceName": "Channel 8",
-      "datetimePosted": "2012-06-25T01:30:59Z",
-      "fbId": "98685085344_319577704796315",
-      "voicePic": "https://graph.facebook.com/98685085344/picture",
-      "commentCount": 2,
-      "likeCount": 48,
-      "caseCreated": false,
-      "readStatus": true,
-      "readBy": "weijian",
-      "comment":
-      [
-        {
-          "content": "But I tried very hard to understand the singing words",
-          "voiceName": "Chee Yong",
-          "datetimePosted": "2012-06-25T03:29:15Z",
+          "content": "Jurong East Swimming Complex",
+          "voiceName": "Ming Wang",
+          "datetimePosted": "2012-06-28T09:25:15Z",
           "likeCount": 0,
           "relatedCase":
           [
             "9691337237017561"
-          ]
+          ],
+          "voiceId": "1671482364",
+          "voicePic": "https://graph.facebook.com/1671482364/picture",
+          "fbId": "98685085344_10150940394490345_23215075"
         }
       ],
-      "assetsPic": "https://graph.facebook.com/98685085344/picture"
+      "assetsPic": "https://graph.facebook.com/98685085344/picture",
+      "assetsId": "98685085344"
     },
     {
-      "content": "Watch these kids as they come together to honor every living thing and help save Mother Earth. öá?Ê×Ê×ÊŠ?îÜ?ÔÛ?åýùŒî÷?ÙéÝïßæÙ€Õô£¬?ñõÏ­ò¢Ï¹íÂõóÒœÕô£¡\\n http://www.facebook.com/MediaCorpSavingGaia",
+      "content": "Jeanette Aw in character for our year-end blockbuster <3 Can anyone guess what show is it? ;)\\n good morning!! :)",
       "voiceName": "Channel 8",
-      "datetimePosted": "2012-06-25T01:30:59Z",
-      "fbId": "98685085344_319577704796315",
+      "datetimePosted": "2012-06-28T07:07:24Z",
+      "fbId": "98685085344_252834011497416",
+      "voicePic": "https://graph.facebook.com/98685085344/picture",
+      "commentCount": 44,
+      "likeCount": 946,
+      "voiceId": "98685085344",
+      "caseCreated": false,
+      "readStatus": "unread",
+      "comment":
+      [
+        {
+          "content": "Wads the title?",
+          "voiceName": "Sharon Gwee",
+          "datetimePosted": "2012-06-28T09:23:53Z",
+          "likeCount": 0,
+          "relatedCase":
+          [
+            "9691337237017561"
+          ],
+          "voiceId": "100000076498318",
+          "voicePic": "https://graph.facebook.com/100000076498318/picture",
+          "fbId": "98685085344_252834011497416_920476"
+        }
+      ],
+      "assetsPic": "https://graph.facebook.com/98685085344/picture",
+      "assetsId": "98685085344"
+    },
+    {
+      "content": "Jeanette Aw in character for our year-end blockbuster <3 Can anyone guess what show is it? ;)\\n good morning!! :)",
+      "voiceName": "Channel 8",
+      "datetimePosted": "2012-06-28T07:07:24Z",
+      "fbId": "98685085344_252834011497416",
+      "voicePic": "https://graph.facebook.com/98685085344/picture",
+      "commentCount": 44,
+      "likeCount": 946,
+      "voiceId": "98685085344",
+      "caseCreated": false,
+      "readStatus": "unread",
+      "comment":
+      [
+        {
+          "content": "They filmed somewhere at Raffles Place right?",
+          "voiceName": "Sharon Gwee",
+          "datetimePosted": "2012-06-28T09:23:36Z",
+          "likeCount": 0,
+          "relatedCase":
+          [
+            "9691337237017561"
+          ],
+          "voiceId": "100000076498318",
+          "voicePic": "https://graph.facebook.com/100000076498318/picture",
+          "fbId": "98685085344_252834011497416_920475"
+        }
+      ],
+      "assetsPic": "https://graph.facebook.com/98685085344/picture",
+      "assetsId": "98685085344"
+    },
+    {
+      "content": "Behind-the-scenes shots of the artistes going 'all out' for the battle and having fun! ^_^",
+      "voiceName": "Channel 8",
+      "datetimePosted": "2012-06-28T07:22:15Z",
+      "fbId": "98685085344_10150940394490345",
+      "voicePic": "https://graph.facebook.com/98685085344/picture",
+      "commentCount": 18,
+      "likeCount": 1098,
+      "voiceId": "98685085344",
+      "caseCreated": false,
+      "readStatus": "unread",
+      "comment":
+      [
+        {
+          "content": "XIAO DAI!! <3<3",
+          "voiceName": "Michelle Yelloww Leong",
+          "datetimePosted": "2012-06-28T09:20:57Z",
+          "likeCount": 0,
+          "relatedCase":
+          [
+            "9691337237017561"
+          ],
+          "voiceId": "522180897",
+          "voicePic": "https://graph.facebook.com/522180897/picture",
+          "fbId": "98685085344_10150940394490345_23215053"
+        }
+      ],
+      "assetsPic": "https://graph.facebook.com/98685085344/picture",
+      "assetsId": "98685085344"
+    },
+    {
+      "content": "Jeanette Aw in character for our year-end blockbuster <3 Can anyone guess what show is it? ;)\\n good morning!! :)",
+      "voiceName": "Channel 8",
+      "datetimePosted": "2012-06-28T07:07:24Z",
+      "fbId": "98685085344_252834011497416",
+      "voicePic": "https://graph.facebook.com/98685085344/picture",
+      "commentCount": 44,
+      "likeCount": 946,
+      "voiceId": "98685085344",
+      "caseCreated": false,
+      "readStatus": "unread",
+      "comment":
+      [
+        {
+          "content": "Beyond!",
+          "voiceName": "Angelz CoolYin",
+          "datetimePosted": "2012-06-28T09:12:17Z",
+          "likeCount": 0,
+          "relatedCase":
+          [
+            "9691337237017561"
+          ],
+          "voiceId": "100000488094577",
+          "voicePic": "https://graph.facebook.com/100000488094577/picture",
+          "fbId": "98685085344_252834011497416_920450"
+        }
+      ],
+      "assetsPic": "https://graph.facebook.com/98685085344/picture",
+      "assetsId": "98685085344"
+    },
+    {
+      "content": "Is there a new children show coming up on 1st July?",
+      "voiceName": "Samme Hong Chan",
+      "datetimePosted": "2012-06-27T15:28:52Z",
+      "fbId": "98685085344_10150938598530345",
+      "voicePic": "https://graph.facebook.com/100001064408289/picture",
+      "commentCount": 2,
+      "likeCount": 0,
+      "voiceId": "100001064408289",
+      "caseCreated": false,
+      "readStatus": "unread",
+      "comment":
+      [
+        {
+          "content": "What show?",
+          "voiceName": "Foo XiaoTong",
+          "datetimePosted": "2012-06-28T09:09:58Z",
+          "likeCount": 0,
+          "relatedCase":
+          [
+            "9691337237017561"
+          ],
+          "voiceId": "100000542382136",
+          "voicePic": "https://graph.facebook.com/100000542382136/picture",
+          "fbId": "98685085344_10150938598530345_23214983"
+        }
+      ],
+      "assetsPic": "https://graph.facebook.com/98685085344/picture",
+      "assetsId": "98685085344"
+    },
+    {
+      "content": "Jeanette Aw in character for our year-end blockbuster <3 Can anyone guess what show is it? ;)\\n good morning!! :)",
+      "voiceName": "Channel 8",
+      "datetimePosted": "2012-06-28T07:07:24Z",
+      "fbId": "98685085344_252834011497416",
+      "voicePic": "https://graph.facebook.com/98685085344/picture",
+      "commentCount": 44,
+      "likeCount": 946,
+      "voiceId": "98685085344",
+      "caseCreated": false,
+      "readStatus": "unread",
+      "comment":
+      [
+        {
+          "content": "?ýÀû¿ø÷ÕÕ?£¡~XD",
+          "voiceName": "Jason Lee",
+          "datetimePosted": "2012-06-28T09:06:32Z",
+          "likeCount": 0,
+          "relatedCase":
+          [
+            "9691337237017561"
+          ],
+          "voiceId": "100000593746444",
+          "voicePic": "https://graph.facebook.com/100000593746444/picture",
+          "fbId": "98685085344_252834011497416_920430"
+        }
+      ],
+      "assetsPic": "https://graph.facebook.com/98685085344/picture",
+      "assetsId": "98685085344"
+    },
+    {
+      "content": "Jeanette Aw in character for our year-end blockbuster <3 Can anyone guess what show is it? ;)\\n good morning!! :)",
+      "voiceName": "Channel 8",
+      "datetimePosted": "2012-06-28T07:07:24Z",
+      "fbId": "98685085344_252834011497416",
+      "voicePic": "https://graph.facebook.com/98685085344/picture",
+      "commentCount": 44,
+      "likeCount": 946,
+      "voiceId": "98685085344",
+      "caseCreated": false,
+      "readStatus": "unread",
+      "comment":
+      [
+        {
+          "content": "X êªáÈ!!! :)",
+          "voiceName": "Joanna Kwang",
+          "datetimePosted": "2012-06-28T09:05:58Z",
+          "likeCount": 0,
+          "relatedCase":
+          [
+            "9691337237017561"
+          ],
+          "voiceId": "824609473",
+          "voicePic": "https://graph.facebook.com/824609473/picture",
+          "fbId": "98685085344_252834011497416_920426"
+        }
+      ],
+      "assetsPic": "https://graph.facebook.com/98685085344/picture",
+      "assetsId": "98685085344"
+    },
+    {
+      "content": "Behind-the-scenes shots of the artistes going 'all out' for the battle and having fun! ^_^",
+      "voiceName": "Channel 8",
+      "datetimePosted": "2012-06-28T07:22:15Z",
+      "fbId": "98685085344_10150940394490345",
+      "voicePic": "https://graph.facebook.com/98685085344/picture",
+      "commentCount": 18,
+      "likeCount": 1098,
+      "voiceId": "98685085344",
+      "caseCreated": false,
+      "readStatus": "unread",
+      "comment":
+      [
+        {
+          "content": "When is Tiz Episode gng 2 Aired??",
+          "voiceName": "Kll Ling",
+          "datetimePosted": "2012-06-28T09:05:14Z",
+          "likeCount": 0,
+          "relatedCase":
+          [
+            "9691337237017561"
+          ],
+          "voiceId": "100001089684329",
+          "voicePic": "https://graph.facebook.com/100001089684329/picture",
+          "fbId": "98685085344_10150940394490345_23214967"
+        }
+      ],
+      "assetsPic": "https://graph.facebook.com/98685085344/picture",
+      "assetsId": "98685085344"
+    },
+    {
+      "content": "Jeanette Aw in character for our year-end blockbuster <3 Can anyone guess what show is it? ;)\\n good morning!! :)",
+      "voiceName": "Channel 8",
+      "datetimePosted": "2012-06-28T07:07:24Z",
+      "fbId": "98685085344_252834011497416",
+      "voicePic": "https://graph.facebook.com/98685085344/picture",
+      "commentCount": 44,
+      "likeCount": 946,
+      "voiceId": "98685085344",
+      "caseCreated": false,
+      "readStatus": "unread",
+      "comment":
+      [
+        {
+          "content": "Jeanette looks cool in her new style . :D",
+          "voiceName": "Shimin Katherine",
+          "datetimePosted": "2012-06-28T08:54:29Z",
+          "likeCount": 0,
+          "relatedCase":
+          [
+            "9691337237017561"
+          ],
+          "voiceId": "100001402174059",
+          "voicePic": "https://graph.facebook.com/100001402174059/picture",
+          "fbId": "98685085344_252834011497416_920395"
+        }
+      ],
+      "assetsPic": "https://graph.facebook.com/98685085344/picture",
+      "assetsId": "98685085344"
+    },
+    {
+      "content": "Jeanette Aw in character for our year-end blockbuster <3 Can anyone guess what show is it? ;)\\n good morning!! :)",
+      "voiceName": "Channel 8",
+      "datetimePosted": "2012-06-28T07:07:24Z",
+      "fbId": "98685085344_252834011497416",
+      "voicePic": "https://graph.facebook.com/98685085344/picture",
+      "commentCount": 44,
+      "likeCount": 946,
+      "voiceId": "98685085344",
+      "caseCreated": false,
+      "readStatus": "unread",
+      "comment":
+      [
+        {
+          "content": "so beautiful :P",
+          "voiceName": "Alfred Hoo",
+          "datetimePosted": "2012-06-28T08:52:48Z",
+          "likeCount": 0,
+          "relatedCase":
+          [
+            "9691337237017561"
+          ],
+          "voiceId": "679349222",
+          "voicePic": "https://graph.facebook.com/679349222/picture",
+          "fbId": "98685085344_252834011497416_920393"
+        }
+      ],
+      "assetsPic": "https://graph.facebook.com/98685085344/picture",
+      "assetsId": "98685085344"
+    },
+    {
+      "content": "Jeanette Aw in character for our year-end blockbuster <3 Can anyone guess what show is it? ;)\\n good morning!! :)",
+      "voiceName": "Channel 8",
+      "datetimePosted": "2012-06-28T07:07:24Z",
+      "fbId": "98685085344_252834011497416",
+      "voicePic": "https://graph.facebook.com/98685085344/picture",
+      "commentCount": 44,
+      "likeCount": 946,
+      "voiceId": "98685085344",
+      "caseCreated": false,
+      "readStatus": "unread",
+      "comment":
+      [
+        {
+          "content": "?ÒöêªáÈ",
+          "voiceName": "Tay Hwee Mei",
+          "datetimePosted": "2012-06-28T08:46:05Z",
+          "likeCount": 0,
+          "relatedCase":
+          [
+            "9691337237017561"
+          ],
+          "voiceId": "1455368026",
+          "voicePic": "https://graph.facebook.com/1455368026/picture",
+          "fbId": "98685085344_252834011497416_920386"
+        }
+      ],
+      "assetsPic": "https://graph.facebook.com/98685085344/picture",
+      "assetsId": "98685085344"
+    },
+    {
+      "content": "Jeanette Aw in character for our year-end blockbuster <3 Can anyone guess what show is it? ;)\\n good morning!! :)",
+      "voiceName": "Channel 8",
+      "datetimePosted": "2012-06-28T07:07:24Z",
+      "fbId": "98685085344_252834011497416",
+      "voicePic": "https://graph.facebook.com/98685085344/picture",
+      "commentCount": 44,
+      "likeCount": 946,
+      "voiceId": "98685085344",
+      "caseCreated": false,
+      "readStatus": "unread",
+      "comment":
+      [
+        {
+          "content": "Ms Introvert?",
+          "voiceName": "Dave Chen",
+          "datetimePosted": "2012-06-28T08:39:36Z",
+          "likeCount": 0,
+          "relatedCase":
+          [
+            "9691337237017561"
+          ],
+          "voiceId": "1245241502",
+          "voicePic": "https://graph.facebook.com/1245241502/picture",
+          "fbId": "98685085344_252834011497416_920372"
+        }
+      ],
+      "assetsPic": "https://graph.facebook.com/98685085344/picture",
+      "assetsId": "98685085344"
+    },
+    {
+      "content": "Jeanette Aw in character for our year-end blockbuster <3 Can anyone guess what show is it? ;)\\n good morning!! :)",
+      "voiceName": "Channel 8",
+      "datetimePosted": "2012-06-28T07:07:24Z",
+      "fbId": "98685085344_252834011497416",
+      "voicePic": "https://graph.facebook.com/98685085344/picture",
+      "commentCount": 44,
+      "likeCount": 946,
+      "voiceId": "98685085344",
+      "caseCreated": false,
+      "readStatus": "unread",
+      "comment":
+      [
+        {
+          "content": "Saw them filming this show",
+          "voiceName": "Shao Ming YourBuddy",
+          "datetimePosted": "2012-06-28T08:39:27Z",
+          "likeCount": 0,
+          "relatedCase":
+          [
+            "9691337237017561"
+          ],
+          "voiceId": "100000219819341",
+          "voicePic": "https://graph.facebook.com/100000219819341/picture",
+          "fbId": "98685085344_252834011497416_920371"
+        }
+      ],
+      "assetsPic": "https://graph.facebook.com/98685085344/picture",
+      "assetsId": "98685085344"
+    },
+    {
+      "content": "Jeanette Aw in character for our year-end blockbuster <3 Can anyone guess what show is it? ;)\\n good morning!! :)",
+      "voiceName": "Channel 8",
+      "datetimePosted": "2012-06-28T07:07:24Z",
+      "fbId": "98685085344_252834011497416",
+      "voicePic": "https://graph.facebook.com/98685085344/picture",
+      "commentCount": 44,
+      "likeCount": 946,
+      "voiceId": "98685085344",
+      "caseCreated": false,
+      "readStatus": "unread",
+      "comment":
+      [
+        {
+          "content": "She's so pretty",
+          "voiceName": "Sihui Ahhai",
+          "datetimePosted": "2012-06-28T08:37:52Z",
+          "likeCount": 0,
+          "relatedCase":
+          [
+            "9691337237017561"
+          ],
+          "voiceId": "1546635179",
+          "voicePic": "https://graph.facebook.com/1546635179/picture",
+          "fbId": "98685085344_252834011497416_920363"
+        }
+      ],
+      "assetsPic": "https://graph.facebook.com/98685085344/picture",
+      "assetsId": "98685085344"
+    },
+    {
+      "content": "Jeanette Aw in character for our year-end blockbuster <3 Can anyone guess what show is it? ;)\\n good morning!! :)",
+      "voiceName": "Channel 8",
+      "datetimePosted": "2012-06-28T07:07:24Z",
+      "fbId": "98685085344_252834011497416",
+      "voicePic": "https://graph.facebook.com/98685085344/picture",
+      "commentCount": 44,
+      "likeCount": 946,
+      "voiceId": "98685085344",
+      "caseCreated": false,
+      "readStatus": "unread",
+      "comment":
+      [
+        {
+          "content": "Ah Lian and Aminah sequel to Abang and Ah Beng",
+          "voiceName": "Hamid Ahmad",
+          "datetimePosted": "2012-06-28T08:37:05Z",
+          "likeCount": 0,
+          "relatedCase":
+          [
+            "9691337237017561"
+          ],
+          "voiceId": "1250892263",
+          "voicePic": "https://graph.facebook.com/1250892263/picture",
+          "fbId": "98685085344_252834011497416_920362"
+        }
+      ],
+      "assetsPic": "https://graph.facebook.com/98685085344/picture",
+      "assetsId": "98685085344"
+    },
+    {
+      "content": "ãÀîÜ! #joysoflife îÜñ«?ÍØ<òÒà­> ãÀëŠ?Õôûý?æÑóÝîÜ! ýñØÐî¢??îð?!",
+      "voiceName": "Channel 8",
+      "datetimePosted": "2012-06-27T13:01:25Z",
+      "fbId": "98685085344_10150938306215345",
       "voicePic": "https://graph.facebook.com/98685085344/picture",
       "commentCount": 2,
-      "likeCount": 48,
+      "likeCount": 79,
+      "voiceId": "98685085344",
       "caseCreated": false,
-      "readStatus": true,
-      "readBy": "weijian",
+      "readStatus": "unread",
       "comment":
       [
+        {
+          "content": "u acting as a student",
+          "voiceName": "Yeoh Teng Khean",
+          "datetimePosted": "2012-06-28T08:34:54Z",
+          "likeCount": 0,
+          "relatedCase":
+          [
+            "9691337237017561"
+          ],
+          "voiceId": "1035922695",
+          "voicePic": "https://graph.facebook.com/1035922695/picture",
+          "fbId": "98685085344_10150938306215345_23214802"
+        }
       ],
-      "assetsPic": "https://graph.facebook.com/98685085344/picture"
+      "assetsPic": "https://graph.facebook.com/98685085344/picture",
+      "assetsId": "98685085344"
     },
     {
-      "content": "I find priority seat auntie look very much like choo mimi . how abt asking her to play the role of tat auntie and hopefully tis auntie be embarrassed..",
-      "voiceName": "Alvin Fua",
-      "datetimePosted": "2012-06-24T23:56:41Z",
-      "fbId": "98685085344_10150932677890345",
-      "voicePic": "https://graph.facebook.com/1073794765/picture",
-      "commentCount": 0,
-      "likeCount": 0,
+      "content": "Behind-the-scenes shots of the artistes going 'all out' for the battle and having fun! ^_^",
+      "voiceName": "Channel 8",
+      "datetimePosted": "2012-06-28T07:22:15Z",
+      "fbId": "98685085344_10150940394490345",
+      "voicePic": "https://graph.facebook.com/98685085344/picture",
+      "commentCount": 18,
+      "likeCount": 1098,
+      "voiceId": "98685085344",
       "caseCreated": false,
-      "readStatus": true,
-      "readBy": "weijian",
+      "readStatus": "unread",
       "comment":
       [
+        {
+          "content": "Óã?ôž! <3",
+          "voiceName": "Øº??",
+          "datetimePosted": "2012-06-28T08:32:16Z",
+          "likeCount": 1,
+          "relatedCase":
+          [
+            "9691337237017561"
+          ],
+          "voiceId": "100003629082496",
+          "voicePic": "https://graph.facebook.com/100003629082496/picture",
+          "fbId": "98685085344_10150940394490345_23214788"
+        }
       ],
-      "assetsPic": "https://graph.facebook.com/98685085344/picture"
+      "assetsPic": "https://graph.facebook.com/98685085344/picture",
+      "assetsId": "98685085344"
     },
     {
-      "content": "Sorry For Not Posting For Awhile, Bcos I Was Busy Fulfilling My Dream:) Even Though School Is Reopening Tmr Is Also Important For Students To Study Hard For Yr Exam, But Do Remember To Watch Joys of Life ü£?ìÑ? At 9pm On Channel 8! Here Is A Video To Make U Hv A Great Start For Tmr!! 2 MORE DAYS! =D\\n\\nhttp://www.youtube.com/watch?v=6PKc6OnqNg8&feature=plcp \\n\\n-RR.\\n Joys of Life ü£?ìÑ? - Behind The Scene Ø­ýšü£ßü 6: Opening sequence (HD 1080p)",
-      "voiceName": "Rui En",
-      "datetimePosted": "2012-06-24T15:45:21Z",
-      "fbId": "98685085344_10150931839135345",
-      "voicePic": "https://graph.facebook.com/149424541737219/picture",
-      "commentCount": 0,
-      "likeCount": 0,
+      "content": "Jeanette Aw in character for our year-end blockbuster <3 Can anyone guess what show is it? ;)\\n good morning!! :)",
+      "voiceName": "Channel 8",
+      "datetimePosted": "2012-06-28T07:07:24Z",
+      "fbId": "98685085344_252834011497416",
+      "voicePic": "https://graph.facebook.com/98685085344/picture",
+      "commentCount": 44,
+      "likeCount": 946,
+      "voiceId": "98685085344",
       "caseCreated": false,
-      "readStatus": true,
-      "readBy": "weijian",
+      "readStatus": "unread",
       "comment":
       [
+        {
+          "content": "Cute",
+          "voiceName": "Yeong Wen Qi",
+          "datetimePosted": "2012-06-28T08:17:35Z",
+          "likeCount": 0,
+          "relatedCase":
+          [
+            "9691337237017561"
+          ],
+          "voiceId": "100000182118812",
+          "voicePic": "https://graph.facebook.com/100000182118812/picture",
+          "fbId": "98685085344_252834011497416_920300"
+        }
       ],
-      "assetsPic": "https://graph.facebook.com/98685085344/picture"
-    },
-    {
-      "content": "I like channel 8 because I lovely love",
-      "voiceName": "Meili Mei Li Low",
-      "datetimePosted": "2012-06-24T15:41:38Z",
-      "fbId": "98685085344_10150931833590345",
-      "voicePic": "https://graph.facebook.com/100003973665702/picture",
-      "commentCount": 0,
-      "likeCount": 0,
-      "caseCreated": false,
-      "readStatus": true,
-      "readBy": "weijian",
-      "comment":
-      [
-      ],
-      "assetsPic": "https://graph.facebook.com/98685085344/picture"
-    },
-    {
-      "content": "??Ñá×ìÊŠì€Ê×ÓðÐÑôž8?Ô³îÜãæ?ñì÷ë??£¿é©î€?ó×ßŸîÜ¡£",
-      "voiceName": "Luisa Mok Lu Yock",
-      "datetimePosted": "2012-06-24T15:24:50Z",
-      "fbId": "98685085344_10150931804300345",
-      "voicePic": "https://graph.facebook.com/1647235259/picture",
-      "commentCount": 0,
-      "likeCount": 0,
-      "caseCreated": false,
-      "readStatus": true,
-      "readBy": "weijian",
-      "comment":
-      [
-      ],
-      "assetsPic": "https://graph.facebook.com/98685085344/picture"
-    },
-    {
-      "content": "How The World Spends Its Time Online [INFOGRAPHIC] http://buff.ly/LATWXi",
-      "voiceName": "Brandtology",
-      "datetimePosted": "2012-06-13T00:56:31Z",
-      "fbId": "104681096700_10150862533251701",
-      "voicePic": "https://graph.facebook.com/104681096700/picture",
-      "commentCount": 0,
-      "likeCount": 4,
-      "caseCreated": false,
-      "readStatus": true,
-      "readBy": "weijian",
-      "comment":
-      [
-      ],
-      "assetsPic": "https://graph.facebook.com/98685085344/picture"
+      "assetsPic": "https://graph.facebook.com/98685085344/picture",
+      "assetsId": "98685085344"
     }
   ]
-}
-'''
+}'''
 
     }
 
