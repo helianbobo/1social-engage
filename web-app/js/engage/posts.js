@@ -1,20 +1,4 @@
-
-// Namespaces
-var engage = {
-      appFrame: _.extend({}, Backbone.Events)
-    , model: {}
-
-    , repeat: function (ul, max) {
-        var li = ul.find('li')
-          , max = max || 10
-
-        for (var i = 0; i < max; i++) ul.append(li.clone())
-      }
-    }
-
 $(document.body).ready(function() {
-  // constants
-  var DEFAULT_TEMPLATE_FILTER = function(el) { return el.attr('tmpl-load-timing') != 'manual' }
 
   // Models
   // -----
@@ -141,7 +125,7 @@ $(document.body).ready(function() {
               el = prepareModal('app-case-modal')
               btn.attr(attrName, el.attr('id'))
               modalQueue.push(el.attr('id'))
-              el.one('show', function() { loadTemplates(el) })
+              el.one('show', function() { tmplLoader.load(el) })
             }
             
             el.attr('post-id', this.model.get('id'))
@@ -365,8 +349,7 @@ $(document.body).ready(function() {
   // Objects
   // -----
 
-  var appFrame = engage.appFrame
-    , ids = 0
+  var ids = 0
     , modalQueue = new ElementQueue({ max: 3 })
     , assets = engage.assets = new engage.model.Assets()
     , posts = engage.posts = new engage.model.Posts(null
@@ -424,41 +407,6 @@ $(document.body).ready(function() {
     return $(window).height() - el.offset().top - 30
   }
 
-  function getTemplatePath(path) {
-    return path.indexOf('.') > 0 ? path : path + '.html'
-  }
-
-  function loadTemplate(el, callback) {
-    var url = joinPath($.contextPath, '/tmpl/' + getTemplatePath(el.attr('tmpl')))
-
-    $.ajax({
-      url: url,
-      success: function(data) {
-        var newEl = $(data)
-
-        el.replaceWith(newEl)
-        if ($.isFunction(callback)) callback(el, newEl)
-      }
-    })
-  }
-
-  function loadTemplates(el, filter) {
-    filter = filter || DEFAULT_TEMPLATE_FILTER
-    var callback = function(placeholder, el) {
-          loadTemplates(el, filter)
-          appFrame.trigger('templateLoaded', placeholder.attr('tmpl'), el)
-        }
-      , load = function(i, it) {
-          var el = $(it)
-
-          if (!filter) loadTemplate(el, callback)
-          filter(el) && loadTemplate(el, callback)
-        }
-
-    if (el.hasClass('tmpl')) load(0, el)
-    else el.find('[tmpl]').each(load)
-  }
-
   function newId(prefix, suffix) {
     return (prefix ? prefix : '') + (++ids) + (suffix ? suffix : '')
   }
@@ -483,10 +431,10 @@ $(document.body).ready(function() {
               if (tmpl !== tmplName) return;
 
               if (callback.apply(this, arguments) === false) {
-                appFrame.off('templateLoaded', fn)
+                tmplLoader.off('templateLoaded', fn)
               }
             }
-        appFrame.on('templateLoaded', fn)
+        tmplLoader.on('templateLoaded', fn)
       }
     )
 
@@ -505,6 +453,5 @@ $(document.body).ready(function() {
 
   $(window).resize(updateListHeight)
   // updateListHeight()
-  loadTemplates($('#page'))
-  window.loadTemplates = loadTemplates
+  tmplLoader.load($('#page'))
 })

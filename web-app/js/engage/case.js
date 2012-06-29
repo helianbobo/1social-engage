@@ -17,8 +17,8 @@ engage.CaseApp = Backbone.View.extend({
                 _t.childs[name] = new engage[capitalize(toCamelCase(name))]({ el: el })
               }
 
-          loadTemplates(_t.findPane(tab.attr('href')), function() { return true })
-          engage.appFrame.one('templateLoaded', loaded)
+          tmplLoader.one('templateLoaded', loaded)
+          tmplLoader.load(_t.findPane(tab.attr('href')), function() { return true })
         })
 
         // load the content of first tab

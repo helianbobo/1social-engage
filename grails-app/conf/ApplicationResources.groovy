@@ -69,7 +69,6 @@ modules = {
 
     engage {
         dependsOn 'backbone'
-        //TODO: new social engage resources
 
         resource url: 'less/engage.less', attrs: [rel: "stylesheet/less", type: 'css']//, bundle: 'bundle_ui'
 
@@ -79,8 +78,8 @@ modules = {
         resource url: 'js/mustache.js'
         resource url: 'js/jquery.lazyload.js'
         resource url: 'js/jquery-x.js'
-        //resource url: 'engage/js/engage.js'
-        //resource url: 'engage/css/engage.css'
+
+        resource url: 'js/engage.js'
     }
 
     'engage-post' {
