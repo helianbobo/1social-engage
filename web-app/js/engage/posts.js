@@ -46,15 +46,18 @@ $(document.body).ready(function() {
         }
       )
 
+    , Parameters = Backbone.Model.extend({})
+
     , Pagination = Backbone.Model.extend(
         {
           initialize: function(options) {
             var model = this
               , defaults = {
                   offset: 0
+                , pageSize: 50
                 , total: 0
-                , pageSize: 20
                 }
+
             _.each(defaults, function(value, key) {
                   if (!model.has(key)) {
                     var data = {}
@@ -73,8 +76,30 @@ $(document.body).ready(function() {
 
     , Posts = Backbone.Collection.extend(
         {
-          initialize: function(options) {
-            this.pagination = new Pagination()
+          initialize: function(models, options) {
+            var pagiOpts = {}
+
+            if ('pageSize' in options) {
+              pagiOpts.pageSize = options.pageSize
+            }
+            this.params = new Parameters()
+            this.pagination = new Pagination(pagiOpts)
+          }
+
+        , collectParams: function() {
+            var params = {}
+              , pagination = this.pagination.toJSON()
+
+            params = _.extend(params, this.params.toJSON())
+
+            params.max = pagination.pageSize
+            if (pagination.offset > 0) params.offset = pagination.offset
+            return params
+          }
+
+        , fetch: function(options) {
+            Backbone.Collection.prototype.fetch.apply(this
+              , [_.extend({ data: this.collectParams() }, options)])
           }
 
         , model: Post
@@ -95,7 +120,9 @@ $(document.body).ready(function() {
         }
       )
     
-    , PostItem = Backbone.View.extend(
+  // Views
+  // -----
+  var PostItem = Backbone.View.extend(
         {
           initialize: function(options) {
             this.li = options.li
@@ -299,17 +326,23 @@ $(document.body).ready(function() {
 
     , sort: function(evt) {
         var el = $(evt.currentTarget)
-          , title = el.attr('title').replace(/ (asc|desc)/i, '')
 
         // default sort desc
-        this.updateStatus(el, !el.hasClass('desc') ? 'desc' : 'asc', title)
+        this.updateStatus(el, !el.hasClass('desc') ? 'desc' : 'asc')
         return false
       }
 
-    , updateStatus: function(el, flag, title) {
+    , updateStatus: function(el, flag) {
         this.reset()
         el.addClass(flag)
-        el.attr('title', title + ' ' + flag.toUpperCase())
+        el.attr('title', el.attr('title') + ' ' + flag.toUpperCase())
+        this.collection.params.set(
+            { 
+              sort: el.attr('href').split('#')[1]
+            , order: flag
+            }
+          )
+        this.collection.fetch()
       }
     }
   )
@@ -330,7 +363,12 @@ $(document.body).ready(function() {
     , ids = 0
     , modalQueue = new ElementQueue({ max: 3 })
     , assets = engage.assets = new engage.model.Assets()
-    , posts = engage.posts = new engage.model.Posts()
+    , posts = engage.posts = new engage.model.Posts(null
+      , { 
+          pageSize: 20
+        , type: 'facebook' 
+        }
+      )
     , tmpls = {
         'app-case-modal': $('.app-case-modal').remove()
       , get: function(name) {
