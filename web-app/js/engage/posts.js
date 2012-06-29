@@ -46,13 +46,38 @@ $(document.body).ready(function() {
         }
       )
 
-    , Pagination = Backbone.Model.extend({})
+    , Pagination = Backbone.Model.extend(
+        {
+          initialize: function(options) {
+            var model = this
+              , defaults = {
+                  offset: 0
+                , total: 0
+                , pageSize: 20
+                }
+            _.each(defaults, function(value, key) {
+                  if (!model.has(key)) {
+                    var data = {}
+                      , options = { silent: true }
+
+                    data[key] = value
+                    model.set(data, options)
+                  }
+                }
+              )
+          }
+        }
+      )
 
     , Post = Backbone.Model.extend({})
 
     , Posts = Backbone.Collection.extend(
         {
-          model: Post
+          initialize: function(options) {
+            this.pagination = new Pagination()
+          }
+
+        , model: Post
 
         , parse: function(response) {
             this.updatePagination(response)
@@ -60,12 +85,8 @@ $(document.body).ready(function() {
           }
 
         , updatePagination: function(response) {
-            var data = _.pick(response, 'offset', 'max')
-            if ('pagination' in this) {
-              this.pagination.set(data)
-            } else {
-              this.pagination = new Pagination(data)
-            }
+            var data = _.pick(response, 'offset', 'total')
+            this.pagination.set(data)
           }
 
         , url: function() {
@@ -227,6 +248,25 @@ $(document.body).ready(function() {
           , ul = this.$('.assets')
         collection.each(function(model) {
           ul.append(Mustache.render(li, model.toJSON()))
+        })
+      }
+    }
+  )
+
+  Toolbar.PaginationActions = Backbone.View.extend(
+    {
+      initialize: function(options) {
+        var _t = this
+
+        this.collection.pagination.on('change', function(model, evt) {
+          var data = model.toJSON()
+            , max = Math.min(data.offset + data.pageSize, data.total)
+          console.log(data)
+          _t.$('.offset').html(data.offset + 1)
+          _t.$('.max').html(max)
+          _t.$('.prev,.next').removeClass('disabled')
+          if (data.offset === 0) _t.$('.prev').addClass('disabled')
+          if (max >= data.total) _t.$('.next').addClass('disabled')
         })
       }
     }
