@@ -51,22 +51,15 @@ $(document.body).ready(function() {
     , Pagination = Backbone.Model.extend(
         {
           initialize: function(options) {
-            var model = this
-              , defaults = {
+            var defaults = {
                   offset: 0
                 , pageSize: 50
                 , total: 0
                 }
 
-            _.each(defaults, function(value, key) {
-                  if (!model.has(key)) {
-                    var data = {}
-                      , options = { silent: true }
-
-                    data[key] = value
-                    model.set(data, options)
-                  }
-                }
+            this.set(
+                _.extend(defaults, this.toJSON())
+              , { silent: true }
               )
           }
         }
@@ -77,13 +70,8 @@ $(document.body).ready(function() {
     , Posts = Backbone.Collection.extend(
         {
           initialize: function(models, options) {
-            var pagiOpts = {}
-
-            if ('pageSize' in options) {
-              pagiOpts.pageSize = options.pageSize
-            }
-            this.params = new Parameters()
-            this.pagination = new Pagination(pagiOpts)
+            this.params = new Parameters(_.pick(options, 'type'))
+            this.pagination = new Pagination(_.pick(options, 'pageSize'))
           }
 
         , collectParams: function() {
@@ -290,7 +278,7 @@ $(document.body).ready(function() {
         this.collection.pagination.on('change', function(model, evt) {
           var data = model.toJSON()
             , max = Math.min(data.offset + data.pageSize, data.total)
-          console.log(data)
+          
           _t.$('.offset').html(data.offset + 1)
           _t.$('.max').html(max)
           _t.$('.prev,.next').removeClass('disabled')
@@ -499,8 +487,4 @@ $(document.body).ready(function() {
   // updateListHeight()
   loadTemplates($('#page'))
   window.loadTemplates = loadTemplates
-
-  // engage.posts.fetch()
-
-  // engage.repeat($('.post-list'), 50)
 })
