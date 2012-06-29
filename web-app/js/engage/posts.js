@@ -18,17 +18,6 @@ $(document.body).ready(function() {
 
   // Models
   // -----
-  var ElementQueue = Backbone.Model.extend(
-      {
-        push: function(obj) {
-          var arr = []
-
-          this.get('queue') && arr.push.apply(arr, this.get('queue'))
-          arr.push(obj)
-          this.set('queue', arr)
-        }
-      }
-    )
 
   var Asset = Backbone.Model.extend({})
 
@@ -42,6 +31,18 @@ $(document.body).ready(function() {
 
         , url: function() {
             return joinPath($.contextPath, 'socialAssets/getAllAssets')
+          }
+        }
+      )
+
+    , ElementQueue = Backbone.Model.extend(
+        {
+          push: function(obj) {
+            var arr = []
+
+            this.get('queue') && arr.push.apply(arr, this.get('queue'))
+            arr.push(obj)
+            this.set('queue', arr)
           }
         }
       )
@@ -70,7 +71,7 @@ $(document.body).ready(function() {
     , Posts = Backbone.Collection.extend(
         {
           initialize: function(models, options) {
-            this.params = new Parameters(_.pick(options, 'type'))
+            this.params = new Parameters(_.pick(options, 'order', 'sort', 'type'))
             this.pagination = new Pagination(_.pick(options, 'pageSize'))
           }
 
@@ -154,7 +155,7 @@ $(document.body).ready(function() {
             this.$li = this.$el.html()
             // clear the template
             this.$el.empty()
-            
+
             this.collection.on('sync', this.render, this)
             this.collection.fetch()
           }
@@ -358,7 +359,9 @@ $(document.body).ready(function() {
     , assets = engage.assets = new engage.model.Assets()
     , posts = engage.posts = new engage.model.Posts(null
       , { 
-          pageSize: 20
+          order: 'desc'
+        , pageSize: 20
+        , sort: 'datetimePosted'
         , type: 'facebook' 
         }
       )
