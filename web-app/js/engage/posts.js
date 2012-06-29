@@ -51,28 +51,35 @@ $(document.body).ready(function() {
 
     , Pagination = Backbone.Model.extend(
         {
-          initialize: function(options) {
-            var defaults = {
-                  offset: 0
-                , pageSize: 50
-                , total: 0
-                }
+          defaults : {
+            offset: 0
+          , pageSize: 50
+          , total: 0
+          }
+        }
+      )
+
+    , Post = Backbone.Model.extend(
+        {
+          initialize: function(data) {
+            var id = data.fbId
+            if (data.comment && data.comment.length > 0) {
+              id = data.comment[0].fbId
+            }
 
             this.set(
-                _.extend(defaults, this.toJSON())
+                { id: id }
               , { silent: true }
               )
           }
         }
       )
 
-    , Post = Backbone.Model.extend({})
-
     , Posts = Backbone.Collection.extend(
         {
           initialize: function(models, options) {
             this.params = new Parameters(_.pick(options, 'order', 'sort', 'type'))
-            this.pagination = new Pagination(_.pick(options, 'pageSize'))
+            this.pagination = new Pagination(_.pick(options, 'offset', 'pageSize'))
           }
 
         , collectParams: function() {
@@ -87,8 +94,9 @@ $(document.body).ready(function() {
           }
 
         , fetch: function(options) {
-            Backbone.Collection.prototype.fetch.apply(this
-              , [_.extend({ data: this.collectParams() }, options)])
+            options = options || {}
+            options.data = _.extend(this.collectParams(), options.data)
+            Backbone.Collection.prototype.fetch.apply(this, [options])
           }
 
         , model: Post
@@ -120,9 +128,26 @@ $(document.body).ready(function() {
             this.render()
           }
 
-        , select: function(model, selected) {
-            this.$('.input-item-selector').attr('checked', selected ? 'checked' : false)
+        , events: {
+            'click .show-case': 'openCase'
           }
+
+        , openCase: function(evt) {
+            var attrName = 'modal-id'
+              , btn = $(evt.currentTarget)
+              , el = $('#' + btn.attr(attrName))
+
+            if (el.length === 0) {
+              el = prepareModal('app-case-modal')
+              btn.attr(attrName, el.attr('id'))
+              modalQueue.push(el.attr('id'))
+              el.one('show', function() { loadTemplates(el) })
+            }
+            
+            el.attr('post-id', this.model.get('id'))
+            el.modal()
+          }
+
         , render : function() {
             var data = this.model.toJSON()
 
@@ -144,6 +169,10 @@ $(document.body).ready(function() {
 
             this.setElement($(Mustache.render(this.li, data)))
           }
+
+        , select: function(model, selected) {
+            this.$('.input-item-selector').attr('checked', selected ? 'checked' : false)
+          }
         }
       )
 
@@ -160,9 +189,6 @@ $(document.body).ready(function() {
             this.collection.fetch()
           }
 
-        , events: {
-            'click .show-case': 'openCase'
-          }
 
         , append: function(model) {
             var item = new PostItem(
@@ -176,20 +202,6 @@ $(document.body).ready(function() {
             this.$el.append(item.$el)
           }
 
-        , openCase: function(evt) {
-            var attrName = 'modal-id'
-              , btn = $(evt.currentTarget)
-              , el = $('#' + btn.attr(attrName))
-
-            if (el.length === 0) {
-              el = prepareModal('app-case-modal')
-              btn.attr(attrName, el.attr('id'))
-              modalQueue.push(el.attr('id'))
-              el.one('show', function() { loadTemplates(el) })
-            }
-            
-            el.modal()
-          }
 
         , render: function(collection, data) {
             var _t = this
