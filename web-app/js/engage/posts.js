@@ -154,23 +154,13 @@ $(document.body).ready(function() {
             this.$li = this.$el.html()
             // clear the template
             this.$el.empty()
+            
             this.collection.on('sync', this.render, this)
             this.collection.fetch()
+          }
 
-            $('.post-list').delegate('.show-case', 'click', function() {
-              var attrName = 'modal-id'
-                , btn = $(this)
-                , el = $('#' + btn.attr(attrName))
-
-              if (el.length === 0) {
-                el = prepareModal('app-case-modal')
-                btn.attr(attrName, el.attr('id'))
-                modalQueue.push(el.attr('id'))
-                el.one('show', function() { loadTemplates(el) })
-              }
-              
-              el.modal()
-            })
+        , events: {
+            'click .show-case': 'openCase'
           }
 
         , append: function(model) {
@@ -183,6 +173,21 @@ $(document.body).ready(function() {
 
             this.childs.push(item)
             this.$el.append(item.$el)
+          }
+
+        , openCase: function(evt) {
+            var attrName = 'modal-id'
+              , btn = $(evt.currentTarget)
+              , el = $('#' + btn.attr(attrName))
+
+            if (el.length === 0) {
+              el = prepareModal('app-case-modal')
+              btn.attr(attrName, el.attr('id'))
+              modalQueue.push(el.attr('id'))
+              el.one('show', function() { loadTemplates(el) })
+            }
+            
+            el.modal()
           }
 
         , render: function(collection, data) {
