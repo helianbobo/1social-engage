@@ -240,7 +240,9 @@ $(document.body).ready(function() {
         this.$asset = this.$('.assets li:last').remove()[0].outerHTML
         this.assets = assets
         this.assets.on('sync', this.renderAssets, this)
-        this.assets.fetch()
+        this.assets.fetch({
+            data:{type:'facebook'}
+        })
       }
 
     , renderAssets: function(collection, data) {
