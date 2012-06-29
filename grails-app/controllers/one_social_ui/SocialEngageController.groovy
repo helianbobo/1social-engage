@@ -754,10 +754,10 @@ class SocialEngageController {
 
     def markStatus(){
         /*
-        commentId=0&
-        articleId=98685085344_10150933571490345&
-        status=true&
-        userId=661&
+        commentId=98685085344_252834011497416_920663&
+        articleId=98685085344_252834011497416&
+        status=read|unread
+        userId=661
         type=facebook
          */
 
