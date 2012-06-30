@@ -61,6 +61,34 @@ var tmplLoader = _.extend({}, Backbone.Events)
         }
       )
 
+    , Conversation = Backbone.Model.extend(
+        {
+          collectParams: function() {
+            return { id: this.toJSON().id }
+          }
+
+        , fetch: function(options) {
+            options = options || {}
+            options.data = _.extend(this.collectParams(), options.data)
+            Backbone.Model.prototype.fetch.apply(this, [options])
+          }
+
+        , parse: function(response) {
+            var data = response.data
+              , datetime = data.datetimePost.split(/[TZ]/)
+
+            data.date = datetime[0]
+            data.time = datetime[1]
+            
+            return data
+          }
+
+        , url: function() {
+            return joinPath($.contextPath, 'socialEngage/getPostDetails')
+          }
+        }
+      )
+
     , Post = Backbone.Model.extend(
         {
           initialize: function(data) {
@@ -120,6 +148,7 @@ var tmplLoader = _.extend({}, Backbone.Events)
   _.extend(engage.model, {
       'Asset': Asset
     , 'Assets': Assets
+    , 'Conversation': Conversation
     , 'Post': Post
     , 'Posts': Posts
     }

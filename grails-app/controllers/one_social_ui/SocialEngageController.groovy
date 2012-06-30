@@ -13,7 +13,7 @@ class SocialEngageController {
 
         render '''{
   "data": {
-    "username": "Brandtology",
+    "userName": "Brandtology",
     "permalink": "http://www.facebook.com/permalink.php?story_fbid=10150862533251701&id=104681096700",
     "profileURL": "http://www.facebook.com/104681096700",
     "imageURL": "http://photos-d.ak.fbcdn.net/hphotos-ak-ash3/533419_10150862533191701_1214425481_s.jpg",

@@ -23,7 +23,12 @@
             var tab = $(this)
               , name = tab.attr('href').split('#')[1]
               , loaded = function(el, placeholder) {
-                  _t.childs[name] = new CaseApp[capitalize(toCamelCase(name))]({ el: el })
+                  _t.childs[name] = new CaseApp[capitalize(toCamelCase(name))](
+                    {
+                      caseApp: _t
+                    , el: el
+                    }
+                  )
                 }
 
             tmplLoader.one('load:' + name, loaded)
@@ -51,7 +56,21 @@
 
   CaseApp.CaseConversation = Backbone.View.extend({
         initialize: function(options) {
-          engage.repeat(this.$('.comments ul'))
+          var id = options.caseApp.$el.attr('post-id')
+            , el = this.$('.conversation-inner')
+            , conversation = new engage.model.Conversation({ id : id })
+
+          this.tmpl = el[0].outerHTML
+          el.replaceWith('<div class="conversation-inner"></div>')
+          this.model = conversation
+          conversation.on('change', this.render, this)
+          conversation.fetch()
+        }
+
+      , render: function(model, data) {
+          this.$('.conversation-inner').replaceWith(
+              Mustache.render(this.tmpl, model.toJSON())
+            )
         }
       }
     )
@@ -79,7 +98,6 @@
 
           this.$el.replaceWith(el)
           this.setElement(el)
-          console.log(this.$('img'))
           this.$('img').lazyload({ effect: "fadeIn" })
         }
       }

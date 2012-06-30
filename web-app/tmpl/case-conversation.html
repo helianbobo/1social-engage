@@ -8,35 +8,37 @@
     <div class="conversation-inner">
       <div class="post">
         <div class="user-pic">
-          <img src="http://placehold.it/50x50/ccc" width="50" height="50" alt="">
+          <img data-original="{{userPic}}" width="50" height="50" alt="{{userName}}">
         </div>
         <div class="content">
-          <span class="user-name">Singtel</span>
-          The HTC One X allows for lightning-fast web browsing, remarkable picture quality and seamless gaming visual with its power0ful quad-cor1e0p2r2ocessor. Receive a free Energizer portable 20 June 2012 charger worth $69.90 and enjoy additional $30 off when you purchase online between 9pm and Mark as Read 9am daily. For details and price plans: <a href="#">http://bit.ly/KMQFTj</a>
+          <span class="user-name">{{userName}}</span>
+          {{{content}}}
         </div>
         <div class="meta">
-          <span class="count"><i class="icon-like"></i> 20</span>
-          <span class="count"><i class="icon-comment"></i> 10</span>
-          <span class="count"><i class="icon-share"></i> 799</span>
-          <span class="date">13:14:15 21 Jun 2012</span>
+          <span class="count"><i class="icon-like"></i> {{likesCount}}</span>
+          <span class="count"><i class="icon-comment"></i> {{commentCount}}</span>
+          <!--<span class="count"><i class="icon-share"></i> 799</span>-->
+          <span class="date">{{time}} {{date}}</span>
         </div>
       </div>
       
       <div class="comments">
         <ul>
+          {{#comment}}
           <li class="comment">
             <div class="content">
-              <span class="user-name">Thoypen</span>
-              with new engagement and asset management modules to provide brands with a holistic view of their social media activities
+              <span class="user-name">{{userName}}</span>
+              {{{content}}}
             </div>
             <div class="user-pic">
-              <img src="http://placehold.it/50x50/ccc" width="50" height="50" alt="">
+              <img data-original="{{userPic}}" width="50" height="50" alt="{{userName}}">
             </div>
             <div class="meta">
-              <span class="count"><i class="icon-like"></i> 20</span>
-              <span class="date">13:14:15 21 Jun 2012</span>
+              <span class="count"><i class="icon-like"></i> {{likesCount}}</span>
+              <span class="date">{{time}} {{date}}</span>
             </div>
           </li>
+          {{/comment}}
         </ul>
       </div>
     </div>
