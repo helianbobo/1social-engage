@@ -2,61 +2,65 @@
 
 // Models
 // -----
-engage.CaseApp = Backbone.View.extend({
-      initialize: function(options) {
-        var _t = this
-          , details = this.$('.case-details')
+;(function() {
 
-        this.childs = {}
+  var CaseApp = engage.CaseApp = Backbone.View.extend(
+      {
+        initialize: function(options) {
+          var _t = this
+            , details = this.$('.case-details')
 
-        details.find('.nav-tabs a').one('show', function() {
-          var tab = $(this)
-            , loaded = function(className, el) {
-                var name = el.parent().attr('name')
+          this.childs = {}
 
-                _t.childs[name] = new engage[capitalize(toCamelCase(name))]({ el: el })
-              }
+          details.find('.nav-tabs a').one('show', function() {
+            var tab = $(this)
+              , loaded = function(className, el) {
+                  var name = tab.attr('href').split('#')[1]
 
-          tmplLoader.one('templateLoaded', loaded)
-          tmplLoader.load(_t.findPane(tab.attr('href')), function() { return true })
-        })
+                  _t.childs[name] = new CaseApp[capitalize(toCamelCase(name))]({ el: el })
+                }
 
-        // load the content of first tab
-        details.find('.nav-tabs a:first').click();
+            tmplLoader.one('templateLoaded', loaded)
+            tmplLoader.load(_t.findPane(tab.attr('href')), function() { return true })
+          })
+
+          // load the content of first tab
+          details.find('.nav-tabs a:first').click();
+        }
+      , destroy: function() {
+          _.each(this.childs, function(it) { it.destroy() })
+          
+          this.$el.remove()
+          this.reset()
+        }
+      , findPane: function(id) {
+          var el = $(id)
+
+          if (el.length > 0) return el
+
+          return this.$('.case-details [name=' + id.split('#')[1] + ']:first')
+        }
       }
-    , destroy: function() {
-        _.each(this.childs, function(it) { it.destroy() })
-        
-        this.$el.remove()
-        this.reset()
+    )
+
+  CaseApp.CaseConversation = Backbone.View.extend({
+        initialize: function(options) {
+          engage.repeat(this.$('.comments ul'))
+        }
       }
-    , findPane: function(id) {
-        var el = $(id)
+    )
 
-        if (el.length > 0) return el
-
-        return this.$('.case-details [name=' + id.split('#')[1] + ']:first')
+  CaseApp.CaseHistory = Backbone.View.extend({
+        initialize: function(options) {
+          engage.repeat(this.$('ul'), 50)
+        }
       }
-    }
-  )
+    )
 
-engage.CaseConversation = Backbone.View.extend({
-      initialize: function(options) {
-        engage.repeat(this.$('.comments ul'))
+  CaseApp.CaseSocialProfile = Backbone.View.extend({
+        initialize: function(options) {
+
+        }
       }
-    }
-  )
-
-engage.CaseHistory = Backbone.View.extend({
-      initialize: function(options) {
-        engage.repeat(this.$('ul'), 50)
-      }
-    }
-  )
-
-engage.CaseSocialProfile = Backbone.View.extend({
-      initialize: function(options) {
-
-      }
-    }
-  )
+    )
+})()
