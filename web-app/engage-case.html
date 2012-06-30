@@ -26,7 +26,27 @@
     <script src="js/engage.js"></script>
     <script src="js/engage/case.js"></script>
     <script>
-      tmplLoader.one('templateLoaded', function(tmpl, el) {
+      var posts = engage.posts = new engage.model.Posts()
+        , data = {
+            "content": "??ÊŠì€î€YOUTUBEÊ×Óðü£?ìÑ??£¿öáUPLOAD?£¡£¡Ê§Ê§£¡£¡???£¡:)",
+            "voiceName": "Diane Timothea Ng",
+            "datetimePosted": "2012-06-28T09:33:38Z",
+            "fbId": "98685085344_10150940547215345",
+            "voicePic": "https://graph.facebook.com/100001293120297/picture",
+            "commentCount": 0,
+            "likeCount": 0,
+            "voiceId": "100001293120297",
+            "caseCreated": false,
+            "readStatus": "unread",
+            "comment": [],
+            "assetsPic": "https://graph.facebook.com/98685085344/picture",
+            "assetsId": "98685085344"
+          }
+
+      posts.add(new engage.model.Post(data))
+      
+      tmplLoader.one('load:case', function(el) {
+          el.attr('post-id', '98685085344_10150940547215345')
           new engage.CaseApp({ el: el })
         }
       )

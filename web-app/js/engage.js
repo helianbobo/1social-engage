@@ -77,6 +77,7 @@ var tmplLoader = _.extend({}, Backbone.Events)
     , Posts = Backbone.Collection.extend(
         {
           initialize: function(models, options) {
+            options = options || {}
             this.params = new Parameters(_.pick(options, 'order', 'sort', 'type'))
             this.pagination = new Pagination(_.pick(options, 'offset', 'pageSize'))
           }
@@ -137,16 +138,16 @@ var tmplLoader = _.extend({}, Backbone.Events)
         var newEl = $(data)
 
         el.replaceWith(newEl)
-        if ($.isFunction(callback)) callback(el, newEl)
+        if ($.isFunction(callback)) callback(newEl, el)
       }
     })
   }
 
   function loadTemplates(el, filter) {
     filter = filter || DEFAULT_TEMPLATE_FILTER
-    var callback = function(placeholder, el) {
+    var callback = function(el, placeholder) {
           loadTemplates(el, filter)
-          tmplLoader.trigger('templateLoaded', placeholder.attr('tmpl'), el)
+          tmplLoader.trigger('load:' + placeholder.attr('tmpl'), el, placeholder)
         }
       , load = function(i, it) {
           var el = $(it)

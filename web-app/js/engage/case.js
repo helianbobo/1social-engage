@@ -10,17 +10,23 @@
           var _t = this
             , details = this.$('.case-details')
 
-          this.childs = {}
+          this.childs = {
+            'post-info': new CaseApp.PostInfo(
+              {
+                el: this.$('.post-info')
+              , caseApp: this
+              }
+            )
+          }
 
           details.find('.nav-tabs a').one('show', function() {
             var tab = $(this)
-              , loaded = function(className, el) {
-                  var name = tab.attr('href').split('#')[1]
-
+              , name = tab.attr('href').split('#')[1]
+              , loaded = function(el, placeholder) {
                   _t.childs[name] = new CaseApp[capitalize(toCamelCase(name))]({ el: el })
                 }
 
-            tmplLoader.one('templateLoaded', loaded)
+            tmplLoader.one('load:' + name, loaded)
             tmplLoader.load(_t.findPane(tab.attr('href')), function() { return true })
           })
 
@@ -53,6 +59,28 @@
   CaseApp.CaseHistory = Backbone.View.extend({
         initialize: function(options) {
           engage.repeat(this.$('ul'), 50)
+        }
+      }
+    )
+
+  CaseApp.PostInfo = Backbone.View.extend(
+      {
+        initialize: function(options) {
+          var id = options.caseApp.$el.attr('post-id')
+            , post = engage.posts.get(id)
+
+          this.model = post
+          this.render()
+        }
+
+      , render: function() {
+          var tmpl = this.el.outerHTML
+            , el = $(Mustache.render(tmpl, this.model.toJSON()))
+
+          this.$el.replaceWith(el)
+          this.setElement(el)
+          console.log(this.$('img'))
+          this.$('img').lazyload({ effect: "fadeIn" })
         }
       }
     )

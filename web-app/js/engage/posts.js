@@ -27,7 +27,7 @@ $(document.body).ready(function() {
               el.one('show', function() { tmplLoader.load(el) })
             }
             
-            el.attr('post-id', this.model.get('id'))
+            el.find('.app-case').attr('post-id', this.model.get('id'))
             el.modal()
           }
 
@@ -263,30 +263,29 @@ $(document.body).ready(function() {
 
     , templateListeners = {
       /**
-       * If the listener return false, it will be off
+       * Name ends with :one, will be trigger only once
        */
-        'case': function(tmplName, el) {
+        'case': function(el, placeholder) {
+          el.attr('post-id', placeholder.attr('post-id'))
+          
           var obj = new engage.CaseApp({el: el})
+
           el.parents('.modal').on('remove', function() {
             obj.destroy()
             obj = null
           })
         }
-      , 'posts': function(tmplName, el) {
+      , 'posts:one': function(el, placeholder) {
           new PostList(
             {
               collection: posts
             , el: el.find('.post-list')
             }
           )
-          return false
         }
-      , 'posts-toolbar': function(tmplName, el) {
+      , 'posts-toolbar:one': function(el, placeholder) {
           updateListHeight()
-
           new Toolbar({ collection: posts, el: el })
-
-          return false
         }
 
       }
@@ -318,14 +317,9 @@ $(document.body).ready(function() {
   // -----
 
   _.each(templateListeners, function(callback, tmplName) {
-        var fn = function(tmpl) {
-              if (tmpl !== tmplName) return;
+        var arr = tmplName.split(':')
 
-              if (callback.apply(this, arguments) === false) {
-                tmplLoader.off('templateLoaded', fn)
-              }
-            }
-        tmplLoader.on('templateLoaded', fn)
+        tmplLoader[arr[1] || 'on']('load:' + arr[0], callback)
       }
     )
 
