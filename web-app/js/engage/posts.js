@@ -267,7 +267,7 @@ $(document.body).ready(function() {
        */
         'case': function(el, placeholder) {
           el.attr('post-id', placeholder.attr('post-id'))
-          
+
           var obj = new engage.CaseApp({el: el})
 
           el.parents('.modal').on('remove', function() {
@@ -316,8 +316,9 @@ $(document.body).ready(function() {
   // Event listeners
   // -----
 
-  _.each(templateListeners, function(callback, tmplName) {
-        var arr = tmplName.split(':')
+  _.each(templateListeners, function(callback, key) {
+        // key = 'tmplName[:one]'
+        var arr = key.split(':') 
 
         tmplLoader[arr[1] || 'on']('load:' + arr[0], callback)
       }
