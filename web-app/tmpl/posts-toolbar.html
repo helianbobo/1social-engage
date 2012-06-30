@@ -11,46 +11,46 @@
     <span>Filter by: </span>
 
     <ul class="nav">
-      <li class="dropdown">
+      <li class="dropdown" data-name="postType">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           Post Type <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
-          <li><a href="#">All Posts</a></li>
-          <li><a href="#">Articles</a></li>
-          <li><a href="#">Comments</a></li>
+          <li class="active"><a href="#">All Posts</a></li>
+          <li><a href="#article">Articles</a></li>
+          <li><a href="#comment">Comments</a></li>
         </ul>
       </li>
 
-      <li class="dropdown">
+      <li class="dropdown" data-name="assetsId">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           Assets <b class="caret"></b>
         </a>
         <ul class="dropdown-menu assets">
-          <li><a href="#">All Assets</a></li>
-          <li><a href="#" aid="{{id}}">{{name}}</a></li>
+          <li class="active"><a href="#">All Assets</a></li>
+          <li><a href="#{{id}}" aid="{{id}}">{{name}}</a></li>
         </ul>
       </li>
 
-      <li class="dropdown">
+      <li class="dropdown" data-name="readStatus">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           Read <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
-          <li><a href="#">Everything</a></li>
-          <li><a href="#">Read Only</a></li>
-          <li><a href="#">Unread Only</a></li>
+          <li class="active"><a href="#">Everything</a></li>
+          <li><a href="#read">Read Only</a></li>
+          <li><a href="#unread">Unread Only</a></li>
         </ul>
       </li>
 
-      <li class="dropdown">
+      <li class="dropdown" data-name="caseCreated">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           Case <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
-          <li><a href="#">Everything</a></li>
-          <li><a href="#">Case Made</a></li>
-          <li><a href="#">No Case Made</a></li>
+          <li class="active"><a href="#">Everything</a></li>
+          <li><a href="#true">Case Made</a></li>
+          <li><a href="#false">No Case Made</a></li>
         </ul>
       </li>
     </ul>

@@ -161,12 +161,31 @@ $(document.body).ready(function() {
         })
       }
 
+    , events: {
+        'click .dropdown-menu a': 'updateFilter'
+      }
+
     , renderAssets: function(collection, data) {
         var li = this.$asset
           , ul = this.$('.assets')
         collection.each(function(model) {
           ul.append(Mustache.render(li, model.toJSON()))
         })
+      }
+
+    , updateFilter: function(evt) {
+        var btn = $(evt.currentTarget)
+          , menu = btn.closest('.dropdown')
+          , key = menu.attr('data-name')
+          , value = btn.attr('href').split('#')[1]
+
+        if (btn.parent().hasClass('active')) return;
+        if (value) { this.collection.params.set(key, value) }
+        else { this.collection.params.unset(key) }
+        this.collection.fetch()
+
+        btn.closest('ul').find('li').removeClass('active')
+        btn.parent().addClass('active')
       }
     }
   )
