@@ -24,38 +24,61 @@
         <div class="tab-content">
           <div class="tab-pane active" id="new-case">
             <div class="case-form">
-              <div class="field">
-                <input type="text" placeholder="Case Name" />
-              </div>
-
-              <div class="field">
-                <label for="">Set Priority</label>
-                <ul class="prioritys">
-                  <li class="active"><a href="javascript:;">1</a></li>
-                  <li class="active"><a href="javascript:;">2</a></li>
-                  <li class="active"><a href="javascript:;">3</a></li>
-                  <li><a href="javascript:;">4</a></li>
-                  <li><a href="javascript:;">5</a></li>
-                </ul>
-              </div>
-
-              <div class="field">
-                <button class="create-response">Write A New Response</button>
-                <div class="reponse-wrap hide">
-                  <textarea name="response" rows="3" class="response" placeholder="Write A New Response"></textarea>
-                  <span class="help-inline">140 Characters Left</span>
+              <div class="form-horizontal">
+                <div class="control-group">
+                  <label for="" class="control-label">Case Name</label>
+                  <div class="controls">
+                    <input type="text" placeholder="Case Name" />
+                  </div>
+                </div>
+              
+                <div class="control-group">
+                  <label class="control-label" for="">Set Priority</label>
+                  <div class="controls">
+                    <ul class="prioritys">
+                      <li class="active"><a href="javascript:;">1</a></li>
+                      <li class="active"><a href="javascript:;">2</a></li>
+                      <li class="active"><a href="javascript:;">3</a></li>
+                      <li><a href="javascript:;">4</a></li>
+                      <li><a href="javascript:;">5</a></li>
+                    </ul>
+                  </div>
+                </div>
+              
+                <div class="control-group">
+                  <label for="" class="control-label">Case Status</label>
+                  <div class="controls">
+                    <span class="status">Open</span>
+                  </div>
+                </div>
+              
+                
+                            
+                <div class="control-actions">
+                  <button class="btn">Add Response</button>
+                  <button class="btn">Add Memo</button>
+                  <button class="btn">Create Case</button>
                 </div>
               </div>
-
-              <div class="field">
-                <textarea name="memo" id="" rows="3" class="memo" placeholder="Add Memo"></textarea>
-              </div>
-
-              <div class="form-actions">
-                <button>Cancel</button>
-                <button>Create Case</button>
-              </div>
             </div>
+          </div>
+        </div>
+
+        <form class="reponse-wrap hide">
+          <span>Add Response</span>
+          <textarea name="response" rows="3" class="response" placeholder="Write A New Response"></textarea>
+          <div class="form-actions">
+            <span class="tips">140 Characters Left</span>
+            <button class="btn" type="reset">Reset</button>
+          </div>
+        </form>
+
+        <div class="memo-wrap hide">
+          <span>Add Memo</span>
+          <textarea name="memo" id="" rows="3" class="memo" placeholder="Add Memo"></textarea>
+          <div class="form-actions">
+            <button class="btn">Cancel</button>
+            <button class="btn">Save</button>
           </div>
         </div>
       </div>

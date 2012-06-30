@@ -6,11 +6,19 @@
 
 .app-case {
   background-color: @bodyBackground;
+  font-size: 12px;
+  button,
+  input,
+  label,
+  select,
+  textarea {
+    font-size: 12px;
+  }
   .form-actions {
     background-color: transparent;
     border: 0;
     margin: 0;
-    padding: 5px 0;
+    padding: 2px 0;
     text-align: right;
     button {
       padding-left: 20px;
@@ -20,15 +28,24 @@
 }
 
 .app-case-modal {
-  background-color: transparent;
-  border: 4px solid transparent;
-  .box-shadow(0 0px 18px rgba(0,0,0,0.4));
-  margin-left: -490px;
-  margin-top: -275px;
-  width: 980px;
+  // background-color: transparent;
+  // border: 4px solid transparent;
+  // .box-shadow(0 0px 18px rgba(0,0,0,0.4));
+  background: url(../images/lightbox-bg.png) no-repeat;
+  border: 0;
+  .box-shadow(0 0 0 rgba(0,0,0,0.4));
+  margin-left: -465px;
+  margin-top: -245px;
+  width: 930px;
+  .container {
+    width: 890px;
+  }
+  .span6 {
+    width: 432px;
+  }
   .modal-body {
-    max-height: 550px;
-    padding: 20px 0;
+    max-height: 450px;
+    padding: 20px;
   }
   .modal-header {
     padding: 0;
@@ -41,8 +58,14 @@
     }
   }
   .modal-inner {
-    background-color: @bodyBackground;
-    .border-radius(6px);
+    //background-color: @bodyBackground;
+    //.border-radius(6px);
+  }
+  .form-horizontal .control-label {
+    width: 110px;
+  }
+  .form-horizontal .controls {
+    margin-left: 130px;
   }
 }
 
@@ -64,6 +87,7 @@
     font-size: 11px;
     margin: 0 6px 0 120px;
     padding: 8px 0;
+    .text-overflow();
   }
   .user {
     margin-left: 120px;
@@ -80,15 +104,44 @@
 .case-tabs {
   margin-bottom: 0;
 }
+.case-tabs > li > a {
+  padding-top: 4px;
+  padding-bottom: 4px; 
+}
 .case-tabs > .active > a,
 .case-tabs > .active > a:hover {
   background-color: @caseBoxBackground;
 }
 
+.case-wrap {
+  .reponse-wrap,
+  .memo-wrap {
+    background-color: @caseBoxBackground;
+    margin-top: 6px;
+    padding: @panelPadding;
+    textarea {
+      .box-sizing(border-box);
+      width: 100%;
+    }
+    .btn {
+      padding-bottom: 4px;
+      padding-top: 4px;
+    }
+  }
+  .reponse-wrap .tips {
+    float: left;
+  }
+  .tab-pane {
+    background-color: @caseBoxBackground;
+  }
+}
 .case-form {
   @boxWidth: (@gridColumnWidth + @gridGutterWidth) * 6 - @gridGutterWidth;
-  background-color: @caseBoxBackground;
+  border-right: 1px solid #bbb;
+  .box-shadow(1px 0 0 rgba(255, 255, 255, 0.6));
+  margin-right: 120px;
   padding: @panelPadding;
+  position: relative;
   input,
   textarea,
   .create-response {
@@ -104,12 +157,38 @@
   .field {
     padding: 4px 0 6px;
   }
+  .control-actions {
+    .absolute-top-left(@panelPadding, 100%);
+    padding-left: 8px;
+    text-align: left;
+    width: 110px;
+    .btn {
+      padding: 4px 0;
+      margin: 2px 0;
+      width: 105px;
+    }
+  }
+  .form-horizontal {
+    .control-label {
+      width: 80px;
+    }
+    .control-group {
+      margin-bottom: 9px;
+    }
+    .controls {
+      margin-left: 100px;
+    }
+  }
+  .status {
+    display: inline-block;
+    padding-top: 5px;
+  }
 }
 
 .prioritys {
   display: inline-block;
   margin: 0;
-  padding: 0 0 0 12px;
+  padding: 0;
 }
 .prioritys > li {
   display: inline-block;
@@ -145,7 +224,8 @@
 }
 .case-details > .tab-content > .tab-pane {
   background-color: @caseBoxBackground;
-  min-height: 480px;
+  height: 410px;
+  overflow: hidden;
 }
 
 .conversation-wrap {
@@ -198,7 +278,6 @@
   }
 
   .comments {
-    height: 250px;
     padding: 0 6px 0 80px;
     overflow: auto;
     ul {
@@ -238,10 +317,15 @@
     padding-right: 6px;
   }
 }
+.conversation-inner {
+  overflow: auto;
+  height: 355px;
+}
 
 .case-history {
   font-size: 11px;
-  max-height: 405px;
+  height: 360px;
+  margin: 0;
   overflow: auto;
   padding: @panelPadding 0 @panelPadding @panelPadding;
   li {
@@ -271,7 +355,7 @@
     width: 100%;
   }
   .basic-contact {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   .control-group {
     margin-bottom: 9px;
@@ -280,13 +364,17 @@
     margin-bottom: 0;
     margin-top: 4px;
     padding-left: 6px;
+    a {
+      padding-bottom: 4px;
+      padding-top: 4px;
+    }
   }
   .tab-content {
     overflow: visible;
   }
   .tab-pane {
     background-color: @white;
-    padding: @panelPadding;
+    padding: 10px;
     .border-bottom-left-radius(6px);
     .border-bottom-right-radius(6px);
     .box-shadow(0 1px 3px rgba(0,0,0,.3));
