@@ -51,10 +51,12 @@
     padding: 0;
     border: 0;
     .close {
-      .absolute-top-right(10px, 10px);
-      background: @white;
-      border: 2px solid #ccc;
-      .border-radius(12px);
+      .absolute-top-right(5px, 15px);
+      background: url(../images/icon-engage-posts.png) no-repeat 0 -65px;
+      border: 0;
+      display: inline-block;
+      .square(32px);
+      text-indent: -9999px;
     }
   }
   .modal-inner {
@@ -192,15 +194,15 @@
 }
 .prioritys > li {
   display: inline-block;
+  float: left;
   list-style: none;
 }
 .prioritys > li > a {
   background: url(../images/icon-flags.png) no-repeat -50px 0;
   display: inline-block;
-  height: 25px;
+  .square(25px);
   text-indent: -9999px;
   vertical-align: text-top;
-  width: 25px;
 }
 .prioritys > .active > a,
 .prioritys > li > a:hover {
@@ -265,12 +267,7 @@
     position: relative;
     .content,
     .meta {
-      margin-left: 80px;
-      margin-right: 6px;
-    }
-    .meta {      
-      margin-top: 6px;
-      margin-bottom: 6px;
+      margin: 6px 6px 6px 80px;
     }
     .user-pic {
       .absolute-top-left(6px, 15px);
