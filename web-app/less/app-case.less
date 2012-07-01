@@ -194,15 +194,15 @@
 }
 .prioritys > li {
   display: inline-block;
+  float: left;
   list-style: none;
 }
 .prioritys > li > a {
   background: url(../images/icon-flags.png) no-repeat -50px 0;
   display: inline-block;
-  height: 25px;
+  .square(25px);
   text-indent: -9999px;
   vertical-align: text-top;
-  width: 25px;
 }
 .prioritys > .active > a,
 .prioritys > li > a:hover {
@@ -267,12 +267,7 @@
     position: relative;
     .content,
     .meta {
-      margin-left: 80px;
-      margin-right: 6px;
-    }
-    .meta {      
-      margin-top: 6px;
-      margin-bottom: 6px;
+      margin: 6px 6px 6px 80px;
     }
     .user-pic {
       .absolute-top-left(6px, 15px);
