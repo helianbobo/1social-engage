@@ -74,17 +74,17 @@ var tmplLoader = _.extend({}, Backbone.Events)
           }
 
         , parse: function(response) {
-            var data = response.data
-              , datetime = data.datetimePost.split(/[TZ]/)
+            var data = response
+              , datetime = (data.datetimePost || '').split(/[TZ]/)
 
             data.date = datetime[0]
             data.time = datetime[1]
-            
+
             return data
           }
 
         , url: function() {
-            return joinPath($.contextPath, 'socialEngage/getPostDetails')
+            return joinPath($.contextPath, 'socialEngage/showConversation')
           }
         }
       )
