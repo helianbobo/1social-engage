@@ -82,7 +82,7 @@ modules = {
         resource url: 'js/engage.js'
     }
 
-    'engage-post' {
+    'engage-posts' {
         dependsOn 'engage'
         
         resource url: 'less/app-posts.less', attrs: [rel: "stylesheet/less", type: 'css']
@@ -98,5 +98,12 @@ modules = {
         resource url: 'js/engage/case.js'
     }
 
+    'engage-cases' {
+        dependsOn 'engage'
+
+        resource url: 'less/app-cases.less', attrs: [rel: "stylesheet/less", type: 'css']
+
+        resource url: 'js/engage/cases.js'
+    }
 
 }
