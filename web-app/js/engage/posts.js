@@ -186,7 +186,7 @@ $(document.body).ready(function() {
 
         btn.closest('ul').find('li').removeClass('active')
         btn.parent().addClass('active')
-        menu.find('.dropdown-toggle').html(btn.html() + ' <b class="caret"></b>')
+        menu.find('.dropdown-toggle-text').html(btn.html())
         evt.preventDefault()
       }
     }
