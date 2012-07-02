@@ -85,9 +85,21 @@
     {
       initialize: function(options) {
         var _t = this
+          , model = this.model = new engage.model.Case()
+          , post = options.parent.model
+
+        model.set(
+          {
+            'articleId': post.get('fbId')
+          , 'type': 'facebook'
+          }
+        )
+        if (post.get('comment').length > 0) {
+          model.set('commentId', post.get('comment')[0].fbId)
+        }
 
         function createChild(className, selector) {
-          return new CaseForm[className]({ el: _t.$(selector), parent: _t })
+          return new CaseForm[className]({ el: _t.$(selector), model: model, parent: _t })
         }
 
         this.childs = {
@@ -156,14 +168,20 @@
         {
           initialize: function(options) {
             //options.parent.model.get('caseCreated')
-            this.priority = 3
+            this.model.set('priority', 3)
           }
 
         , events: {
             'click .add-action': 'displayPanel'
+          , 'click .btn-create-case': 'createCase'
           , 'click .prioritys a': 'setPriority'
           , 'mouseenter .prioritys a': 'showPriority'
           , 'mouseleave .prioritys a': 'resetPriority'
+          }
+
+        , createCase: function() {
+            this.model.set('name', this.$('[name=case-name]').val())
+            this.model.save(null, { url : joinPath($.contextPath, 'socialEngage/createCase') })
           }
 
         , displayPanel: function(evt) {
@@ -183,7 +201,9 @@
           }
 
         , resetPriority: function(evt) {
-            this.updatePriority(this.$('.prioritys li:nth-child(' + this.priority + ')'))
+            this.updatePriority(
+              this.$('.prioritys li:nth-child(' + this.model.get('priority') + ')')
+            )
           }
 
         , setPriority: function(evt) {
@@ -191,7 +211,7 @@
 
             this.updatePriority(btn)
 
-            this.priority = btn.parent().find('.active').length
+            this.model.set('priority', btn.parent().find('.active').length)
           }
 
         , showPriority: function(evt) {

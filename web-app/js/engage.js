@@ -61,6 +61,20 @@ var tmplLoader = _.extend({}, Backbone.Events)
         }
       )
 
+    , Case = Backbone.Model.extend(
+        {
+          parse: function(response) {
+            response.data.id = response.data.caseId
+            return response.data
+          }
+
+        , url: function() {
+            // TODO: wait for Get Case API
+            // return joinPath($.contextPath, 'socialEngage/case/' + this.get('id'))
+          }
+        }
+      )
+
     , Conversation = Backbone.Model.extend(
         {
           collectParams: function() {
@@ -148,6 +162,7 @@ var tmplLoader = _.extend({}, Backbone.Events)
   _.extend(engage.model, {
       'Asset': Asset
     , 'Assets': Assets
+    , 'Case': Case
     , 'Conversation': Conversation
     , 'Post': Post
     , 'Posts': Posts
