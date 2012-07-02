@@ -167,8 +167,7 @@
     , CreateCase = Backbone.View.extend(
         {
           initialize: function(options) {
-            //options.parent.model.get('caseCreated')
-            this.model.set('priority', 3)
+            this.resetPriority()
           }
 
         , events: {
@@ -200,7 +199,7 @@
             })
           }
 
-        , resetPriority: function(evt) {
+        , resetPriority: function() {
             this.updatePriority(
               this.$('.prioritys li:nth-child(' + this.model.get('priority') + ')')
             )
