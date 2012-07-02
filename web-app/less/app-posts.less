@@ -39,10 +39,6 @@
 // Toolbar
 // ----------------------------------------------
 
-.toolbar {
-  .clearfix();
-  border-bottom: 1px solid #ddd;
-}
 .batch-actions {
   button {
     display: inline-block;
@@ -67,10 +63,6 @@
   a:hover {
     background-color: @bodyBackground;
     text-decoration: none;
-  }
-  span {
-    display: inline-block;
-    padding: 10px 4px;
   }
 }
 .filter-actions {
@@ -100,7 +92,7 @@
     display: inline-block;
     padding: 10px;
   }
-  span {
+  .text {
     padding: 10px 1px;
   }
   .disabled {
@@ -111,6 +103,9 @@
       color: @grayLighter;
     }
   }
+}
+.btn-sort {
+  padding: 8px 13px;
 }
 .sort-actions {
   a {

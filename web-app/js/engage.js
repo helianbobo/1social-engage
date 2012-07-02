@@ -39,6 +39,10 @@ var ElementQueue = Backbone.Model.extend(
 
 var tmplLoader = _.extend({}, Backbone.Events)
 
+function extractTemplate(el) {
+  return $('<div></div>').append(el).html()
+}
+
 ;(function() {
   // constants
   var DEFAULT_TEMPLATE_FILTER = function(el) { return el.attr('tmpl-load-timing') != 'manual' }
@@ -68,13 +72,39 @@ var tmplLoader = _.extend({}, Backbone.Events)
           }
 
         , parse: function(response) {
-            response.data.id = response.data.caseId
-            return response.data
+            if (response.data) {
+              response.data.id = response.data.caseId
+              return response.data
+            }
+            return response
           }
 
         , url: function() {
             // TODO: wait for Get Case API
             // return joinPath($.contextPath, 'socialEngage/case/' + this.get('id'))
+          }
+        }
+      )
+
+    , Cases = Backbone.Collection.extend(
+        {
+          defaultOptions: {
+            'sort': 'dateCreated'
+          , 'order': 'asc'
+          , 'max': 20
+          , 'offset': 0
+          , 'platform': 'everything'
+          , 'assetId': 'everything'
+          }
+
+        , model: Case
+
+        , parse: function(response) {
+            return response.data
+          }
+
+        , url: function() {
+            return joinPath($.contextPath, 'socialEngage/getAllCase')
           }
         }
       )
@@ -167,6 +197,7 @@ var tmplLoader = _.extend({}, Backbone.Events)
       'Asset': Asset
     , 'Assets': Assets
     , 'Case': Case
+    , 'Cases': Cases
     , 'Conversation': Conversation
     , 'Post': Post
     , 'Posts': Posts

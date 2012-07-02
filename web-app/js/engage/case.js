@@ -234,8 +234,4 @@
     , 'CreateCase': CreateCase
     }
   )
-
-  function extractTemplate(el) {
-    return $('<div></div>').append(el).html()
-  }
 })()

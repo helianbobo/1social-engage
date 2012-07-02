@@ -1,0 +1,98 @@
+@import "variables.less";
+@import "mixins.less";
+
+.app-cases {
+  background: @white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+// Toolbar
+// -----
+.toolbar {
+  margin-top: 40px;
+}
+.refresh-actions {
+  .btn-refresh {
+    line-height: 12px;
+    margin: 4px 6px;
+    padding: 2px 20px;
+  }
+}
+.dropdown-toggle-text {
+  max-width: 70px;
+  padding: 0;
+  .text-overflow();
+  vertical-align: top;
+}
+.sort-actions {
+  float: right;
+  margin-right: 120px;
+}
+
+// Case List
+// -----
+.case-list-wrap {
+  min-height: 600px;
+}
+.case-list {
+  margin: 0;
+  padding: 0;
+  li {
+    .clearfix();
+    list-style: none;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+  }
+  .actions {
+    .absolute-top-right(10px, 10px);
+  }
+  .content {
+    margin-left: (@gridColumnWidth + @gridGutterWidth) * 3 - @gridGutterWidth;
+    margin-right: (@gridColumnWidth + @gridGutterWidth) * 8 - @gridGutterWidth;
+    min-height: 80px;
+    padding: 10px 0;
+  }
+  .meta {
+    .absolute-top-right(10px, 120px);
+    div {
+      display: inline-block;
+    }
+    .datetime {
+      text-align: center;
+      width: 140px;
+    }
+  }
+  .pics {
+    .absolute-top-left(10px, 30px);
+    img {
+      margin: 0 8px 0 0;
+    }
+  }
+  .user-name {
+    font-weight: bold;
+    padding-right: 8px;
+  }
+}
+
+.prioritys {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.prioritys > li {
+  display: inline-block;
+  float: left;
+  list-style: none;
+}
+.prioritys > li > a {
+  background: url(../images/icon-flags.png) no-repeat -50px 0;
+  display: inline-block;
+  outline: none;
+  .square(25px);
+  text-indent: -9999px;
+  vertical-align: text-top;
+}
+.prioritys > .active > a,
+.prioritys > li > a:hover {
+  background-position: 0 0;
+}
