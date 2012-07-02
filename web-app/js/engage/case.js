@@ -83,9 +83,20 @@
   var CaseForm = CaseApp.CaseForm = Backbone.View.extend(
     {
       initialize: function(options) {
+        var _t = this
+
+        function createChild(className, selector) {
+          return new CaseForm[className]({ el: _t.$(selector), parent: _t })
+        }
+
+        this.childs = {
+          'add-response': createChild('AddResponse', '.reponse-wrap')
+        , 'add-memo': createChild('AddMemo', '.memo-wrap')
+        }
+        
         if (!options.parent.model.get('caseCreated')) {
           this.$('.edit-case').addClass('hide')
-          new CreateCase({ el: this.$('[name=create-case]'), parent: this })
+          this.childs['create-case'] = createChild('CreateCase', '[name=create-case]')
         }
       }
     }
@@ -122,7 +133,25 @@
     }
   )
 
-  var CreateCase = Backbone.View.extend(
+  var AddMemo = Backbone.View.extend(
+        {
+          display: function(visiable) {
+            if (visiable) this.$el.removeClass('hide')
+            else this.$el.addClass('hide')
+          }
+        }
+      )
+
+    , AddResponse = Backbone.View.extend(
+        {
+          display: function(visiable) {
+            if (visiable) this.$el.removeClass('hide')
+            else this.$el.addClass('hide')
+          }
+        }
+      )
+
+    , CreateCase = Backbone.View.extend(
         {
           initialize: function(options) {
             //options.parent.model.get('caseCreated')
@@ -130,9 +159,26 @@
           }
 
         , events: {
-            'click .prioritys a': 'setPriority'
+            'click .add-action': 'displayPanel'
+          , 'click .prioritys a': 'setPriority'
           , 'mouseenter .prioritys a': 'showPriority'
           , 'mouseleave .prioritys a': 'resetPriority'
+          }
+
+        , displayPanel: function(evt) {
+            var btn = $(evt.currentTarget)
+              , btns = this.$('.add-action')
+              , active = btn.hasClass('btn-active')
+              , childs = this.options.parent.childs
+
+            btns.removeClass('btn-active')
+            if (!active) btn.addClass('btn-active')
+
+            btns.each(function(i, it) {
+              var el = $(it)
+
+              childs[el.attr('data-panel')].display(el.hasClass('btn-active'))
+            })
           }
 
         , resetPriority: function(evt) {
@@ -160,10 +206,12 @@
           }
         }
       )
-
+  
   _.extend(CaseForm
   , {
-      'CreateCase': CreateCase
+      'AddMemo': AddMemo
+    , 'AddResponse': AddResponse
+    , 'CreateCase': CreateCase
     }
   )
 
