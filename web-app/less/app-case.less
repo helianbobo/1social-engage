@@ -72,11 +72,13 @@
 }
 
 .post-info {
+  @assetPicWidth: 50px;
+  @assetPicMargin: round(@assetPicWidth * 0.25);
   background-color: @caseBoxBackground;
   padding: 6px 0;
   position: relative;
   .asset-pic {
-    .absolute-top-left(-12px, 15px);
+    .absolute-top-left(round(-@assetPicWidth * 0.15), @assetPicMargin);
     img {
       border: 1px solid @grayLighter;
     }
@@ -87,12 +89,12 @@
   .content {
     border-top: 1px solid @grayLight;
     font-size: 11px;
-    margin: 0 6px 0 120px;
+    margin: 0 6px 0 @assetPicWidth + @assetPicMargin * 2;
     padding: 8px 0;
     .text-overflow();
   }
   .user {
-    margin-left: 120px;
+    margin-left: @assetPicWidth + @assetPicMargin * 2;
     padding-bottom: 12px;
   }
   .user-pic {
