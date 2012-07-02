@@ -201,6 +201,7 @@ $(document.body).ready(function() {
           
           _t.$('.offset').html(data.offset + 1)
           _t.$('.max').html(max)
+          _t.$('.total').html(data.total)
           _t.$('.prev,.next').removeClass('disabled')
           if (data.offset === 0) _t.$('.prev').addClass('disabled')
           if (max >= data.total) _t.$('.next').addClass('disabled')
