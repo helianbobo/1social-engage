@@ -186,6 +186,8 @@ $(document.body).ready(function() {
 
         btn.closest('ul').find('li').removeClass('active')
         btn.parent().addClass('active')
+        menu.find('.dropdown-toggle').html(btn.html() + ' <b class="caret"></b>')
+        evt.preventDefault()
       }
     }
   )
