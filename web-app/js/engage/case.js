@@ -76,6 +76,7 @@
         this.$('.conversation-inner').html(
             Mustache.render(this.tmpl, model.toJSON())
           )
+        this.$('img').lazyload({ effect: "fadeIn" })
       }
     }
   )
