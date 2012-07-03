@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
+    <meta name="layout" content="brandtology_engage">
     <r:require modules="engage-cases"/>
-    <r:layoutResources/>
 </head>
 
   <body>
@@ -126,8 +126,5 @@
         </div>
       </div>
     </div>
-    <g:render template="/share/session" 
-        model="[currentModule: 'socialEngage', currentSubModule: currentSubModule]" />
-    <r:layoutResources/>
   </body>
 </html>
