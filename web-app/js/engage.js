@@ -71,17 +71,16 @@ var tmplLoader = _.extend({}, Backbone.Events)
           }
 
         , parse: function(response) {
+            var data = response
+
             if (response.data) {
-              var data = response.data
+              data = response.data
 
               if (!data.id) data.id = data.caseId
-              
-              // TODO map status num to text
-              // data.statusText = statusMap[data.status]
-
-              return data
             }
-            return response
+
+            data.statusText = Case.statusMap[data.caseStatus]
+            return data
           }
 
         , url: function() {
@@ -90,7 +89,9 @@ var tmplLoader = _.extend({}, Backbone.Events)
         }
       , {
           statusMap: {
-            // TODO mapping data
+            '0': 'Closed'
+          , '1': 'Open'
+          , '2': 'Responsed'
           }
         }
       )
