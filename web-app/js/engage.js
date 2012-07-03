@@ -76,8 +76,7 @@ var tmplLoader = _.extend({}, Backbone.Events)
           }
 
         , url: function() {
-            // TODO: wait for Get Case API
-            // return joinPath($.contextPath, 'socialEngage/case/' + this.get('id'))
+            return joinPath($.contextPath, 'socialEngage/case/' + this.get('id'))
           }
         }
       )

@@ -8,6 +8,27 @@ class SocialEngageController {
 
     def index() {redirect(action: 'posts')}
 
+    def getCaseById(){
+        /*
+        caseId=9691340959298765
+         */
+
+
+        render '''{
+
+  "caseName": "hello",
+  "priority": 3,
+  "caseState": 1,
+  "assetPic": "http://graph.facebook.com/28011986676/picture",
+  "assetURL": "http://www.facebook.com/28011986676",
+  "assetType": "facebook",
+  "content": "Hi Denis, please provide us your details via the form below so that we can investigate on the network performance in both areas. Thanks - Caroline\\n\\nhttp://on.fb.me/ContactSingTel",
+  "voicePic": "https://graph.facebook.com/28011986676/picture",
+  "voiceName": "SingTel",
+  "voiceURL": "http://www.facebook.com/28011986676"
+}'''
+    }
+
 
     def getPostDetails() {
 

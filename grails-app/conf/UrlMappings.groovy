@@ -2,6 +2,8 @@ class UrlMappings {
 
     static mappings = {
 
+        "/socialEngage/case/$caseId"(controller: 'socialEngage', action: 'getCaseById')
+
 
         "/$controller/$action?/$id?" {
             constraints {
