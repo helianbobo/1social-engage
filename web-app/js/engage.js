@@ -52,7 +52,13 @@ var tmplLoader = _.extend({}, Backbone.Events)
           model: Asset
 
         , parse: function(response) {
-            return response.data[0].pageData
+            var result = [];
+            $(response.data).each(function(index, account){
+                $(account.pageData).each(function(index, page){
+                    result.push(page);
+                });
+            });
+            return result;
           }
 
         , url: function() {
