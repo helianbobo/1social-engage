@@ -63,8 +63,10 @@
   CaseApp.CaseConversation = Backbone.View.extend(
     {
       initialize: function(options) {
+        var comments = options.parent.model.get('comments');
+        var commentId = comments?comments[0].fbId:0;
         var id = options.parent.model.get('id')
-          , conversation = new engage.model.Conversation({ id : id })
+          , conversation = new engage.model.Conversation({ id:id, articleId : id, commentId:commentId })
 
         this.tmpl = this.extractTemplate(this.$('.conversation-inner').children())
         this.model = conversation

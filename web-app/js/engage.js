@@ -113,7 +113,7 @@ var tmplLoader = _.extend({}, Backbone.Events)
     , Conversation = Backbone.Model.extend(
         {
           collectParams: function() {
-            return { id: this.toJSON().id }
+            return { articleId: this.toJSON().articleId, commentId:this.toJSON().commentId }
           }
 
         , fetch: function(options) {
