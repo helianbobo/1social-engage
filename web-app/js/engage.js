@@ -72,14 +72,25 @@ var tmplLoader = _.extend({}, Backbone.Events)
 
         , parse: function(response) {
             if (response.data) {
-              response.data.id = response.data.caseId
-              return response.data
+              var data = response.data
+
+              if (!data.id) data.id = data.caseId
+              
+              // TODO map status num to text
+              // data.statusText = statusMap[data.status]
+
+              return data
             }
             return response
           }
 
         , url: function() {
             return joinPath($.contextPath, 'socialEngage/case/' + this.get('id'))
+          }
+        }
+      , {
+          statusMap: {
+            // TODO mapping data
           }
         }
       )
