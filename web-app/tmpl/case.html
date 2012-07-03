@@ -66,8 +66,8 @@
                 <div class="control-group">
                   <label class="control-label">Case Name</label>
                   <div class="controls">
-                    <span class="case-name text"></span>
-                    <input name="case-name" type="text" placeholder="Case Name" />
+                    <span class="case-name text" data-mode="read"></span>
+                    <input name="case-name" type="text" data-mode="edit" placeholder="Case Name" />
                   </div>
                 </div>
 
@@ -91,7 +91,7 @@
                   </div>
                 </div>
 
-                <div class="form-actions hide">
+                <div class="form-actions" data-mode="edit">
                   <button class="btn btn-cancel">Cancel</button>
                   <button class="btn btn-save">Save</button>
                 </div>

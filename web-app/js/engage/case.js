@@ -256,20 +256,20 @@
               editable = !btn.hasClass('btn-active')
             }
 
+            this.$('[data-mode]').each(function(i, it) {
+                var el = $(it)
+                  , mode = editable ? 'edit' : 'read'
+
+                el[el.attr('data-mode') === mode ? 'removeClass' : 'addClass']('hide')
+              }
+            )
+
             if (editable) {
               this.oldModel = this.model
               this.model = new engage.model.Case(this.model.toJSON())
-              this.$('.case-name').addClass('hide')
-              this.$('[name=case-name]').removeClass('hide')
-
-              this.$('.form-actions').removeClass('hide')
             } else {
               if (this.oldModel) this.model = this.oldModel
               delete this.oldModel
-              this.$('.case-name').removeClass('hide')
-              this.$('[name=case-name]').addClass('hide')
-
-              this.$('.form-actions').addClass('hide')
 
               this.render(this.model)
             }
