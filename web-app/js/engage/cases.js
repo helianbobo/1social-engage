@@ -13,7 +13,6 @@ $(document.body).ready(function() {
             var date = data.articleDateTimePost.split(/[TZ]/)
             data.datePosted = date[0]
             data.timePosted = date[1]
-            console.log(data)
             var date = data.dateCreated.split(/[TZ]/)
             data.dateCreated = date[0]
             data.timeCreated = date[1]
@@ -25,7 +24,7 @@ $(document.body).ready(function() {
   var CaseList = Backbone.View.extend(
     {
       initialize: function(options) {
-        this.$li = extractTemplate(this.$('li:first'))
+        this.$li = this.extractTemplate(this.$('li:first'))
         this.childs = []
 
         this.collection.on('sync', this.render, this)

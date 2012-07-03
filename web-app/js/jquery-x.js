@@ -44,11 +44,20 @@ if (Backbone) {
       _t.on(event, fn)
     }
 
-  Backbone.View.prototype.destroy =
-  Backbone.View.prototype.reset = function() {
-      delete this.$el
-      delete this.el
-      this.trigger('reset')
-      this.off()
-    }
+  var viewExt = {
+        extractTemplate: function(el) {
+          return $('<div></div>').append(el).html()
+        }
+
+      , reset: function() {
+          this.remove()
+          delete this.$el
+          delete this.el
+          this.trigger('reset')
+          this.off()
+        }
+      }
+
+  viewExt.destroy = viewExt.reset
+  _.extend(Backbone.View.prototype, viewExt)
 }

@@ -39,10 +39,6 @@ var ElementQueue = Backbone.Model.extend(
 
 var tmplLoader = _.extend({}, Backbone.Events)
 
-function extractTemplate(el) {
-  return $('<div></div>').append(el).html()
-}
-
 ;(function() {
   // constants
   var DEFAULT_TEMPLATE_FILTER = function(el) { return el.attr('tmpl-load-timing') != 'manual' }

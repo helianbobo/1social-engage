@@ -66,7 +66,7 @@
         var id = options.parent.model.get('id')
           , conversation = new engage.model.Conversation({ id : id })
 
-        this.tmpl = extractTemplate(this.$('.conversation-inner').children())
+        this.tmpl = this.extractTemplate(this.$('.conversation-inner').children())
         this.model = conversation
         conversation.on('change', this.render, this)
         conversation.fetch()
@@ -134,7 +134,7 @@
   CaseApp.PostInfo = Backbone.View.extend(
     {
       initialize: function(options) {
-        this.tmpl = extractTemplate(this.$el.children())
+        this.tmpl = this.extractTemplate(this.$el.children())
         this.model = options.parent.model
         this.render()
       }
