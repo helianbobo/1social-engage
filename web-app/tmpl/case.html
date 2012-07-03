@@ -17,15 +17,15 @@
 
       <div class="case-wrap">
         <ul class="nav nav-tabs case-tabs">
-          <li class="create-case active"><a href="#create-case" data-toggle="tab">Create New Case</a></li>
+          <li class="create-case"><a href="#create-case" data-toggle="tab">Create New Case</a></li>
           <li class="edit-case"><a href="#edit-case" data-toggle="tab">Case #</a></li>
         </ul>
         <div class="tab-content">
-          <div class="tab-pane active" name="create-case">
+          <div class="tab-pane" name="create-case">
             <div class="case-form">
               <div class="form-horizontal">
                 <div class="control-group">
-                  <label for="" class="control-label">Case Name</label>
+                  <label class="control-label">Case Name</label>
                   <div class="controls">
                     <input name="case-name" type="text" placeholder="Case Name" />
                   </div>
@@ -47,7 +47,7 @@
                 <div class="control-group">
                   <label for="" class="control-label">Case Status</label>
                   <div class="controls">
-                    <span class="status">Open</span>
+                    <span class="text">Open</span>
                   </div>
                 </div>
               
@@ -56,6 +56,53 @@
                   <button class="btn add-action" data-panel="add-memo">Add Memo</button>
                   <button class="btn btn-create-case">Create Case</button>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" name="edit-case">
+            <div class="case-form">
+              <div class="form-horizontal">
+                <div class="control-group">
+                  <label class="control-label">Case Name</label>
+                  <div class="controls">
+                    <span class="case-name text"></span>
+                    <input name="case-name" type="text" placeholder="Case Name" />
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="">Set Priority</label>
+                  <div class="controls">
+                    <ul class="prioritys">
+                      <li class="active"><a href="javascript:;">1</a></li>
+                      <li><a href="javascript:;">2</a></li>
+                      <li><a href="javascript:;">3</a></li>
+                      <li><a href="javascript:;">4</a></li>
+                      <li><a href="javascript:;">5</a></li>
+                    </ul>
+                  </div>
+                </div>
+              
+                <div class="control-group">
+                  <label for="" class="control-label">Case Status</label>
+                  <div class="controls">
+                    <span class="case-status text">-</span>
+                  </div>
+                </div>
+
+                <div class="form-actions hide">
+                  <button class="btn btn-cancel">Cancel</button>
+                  <button class="btn btn-save">Save</button>
+                </div>
+              
+                <div class="control-actions">
+                  <button class="btn btn-edit-case">Edit</button>
+                  <button class="btn add-action" data-panel="add-response">Add Response</button>
+                  <button class="btn add-action" data-panel="add-memo">Add Memo</button>
+                  <button class="btn btn-close-case">Close Case</button>
+                </div>
+
               </div>
             </div>
           </div>

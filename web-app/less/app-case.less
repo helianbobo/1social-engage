@@ -164,7 +164,7 @@
     padding: 4px 0 6px;
   }
   .control-actions {
-    .absolute-top-left(@panelPadding, 100%);
+    .absolute-top-left(@panelPadding / 2, 100%);
     padding-left: 8px;
     text-align: left;
     width: 110px;
@@ -172,6 +172,12 @@
       padding: 4px 0;
       margin: 2px 0;
       width: 105px;
+    }
+  }
+  .form-actions {
+    .btn {
+      padding-top: 4px;
+      padding-bottom: 4px;
     }
   }
   .form-horizontal {
@@ -185,9 +191,8 @@
       margin-left: 100px;
     }
   }
-  .status {
-    display: inline-block;
-    padding-top: 5px;
+  .text {
+    line-height: 28px;
   }
 }
 
@@ -209,8 +214,7 @@
   text-indent: -9999px;
   vertical-align: text-top;
 }
-.prioritys > .active > a,
-.prioritys > li > a:hover {
+.prioritys > .active > a {
   background-position: 0 0;
 }
 

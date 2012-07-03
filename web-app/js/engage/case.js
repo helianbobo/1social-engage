@@ -112,6 +112,12 @@
         if (!options.parent.model.get('caseCreated')) {
           this.$('.edit-case').addClass('hide')
           this.childs['create-case'] = createChild('CreateCase', '[name=create-case]')
+          this.$('.create-case a').click()
+        } else {
+          this.$('.create-case').addClass('hide')
+          model.set('id', post.get('caseId'))
+          this.childs['edit-case'] = createChild('EditCase', '[name=edit-case]')
+          this.$('.edit-case a').append('<span>' + model.get('id') + '</span>').click()
         }
       }
     }
@@ -202,7 +208,7 @@
           }
 
         , resetPriority: function() {
-            this.updatePriority(
+            updatePriority(
               this.$('.prioritys li:nth-child(' + this.model.get('priority') + ')')
             )
           }
@@ -210,7 +216,7 @@
         , setPriority: function(evt) {
             var btn = $(evt.currentTarget).parent()
 
-            this.updatePriority(btn)
+            updatePriority(btn)
 
             this.model.set('priority', btn.parent().find('.active').length)
           }
@@ -218,22 +224,108 @@
         , showPriority: function(evt) {
             var btn = $(evt.currentTarget).parent()
 
-            this.updatePriority(btn)
-          }
-
-        , updatePriority: function(li) {
-            li.prevAll().addClass('active')
-            li.addClass('active')
-            li.nextAll().removeClass('active')
+            updatePriority(btn)
           }
         }
       )
+
+    , EditCase = Backbone.View.extend(
+        {
+          initialize: function(options) {
+            this.changeMode('read')
+            this.model.on('sync', this.render, this)
+            this.model.fetch()
+          }
+
+        , events: {
+            'click .btn-edit-case': 'changeMode'
+          , 'click .btn-cancel': 'changeMode'
+          , 'click .prioritys a': 'setPriority'
+          , 'mouseenter .prioritys a': 'showPriority'
+          , 'mouseleave .prioritys a': 'resetPriority'
+          }
+
+        , changeMode: function(evt) {
+            var btn
+              , editable
+
+            if (typeof evt == 'string') {
+              editable = /edit/.test(evt)
+            } else {
+              btn = this.$('.btn-edit-case')
+              editable = !btn.hasClass('btn-active')
+            }
+
+            if (editable) {
+              this.oldModel = this.model
+              this.model = new engage.model.Case(this.model.toJSON())
+              this.$('.case-name').addClass('hide')
+              this.$('[name=case-name]').removeClass('hide')
+
+              this.$('.form-actions').removeClass('hide')
+            } else {
+              if (this.oldModel) this.model = this.oldModel
+              delete this.oldModel
+              this.$('.case-name').removeClass('hide')
+              this.$('[name=case-name]').addClass('hide')
+
+              this.$('.form-actions').addClass('hide')
+
+              this.render(this.model)
+            }
+            this.editable = editable
+            if (btn) btn.toggleClass('btn-active')
+          }
+
+        , render: function(model) {
+            this.$('.case-name').html(model.get('caseName'))
+            this.$('[name=case-name]').val(model.get('caseName'))
+
+            this.$('.case-status').html(model.get('statusText'))
+
+            this.resetPriority()
+          }
+
+        , resetPriority: function(evt) {
+            if (!this.editable && evt) return;
+
+            updatePriority(
+              this.$('.prioritys li:nth-child(' + this.model.get('priority') + ')')
+            )
+          }
+
+        , setPriority: function(evt) {
+            if (!this.editable) return;
+
+            var btn = $(evt.currentTarget).parent()
+
+            updatePriority(btn)
+
+            this.model.set('priority', btn.parent().find('.active').length)
+          }
+
+        , showPriority: function(evt) {
+            if (!this.editable) return;
+
+            var btn = $(evt.currentTarget).parent()
+
+            updatePriority(btn)
+          }
+        }
+      )
+  
+  function updatePriority(li) {
+    li.prevAll().addClass('active')
+    li.addClass('active')
+    li.nextAll().removeClass('active')
+  }
   
   _.extend(CaseForm
   , {
       'AddMemo': AddMemo
     , 'AddResponse': AddResponse
     , 'CreateCase': CreateCase
+    , 'EditCase': EditCase
     }
   )
 })()

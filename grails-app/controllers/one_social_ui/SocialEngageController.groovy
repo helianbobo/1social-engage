@@ -18,7 +18,7 @@ class SocialEngageController {
   "id": "9691340959298765",
   "caseName": "hello",
   "priority": 3,
-  "caseState": 1,
+  "caseStatus": 1,
   "assetPic": "http://graph.facebook.com/28011986676/picture",
   "assetURL": "http://www.facebook.com/28011986676",
   "assetType": "facebook",
