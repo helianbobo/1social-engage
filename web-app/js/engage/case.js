@@ -100,24 +100,43 @@
           model.set('commentId', post.get('comment')[0].fbId)
         }
 
-        function createChild(className, selector) {
-          return new CaseForm[className]({ el: _t.$(selector), model: model, parent: _t })
+        this.childs = {
+          'add-response': this.createChild('AddResponse', '.reponse-wrap')
+        , 'add-memo': this.createChild('AddMemo', '.memo-wrap')
         }
 
-        this.childs = {
-          'add-response': createChild('AddResponse', '.reponse-wrap')
-        , 'add-memo': createChild('AddMemo', '.memo-wrap')
-        }
+        model.on('change:caseStatus'
+        , function(model) {
+            this.switchMode(false)
+          }
+        , this
+        )
         
-        if (!options.parent.model.get('caseCreated')) {
+        this.switchMode(!options.parent.model.get('caseCreated'))
+      }
+
+    , createChild: function(className, selector) {
+        return new CaseForm[className](
+          {
+            el: this.$(selector)
+          , model: this.model
+          , parent: this
+          }
+        )
+      }
+
+    , switchMode: function(isNew) {
+        if (isNew) {
+          this.$('.create-case').removeClass('hide')
           this.$('.edit-case').addClass('hide')
-          this.childs['create-case'] = createChild('CreateCase', '[name=create-case]')
+          this.childs['create-case'] = this.createChild('CreateCase', '[name=create-case]')
           this.$('.create-case a').click()
         } else {
           this.$('.create-case').addClass('hide')
-          model.set('id', post.get('caseId'))
-          this.childs['edit-case'] = createChild('EditCase', '[name=edit-case]')
-          this.$('.edit-case a').append('<span>' + model.get('id') + '</span>').click()
+          this.$('.edit-case').removeClass('hide')
+          this.model.set('id', this.options.parent.model.get('caseId'))
+          this.childs['edit-case'] = this.createChild('EditCase', '[name=edit-case]')
+          this.$('.edit-case a').append('<span>' + this.model.get('id') + '</span>').click()
         }
       }
     }
@@ -188,7 +207,11 @@
 
         , createCase: function() {
             this.model.set('name', this.$('[name=case-name]').val())
-            this.model.save(null, { url : joinPath($.contextPath, 'socialEngage/createCase') })
+            this.model.save(null
+            , {
+                url: joinPath($.contextPath, 'socialEngage/createCase')
+              }
+            )
           }
 
         , displayPanel: function(evt) {
