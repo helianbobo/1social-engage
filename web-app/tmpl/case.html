@@ -111,20 +111,28 @@
         <form class="reponse-wrap hide">
           <span>Add Response</span>
           <textarea name="response" rows="3" class="response" placeholder="Write A New Response"></textarea>
-          <div class="form-actions">
-            <span class="tips">140 Characters Left</span>
+          <span class="tips">140 Characters Left</span>
+          <div class="form-actions" data-mode="create">
             <button class="btn" type="reset">Reset</button>
           </div>
-        </form>
-
-        <div class="memo-wrap hide">
-          <span>Add Memo</span>
-          <textarea name="memo" id="" rows="3" class="memo" placeholder="Add Memo"></textarea>
-          <div class="form-actions">
+          <div class="form-actions" data-mode="edit">
             <button class="btn btn-cancel">Cancel</button>
             <button class="btn btn-save">Save</button>
           </div>
-        </div>
+        </form>
+
+        <form class="memo-wrap hide">
+          <span>Add Memo</span>
+          <textarea name="memo" id="" rows="3" class="memo" placeholder="Add Memo"></textarea>
+          <div class="form-actions" data-mode="create">
+            <button class="btn" type="reset">Reset</button>
+          </div>
+          <div class="form-actions" data-mode="edit">
+            <button class="btn btn-cancel">Cancel</button>
+            <button class="btn btn-save">Save</button>
+          </div>
+        </form>
+
       </div>
     </div>
 

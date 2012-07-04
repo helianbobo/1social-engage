@@ -114,16 +114,17 @@
         model.one('change:id'
         , function(model) {
             _.each(['add-response', 'add-memo'], function(it) {
+                this.childs[it].switchMode('edit').save()
                 this.trigger('display:'+ it, false)
               }
             , this
             )
-            this.switchMode(false)
+            this.switchMode('edit')
           }
         , this
         )
         
-        this.switchMode(!options.parent.model.get('caseCreated'))
+        this.switchMode(options.parent.model.get('caseCreated') ? 'eidt' : 'create')
       }
 
     , createChild: function(className, selector) {
@@ -136,8 +137,8 @@
         )
       }
 
-    , switchMode: function(isNew) {
-        if (isNew) {
+    , switchMode: function(mode) {
+        if (mode === 'create') {
           this.$('.create-case').removeClass('hide')
           this.$('.edit-case').addClass('hide')
           this.childs['create-case'] = this.createChild('CreateCase', '[name=create-case]')
@@ -149,6 +150,7 @@
           this.childs['edit-case'] = this.createChild('EditCase', '[name=edit-case]')
           this.$('.edit-case a').append('<span>' + this.model.get('id') + '</span>').click()
         }
+        return this
       }
     }
   )
@@ -190,6 +192,7 @@
             options.parent.on('display:add-memo', this.display, this)
             this.refCase = this.model
             this.resetModel()
+            this.switchMode(this.model == null ? 'create' : 'edit')
           }
 
         , events: {
@@ -218,27 +221,39 @@
             )
           }
 
-        , save: function() {
+        , save: function(evt) {
             var input = this.$('[name=memo]')
             var val = $.trim(input.val())
 
-            if (!val) return;
-            if (!this.model) this.resetModel()
+            if (val) {
+              if (!this.model) this.resetModel()
 
-            var _t = this
+              var _t = this
 
-            this.model.save(
-              { 'memo': val }
-            , {
-                success: function(model, response) {
-                  if (response.response == 'ok') {
-                    input.val('')
-                    _t.resetModel()
-                    _t.cancel()
+              this.model.save(
+                { 'memo': val }
+              , {
+                  success: function(model, response) {
+                    if (response.response == 'ok') {
+                      input.val('')
+                      _t.resetModel()
+                      if (evt) showMsg('Memo saved', $(evt.currentTarget).parent())
+                    }
                   }
                 }
+              )
+            }
+            return evt ? false : this
+          }
+
+        , switchMode: function(mode) {
+            this.$('[data-mode]').each(function(i, it) {
+                var el = $(it)
+
+                el[el.attr('data-mode') === mode ? 'removeClass': 'addClass']('hide')
               }
             )
+            return this
           }
         }
       )
@@ -249,6 +264,16 @@
             options.parent.on('display:add-response', this.display, this)
             this.refCase = this.model
             this.resetModel()
+            this.switchMode(this.model == null ? 'create' : 'edit')
+          }
+
+        , events: {
+            'click .btn-cancel': 'cancel'
+          , 'click .btn-save': 'save'
+          }
+
+        , cancel: function() {
+            this.options.parent.trigger('display:add-response', false)
           }
 
         , display: function(visiable) {
@@ -266,6 +291,41 @@
               , type: 'facebook'
               }
             )
+          }
+
+        , save: function(evt) {
+            var input = this.$('[name=response]')
+            var val = $.trim(input.val())
+
+            if (val) {
+              if (!this.model) this.resetModel()
+
+              var _t = this
+
+              this.model.save(
+                { 'response': val }
+              , {
+                  success: function(model, response) {
+                    if (response.response == 'ok') {
+                      input.val('')
+                      _t.resetModel()
+                      if (evt) showMsg('Response saved', $(evt.currentTarget).parent())
+                    }
+                  }
+                }
+              )
+            }
+            return evt ? false : this
+          }
+
+        , switchMode: function(mode) {
+            this.$('[data-mode]').each(function(i, it) {
+                var el = $(it)
+
+                el[el.attr('data-mode') === mode ? 'removeClass': 'addClass']('hide')
+              }
+            )
+            return this
           }
         }
       )
@@ -307,10 +367,15 @@
 
         , displayPanel: function(evt) {
             var btn = $(evt.currentTarget)
+              , active = btn.hasClass('btn-active')
+              , parent = this.options.parent
 
-            return this.options.parent.trigger('display:' + btn.attr('data-panel')
-              , !btn.hasClass('btn-active')
-              )
+            btn.parent().find('.add-action').each(function(i, it) {
+              it = $(it)
+              parent.trigger('display:' + it.attr('data-panel')
+                , btn.attr('data-panel') == it.attr('data-panel') ? !active : false
+                )
+            })
           }
 
         , resetPriority: function() {
@@ -399,10 +464,15 @@
 
         , displayPanel: function(evt) {
             var btn = $(evt.currentTarget)
+              , active = btn.hasClass('btn-active')
+              , parent = this.options.parent
 
-            return this.options.parent.trigger('display:' + btn.attr('data-panel')
-              , !btn.hasClass('btn-active')
-              )
+            btn.parent().find('.add-action').each(function(i, it) {
+              it = $(it)
+              parent.trigger('display:' + it.attr('data-panel')
+                , btn.attr('data-panel') == it.attr('data-panel') ? !active : false
+                )
+            })
           }
 
         , render: function(model) {
@@ -451,6 +521,16 @@
     li.prevAll().addClass('active')
     li.addClass('active')
     li.nextAll().removeClass('active')
+  }
+
+  function showMsg(msg, parent) {
+    var el = $('<span>' + msg + '</span>')
+    parent.prepend(el)
+    setTimeout(function() {
+        el.fadeOut('slow', function() { el.remove() })
+      }
+    , 2500
+    )
   }
   
   _.extend(CaseForm
