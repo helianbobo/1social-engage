@@ -66,7 +66,13 @@
         var comments = options.parent.model.get('comments');
         var commentId = comments?comments[0].fbId:0;
         var id = options.parent.model.get('id')
-          , conversation = new engage.model.Conversation({ id:id, articleId : id, commentId:commentId })
+          , conversation = new engage.model.Conversation(
+              {
+                id: id
+              , articleId: id
+              , commentId:commentId
+              }
+            )
 
         this.tmpl = this.extractTemplate(this.$('.conversation-inner').children())
         this.model = conversation
@@ -107,6 +113,11 @@
 
         model.one('change:id'
         , function(model) {
+            _.each(['add-response', 'add-memo'], function(it) {
+                this.trigger('display:'+ it, false)
+              }
+            , this
+            )
             this.switchMode(false)
           }
         , this
@@ -175,18 +186,86 @@
 
   var AddMemo = Backbone.View.extend(
         {
-          display: function(visiable) {
+          initialize: function(options) {
+            options.parent.on('display:add-memo', this.display, this)
+            this.refCase = this.model
+            this.resetModel()
+          }
+
+        , events: {
+            'click .btn-cancel': 'cancel'
+          , 'click .btn-save': 'save'
+          }
+
+        , cancel: function() {
+            this.options.parent.trigger('display:add-memo', false)
+          }
+
+        , display: function(visiable) {
             if (visiable) this.$el.removeClass('hide')
             else this.$el.addClass('hide')
+          }
+
+        , resetModel: function() {
+            if (!this.refCase.get('id')) {
+              return this.model = null
+            }
+            this.model = new engage.model.Case.Memo(
+              {
+                caseId: this.refCase.get('id')
+              , type: 'facebook'
+              }
+            )
+          }
+
+        , save: function() {
+            var input = this.$('[name=memo]')
+            var val = $.trim(input.val())
+
+            if (!val) return;
+            if (!this.model) this.resetModel()
+
+            var _t = this
+
+            this.model.save(
+              { 'memo': val }
+            , {
+                success: function(model, response) {
+                  if (response.response == 'ok') {
+                    input.val('')
+                    _t.resetModel()
+                    _t.cancel()
+                  }
+                }
+              }
+            )
           }
         }
       )
 
     , AddResponse = Backbone.View.extend(
         {
-          display: function(visiable) {
+          initialize: function(options) {
+            options.parent.on('display:add-response', this.display, this)
+            this.refCase = this.model
+            this.resetModel()
+          }
+
+        , display: function(visiable) {
             if (visiable) this.$el.removeClass('hide')
             else this.$el.addClass('hide')
+          }
+
+        , resetModel: function() {
+            if (!this.refCase.get('id')) {
+              return this.model = null
+            }
+            this.model = new engage.model.Case.Response(
+              {
+                caseId: this.refCase.get('id')
+              , type: 'facebook'
+              }
+            )
           }
         }
       )
@@ -194,6 +273,18 @@
     , CreateCase = Backbone.View.extend(
         {
           initialize: function(options) {
+            var _t = this
+
+            _.each(['add-memo', 'add-response'], function(it) {
+                options.parent.on('display:' + it, function(visiable) {
+                    var method = visiable ? 'addClass' : 'removeClass'
+
+                    _t.$('[data-panel=' + it + ']')[method]('btn-active')
+                  } 
+                )
+              }
+            )
+            
             this.resetPriority()
           }
 
@@ -216,18 +307,10 @@
 
         , displayPanel: function(evt) {
             var btn = $(evt.currentTarget)
-              , btns = this.$('.add-action')
-              , active = btn.hasClass('btn-active')
-              , childs = this.options.parent.childs
 
-            btns.removeClass('btn-active')
-            if (!active) btn.addClass('btn-active')
-
-            btns.each(function(i, it) {
-              var el = $(it)
-
-              childs[el.attr('data-panel')].display(el.hasClass('btn-active'))
-            })
+            return this.options.parent.trigger('display:' + btn.attr('data-panel')
+              , !btn.hasClass('btn-active')
+              )
           }
 
         , resetPriority: function() {
@@ -255,13 +338,26 @@
     , EditCase = Backbone.View.extend(
         {
           initialize: function(options) {
+            var _t = this
+
+            _.each(['add-memo', 'add-response'], function(it) {
+                options.parent.on('display:' + it, function(visiable) {
+                    var method = visiable ? 'addClass' : 'removeClass'
+
+                    _t.$('[data-panel=' + it + ']')[method]('btn-active')
+                  } 
+                )
+              }
+            )
+
             this.changeMode('read')
             this.model.on('sync', this.render, this)
             this.model.fetch()
           }
 
         , events: {
-            'click .btn-edit-case': 'changeMode'
+            'click .add-action': 'displayPanel'
+          , 'click .btn-edit-case': 'changeMode'
           , 'click .btn-cancel': 'changeMode'
           , 'click .btn-save-case': 'save'
           , 'click .prioritys a': 'setPriority'
@@ -299,6 +395,14 @@
             }
             this.editable = editable
             if (btn) btn.toggleClass('btn-active')
+          }
+
+        , displayPanel: function(evt) {
+            var btn = $(evt.currentTarget)
+
+            return this.options.parent.trigger('display:' + btn.attr('data-panel')
+              , !btn.hasClass('btn-active')
+              )
           }
 
         , render: function(model) {
