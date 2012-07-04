@@ -34,15 +34,19 @@ function toCamelCase(str) {
 var Backbone
 
 if (Backbone) {
-  Backbone.Events.one = function(event, callback) {
-      var _t = this
-        , fn = function() {
-            if ($.isFunction(callback)) callback.apply(_t, arguments)
-            _t.off(event, fn)
-          }
+  var one = function(event, callback, context) {
+        var _t = this
+          , fn = function() {
+              _t.off(event, fn, context)
+              if ($.isFunction(callback)) callback.apply(this, arguments)
+            }
 
-      _t.on(event, fn)
-    }
+        _t.on(event, fn, context)
+      }
+
+  Backbone.Events.one = one
+  Backbone.Model.prototype.one = one
+  Backbone.Collection.prototype.one = one
 
   var viewExt = {
         extractTemplate: function(el) {
