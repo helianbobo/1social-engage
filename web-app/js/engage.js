@@ -94,6 +94,21 @@ var tmplLoader = _.extend({}, Backbone.Events)
           , '1': 'Open'
           , '2': 'Responsed'
           }
+
+        , Memo: Backbone.Model.extend(
+            {
+              url: function() {
+                return joinPath($.contextPath, 'socialEngage/addMemo')
+              }
+            }
+          )
+        , Response: Backbone.Model.extend(
+            {
+              url: function() {
+                return joinPath($.contextPath, 'socialEngage/responseCase')
+              }
+            }
+          )
         }
       )
 
