@@ -270,6 +270,8 @@
         , events: {
             'click .btn-cancel': 'cancel'
           , 'click .btn-save': 'save'
+          , 'keydown [name=response]': 'editing'
+          , 'keyup [name=response]': 'editing'
           }
 
         , cancel: function() {
@@ -279,6 +281,11 @@
         , display: function(visiable) {
             if (visiable) this.$el.removeClass('hide')
             else this.$el.addClass('hide')
+          }
+
+        , editing: function(evt) {
+            var el = $(evt.currentTarget)
+            this.$('.char-left').html(140 - el.val().length)
           }
 
         , resetModel: function() {
