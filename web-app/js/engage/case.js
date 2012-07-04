@@ -105,7 +105,7 @@
         , 'add-memo': this.createChild('AddMemo', '.memo-wrap')
         }
 
-        model.on('change:caseStatus'
+        model.one('change:id'
         , function(model) {
             this.switchMode(false)
           }
@@ -263,6 +263,7 @@
         , events: {
             'click .btn-edit-case': 'changeMode'
           , 'click .btn-cancel': 'changeMode'
+          , 'click .btn-save-case': 'save'
           , 'click .prioritys a': 'setPriority'
           , 'mouseenter .prioritys a': 'showPriority'
           , 'mouseleave .prioritys a': 'resetPriority'
@@ -315,6 +316,11 @@
             updatePriority(
               this.$('.prioritys li:nth-child(' + this.model.get('priority') + ')')
             )
+          }
+
+        , save: function() {
+            this.model.set('caseName', this.$('[name=case-name]').val())
+            this.model.save()
           }
 
         , setPriority: function(evt) {

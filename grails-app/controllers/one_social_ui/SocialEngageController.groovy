@@ -751,7 +751,6 @@ class SocialEngageController {
         render '''{
   "data": {
     "caseId":"9691340720753581"
-  , "caseStatus": 1
   }
 }'''
     }
