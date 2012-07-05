@@ -142,13 +142,17 @@
         if (mode === 'create') {
           this.$('.create-case').removeClass('hide')
           this.$('.edit-case').addClass('hide')
-          this.childs['create-case'] = this.createChild('CreateCase', '[name=create-case]')
+          if (!this.childs['create-case']) {
+            this.childs['create-case'] = this.createChild('CreateCase', '[name=create-case]')
+          }
           this.$('.create-case a').click()
         } else {
           this.$('.create-case').addClass('hide')
           this.$('.edit-case').removeClass('hide')
           this.model.set('id', this.options.parent.model.get('caseId'))
-          this.childs['edit-case'] = this.createChild('EditCase', '[name=edit-case]')
+          if (!this.childs['edit-case']) {
+            this.childs['edit-case'] = this.createChild('EditCase', '[name=edit-case]')
+          }
           this.$('.edit-case a').append('<span>' + this.model.get('id') + '</span>').click()
         }
         return this
