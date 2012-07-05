@@ -153,7 +153,7 @@
           if (!this.model.get('caseId')) {
             this.model.set('caseId', this.options.parent.model.get('caseId'))
           }
-          
+
           if (!this.childs['edit-case']) {
             this.childs['edit-case'] = this.createChild('EditCase', '[name=edit-case]')
           }
@@ -219,12 +219,12 @@
           }
 
         , resetModel: function() {
-            if (!this.refCase.get('id')) {
+            if (!this.refCase.id) {
               return this.model = null
             }
             this.model = new engage.model.Case.Memo(
               {
-                caseId: this.refCase.get('id')
+                caseId: this.refCase.id
               , type: 'facebook'
               }
             )
@@ -298,12 +298,12 @@
           }
 
         , resetModel: function() {
-            if (!this.refCase.get('id')) {
+            if (!this.refCase.id) {
               return this.model = null
             }
             this.model = new engage.model.Case.Response(
               {
-                caseId: this.refCase.get('id')
+                caseId: this.refCase.id
               , type: 'facebook'
               }
             )
