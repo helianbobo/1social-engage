@@ -113,7 +113,7 @@ var tmplLoader = _.extend({}, Backbone.Events)
           )
         }
       )
-
+    
     , Cases = Backbone.Collection.extend(
         {
           defaultOptions: {
@@ -133,6 +133,32 @@ var tmplLoader = _.extend({}, Backbone.Events)
 
         , url: function() {
             return joinPath($.contextPath, 'socialEngage/getAllCase')
+          }
+        }
+      )
+
+    , CaseRecord = Backbone.Model.extend({})
+
+    , CaseRecords = Backbone.Collection.extend(
+        {
+          model: CaseRecord
+
+        , parse: function(response) {
+            var attrs = ['datetime', 'userName', 'msg']
+            function toObject(keys, values) {
+              var obj = {}
+
+              _.each(keys, function(key, i) { obj[key] = values[i] })
+              return obj
+            }
+            return response.data.map(function(str) {
+                return toObject(attrs, str.split(/\s+\-\s+/, 3))
+              }
+            )
+          }
+
+        , url: function() {
+            return joinPath($.contextPath, 'socialEngage/getCaseHistory')
           }
         }
       )
@@ -226,6 +252,8 @@ var tmplLoader = _.extend({}, Backbone.Events)
     , 'Assets': Assets
     , 'Case': Case
     , 'Cases': Cases
+    , 'CaseRecord': CaseRecord
+    , 'CaseRecords': CaseRecords
     , 'Conversation': Conversation
     , 'Post': Post
     , 'Posts': Posts

@@ -329,14 +329,14 @@
 }
 
 .case-history {
-  font-size: 11px;
   height: 360px;
   margin: 0;
   overflow: auto;
-  padding: @panelPadding 0 @panelPadding @panelPadding;
+  padding: @panelPadding;
   li {
     list-style: none;
     padding: 4px 0;
+    .text-overflow();
   }
   .user-name {
     font-weight: bold;

@@ -120,6 +120,7 @@
               }
             , this
             )
+            post.set('caseId', model.get('caseId'))
             this.switchMode('edit')
           }
         , this
@@ -167,7 +168,33 @@
   CaseApp.CaseHistory = Backbone.View.extend(
     {
       initialize: function(options) {
-        engage.repeat(this.$('ul'), 50)
+        this.li = this.extractTemplate(this.$('ul li'))
+        this.model = new engage.model.CaseRecords(
+          {
+            caseId: options.parent.model.get('caseId')
+          }
+        )
+
+        this.model.on('sync', this.render, this)
+        this.model.fetch()
+      }
+
+    , render: function(collection) {
+        var li = this.li
+        
+        this.$('ul').html(
+          collection.map(
+            function(model) {
+              var obj = model.toJSON()
+                , datetime = obj.datetime.split(/[TZ]/)
+
+              obj.date = datetime[0]
+              obj.time = datetime[1]
+
+              return Mustache.render(li, obj) 
+            }
+          ).join('')
+        )
       }
     }
   )
