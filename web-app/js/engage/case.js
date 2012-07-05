@@ -365,7 +365,7 @@
           }
 
         , createCase: function() {
-            this.model.set('name', this.$('[name=case-name]').val())
+            this.model.set('name', this.$('[name=title]').val())
             this.model.save(null
             , {
                 url: joinPath($.contextPath, 'socialEngage/createCase')
@@ -484,8 +484,8 @@
           }
 
         , render: function(model) {
-            this.$('.case-name').html(model.get('title'))
-            this.$('[name=case-name]').val(model.get('title'))
+            this.$('.title').html(model.get('title'))
+            this.$('[name=title]').val(model.get('title'))
 
             this.$('.case-status').html(model.get('statusText'))
 
@@ -501,7 +501,7 @@
           }
 
         , save: function() {
-            this.model.set('title', this.$('[name=case-name]').val())
+            this.model.set('title', this.$('[name=title]').val())
             this.model.save()
           }
 
