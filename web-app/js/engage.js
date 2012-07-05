@@ -78,8 +78,6 @@ var tmplLoader = _.extend({}, Backbone.Events)
 
             if (response.data) {
               data = response.data
-
-              if (!data.id) data.id = data.caseId
             }
 
             data.statusText = Case.statusMap[data.caseStatus]
