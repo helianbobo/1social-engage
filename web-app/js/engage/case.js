@@ -165,7 +165,7 @@
           if (!this.childs['edit-case']) {
             this.childs['edit-case'] = this.createChild('EditCase', '[name=edit-case]')
           }
-          this.$('.edit-case a').append('<span>' + this.model.get('id') + '</span>').click()
+          this.$('.edit-case a').append('<span>' + this.model.id + '</span>').click()
         }
         return this
       }
