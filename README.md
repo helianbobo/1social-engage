@@ -26,9 +26,9 @@ Functions
 * Post list can auto resize to fit the screen height. I can't understand what the #page bottom margin for, but keep it.
 * All tabs are clickable.
 * Images lazy loading.
-* The menus in toolbar can open, but no action.
-* Only the "Action" button works, click it to open the embeded case app.
+* On Posts, click "Action" to open the embeded case app.
 * The App will maintains last 3 open case modal, the old one will be cleanup.
+
 
 
 Known issues
