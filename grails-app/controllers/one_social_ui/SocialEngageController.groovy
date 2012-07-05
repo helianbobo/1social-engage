@@ -13,9 +13,8 @@ class SocialEngageController {
         caseId=9691340959298765
          */
 
-
         render '''{
-  "caseId": "9691341301184247",
+  "caseId": "''' + params.caseId + '''",
   "title": "case1",
   "priority": 2,
   "caseStatus": 1,
