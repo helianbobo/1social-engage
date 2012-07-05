@@ -70,6 +70,8 @@ var tmplLoader = _.extend({}, Backbone.Events)
             caseStatus: 1
           , priority: 3
           }
+          
+        , idAttribute: 'caseId'
 
         , parse: function(response) {
             var data = response

@@ -99,6 +99,7 @@
         model.set(
           {
             'articleId': post.get('fbId')
+          , 'caseId': post.get('caseId')
           , 'type': 'facebook'
           }
         )
@@ -111,7 +112,7 @@
         , 'add-memo': this.createChild('AddMemo', '.memo-wrap')
         }
 
-        model.one('change:id'
+        model.one('change:caseId'
         , function(model) {
             _.each(['add-response', 'add-memo'], function(it) {
                 this.childs[it].switchMode('edit').save()
@@ -124,7 +125,7 @@
         , this
         )
         
-        this.switchMode(options.parent.model.get('caseCreated') ? 'eidt' : 'create')
+        this.switchMode(this.model.id ? 'eidt' : 'create')
       }
 
     , createChild: function(className, selector) {
@@ -483,8 +484,8 @@
           }
 
         , render: function(model) {
-            this.$('.case-name').html(model.get('caseName'))
-            this.$('[name=case-name]').val(model.get('caseName'))
+            this.$('.case-name').html(model.get('title'))
+            this.$('[name=case-name]').val(model.get('title'))
 
             this.$('.case-status').html(model.get('statusText'))
 
@@ -500,7 +501,7 @@
           }
 
         , save: function() {
-            this.model.set('caseName', this.$('[name=case-name]').val())
+            this.model.set('title', this.$('[name=case-name]').val())
             this.model.save()
           }
 
