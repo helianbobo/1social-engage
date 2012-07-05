@@ -100,7 +100,7 @@ var tmplLoader = _.extend({}, Backbone.Events)
         , Memo: Backbone.Model.extend(
             {
               url: function() {
-                return joinPath($.contextPath, 'socialEngage/addMemo')
+                return joinPath($.contextPath, 'socialEngage/addNotes')
               }
             }
           )
