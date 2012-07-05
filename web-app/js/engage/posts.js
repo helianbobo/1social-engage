@@ -265,6 +265,7 @@ $(document.body).ready(function() {
   var ids = 0
     , modalQueue = new ElementQueue({ max: 3 })
     , assets = engage.assets = new engage.model.Assets()
+    , cases = engage.cases = new engage.model.Cases()
     , posts = engage.posts = new engage.model.Posts(null
       , { 
           order: 'desc'

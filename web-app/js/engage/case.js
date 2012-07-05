@@ -96,23 +96,39 @@
     }
   )
 
-  var CaseForm = CaseApp.CaseForm = Backbone.View.extend(
-    {
-      initialize: function(options) {
-        var _t = this
-          , model = this.model = new engage.model.Case()
-          , post = options.parent.model
+  function getOrCreateCase(post) {
+    var id = post.get('caseId')
+      , model = null
 
-        model.set(
-          {
+    if (id) {
+      model = engage.cases.get(id)
+      if (!model) {
+        model = new engage.model.Case({caseId: id})
+        model.one('sync', function() { engage.cases.add(model) })
+        model.fetch()
+      }
+    } else {
+      var comment = post.get('comment')[0]
+        , data = {
             'articleId': post.get('fbId')
           , 'caseId': post.get('caseId')
           , 'type': 'facebook'
           }
+
+      if (comment) data.commentId = comment.fbId
+      model = new engage.model.Case(data)
+      model.on('change:caseId'
+        , function(model, id) { post.set('caseId', id)}
         )
-        if (post.get('comment').length > 0) {
-          model.set('commentId', post.get('comment')[0].fbId)
-        }
+    }
+    return model
+  }
+
+  var CaseForm = CaseApp.CaseForm = Backbone.View.extend(
+    {
+      initialize: function(options) {
+        var _t = this
+          , model = this.model = getOrCreateCase(options.parent.model)
 
         this.childs = {
           'add-response': this.createChild('AddResponse', '.reponse-wrap')
@@ -127,7 +143,6 @@
               }
             , this
             )
-            post.set('caseId', model.get('caseId'))
             this.switchMode('edit')
           }
         , this
@@ -178,8 +193,20 @@
         this.li = this.extractTemplate(this.$('ul li'))
         this.model = new engage.model.CaseRecords()
 
+        var _case = this.model._case = 
+            engage.cases.get(options.parent.model.get('caseId'))
+        _case.on('change', this.refresh, this)
+
         this.model.on('sync', this.render, this)
-        this.model.fetch({ data: { caseId: options.parent.model.get('caseId') } })
+        this.refresh()
+      }
+
+    , refresh: function(model, evt) {
+        this.model.fetch(
+          {
+            data: { caseId: this.model._case.id }
+          }
+        )
       }
 
     , render: function(collection) {
@@ -241,6 +268,7 @@
 
         , cancel: function() {
             this.options.parent.trigger('display:add-memo', false)
+            return false
           }
 
         , display: function(visiable) {
@@ -277,6 +305,7 @@
                       input.val('')
                       _t.resetModel()
                       if (evt) showMsg('Memo saved', $(evt.currentTarget).parent())
+                      _t.refCase.increase('version')
                     }
                   }
                 }
@@ -315,6 +344,7 @@
 
         , cancel: function() {
             this.options.parent.trigger('display:add-response', false)
+            return false
           }
 
         , display: function(visiable) {
@@ -356,6 +386,7 @@
                       input.val('')
                       _t.resetModel()
                       if (evt) showMsg('Response saved', $(evt.currentTarget).parent())
+                      _t.refCase.increase('version')
                     }
                   }
                 }
@@ -404,11 +435,7 @@
 
         , createCase: function() {
             this.model.set('name', this.$('[name=title]').val())
-            this.model.save(null
-            , {
-                //url: joinPath($.contextPath, 'socialEngage/createCase')
-              }
-            )
+            this.model.save()
           }
 
         , displayPanel: function(evt) {
@@ -456,25 +483,32 @@
                     var method = visiable ? 'addClass' : 'removeClass'
 
                     _t.$('[data-panel=' + it + ']')[method]('btn-active')
-                  } 
+                  }
                 )
               }
             )
 
             this.changeMode('read')
             this.model.on('sync', this.render, this)
-            this.model.fetch()
+
+            if (this.model.get('title')) this.render()
+            else this.model.fetch()
           }
 
         , events: {
             'click .add-action': 'displayPanel'
           , 'click .btn-close-case': 'close'
           , 'click .btn-edit-case': 'changeMode'
-          , 'click .btn-cancel': 'changeMode'
+          , 'click .btn-cancel': 'cancel'
           , 'click .btn-save-case': 'save'
           , 'click .prioritys a': 'setPriority'
           , 'mouseenter .prioritys a': 'showPriority'
           , 'mouseleave .prioritys a': 'resetPriority'
+          }
+
+        , cancel: function(evt) {
+            this.model.unset('newPriority', { silent: true})
+            this.changeMode(evt)
           }
 
         , changeMode: function(evt) {
@@ -496,13 +530,7 @@
               }
             )
 
-            if (editable) {
-              this.oldModel = this.model
-              this.model = new engage.model.Case(this.model.toJSON())
-            } else {
-              if (this.oldModel) this.model = this.oldModel
-              delete this.oldModel
-
+            if (!editable) {
               this.render(this.model)
             }
             this.editable = editable
@@ -538,15 +566,27 @@
 
         , resetPriority: function(evt) {
             if (!this.editable && evt) return;
+            var priority = this.model.get('newPriority') || this.model.get('priority')
 
             updatePriority(
-              this.$('.prioritys li:nth-child(' + this.model.get('priority') + ')')
+              this.$('.prioritys li:nth-child(' + priority + ')')
             )
           }
 
-        , save: function() {
-            this.model.set('title', this.$('[name=title]').val())
-            this.model.save()
+        , save: function(evt) {
+            var _t = this
+              , data = {
+                  'title': this.$('[name=title]').val()
+                }
+
+            if (this.model.get('newPriority')) {
+              data.priority = this.model.get('newPriority')
+              this.model.unset('newPriority', { silent: true })
+            }
+            this.model.set(data, { silent: true })
+            this.model.save(null, { success: function() { _t.changeMode(evt) } })
+            // TODO trigger the change event with title or priority
+            // this.model.change()
           }
 
         , setPriority: function(evt) {
@@ -556,7 +596,9 @@
 
             updatePriority(btn)
 
-            this.model.set('priority', btn.parent().find('.active').length)
+            this.model.set('newPriority', btn.parent().find('.active').length
+              , { silent: true }
+              )
           }
 
         , showPriority: function(evt) {
