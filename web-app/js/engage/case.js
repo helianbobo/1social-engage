@@ -43,6 +43,13 @@
               tmplLoader.load(_t.findPane(tab.attr('href')), function() { return true })
             })
 
+            if (!this.model.get('caseId')) {
+              var el = details.find('.nav-tabs li:first')
+              el.nextAll().addClass('hide')
+
+              this.model.on('change:caseId', function() { el.nextAll().removeClass('hide') })
+            }
+
             // load the content of first tab
             details.find('.nav-tabs a:first').click();
           }
