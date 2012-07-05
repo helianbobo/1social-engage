@@ -69,6 +69,7 @@ var tmplLoader = _.extend({}, Backbone.Events)
           defaults: {
             caseStatus: 1
           , priority: 3
+          , version: 0
           }
 
         , idAttribute: 'caseId'
@@ -82,6 +83,10 @@ var tmplLoader = _.extend({}, Backbone.Events)
 
             data.statusText = Case.statusMap[data.caseStatus]
             return data
+          }
+
+        , increase: function(attr, step) {
+            this.set(attr, (this.get(attr) || 0) + (step || 1))
           }
 
         , url: function() {
