@@ -169,14 +169,10 @@
     {
       initialize: function(options) {
         this.li = this.extractTemplate(this.$('ul li'))
-        this.model = new engage.model.CaseRecords(
-          {
-            caseId: options.parent.model.get('caseId')
-          }
-        )
+        this.model = new engage.model.CaseRecords()
 
         this.model.on('sync', this.render, this)
-        this.model.fetch()
+        this.model.fetch({ data: { caseId: options.parent.model.get('caseId') } })
       }
 
     , render: function(collection) {
