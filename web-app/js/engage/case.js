@@ -149,7 +149,11 @@
         } else {
           this.$('.create-case').addClass('hide')
           this.$('.edit-case').removeClass('hide')
-          this.model.set('id', this.options.parent.model.get('caseId'))
+
+          if (!this.model.get('caseId')) {
+            this.model.set('caseId', this.options.parent.model.get('caseId'))
+          }
+          
           if (!this.childs['edit-case']) {
             this.childs['edit-case'] = this.createChild('EditCase', '[name=edit-case]')
           }
@@ -372,7 +376,7 @@
             this.model.set('name', this.$('[name=title]').val())
             this.model.save(null
             , {
-                url: joinPath($.contextPath, 'socialEngage/createCase')
+                //url: joinPath($.contextPath, 'socialEngage/createCase')
               }
             )
           }
@@ -434,6 +438,7 @@
 
         , events: {
             'click .add-action': 'displayPanel'
+          , 'click .btn-close-case': 'close'
           , 'click .btn-edit-case': 'changeMode'
           , 'click .btn-cancel': 'changeMode'
           , 'click .btn-save-case': 'save'
@@ -472,6 +477,11 @@
             }
             this.editable = editable
             if (btn) btn.toggleClass('btn-active')
+          }
+
+        , close: function() {
+            if (this.editable) this.$('.btn-edit-case').click()
+            this.model.destroy()
           }
 
         , displayPanel: function(evt) {

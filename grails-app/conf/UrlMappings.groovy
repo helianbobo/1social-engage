@@ -2,7 +2,9 @@ class UrlMappings {
 
     static mappings = {
 
-        "/socialEngage/case/$caseId"(controller: 'socialEngage', action: 'getCaseById')
+        "/socialEngage/case/$caseId"(controller: 'socialEngage') {
+            action = [GET: 'getCaseById', PUT: 'updateCase', DELETE: 'closeCase', POST: 'createCase']
+        }
 
 
         "/$controller/$action?/$id?" {

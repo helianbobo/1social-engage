@@ -70,7 +70,7 @@ var tmplLoader = _.extend({}, Backbone.Events)
             caseStatus: 1
           , priority: 3
           }
-          
+
         , idAttribute: 'caseId'
 
         , parse: function(response) {
@@ -87,7 +87,7 @@ var tmplLoader = _.extend({}, Backbone.Events)
           }
 
         , url: function() {
-            return joinPath($.contextPath, 'socialEngage/case/' + this.get('id'))
+            return joinPath($.contextPath, 'socialEngage/case/' + (this.id || 'new'))
           }
         }
       , {
