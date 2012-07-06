@@ -163,8 +163,7 @@
             this.childs['edit-case'] = this.createChild('EditCase', '[name=edit-case]')
           }
           // change:caseId maybe fired more than once
-          this.$('.edit-case a span').remove()
-          this.$('.edit-case a').append('<span>' + this.model.id + '</span>').click()
+          this.$('.edit-case a').click().find('.case-id').html(this.model.id)
         }
         return this
       }
