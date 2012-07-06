@@ -6,14 +6,23 @@
       <ul class="case-list">
         <li class="case-item">
           <div class="content">
-            <span class="user-name">{{articleVoiceName}}</span>
-            {{{articleContent}}}
+            <div class="init-post {{#comment}}trim{{/comment}}">
+              <span class="user-name" href="javascript:;">{{articleVoiceName}}</span>
+              {{articleContent}}
+            </div>
+            {{#comment}}
+            <div class="comment">
+              <span class="user-name" href="javascript:;">{{voiceName}}</span>
+              {{content}}
+            </div>
+            {{/comment}}
           </div>
 
+          <input type="checkbox" class="input-item-selector" >
           <div class="pics">
-            <img src="http://placehold.it/50x50/ccc" alt="" width="50" height="50">
+            <img data-original="{{platformPic}}" alt="" width="50" height="50">
             <img data-original="{{assetPic}}" alt="" width="50" height="50">
-            <img data-original="{{articleVoicePicture}}" alt="{{articleVoiceName}}" width="50" height="50">
+            <img data-original="{{voicePic}}" alt="{{voiceName}}" width="50" height="50">
           </div>
 
           <div class="meta">

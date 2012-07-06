@@ -10,14 +10,25 @@ $(document.body).ready(function() {
             var data = this.model.toJSON()
 
             // split date & time
-            var date = data.articleDateTimePost.split(/[TZ]/)
-            data.datePosted = date[0]
-            data.timePosted = date[1]
-            var date = data.dateCreated.split(/[TZ]/)
-            data.dateCreated = date[0]
-            data.timeCreated = date[1]
+            function mapDatetime(obj, src, target) {
+              _.extend(obj, array2Object(target, obj[src].split(/[TZ]/)))
+            }
+
+            mapDatetime(data, 'articleDateTimePost', ['datePosted', 'timePosted'])
+            mapDatetime(data, 'dateCreated', ['dateCreated', 'timeCreated'])
+
+            if (data.comment && data.comment.length > 0) {
+              data.voiceName = data.comment[0].voiceName
+              data.voicePic = data.comment[0].voicePicture
+            } else {
+              data.voiceName = data.articleVoiceName
+              data.voicePic = data.articleVoicePicture
+            }
+
+            data.platformPic = joinPath($.contextPath, 'images/icon-' + data.type + '-32x32.png')
 
             this.setElement($(Mustache.render(this.li, data)))
+            updatePriority(this.$('.prioritys li:nth-child(' + data.priority + ')'))
           }
         }
       )
@@ -179,6 +190,7 @@ $(document.body).ready(function() {
 
     , templateListeners = {
         'cases:one': function(el, placeholder) {
+          $(window).resize(updateListHeight('.case-list-wrap'))
           new CaseList({ collection: cases, el: el.find('.case-list') })
         }
 
@@ -195,8 +207,6 @@ $(document.body).ready(function() {
       el.height($(window).height() - el.offset().top - 30)
     }
   }
-
-  $(window).resize(updateListHeight('.case-list-wrap'))
 
   tmplLoader.addListeners(templateListeners)
   tmplLoader.load($('#page'))

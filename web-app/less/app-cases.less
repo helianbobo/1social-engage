@@ -9,7 +9,17 @@
 // Toolbar
 // -----
 .toolbar {
-  margin-top: 40px;
+  padding-top: 40px;
+}
+.batch-actions {
+  button {
+    display: inline-block;
+    margin: 4px;
+    padding: 4px 6px;
+  }
+  .input-all-selector {
+    margin: 8px 12px;
+  }
 }
 .refresh-actions {
   .btn-refresh {
@@ -51,11 +61,23 @@
       width: 100px;
     }
   }
+  .comment {
+    border-top: 1px solid @grayLight;
+    padding: 4px 0 4px 20px;
+  }
   .content {
     margin-left: (@gridColumnWidth + @gridGutterWidth) * 3 - @gridGutterWidth;
     margin-right: (@gridColumnWidth + @gridGutterWidth) * 8 - @gridGutterWidth;
     min-height: 80px;
     padding: 10px 0;
+  }
+  .init-post {
+    margin-bottom: 6px;
+  }
+  .input-item-selector {
+    left: 10px;
+    position: absolute;
+    top: 15px;
   }
   .meta {
     .absolute-top-right(10px, 120px);
@@ -78,10 +100,14 @@
     }
   }
   .pics {
-    .absolute-top-left(10px, 30px);
+    .absolute-top-left(10px, 35px);
     img {
-      margin: 0 8px 0 0;
+      margin: 0 6px 0 0;
     }
+  }
+  .trim {
+    height: 18px;
+    .text-overflow();
   }
   .user-name {
     font-weight: bold;
@@ -107,7 +133,6 @@
   text-indent: -9999px;
   vertical-align: text-top;
 }
-.prioritys > .active > a,
-.prioritys > li > a:hover {
+.prioritys > .active > a {
   background-position: -22px -44px;
 }

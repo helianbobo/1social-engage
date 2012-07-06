@@ -622,12 +622,6 @@
     )
   }
 
-  function updatePriority(li) {
-    li.prevAll().addClass('active')
-    li.addClass('active')
-    li.nextAll().removeClass('active')
-  }
-
   _.extend(CaseForm
   , {
       'AddMemo': AddMemo

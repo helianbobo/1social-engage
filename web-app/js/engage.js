@@ -52,6 +52,12 @@ var tmplLoader = _.extend(
     , Backbone.Events
     )
 
+function updatePriority(li) {
+  li.prevAll().addClass('active')
+  li.addClass('active')
+  li.nextAll().removeClass('active')
+}
+
 ;(function() {
   // constants
   var DEFAULT_TEMPLATE_FILTER = function(el) { return el.attr('tmpl-load-timing') != 'manual' }
