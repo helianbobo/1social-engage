@@ -6,7 +6,7 @@
   <div class="filter-actions pull-left">
     <span class="text">Filter by: </span>
     <ul class="nav">
-      <li class="dropdown">
+      <li class="dropdown" data-name="postType">
         <a href="" class="dropdown-toggle" data-toggle="dropdown">
           <span class="dropdown-toggle-text">Post Type</span> <b class="caret"></b>
         </a>
@@ -16,25 +16,34 @@
           <li><a href="#Comment">Comments</a></li>
         </ul>
       </li>
-      <li class="dropdown">
+      <li class="dropdown" data-name="platform">
         <a href="" class="dropdown-toggle" data-toggle="dropdown">
           <span class="dropdown-toggle-text">Platform</span> <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
+          <li class="active"><a href="#">Everything</a></li>
+          <li><a href="#facebook">Facebook</a></li>
+          <li><a href="#twitter">Twitter</a></li>
+          <li><a href="#weibo">Weibo</a></li>
         </ul>
       </li>
-      <li class="dropdown">
+      <li class="dropdown" data-name="assetsId">
         <a href="" class="dropdown-toggle" data-toggle="dropdown">
           <span class="dropdown-toggle-text">Asset</span> <b class="caret"></b>
         </a>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu assets">
+          <li class="active"><a href="#">All Assets</a></li>
+          <li><a href="#{{id}}" aid="{{id}}">{{name}}</a></li>
         </ul>
       </li>
-      <li class="dropdown">
+      <li class="dropdown" data-name="caseCreated">
         <a href="" class="dropdown-toggle" data-toggle="dropdown">
           <span class="dropdown-toggle-text">Case</span> <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
+          <li class="active"><a href="#">Everything</a></li>
+          <li><a href="#true">Case Made</a></li>
+          <li><a href="#false">No Case Made</a></li>
         </ul>
       </li>
     </ul>
@@ -44,14 +53,14 @@
     <span class="text">Sort by: </span>
     <ul class="nav sort">
       <li>
-        <a href="#agent" title="Sort by Datetime Posted">
+        <a href="#assignee" title="Sort by Datetime Posted">
           Agent
           <b class="caret-reverse"></b><b class="caret"></b>
         </a>
       </li>
 
       <li>
-        <a href="#status" title="Sort by Datetime Posted">
+        <a href="#caseStatus" title="Sort by Datetime Posted">
           Status
           <b class="caret-reverse"></b><b class="caret"></b>
         </a>
@@ -72,7 +81,7 @@
       </li>
 
       <li>
-        <a href="#datetimeCreated" class="datetime desc" title="Sort by Datetime Posted">
+        <a href="#dateCreated" class="datetime desc" title="Sort by Datetime Posted">
           Date/Time Created
           <b class="caret-reverse"></b><b class="caret"></b>
         </a>

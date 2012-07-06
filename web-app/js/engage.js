@@ -132,16 +132,28 @@ var tmplLoader = _.extend(
     
     , Cases = Backbone.Collection.extend(
         {
-          defaultOptions: {
-            'sort': 'dateCreated'
-          , 'order': 'asc'
-          , 'max': 20
-          , 'offset': 0
-          , 'platform': 'everything'
-          , 'assetId': 'everything'
+          initialize: function(models, options) {
+            options = options || {}
+            this.params = new Parameters(_.pick(options, 'order', 'sort', 'platform'))
+            this.pagination = new Pagination(_.pick(options, 'offset', 'pageSize'))
           }
 
         , model: Case
+
+        , collectParams: function() {
+            var params = this.params.toJSON()
+              , pagination = this.pagination.toJSON()
+
+            params.max = pagination.pageSize
+            if (pagination.offset > 0) params.offset = pagination.offset
+            return params
+          }
+
+        , fetch: function(options) {
+            options = options || {}
+            options.data = _.extend(this.collectParams(), options.data)
+            Backbone.Collection.prototype.fetch.apply(this, [options])
+          }
 
         , parse: function(response) {
             return response.data
