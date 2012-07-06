@@ -37,7 +37,20 @@ var ElementQueue = Backbone.Model.extend(
 // Global Objects
 // -----
 
-var tmplLoader = _.extend({}, Backbone.Events)
+var tmplLoader = _.extend(
+      {
+        addListeners: function(options) {
+          _.each(options, function(callback, key) {
+                // key = 'tmplName[:one]'
+                var arr = key.split(':') 
+
+                tmplLoader[arr[1] || 'on']('load:' + arr[0], callback)
+              }
+            )
+        }
+      }
+    , Backbone.Events
+    )
 
 ;(function() {
   // constants

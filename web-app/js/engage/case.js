@@ -77,7 +77,7 @@
               {
                 id: id
               , articleId: id
-              , commentId:commentId
+              , commentId: commentId
               }
             )
 

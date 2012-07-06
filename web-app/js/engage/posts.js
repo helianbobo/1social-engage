@@ -339,14 +339,6 @@ $(document.body).ready(function() {
   // Event listeners
   // -----
 
-  _.each(templateListeners, function(callback, key) {
-        // key = 'tmplName[:one]'
-        var arr = key.split(':') 
-
-        tmplLoader[arr[1] || 'on']('load:' + arr[0], callback)
-      }
-    )
-
   modalQueue.on('change:queue', function(model, queue) {
     if (queue.length > model.get('max')) {
       var el = $('#' + queue.shift())
@@ -359,8 +351,8 @@ $(document.body).ready(function() {
 
   // Page setup
   // -----
-
   $(window).resize(updateListHeight)
-  // updateListHeight()
+  
+  tmplLoader.addListeners(templateListeners)
   tmplLoader.load($('#page'))
 })
