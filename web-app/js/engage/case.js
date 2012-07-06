@@ -162,6 +162,8 @@
           if (!this.childs['edit-case']) {
             this.childs['edit-case'] = this.createChild('EditCase', '[name=edit-case]')
           }
+          // change:caseId maybe fired more than once
+          this.$('.edit-case a span').remove()
           this.$('.edit-case a').append('<span>' + this.model.id + '</span>').click()
         }
         return this
@@ -468,7 +470,6 @@
             )
 
             if (this.model.get('title')) this.render()
-            else this.model.fetch()
           }
 
         , events: {
@@ -503,9 +504,7 @@
               }
             )
 
-            if (!editable) {
-              this.render(this.model)
-            }
+            if (!editable) this.render(this.model)
             this.$('.prioritys').trigger('enable', editable)
             this.editable = editable
             if (btn) btn.toggleClass('btn-active')
