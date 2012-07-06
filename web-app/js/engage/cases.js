@@ -21,6 +21,7 @@ $(document.body).ready(function() {
           }
         }
       )
+
   var CaseList = Backbone.View.extend(
     {
       initialize: function(options) {
@@ -65,4 +66,23 @@ $(document.body).ready(function() {
 
   var caseList = new CaseList({ collection: cases, el: $('.case-list') })
 
+  var templateListeners = {
+        'cases-toolbar:one': function() {
+          updateListHeight('.case-list-wrap')()
+          // new Toolbar({ collection: posts, el: el })
+        }
+      }
+
+  function updateListHeight(selector) {
+    var el = $(selector)
+
+    return function() {
+      el.height($(window).height() - el.offset().top - 30)
+    }
+  }
+
+  $(window).resize(updateListHeight('.case-list-wrap'))
+
+  tmplLoader.addListeners(templateListeners)
+  tmplLoader.load($('#page'))
 })
