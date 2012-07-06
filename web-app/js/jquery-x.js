@@ -3,6 +3,13 @@
   // TODO
 })(jQuery)
 
+/**
+ * array2Object(['a', 'b'], [0, 1]) 
+ * // { a: 0, b: 1 }
+ *
+ * array2Object(['a', 'b'], [0, 1], [2, 3]) 
+ * // [{ a: 0, b: 1 }, { a: 2, b: 3 }]
+ */
 function array2Object(keys, values) {
   function map(keys, values) {
     var obj = {}
