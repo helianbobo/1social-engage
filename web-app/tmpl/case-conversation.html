@@ -8,7 +8,7 @@
     <div class="conversation-inner">
       <div class="post">
         <div class="user-pic">
-          <img data-original="{{userPic}}" width="50" height="50" alt="{{userName}}">
+          <img data-original="{{userpic}}" width="50" height="50" alt="{{userName}}">
         </div>
         <div class="content">
           <span class="user-name">{{userName}}</span>
@@ -24,21 +24,21 @@
       
       <div class="comments">
         <ul>
-          {{#comment}}
+          {{#comments}}
           <li class="comment">
             <div class="content">
               <span class="user-name">{{userName}}</span>
               {{{content}}}
             </div>
             <div class="user-pic">
-              <img data-original="{{userPic}}" width="50" height="50" alt="{{userName}}">
+              <img data-original="{{userpic}}" width="50" height="50" alt="{{userName}}">
             </div>
             <div class="meta">
               <span class="count"><i class="icon-like"></i> {{likesCount}}</span>
               <span class="date">{{time}} {{date}}</span>
             </div>
           </li>
-          {{/comment}}
+          {{/comments}}
         </ul>
       </div>
     </div>
