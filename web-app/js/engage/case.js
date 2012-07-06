@@ -130,7 +130,7 @@
         , this
         )
         
-        this.switchMode(this.model.id ? 'eidt' : 'create')
+        this.switchMode(this.model.id ? 'edit' : 'create')
       }
 
     , createChild: function(className, selector) {
@@ -284,7 +284,8 @@
                 { 'memo': val }
               , {
                   success: function(model, response) {
-                    if (response.response == 'ok') {
+
+                    if (response.caseId) {
                       input.val('')
                       _t.resetModel()
                       if (evt) showMsg('Memo saved', $(evt.currentTarget).parent())
@@ -365,7 +366,7 @@
                 { 'response': val }
               , {
                   success: function(model, response) {
-                    if (response.response == 'ok') {
+                    if (response.caseId) {
                       input.val('')
                       _t.resetModel()
                       if (evt) showMsg('Response saved', $(evt.currentTarget).parent())
