@@ -71,7 +71,7 @@
     {
       initialize: function(options) {
         var comments = options.parent.model.get('comment');
-        var commentId = comments?comments[0].fbId:0;
+        var commentId = comments[0]?comments[0].fbId:0;
         var id = options.parent.model.get('fbId')
           , conversation = new engage.model.Conversation(
               {
