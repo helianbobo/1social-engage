@@ -281,7 +281,7 @@ class SocialEngageController {
 }'''
     }
 
-    def addMemo(){
+    def addNotes(){
         /*
         caseId=9691340714194928&
         type=facebook&
