@@ -41,6 +41,8 @@ $(document.body).ready(function() {
                     , 'likeCount'
                     , 'commentCount'
                     , 'datetimePosted'
+                    , 'voiceName'
+                    , 'voicePic'
                     )
                 )
             }
