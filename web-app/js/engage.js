@@ -93,6 +93,10 @@ function updatePriority(li) {
 
         , idAttribute: 'caseId'
 
+        , updateStatus: function(status) {
+            this.set({ 'caseStatus': status, 'statusText': Case.statusMap[status] })
+          }
+
         , parse: function(response) {
             var data = response
 

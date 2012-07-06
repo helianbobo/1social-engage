@@ -370,6 +370,7 @@
                       _t.resetModel()
                       if (evt) showMsg('Response saved', $(evt.currentTarget).parent())
                       _t.refCase.increase('version')
+                      _t.refCase.updateStatus('2')
                     }
                   }
                 }
@@ -463,6 +464,7 @@
 
             this.changeMode('read')
             this.model.on('sync', this.render, this)
+            this.model.on('change:caseStatus', this.render, this)
             this.model.on('change:priority', function(model, data) {
                 prioritys.trigger('change', data)
               }
