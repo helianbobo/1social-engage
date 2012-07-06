@@ -424,16 +424,18 @@
                 )
               }
             )
+
+            rates(this.$('.prioritys'), this.model.get('priority'))
+              .on('change', function(evt, value) {
+                  _t.model.set('priority', value)
+                }
+              )
             
-            this.resetPriority()
           }
 
         , events: {
             'click .add-action': 'displayPanel'
           , 'click .btn-create-case': 'createCase'
-          , 'click .prioritys a': 'setPriority'
-          , 'mouseenter .prioritys a': 'showPriority'
-          , 'mouseleave .prioritys a': 'resetPriority'
           }
 
         , createCase: function() {
@@ -454,25 +456,6 @@
             })
           }
 
-        , resetPriority: function() {
-            updatePriority(
-              this.$('.prioritys li:nth-child(' + this.model.get('priority') + ')')
-            )
-          }
-
-        , setPriority: function(evt) {
-            var btn = $(evt.currentTarget).parent()
-
-            updatePriority(btn)
-
-            this.model.set('priority', btn.parent().find('.active').length)
-          }
-
-        , showPriority: function(evt) {
-            var btn = $(evt.currentTarget).parent()
-
-            updatePriority(btn)
-          }
         }
       )
 
@@ -491,8 +474,19 @@
               }
             )
 
+            var prioritys = this.$('.prioritys')
+            rates(prioritys, this.model.get('priority'), false)
+              .on('change', function(evt, value) {
+                  _t.model.set({ 'newPriority': value }, { silent: true })
+                }
+              )
+
             this.changeMode('read')
             this.model.on('sync', this.render, this)
+            this.model.on('change:priority', function(model, data) {
+                prioritys.trigger('change', data)
+              }
+            )
 
             if (this.model.get('title')) this.render()
             else this.model.fetch()
@@ -504,9 +498,6 @@
           , 'click .btn-edit-case': 'changeMode'
           , 'click .btn-cancel': 'cancel'
           , 'click .btn-save-case': 'save'
-          , 'click .prioritys a': 'setPriority'
-          , 'mouseenter .prioritys a': 'showPriority'
-          , 'mouseleave .prioritys a': 'resetPriority'
           }
 
         , cancel: function(evt) {
@@ -536,6 +527,7 @@
             if (!editable) {
               this.render(this.model)
             }
+            this.$('.prioritys').trigger('enable', editable)
             this.editable = editable
             if (btn) btn.toggleClass('btn-active')
           }
@@ -564,16 +556,7 @@
 
             this.$('.case-status').html(model.get('statusText'))
 
-            this.resetPriority()
-          }
-
-        , resetPriority: function(evt) {
-            if (!this.editable && evt) return;
-            var priority = this.model.get('newPriority') || this.model.get('priority')
-
-            updatePriority(
-              this.$('.prioritys li:nth-child(' + priority + ')')
-            )
+            this.$('.prioritys').trigger('change', model.get('priority'))
           }
 
         , save: function(evt) {
@@ -594,28 +577,33 @@
               )
           }
 
-        , setPriority: function(evt) {
-            if (!this.editable) return;
-
-            var btn = $(evt.currentTarget).parent()
-
-            updatePriority(btn)
-
-            this.model.set('newPriority', btn.parent().find('.active').length
-              , { silent: true }
-              )
-          }
-
-        , showPriority: function(evt) {
-            if (!this.editable) return;
-
-            var btn = $(evt.currentTarget).parent()
-
-            updatePriority(btn)
-          }
         }
       )
   
+  function rates(el, _default, enable) {
+    _default = _default || 1
+    if (typeof enable == 'undefined') enable = true
+
+    function reset(evt, value) {
+      if (typeof value == 'number') el.attr('data-prev', value)
+      else value = el.attr('data-prev') || _default
+      updatePriority(el.find('li:nth-child(' + value + ')'))
+    }
+
+    el.on('enable', function(evt, value) { enable = !!value })
+    el.on('change', reset)
+
+    el.delegate('a', 'click', function() {
+        enable && el.trigger('change', $(this).parent().index() + 1) 
+      }
+    )
+    el.delegate('a', 'mouseenter', function() { enable && updatePriority($(this).parent()) })
+    el.delegate('a', 'mouseleave', function() { enable && reset() })
+
+    reset()
+    return el
+  }
+
   function updatePriority(li) {
     li.prevAll().addClass('active')
     li.addClass('active')
