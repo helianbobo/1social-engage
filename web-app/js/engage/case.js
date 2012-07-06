@@ -468,7 +468,7 @@
               }
             )
 
-            if (this.model.get('title')) this.render()
+            if (this.model.get('title')) this.render(this.model)
           }
 
         , events: {

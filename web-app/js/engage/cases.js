@@ -6,6 +6,51 @@ $(document.body).ready(function() {
             this.render()
           }
 
+        , events: {
+            'click .show-case': 'openCase'
+          }
+
+        , openCase: function(evt) {
+            var attrName = 'modal-id'
+              , btn = $(evt.currentTarget)
+              , el = $('#' + btn.attr(attrName))
+              , data = this.model.toJSON()
+              , postId = data.articleId
+
+            if (data.comment && data.comment.length > 0) postId = data.commentId
+            if (el.length === 0) {
+              el = prepareModal('app-case-modal')
+              btn.attr(attrName, el.attr('id'))
+              modalQueue.push(el.attr('id'))
+              el.one('show', function() { tmplLoader.load(el) })
+
+              if (!engage.posts.get(postId)) {
+                var post = {
+                      'fbId': data.articleId
+                    , 'caseId': data.caseId
+                    , 'content': data.articleContent
+                    , 'voiceName': data.articleVoiceName
+                    , 'voicePic': data.articleVoicePicture
+                    , 'comment': []
+                    }
+                if (data.comment && data.comment.length > 0) {
+                  post.comment.push(
+                    {
+                      'content': data.comment[0].content
+                    , 'fbId': data.commentId
+                    , 'voiceName': data.comment[0].voiceName
+                    , 'voicePic': data.comment[0].voicePicture
+                    }
+                  )
+                }
+                engage.posts.add(new engage.model.Post(post))
+              }
+            }
+            
+            el.find('.app-case').attr('post-id', postId)
+            el.modal()
+          }
+
         , render: function() {
             var data = this.model.toJSON()
 
@@ -28,7 +73,7 @@ $(document.body).ready(function() {
             data.platformPic = joinPath($.contextPath, 'images/icon-' + data.type + '-32x32.png')
 
             this.setElement($(Mustache.render(this.li, data)))
-            updatePriority(this.$('.prioritys li:nth-child(' + data.priority + ')'))
+            updatePriority(this.$('.prioritys-small li:nth-child(' + data.priority + ')'))
           }
         }
       )
@@ -59,7 +104,7 @@ $(document.body).ready(function() {
             var _t = this
 
             this.$el.empty()
-            collection.forEach(function(it) {
+            this.collection.forEach(function(it) {
               _t.append(it)
             })
 
@@ -179,17 +224,31 @@ $(document.body).ready(function() {
   )
 
 
-  var cases = new engage.model.Cases(null
+  var assets = engage.assets = new engage.model.Assets()
+    , cases = engage.cases = new engage.model.Cases(null
       , {
           pageSize: 20
         , order: 'desc'
         , sort: 'dateCreated'
         }
       )
-    , assets = engage.assets = new engage.model.Assets()
+    , ids = 0
+    , modalQueue = new ElementQueue({ max: 3 })
+    , posts = engage.posts = new engage.model.Posts()
 
     , templateListeners = {
-        'cases:one': function(el, placeholder) {
+        'case': function(el, placeholder) {
+          el.attr('post-id', placeholder.attr('post-id'))
+
+          var obj = new engage.CaseApp({el: el})
+
+          el.parents('.modal').on('remove', function() {
+            obj.destroy()
+            obj = null
+          })
+        }
+
+      , 'cases:one': function(el, placeholder) {
           $(window).resize(updateListHeight('.case-list-wrap'))
           new CaseList({ collection: cases, el: el.find('.case-list') })
         }
@@ -200,6 +259,28 @@ $(document.body).ready(function() {
         }
       }
 
+    , tmpls = {
+        'app-case-modal': $('.app-case-modal').remove()
+      , get: function(name) {
+          var el = this[name]
+
+          if (!el) throw 'could not get template named ' + name
+          return el.clone()
+        }
+      }
+
+  function newId(prefix, suffix) {
+    return (prefix ? prefix : '') + (++ids) + (suffix ? suffix : '')
+  }
+
+  function prepareModal(name) {
+    var el = tmpls.get(name)
+
+    el.attr('id', newId('modal-'))
+    $(document.body).append(el)
+    return el
+  }
+
   function updateListHeight(selector) {
     var el = $(selector)
 
@@ -207,6 +288,19 @@ $(document.body).ready(function() {
       el.height($(window).height() - el.offset().top - 30)
     }
   }
+
+  // Event listeners
+  // -----
+
+  modalQueue.on('change:queue', function(model, queue) {
+    if (queue.length > model.get('max')) {
+      var el = $('#' + queue.shift())
+      
+      el.trigger('remove')
+      el.remove()
+      this.set('queue', _.map(queue, function(it) { return it }))
+    }
+  })
 
   tmplLoader.addListeners(templateListeners)
   tmplLoader.load($('#page'))

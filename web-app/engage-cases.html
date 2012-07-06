@@ -10,11 +10,23 @@ restart grails server.
     <meta charset="utf-8" >
     <link rel="stylesheet" href="css/engage.css" >
     <link rel="stylesheet" href="css/app-cases.css" >
+    <link rel="stylesheet" href="css/app-case.css" >
   </head>
 
   <body>
     <div id="page">
       <div class="app-cases" tmpl="cases"></div>
+    </div>
+
+    <div class="modal fade hide app-case-modal">
+      <div class="modal-inner">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        <div class="modal-body">
+          <div class="app-case container" tmpl="case"></div>
+        </div>
+      </div>
     </div>
 
 
@@ -32,5 +44,6 @@ restart grails server.
     <script src="js/bootstrap-tab.js"></script>
     <script src="js/engage.js"></script>
     <script src="js/engage/cases.js"></script>
+    <script src="js/engage/case.js"></script>
   </body>
 </html>
