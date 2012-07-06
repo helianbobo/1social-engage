@@ -70,9 +70,9 @@
   CaseApp.CaseConversation = Backbone.View.extend(
     {
       initialize: function(options) {
-        var comments = options.parent.model.get('comment');
-        var commentId = comments[0]?comments[0].fbId:0;
-        var id = options.parent.model.get('fbId')
+        var comments = options.parent.model.get('comment')
+          , commentId = comments[0] ? comments[0].fbId : 0
+          , id = options.parent.model.get('fbId')
           , conversation = new engage.model.Conversation(
               {
                 id: id
@@ -88,44 +88,23 @@
       }
 
     , render: function(model, data) {
-        this.$('.conversation-inner').html(
-            Mustache.render(this.tmpl, model.toJSON())
-          )
-        this.$('img').lazyload({ effect: "fadeIn" })
+        var ctn = this.$('.conversation-inner')
+          , data = model.toJSON()
+
+        function filterDate(obj) {
+          if (obj.dateTimePosted) {
+            _.extend(obj, array2Object(['date', 'time'], obj.dateTimePosted.split(/[TZ]/)))
+          }
+        }
+
+        _.each(data.comments, filterDate)
+        filterDate(data)
+        
+        ctn.html(Mustache.render(this.tmpl, data))
+        this.$('img').lazyload({ container: ctn, effect: "fadeIn" })
       }
     }
   )
-
-  function getOrCreateCase(post) {
-    var id = post.get('caseId')
-      , model = null
-
-    if (id) {
-      model = engage.cases.get(id)
-      if (!model) {
-        model = new engage.model.Case({caseId: id})
-        model.one('sync', function() { engage.cases.add(model) })
-        model.fetch()
-      }
-    } else {
-      var comment = post.get('comment')[0]
-        , data = {
-            'articleId': post.get('fbId')
-          , 'caseId': post.get('caseId')
-          , 'type': 'facebook'
-          }
-
-      if (comment) data.commentId = comment.fbId
-      model = new engage.model.Case(data)
-      model.on('change:caseId'
-        , function(model, id) {
-            post.set('caseId', id)
-            engage.cases.add(model)
-          }
-        )
-    }
-    return model
-  }
 
   var CaseForm = CaseApp.CaseForm = Backbone.View.extend(
     {
@@ -580,6 +559,37 @@
         }
       )
   
+  function getOrCreateCase(post) {
+    var id = post.get('caseId')
+      , model = null
+
+    if (id) {
+      model = engage.cases.get(id)
+      if (!model) {
+        model = new engage.model.Case({caseId: id})
+        model.one('sync', function() { engage.cases.add(model) })
+        model.fetch()
+      }
+    } else {
+      var comment = post.get('comment')[0]
+        , data = {
+            'articleId': post.get('fbId')
+          , 'caseId': post.get('caseId')
+          , 'type': 'facebook'
+          }
+
+      if (comment) data.commentId = comment.fbId
+      model = new engage.model.Case(data)
+      model.on('change:caseId'
+        , function(model, id) {
+            post.set('caseId', id)
+            engage.cases.add(model)
+          }
+        )
+    }
+    return model
+  }
+
   function rates(el, _default, enable) {
     _default = _default || 1
     if (typeof enable == 'undefined') enable = true
@@ -604,12 +614,6 @@
     return el
   }
 
-  function updatePriority(li) {
-    li.prevAll().addClass('active')
-    li.addClass('active')
-    li.nextAll().removeClass('active')
-  }
-
   function showMsg(msg, parent) {
     var el = $('<span>' + msg + '</span>')
     parent.prepend(el)
@@ -619,7 +623,13 @@
     , 2500
     )
   }
-  
+
+  function updatePriority(li) {
+    li.prevAll().addClass('active')
+    li.addClass('active')
+    li.nextAll().removeClass('active')
+  }
+
   _.extend(CaseForm
   , {
       'AddMemo': AddMemo
