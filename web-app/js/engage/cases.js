@@ -166,7 +166,7 @@ $(document.body).ready(function() {
       }
     }
   )
-  
+
 
   var cases = new engage.model.Cases(null
       , {
@@ -177,10 +177,12 @@ $(document.body).ready(function() {
       )
     , assets = engage.assets = new engage.model.Assets()
 
-  var caseList = new CaseList({ collection: cases, el: $('.case-list') })
+    , templateListeners = {
+        'cases:one': function(el, placeholder) {
+          new CaseList({ collection: cases, el: el.find('.case-list') })
+        }
 
-  var templateListeners = {
-        'cases-toolbar:one': function(el, placeholder) {
+      , 'cases-toolbar:one': function(el, placeholder) {
           updateListHeight('.case-list-wrap')()
           new Toolbar({ collection: cases, el: el })
         }

@@ -34,18 +34,22 @@
 .case-list-wrap {
   overflow: auto;
 }
+.case-item {
+  .clearfix();
+  list-style: none;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
 .case-list {
   font-size: 12px;
   margin: 0;
   padding: 0;
-  li {
-    .clearfix();
-    list-style: none;
-    border-bottom: 1px solid #ddd;
-    position: relative;
-  }
   .actions {
-    .absolute-top-right(10px, 10px);
+    .absolute-top-right(10px, 0);
+    width: 120px;
+    .btn {
+      width: 100px;
+    }
   }
   .content {
     margin-left: (@gridColumnWidth + @gridGutterWidth) * 3 - @gridGutterWidth;
@@ -60,14 +64,17 @@
       display: inline-block;
     }
     .agent {
-      width: 60px;
+      width: 65px;
     }
     .datetime {
       text-align: center;
       width: 140px;
     }
+    .priority {
+      margin-right: -16px;
+    }
     .status {
-      width: 60px;
+      width: 65px;
     }
   }
   .pics {
@@ -93,14 +100,14 @@
   list-style: none;
 }
 .prioritys > li > a {
-  background: url(../images/icon-flags.png) no-repeat -50px 0;
+  background: url(../images/icon-engage-posts.png) no-repeat 0 -44px;
   display: inline-block;
   outline: none;
-  .square(25px);
+  .square(16px);
   text-indent: -9999px;
   vertical-align: text-top;
 }
 .prioritys > .active > a,
 .prioritys > li > a:hover {
-  background-position: 0 0;
+  background-position: -22px -44px;
 }

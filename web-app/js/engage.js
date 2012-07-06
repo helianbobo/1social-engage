@@ -156,7 +156,7 @@ var tmplLoader = _.extend(
           }
 
         , parse: function(response) {
-            return response.data
+            return _.map(response.data, Case.prototype.parse)
           }
 
         , url: function() {
