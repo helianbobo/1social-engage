@@ -118,7 +118,10 @@
       if (comment) data.commentId = comment.fbId
       model = new engage.model.Case(data)
       model.on('change:caseId'
-        , function(model, id) { post.set('caseId', id)}
+        , function(model, id) {
+            post.set('caseId', id)
+            engage.cases.add(model)
+          }
         )
     }
     return model
@@ -583,10 +586,12 @@
               data.priority = this.model.get('newPriority')
               this.model.unset('newPriority', { silent: true })
             }
-            this.model.set(data, { silent: true })
-            this.model.save(null, { success: function() { _t.changeMode(evt) } })
-            // TODO trigger the change event with title or priority
-            // this.model.change()
+            this.model.save(data
+              , {
+                  wait: true
+                , success: function() { _t.changeMode(evt) } 
+                }
+              )
           }
 
         , setPriority: function(evt) {
