@@ -3,6 +3,17 @@
   // TODO
 })(jQuery)
 
+function array2Object(keys, values) {
+  function map(keys, values) {
+    var obj = {}
+    _.each(keys, function(key, i) { obj[key] = values[i] })
+    return obj
+  }
+  if (arguments.length > 2) {
+    return _.map(_.rest(arguments), function(arr) { return map(keys, arr)})
+  } else return map(keys, values)
+}
+
 // -----
 function capitalize(str) {
   return str.replace(/^[a-z]/, function(a) { return a.toUpperCase() })
