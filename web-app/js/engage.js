@@ -31,6 +31,10 @@ var ElementQueue = Backbone.Model.extend(
         , pageSize: 50
         , total: 0
         }
+
+      , update: function(response) {
+          this.set(_.pick(response, 'offset', 'total'))
+        }
       }
     )
 
@@ -166,6 +170,7 @@ function updatePriority(li) {
           }
 
         , parse: function(response) {
+            this.pagination.update(response)
             return _.map(response.data, Case.prototype.parse)
           }
 
@@ -270,13 +275,8 @@ function updatePriority(li) {
           }
 
         , parse: function(response) {
-            this.updatePagination(response)
+            this.pagination.update(response)
             return response.data
-          }
-
-        , updatePagination: function(response) {
-            var data = _.pick(response, 'offset', 'total')
-            this.pagination.set(data)
           }
 
         , url: function() {
