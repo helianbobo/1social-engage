@@ -186,7 +186,31 @@ $(document.body).ready(function() {
       }
     }
   )
+  
+  Toolbar.PaginationActions = Backbone.View.extend(
+    {
+      initialize: function(options) {
+        var _t = this
 
+        $.pagination(this.$el).on('go', function(evt, to) {
+          var pagination = _t.collection.pagination
+            , data = _.pick(pagination.toJSON(), 'offset', 'pageSize')
+
+          pagination.set(
+              { offset: data.offset + data.pageSize * (to === 'next' ? 1 : -1) }
+            , { silent: true }
+            )
+
+          _t.collection.fetch()
+        })
+
+        this.collection.pagination.on('change', function(model, evt) {
+          _t.$el.trigger('change', model.toJSON())
+        })
+      }
+    }
+  )
+  
   Toolbar.SortActions = Backbone.View.extend(
     {
       events: { 'click a': 'sort' }

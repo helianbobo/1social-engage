@@ -34,9 +34,32 @@
   .text-overflow();
   vertical-align: top;
 }
+.pagination-actions {
+  text-align: center;
+  margin: 0;
+  width: 140px;
+  a {
+    display: inline-block;
+    padding: 10px;
+    &:hover {
+      background-color: @bodyBackground;
+      text-decoration: none;
+    }
+  }
+  .text {
+    padding: 10px 1px;
+  }
+  .disabled {
+    cursor: default;
+    color: @grayLighter;
+    &:hover {
+      background-color: transparent;
+      color: @grayLighter;
+    }
+  }
+}
 .sort-actions {
   float: right;
-  margin-right: 120px;
 }
 
 // Case List

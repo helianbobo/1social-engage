@@ -199,16 +199,20 @@ $(document.body).ready(function() {
       initialize: function(options) {
         var _t = this
 
+        $.pagination(this.$el).on('go', function(evt, to) {
+          var pagination = _t.collection.pagination
+            , data = _.pick(pagination.toJSON(), 'offset', 'pageSize')
+
+          pagination.set(
+              { offset: data.offset + data.pageSize * (to === 'next' ? 1 : -1) }
+            , { silent: true }
+            )
+
+          _t.collection.fetch()
+        })
+
         this.collection.pagination.on('change', function(model, evt) {
-          var data = model.toJSON()
-            , max = Math.min(data.offset + data.pageSize, data.total)
-          
-          _t.$('.offset').html(data.offset + 1)
-          _t.$('.max').html(max)
-          _t.$('.total').html(data.total)
-          _t.$('.prev,.next').removeClass('disabled')
-          if (data.offset === 0) _t.$('.prev').addClass('disabled')
-          if (max >= data.total) _t.$('.next').addClass('disabled')
+          _t.$el.trigger('change', model.toJSON())
         })
       }
     }

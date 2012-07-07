@@ -112,68 +112,68 @@
   )
 
   var CaseForm = CaseApp.CaseForm = Backbone.View.extend(
-    {
-      initialize: function(options) {
-        var _t = this
-          , model = this.model = getOrCreateCase(options.parent.model)
+        {
+          initialize: function(options) {
+            var _t = this
+              , model = this.model = getOrCreateCase(options.parent.model)
 
-        this.childs = {
-          'add-response': this.createChild('AddResponse', '.reponse-wrap')
-        , 'add-memo': this.createChild('AddMemo', '.memo-wrap')
-        }
+            this.childs = {
+              'add-response': this.createChild('AddResponse', '.reponse-wrap')
+            , 'add-memo': this.createChild('AddMemo', '.memo-wrap')
+            }
 
-        model.one('change:caseId'
-        , function(model) {
-            _.each(['add-response', 'add-memo'], function(it) {
-                this.childs[it].switchMode('edit').save()
-                this.trigger('display:'+ it, false)
+            model.one('change:caseId'
+            , function(model) {
+                _.each(['add-response', 'add-memo'], function(it) {
+                    this.childs[it].switchMode('edit').save()
+                    this.trigger('display:'+ it, false)
+                  }
+                , this
+                )
+                this.switchMode('edit')
               }
             , this
             )
-            this.switchMode('edit')
-          }
-        , this
-        )
-        
-        this.switchMode(this.model.id ? 'edit' : 'create')
-      }
-
-    , createChild: function(className, selector) {
-        return new CaseForm[className](
-          {
-            el: this.$(selector)
-          , model: this.model
-          , parent: this
-          }
-        )
-      }
-
-    , switchMode: function(mode) {
-        if (mode === 'create') {
-          this.$('.create-case').removeClass('hide')
-          this.$('.edit-case').addClass('hide')
-          if (!this.childs['create-case']) {
-            this.childs['create-case'] = this.createChild('CreateCase', '[name=create-case]')
-          }
-          this.$('.create-case a').click()
-        } else {
-          this.$('.create-case').addClass('hide')
-          this.$('.edit-case').removeClass('hide')
-
-          if (!this.model.get('caseId')) {
-            this.model.set('caseId', this.options.parent.model.get('caseId'))
+            
+            this.switchMode(this.model.id ? 'edit' : 'create')
           }
 
-          if (!this.childs['edit-case']) {
-            this.childs['edit-case'] = this.createChild('EditCase', '[name=edit-case]')
+        , createChild: function(className, selector) {
+            return new CaseForm[className](
+              {
+                el: this.$(selector)
+              , model: this.model
+              , parent: this
+              }
+            )
           }
-          // change:caseId maybe fired more than once
-          this.$('.edit-case a').click().find('.case-id').html(this.model.id)
+
+        , switchMode: function(mode) {
+            if (mode === 'create') {
+              this.$('.create-case').removeClass('hide')
+              this.$('.edit-case').addClass('hide')
+              if (!this.childs['create-case']) {
+                this.childs['create-case'] = this.createChild('CreateCase', '[name=create-case]')
+              }
+              this.$('.create-case a').click()
+            } else {
+              this.$('.create-case').addClass('hide')
+              this.$('.edit-case').removeClass('hide')
+
+              if (!this.model.get('caseId')) {
+                this.model.set('caseId', this.options.parent.model.get('caseId'))
+              }
+
+              if (!this.childs['edit-case']) {
+                this.childs['edit-case'] = this.createChild('EditCase', '[name=edit-case]')
+              }
+              // change:caseId maybe fired more than once
+              this.$('.edit-case a').click().find('.case-id').html(this.model.id)
+            }
+            return this
+          }
         }
-        return this
-      }
-    }
-  )
+      )
 
   CaseApp.CaseHistory = Backbone.View.extend(
     {
