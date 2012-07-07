@@ -3,6 +3,8 @@ $(document.body).ready(function() {
         {
           initialize: function(options) {
             this.li = options.li
+
+            this.model.on('change', this.render, this)
             this.render()
           }
 
@@ -69,10 +71,21 @@ $(document.body).ready(function() {
               data.voiceName = data.articleVoiceName
               data.voicePic = data.articleVoicePicture
             }
+            data.read = (data.readStatus == 'read' ? true : false)
 
             data.platformPic = joinPath($.contextPath, 'images/icon-' + data.type + '-32x32.png')
 
-            this.setElement($(Mustache.render(this.li, data)))
+            var el = $(Mustache.render(this.li, data))
+            if (this.$el.parent().length > 0) {
+              this.$el.replaceWith(el)
+              el.find('img').each(function(i, it) {
+                  it = $(it)
+                  it.attr('src', it.attr('data-original'))
+                }
+              )
+            }
+
+            this.setElement(el)
             updatePriority(this.$('.prioritys-small li:nth-child(' + data.priority + ')'))
           }
         }

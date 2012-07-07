@@ -23,6 +23,7 @@
             <img data-original="{{platformPic}}" alt="" width="50" height="50">
             <img data-original="{{assetPic}}" alt="" width="50" height="50">
             <img data-original="{{voicePic}}" alt="{{voiceName}}" width="50" height="50">
+            {{^read}}<span class="update-count">{{updateCount}}</span>{{/read}}
           </div>
 
           <div class="meta">
@@ -40,7 +41,9 @@
             <div class="datetime">{{timePosted}}<br/>{{datePosted}}</div>
             <div class="datetime">{{timeCreated}}<br/>{{dateCreated}}</div>
           </div>
-          <div class="actions"><button class="btn show-case">Action</button></div>
+          <div class="actions">
+            <button class="btn show-case">Action</button>
+          </div>
         </li>
       </ul>
     </div>

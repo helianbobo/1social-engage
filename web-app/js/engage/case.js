@@ -84,6 +84,24 @@
         this.tmpl = this.extractTemplate(this.$('.conversation-inner').children())
         this.model = conversation
         conversation.on('change', this.render, this)
+        conversation.on('sync', function() {
+            var _case = engage.cases.get(options.parent.model.get('caseId'))
+            if (_case.get('updateCount') > 0) {
+              $.ajax(
+                {
+                  url: joinPath($.contextPath, 'socialEngage/markCaseRead')
+                , data: { caseId: _case.id }
+                , dataType: 'json'
+                , success: function(response) {
+                    if (response.response == 'ok') {
+                      _case.set({ 'updateCount' : 0, 'readStatus': 'read'})
+                    }
+                  }
+                }
+              )
+            }
+          }
+        )
         conversation.fetch()
       }
 
@@ -134,7 +152,7 @@
               }
             , this
             )
-            
+
             this.switchMode(this.model.id ? 'edit' : 'create')
           }
 
