@@ -41,6 +41,8 @@ $(document.body).ready(function() {
                     , 'likeCount'
                     , 'commentCount'
                     , 'datetimePosted'
+                    , 'voiceName'
+                    , 'voicePic'
                     )
                 )
             }
@@ -263,9 +265,9 @@ $(document.body).ready(function() {
   // -----
 
   var ids = 0
-    , modalQueue = new ElementQueue({ max: 3 })
     , assets = engage.assets = new engage.model.Assets()
     , cases = engage.cases = new engage.model.Cases()
+    , modalQueue = new ElementQueue({ max: 3 })
     , posts = engage.posts = new engage.model.Posts(null
       , { 
           order: 'desc'

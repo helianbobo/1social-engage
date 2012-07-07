@@ -52,6 +52,12 @@ var tmplLoader = _.extend(
     , Backbone.Events
     )
 
+function updatePriority(li) {
+  li.prevAll().addClass('active')
+  li.addClass('active')
+  li.nextAll().removeClass('active')
+}
+
 ;(function() {
   // constants
   var DEFAULT_TEMPLATE_FILTER = function(el) { return el.attr('tmpl-load-timing') != 'manual' }
@@ -86,6 +92,10 @@ var tmplLoader = _.extend(
           }
 
         , idAttribute: 'caseId'
+
+        , updateStatus: function(status) {
+            this.set({ 'caseStatus': status, 'statusText': Case.statusMap[status] })
+          }
 
         , parse: function(response) {
             var data = response
@@ -156,7 +166,7 @@ var tmplLoader = _.extend(
           }
 
         , parse: function(response) {
-            return response.data
+            return _.map(response.data, Case.prototype.parse)
           }
 
         , url: function() {

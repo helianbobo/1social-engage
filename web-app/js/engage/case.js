@@ -371,6 +371,7 @@
                       _t.resetModel()
                       if (evt) showMsg('Response saved', $(evt.currentTarget).parent())
                       _t.refCase.increase('version')
+                      _t.refCase.updateStatus('2')
                     }
                   }
                 }
@@ -464,12 +465,13 @@
 
             this.changeMode('read')
             this.model.on('sync', this.render, this)
+            this.model.on('change:caseStatus', this.render, this)
             this.model.on('change:priority', function(model, data) {
                 prioritys.trigger('change', data)
               }
             )
 
-            if (this.model.get('title')) this.render()
+            if (this.model.get('title')) this.render(this.model)
           }
 
         , events: {
@@ -621,12 +623,6 @@
       }
     , 2500
     )
-  }
-
-  function updatePriority(li) {
-    li.prevAll().addClass('active')
-    li.addClass('active')
-    li.nextAll().removeClass('active')
   }
 
   _.extend(CaseForm

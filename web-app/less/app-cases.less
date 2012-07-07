@@ -9,7 +9,17 @@
 // Toolbar
 // -----
 .toolbar {
-  margin-top: 40px;
+  padding-top: 40px;
+}
+.batch-actions {
+  button {
+    display: inline-block;
+    margin: 4px;
+    padding: 4px 6px;
+  }
+  .input-all-selector {
+    margin: 8px 12px;
+  }
 }
 .refresh-actions {
   .btn-refresh {
@@ -32,25 +42,42 @@
 // Case List
 // -----
 .case-list-wrap {
+  overflow: auto;
+}
+.case-item {
+  .clearfix();
+  list-style: none;
+  border-bottom: 1px solid #ddd;
+  position: relative;
 }
 .case-list {
   font-size: 12px;
   margin: 0;
   padding: 0;
-  li {
-    .clearfix();
-    list-style: none;
-    border-bottom: 1px solid #ddd;
-    position: relative;
-  }
   .actions {
-    .absolute-top-right(10px, 10px);
+    .absolute-top-right(10px, 0);
+    width: 120px;
+    .btn {
+      width: 100px;
+    }
+  }
+  .comment {
+    border-top: 1px solid @grayLight;
+    padding: 4px 0 4px 20px;
   }
   .content {
     margin-left: (@gridColumnWidth + @gridGutterWidth) * 3 - @gridGutterWidth;
     margin-right: (@gridColumnWidth + @gridGutterWidth) * 8 - @gridGutterWidth;
     min-height: 80px;
     padding: 10px 0;
+  }
+  .init-post {
+    margin-bottom: 6px;
+  }
+  .input-item-selector {
+    left: 10px;
+    position: absolute;
+    top: 15px;
   }
   .meta {
     .absolute-top-right(10px, 120px);
@@ -59,21 +86,28 @@
       display: inline-block;
     }
     .agent {
-      width: 60px;
+      width: 65px;
     }
     .datetime {
       text-align: center;
       width: 140px;
     }
+    .priority {
+      margin-right: -16px;
+    }
     .status {
-      width: 60px;
+      width: 65px;
     }
   }
   .pics {
-    .absolute-top-left(10px, 30px);
+    .absolute-top-left(10px, 35px);
     img {
-      margin: 0 8px 0 0;
+      margin: 0 6px 0 0;
     }
+  }
+  .trim {
+    height: 18px;
+    .text-overflow();
   }
   .user-name {
     font-weight: bold;
@@ -81,25 +115,24 @@
   }
 }
 
-.prioritys {
+.prioritys-small {
   display: inline-block;
   margin: 0;
   padding: 0;
 }
-.prioritys > li {
+.prioritys-small > li {
   display: inline-block;
   float: left;
   list-style: none;
 }
-.prioritys > li > a {
-  background: url(../images/icon-flags.png) no-repeat -50px 0;
+.prioritys-small > li > a {
+  background: url(../images/icon-engage-posts.png) no-repeat 0 -44px;
   display: inline-block;
   outline: none;
-  .square(25px);
+  .square(16px);
   text-indent: -9999px;
   vertical-align: text-top;
 }
-.prioritys > .active > a,
-.prioritys > li > a:hover {
-  background-position: 0 0;
+.prioritys-small > .active > a {
+  background-position: -22px -44px;
 }
