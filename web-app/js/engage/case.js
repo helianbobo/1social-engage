@@ -519,7 +519,15 @@
 
         , close: function() {
             if (this.editable) this.$('.btn-edit-case').click()
-            this.model.destroy()
+            this.model.destroy(
+                {
+                  success: function(model, response) {
+                    // the model is not actually deleted
+                    // should be a PUT with { caseStatus: 0 }
+                    model.set(model.parse(response), { silent: true })
+                  }
+                }
+              )
           }
 
         , displayPanel: function(evt) {
@@ -542,6 +550,10 @@
             this.$('.case-status').html(model.get('statusText'))
 
             this.$('.prioritys').trigger('change', model.get('priority'))
+
+            if (parseInt(model.get('caseStatus')) === 0) {
+              this.$('.control-actions').addClass('hide')
+            }
           }
 
         , save: function(evt) {
