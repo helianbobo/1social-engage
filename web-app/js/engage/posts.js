@@ -87,6 +87,11 @@ $(document.body).ready(function() {
             var el = $(Mustache.render(this.li, data))
             if (this.$el.parent().length > 0) {
               this.$el.replaceWith(el)
+              el.find('img').each(function(i, it) {
+                  it = $(it)
+                  it.attr('src', it.attr('data-original'))
+                }
+              )
             }
 
             this.setElement(el)
