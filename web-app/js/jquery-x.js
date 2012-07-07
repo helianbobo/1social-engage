@@ -1,6 +1,34 @@
 // Extension for jQuery and more
 (function($) {
-  // TODO
+  /**
+   * Return the offset relative to ref, default is body.
+   *
+   * Notes: The ref element should be 'absolute' or 'relative' position.
+   *        If you get the incorrect offfset, check the ref position setting first.
+   */
+  $.relativeOffset = function(sender, ref) {
+      if (sender && sender.jquery) sender = sender[0]
+      if (!sender) return;
+      if (ref && ref.jquery) ref = ref[0]
+      if (!ref) ref = null
+      
+      var e = sender
+        , E = e 
+        , x = E.scrollLeft
+        , y = E.scrollTop
+
+      all: while (e.offsetParent) {
+          x += e.offsetLeft
+          y += e.offsetTop
+          e = e.offsetParent
+          do {
+              if (E === ref) break all;
+              x-= E.scrollLeft
+              y-= E.scrollTop
+          } while (ref === (E = E.parentNode) || e !== E)
+      }
+      return { left: x, top: y }
+  }
 })(jQuery)
 
 /**
