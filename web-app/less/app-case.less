@@ -89,10 +89,14 @@
   }
   .content {
     border-top: 1px solid @grayLight;
+    display: block;
     font-size: 11px;
     margin: 0 6px 0 @assetPicWidth + @assetPicMargin * 2;
     padding: 8px 0;
     .text-overflow();
+    &:hover {
+      text-decoration: none;
+    }
   }
   .user {
     margin-left: @assetPicWidth + @assetPicMargin * 2;

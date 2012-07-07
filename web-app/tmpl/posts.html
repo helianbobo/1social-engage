@@ -15,10 +15,10 @@
         <ul class="post-list">
           <li class="post-item" fbid="{{fbId}}">
             <div class="content">
-              <div class="init-post {{#comment}}trim{{/comment}}">
+              <a href="{{permalink}}" target="_blank" class="init-post {{#comment}}trim{{/comment}}">
                 <span class="user-name" href="">{{voiceName}}</span>
                 {{content}}
-              </div>
+              </a>
               {{#comment}}
               <div class="comment">
                 <span class="user-name" href="">{{voiceName}}</span>
