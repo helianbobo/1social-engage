@@ -238,7 +238,116 @@
   CaseApp.CaseSocialProfile = Backbone.View.extend(
     {
       initialize: function(options) {
+        var _t = this
 
+        this.tmpls = {}
+
+        this.$('.tab-pane').each(function() {
+            var el = $(this)
+
+            _t.tmpls[el.attr('name')] = _t.extractTemplate(el.children())
+          }
+        )
+        
+        this.model = new engage.model.Profile({ id: options.parent.model.get('voiceId') })
+
+        this.model.on('sync', this.render, this)
+        this.model.fetch()
+      }
+
+    , events: {
+        'click .btn-cancel': 'changeMode'
+      , 'click .btn-edit': 'changeMode'
+      , 'click .btn-save-contact': 'saveContact'
+      , 'click .btn-save-social': 'saveSocial'
+      }
+
+    , changeMode: function(evt) {
+        function reverse(mode) {
+          return mode == 'read' ? 'edit': 'read'
+        }
+
+        var el = $(evt.currentTarget).closest('.tab-pane')
+          , mode = reverse(el.attr('data-status') || 'read')
+
+
+        _.each(['read', 'edit'], function(it) {
+            el.find('[data-mode=' + it + ']')[it == mode ? 'removeClass' : 'addClass']('hide')
+          }
+        )
+
+        el.attr('data-status', mode)
+      }
+
+    , render: function(model, part) {
+        var data = model.toJSON()
+          , tmpls = (part in this.tmpls) ? _.pick(this.tmpls, part) : this.tmpls
+
+        function fill(tmpl, name) {
+          this.$('[name=' + name + ']').html(Mustache.render(tmpl, data))
+        }
+        _.each(tmpls, _.bind(fill, this))
+
+        this.$('[data-mode=read]').removeClass('hide')
+        this.$('[data-mode=edit]').addClass('hide')
+      }
+
+    , collectInputs: function(el) {
+        var data = {}
+
+        el.find('input').each(function(i, it) {
+            var input = $(it)
+
+            data[input.attr('name')] = input.val()
+          }
+        )
+        return data
+      }
+
+    , saveContact: function(evt) {
+        var el = $(evt.currentTarget).closest('.tab-pane')
+          , data = this.collectInputs(el)
+          , model = this.model
+          , _t = this
+
+        data.voiceId = model.id
+
+        $.ajax(
+          {
+            url: joinPath($.contextPath, 'socialEngage/updateVoiceDetails')
+          , data: data
+          , dataType: 'json'
+          , success: function(response) {
+              if (response.response == 'ok') {
+                model.set(data)
+                _t.render(model, el.attr('name'))
+              }
+            }
+          }
+        )
+      }
+
+    , saveSocial: function(evt) {
+        var el = $(evt.currentTarget).closest('.tab-pane')
+          , data = this.collectInputs(el)
+          , model = this.model
+          , _t = this
+
+        data.voiceId = model.id
+
+        $.ajax(
+          {
+            url: joinPath($.contextPath, 'socialEngage/updateSocialProfile')
+          , data: data
+          , dataType: 'json'
+          , success: function(response) {
+              if (response.response == 'ok') {
+                model.set(data.type, data)
+                _t.render(model, el.attr('name'))
+              }
+            }
+          }
+        )
       }
     }
   )

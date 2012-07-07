@@ -297,6 +297,44 @@ function updatePriority(li) {
           }
         }
       )
+  
+    , Profile = Backbone.Model.extend(
+        {
+          parse: function(response) {
+            var data = response.data
+              , fb = {}
+              , twitter = {}
+              , weibo = {}
+
+            function rename(src, attr, target, attr2) {
+              target[attr2] = src[attr]
+              delete src[attr]
+            }
+
+            rename(data, 'fbId', fb, 'id')
+            rename(data, 'fbName', fb, 'name')
+            rename(data, 'fbUrl', fb, 'url')
+
+            rename(data, 'twitterId', twitter, 'id')
+            rename(data, 'twitterSN', twitter, 'name')
+            rename(data, 'twitterURL', twitter, 'url')
+
+            rename(data, 'weiboId', weibo, 'id')
+            rename(data, 'weiboSN', weibo, 'name')
+            rename(data, 'weiboURL', weibo, 'url')
+
+            data.facebook = fb
+            data.twitter = twitter
+            data.weibo = weibo
+
+            return data
+          }
+
+        , url: function() {
+            return joinPath($.contextPath, 'socialEngage/getVoiceProfile?voiceId=' + this.id)
+          }
+        }
+      )
 
   _.extend(engage.model, {
       'Asset': Asset
@@ -308,6 +346,7 @@ function updatePriority(li) {
     , 'Conversation': Conversation
     , 'Post': Post
     , 'Posts': Posts
+    , 'Profile': Profile
     }
   )
 

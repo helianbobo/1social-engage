@@ -420,6 +420,7 @@ class SocialEngageController {
         url=www.twitter.com/bye&
         type=twitter&
          */
+        render '''{"response":"ok"}'''
     }
 
     def getVoiceProfile(){
@@ -428,20 +429,12 @@ class SocialEngageController {
          */
         render '''{
   "data": {
-    "class": "com.brandtology.mongo.Voice",
     "clientAccountId": 969,
     "email": "a",
     "fbId": "180911745311892",
     "fbName": "Manicurious",
     "fbUrl": "http://www.facebook.com/180911745311892",
-    "id": {
-      "class": "org.bson.types.ObjectId",
-      "inc": 877359895,
-      "machine": -1351019594,
-      "new": false,
-      "time": 1340801141000,
-      "timeSecond": 1340801141
-    },
+    "id": "9691340801140613.1340801141467",
     "identifier": "iden",
     "name": "bye",
     "phone": "12345",

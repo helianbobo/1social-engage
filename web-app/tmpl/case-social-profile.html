@@ -9,33 +9,41 @@
           <div class="control-group">
             <label class="control-label" for="">Name</label>
             <div class="controls">
-              <input type="" placeholder="Name" >
+              <div class="text" data-mode="read">{{name}}</div>
+              <input data-mode="edit" placeholder="Name" name="name" value="{{name}}" >
             </div>
           </div>
 
           <div class="control-group">
             <label class="control-label" for="">Identifier</label>
             <div class="controls">
-              <input type="" placeholder="Account Number">
+              <div class="text" data-mode="read">{{identifier}}</div>
+              <input data-mode="edit" placeholder="Account Number" name="identifier" value="{{identifier}}">
             </div>
           </div>
 
           <div class="control-group">
             <label class="control-label" for="">Email</label>
             <div class="controls">
-              <input type="" placeholder="Email Address">
+              <div class="text" data-mode="read">{{email}}</div>
+              <input data-mode="edit" placeholder="Email Address" name="email" value="{{email}}">
             </div>
           </div>
 
           <div class="control-group">
             <label class="control-label" for="">Contact Number</label>
             <div class="controls">
-              <input type="" placeholder="Telephone Number">
+              <div class="text" data-mode="read">{{phone}}</div>
+              <input data-mode="edit" placeholder="Telephone Number" name="phone" value="{{phone}}">
             </div>
           </div>
 
-          <div class="form-actions">
-            <button>Save</button>
+          <div data-mode="read" class="form-actions">
+            <button class="btn btn-edit">Edit</button>
+          </div>
+          <div data-mode="edit" class="form-actions">
+            <button class="btn btn-cancel">Cancel</button>
+            <button class="btn btn-save-contact">Save</button>
           </div>
         </div>
 
@@ -52,66 +60,90 @@
     <div class="tab-content">
       <div class="tab-pane active" name="contact-twitter">
         <div class="form-contact form form-horizontal">
+          <input type="hidden" name="type" value="twitter" >
+          <input type="hidden" name="id" value="{{twitter.id}}" >
           <div class="control-group">
             <label class="control-label" for="">User Name</label>
             <div class="controls">
-              <input type="" placeholder="Twitter User Name" >
+              <div class="text" data-mode="read">{{twitter.name}}</div>
+              <input data-mode="edit" placeholder="Twitter User Name" name="name" value="{{twitter.name}}" >
             </div>
           </div>
 
           <div class="control-group">
             <label class="control-label" for="">URL</label>
             <div class="controls">
-              <input type="" placeholder="Twitter User Profile URL">
+              <div class="text" data-mode="read">{{twitter.url}}</div>
+              <input data-mode="edit" placeholder="Twitter User Profile URL" name="url" value="{{twitter.url}}">
             </div>
           </div>
 
-          <div class="form-actions">
-            <button>Save</button>
+          <div data-mode="read" class="form-actions">
+            <button class="btn btn-edit">Edit</button>
+          </div>
+          <div data-mode="edit" class="form-actions">
+            <button class="btn btn-cancel">Cancel</button>
+            <button class="btn btn-save-social">Save</button>
           </div>
         </div>
       </div>
 
       <div class="tab-pane" name="contact-facebook">
         <div class="form-contact form form-horizontal">
+          <input type="hidden" name="type" value="facebook" >
+          <input type="hidden" name="id" value="{{facebook.id}}" >
           <div class="control-group">
             <label class="control-label" for="">Facebook Name</label>
             <div class="controls">
-              <input type="" placeholder="Facebook User Name" >
+              <div class="text" data-mode="read">{{facebook.name}}</div>
+              <input data-mode="edit" placeholder="Facebook User Name" name="name" value="{{facebook.name}}" >
             </div>
           </div>
 
           <div class="control-group">
             <label class="control-label" for="">URL</label>
             <div class="controls">
-              <input type="" placeholder="Facebook User Profile URL">
+              <div class="text" data-mode="read">{{facebook.url}}</div>
+              <input data-mode="edit" placeholder="Facebook User Profile URL" name="url" value="{{facebook.url}}">
             </div>
           </div>
 
-          <div class="form-actions">
-            <button>Save</button>
+          <div data-mode="read" class="form-actions">
+            <button class="btn btn-edit">Edit</button>
+          </div>
+          <div data-mode="edit" class="form-actions">
+            <button class="btn btn-cancel">Cancel</button>
+            <button class="btn btn-save-social">Save</button>
           </div>
         </div>
       </div>
 
       <div class="tab-pane" name="contact-weibo">
         <div class="form-contact form form-horizontal">
+          <input type="hidden" name="type" value="weibo" >
+          <input type="hidden" name="id" value="{{weibo.id}}" >
           <div class="control-group">
             <label class="control-label" for="">Sina Weibo Name</label>
             <div class="controls">
-              <input type="" placeholder="Sina Weibo User Name" >
+              <div class="text" data-mode="read">{{weibo.name}}</div>
+              <input data-mode="edit" placeholder="Sina Weibo User Name" name="name" value="{{weibo.name}}" >
             </div>
           </div>
 
           <div class="control-group">
             <label class="control-label" for="">URL</label>
             <div class="controls">
-              <input type="" placeholder="Sina Weibo User Profile URL">
+              <div class="text" data-mode="read">{{weibo.url}}</div>
+              <input data-mode="edit" placeholder="Sina Weibo User Profile URL" name="url" value="{{weibo.url}}">
             </div>
           </div>
 
-          <div class="form-actions">
-            <button>Save</button>
+          <div data-mode="read" class="form-actions">
+            <button class="btn btn-edit">Edit</button>
+          </div>
+          <div data-mode="edit" class="form-actions">
+            <button class="btn btn-cancel">Cancel</button>
+            <button class="btn btn-save-social">Save</button>
           </div>
         </div>
       </div>
