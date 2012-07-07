@@ -8,11 +8,42 @@ $(document.body).ready(function() {
             this.li = options.li
 
             this.model.on('change:selected', this.select, this)
+            this.model.on('change', this.render, this)
             this.render()
           }
 
         , events: {
-            'click .show-case': 'openCase'
+            'click .mark': 'mark'
+          , 'click .show-case': 'openCase'
+          }
+
+        , mark: function(evt) {
+            var btn = $(evt.currentTarget)
+              , readStatus = btn.attr('data-read-status')
+
+            function reverse(status) {
+              return status == 'read' ? 'unread' : 'read'
+            }
+
+            var model = this.model
+              , post = this.model.toJSON()
+              , params = this.model.getIds()
+
+            params.type = this.model.collection.params.get('type')
+            params.status = reverse(readStatus)
+
+            $.ajax(
+              {
+                url: joinPath($.contextPath, 'socialEngage/markStatus')
+              , data: params
+              , dataType: 'json'
+              , success: function(response) {
+                  if (response.response == 'ok') {
+                    model.set('readStatus', params.status)
+                  }
+                }
+              }
+            )
           }
 
         , openCase: function(evt) {
@@ -47,12 +78,18 @@ $(document.body).ready(function() {
                 )
             }
 
+            data.read = data.readStatus == 'read' ? true : false
             // split date & time
             var date = data.datetimePosted.split(/[TZ]/)
             data.date = date[0]
             data.time = date[1]
 
-            this.setElement($(Mustache.render(this.li, data)))
+            var el = $(Mustache.render(this.li, data))
+            if (this.$el.parent().length > 0) {
+              this.$el.replaceWith(el)
+            }
+
+            this.setElement(el)
           }
 
         , select: function(model, selected) {

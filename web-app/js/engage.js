@@ -246,6 +246,16 @@ function updatePriority(li) {
 
             this.set({ id: id }, { silent: true })
           }
+
+        , getIds: function() {
+            var data = this.toJSON()
+              , obj = { articleId: data.fbId }
+
+            if (data.comment && data.comment.length > 0) {
+              obj.commentId = data.comment[0].fbId
+            }
+            return obj
+          }
         }
       )
 

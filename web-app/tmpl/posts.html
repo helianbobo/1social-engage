@@ -34,7 +34,7 @@
               <span class="type-item-1-2 {{#comment}}inactive{{/comment}}">
                 <i class="icon-page"></i>
               </span>
-              <span class="type-item-2-1 {{^readStatus}}inactive{{/readStatus}}" title="{{#readBy}}Read by {{readBy}}{{/readBy}}">
+              <span class="type-item-2-1 {{^read}}inactive{{/read}}" title="{{#readBy}}Read by {{readBy}}{{/readBy}}">
                 <i class="icon-read"></i>
               </span>
               <span class="type-item-2-2">
@@ -53,7 +53,7 @@
             </div>
             <div class="actions">
               <button class="btn show-case">Action</button>
-              <button class="btn">Mark as read</button>
+              <button class="btn mark" data-read-status="{{readStatus}}">Mark as {{#read}}unread{{/read}}{{^read}}read{{/read}}</button>
             </div>
           </li>
         </ul>
