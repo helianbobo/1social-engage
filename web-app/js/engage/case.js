@@ -102,6 +102,11 @@
         
         ctn.html(Mustache.render(this.tmpl, data))
         this.$('img').lazyload({ container: ctn, effect: "fadeIn" })
+
+        var original = ctn.find('.original:first').closest('li')
+        if (original.length > 0) {
+          ctn.animate({ scrollTop: $.relativeOffset(original, ctn).top }, 'slow')
+        }
       }
     }
   )
