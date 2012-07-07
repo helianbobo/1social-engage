@@ -376,7 +376,7 @@
                       _t.resetModel()
                       if (evt) showMsg('Response saved', $(evt.currentTarget).parent())
                       _t.refCase.increase('version')
-                      _t.refCase.updateStatus('2')
+                      _t.refCase.updateStatus(response.caseStatus || 2)
                     }
                   }
                 }
