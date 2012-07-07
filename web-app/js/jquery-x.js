@@ -1,5 +1,38 @@
 // Extension for jQuery and more
 (function($) {
+
+  $.pagination = function(el) {
+    function goto(to) {
+      return function() {
+        el.trigger('go', to)
+        return false
+      }
+    }
+    function guard(fn) {
+      return function(evt) {
+        var btn = $(this)
+
+        if (btn.hasClass('disabled')) return false;
+        return fn(btn)
+      }
+    }
+
+    el.on('change', function(evt, data) {
+        var max = Math.min(data.offset + data.pageSize, data.total)
+        el.find('.offset').html(data.offset + 1)
+        el.find('.max').html(max)
+        el.find('.total').html(data.total)
+        el.find('.prev, .next').removeClass('disabled')
+        if (!data.offset) el.find('.prev').addClass('disabled')
+        if (max >= data.total) el.find('.next').addClass('disabled')
+      }
+    )
+    
+    el.delegate('.prev', 'click', guard(goto('prev')))
+    el.delegate('.next', 'click', guard(goto('next')))
+    return el
+  }
+
   /**
    * Return the offset relative to ref, default is body.
    *
