@@ -30,6 +30,9 @@
               <span class="user-name">{{userName}}</span>
               {{{content}}}
             </div>
+            {{#isOriginal}}
+            <i class="original icon-chevron-right"></i>
+            {{/isOriginal}}
             <div class="user-pic">
               <img data-original="{{userpic}}" width="50" height="50" alt="{{userName}}">
             </div>
