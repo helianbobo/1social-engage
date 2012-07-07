@@ -210,6 +210,16 @@ $(document.body).ready(function() {
       }
     }
   )
+
+  Toolbar.RefreshActions = Backbone.View.extend(
+    {
+      events: { 'click .btn-refresh': 'refresh' }
+
+    , refresh: function() {
+        this.collection.fetch()
+      }
+    }
+  )
   
   Toolbar.SortActions = Backbone.View.extend(
     {
