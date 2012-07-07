@@ -70,7 +70,13 @@ $(document.body).ready(function() {
             // clear the template
             this.$el.empty()
 
+            var _t = this;
+
             this.collection.on('sync', this.render, this)
+            this.collection.on('fetch:started', function(){
+                $(document).trigger('showPreloader', [{places:[_t.$el]}]);
+            }, this)
+
             this.collection.fetch()
           }
 

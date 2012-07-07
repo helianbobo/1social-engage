@@ -164,6 +164,7 @@ function updatePriority(li) {
           }
 
         , fetch: function(options) {
+            this.trigger('fetch:started');
             options = options || {}
             options.data = _.extend(this.collectParams(), options.data)
             Backbone.Collection.prototype.fetch.apply(this, [options])
@@ -213,6 +214,7 @@ function updatePriority(li) {
           }
 
         , fetch: function(options) {
+            this.trigger('fetch:started');
             options = options || {}
             options.data = _.extend(this.collectParams(), options.data)
             Backbone.Model.prototype.fetch.apply(this, [options])
@@ -269,6 +271,7 @@ function updatePriority(li) {
           }
 
         , fetch: function(options) {
+            this.trigger('fetch:started');
             options = options || {}
             options.data = _.extend(this.collectParams(), options.data)
             Backbone.Collection.prototype.fetch.apply(this, [options])

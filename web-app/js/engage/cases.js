@@ -85,6 +85,10 @@ $(document.body).ready(function() {
             this.childs = []
 
             this.collection.on('sync', this.render, this)
+            var _t = this;
+            this.collection.on('fetch:started', function(){
+              $(document).trigger('showPreloader', [{places:[_t.$el]}]);
+            }, this)
             this.collection.fetch()
           }
 
