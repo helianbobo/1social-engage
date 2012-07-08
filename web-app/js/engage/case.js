@@ -249,7 +249,9 @@
           }
         )
         
-        this.model = new engage.model.Profile({ id: options.parent.model.get('voiceId') })
+        this.model = new engage.model.Profile({
+          id: engage.cases.get(options.parent.model.get('caseId')).get('voiceId')
+        })
 
         this.model.on('sync', this.render, this)
         this.model.fetch()
