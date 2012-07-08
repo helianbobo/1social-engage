@@ -8,7 +8,11 @@ var engage = {
           , max = max || 10
 
         for (var i = 0; i < max; i++) ul.append(li.clone())
-      }
+      },
+    formatDateTime:function (dt) {
+        dt = dt.replace('T', ' ').replace('Z', '') + ' GMT';
+        return Date.parse(dt).toString("MMMM dd yyyy dddd, h:mm:ss tt");
+    }
     }
 
 // Global Models

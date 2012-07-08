@@ -111,7 +111,8 @@
 
         function filterDate(obj) {
           if (obj.dateTimePosted) {
-            _.extend(obj, array2Object(['date', 'time'], obj.dateTimePosted.split(/[TZ]/)))
+            obj.dateTimePosted = engage.formatDateTime(obj.dateTimePosted);
+            _.extend(obj, array2Object(['date', 'time'], obj.dateTimePosted.split(/[,]/)))
           }
         }
 
@@ -222,7 +223,7 @@
           collection.map(
             function(model) {
               var obj = model.toJSON()
-                , datetime = obj.datetime.split(/[TZ]/)
+                , datetime = engage.formatDateTime(obj.datetime).split(/[,]/)
 
               obj.date = datetime[0]
               obj.time = datetime[1]

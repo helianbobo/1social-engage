@@ -80,7 +80,8 @@ $(document.body).ready(function() {
 
             data.read = data.readStatus == 'read' ? true : false
             // split date & time
-            var date = data.datetimePosted.split(/[TZ]/)
+            data.datetimePosted = engage.formatDateTime(data.datetimePosted);
+            var date = data.datetimePosted.split(/[,]/)
             data.date = date[0]
             data.time = date[1]
 
