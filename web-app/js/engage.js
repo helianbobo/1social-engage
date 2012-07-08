@@ -303,6 +303,9 @@ function updatePriority(li) {
     , Profile = Backbone.Model.extend(
         {
           parse: function(response) {
+
+            response.data.id = response.data.voiceId;
+
             var data = response.data
               , fb = {}
               , twitter = {}
