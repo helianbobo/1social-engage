@@ -31,7 +31,8 @@ $(document.body).ready(function() {
                       'fbId': data.articleId
                     , 'caseId': data.caseId
                     , 'content': data.articleContent
-                    , 'permalink': data.articlePermalink
+                    , 'permalink': data.articleURL
+                    , 'voiceId': data.voiceId
                     , 'voiceName': data.articleVoiceName
                     , 'voicePic': data.articleVoicePicture
                     , 'comment': []

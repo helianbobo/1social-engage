@@ -253,6 +253,8 @@ function updatePriority(li) {
 
             if (data.comment && data.comment.length > 0) {
               obj.commentId = data.comment[0].fbId
+            }else{
+              obj.commentId = 0;
             }
             return obj
           }
