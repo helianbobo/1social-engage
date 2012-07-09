@@ -95,10 +95,11 @@ function capitalize(str) {
  */
 function joinPath(p1, p2 /* [, px] */) {
   return _.reduce(arguments, function(s1, s2) {
-        s1 = s1.replace(/\/$/, '')
-        s2 = s2.replace(/^\//, '')
         if (!s1) return s2
         if (!s2) return s1
+        s1 = s1.replace(/\/$/, '')
+        s2 = s2.replace(/^\//, '')
+
         return s1.replace(/\/$/, '') + '/' + s2.replace(/^\//, '')
       }
     )
