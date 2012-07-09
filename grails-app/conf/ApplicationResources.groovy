@@ -79,7 +79,7 @@ modules = {
         resource url: 'js/jquery.lazyload.js'
         resource url: 'js/jquery-x.js'
 
-        resource url: 'v1/js/date.js'
+        resource url: 'js/date.js'
 
         resource url: 'js/engage.js'
     }
