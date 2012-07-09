@@ -38,8 +38,8 @@
                 <li><a href="javascript:;">5</a></li>
               </ul>
             </div>
-            <div class="datetime">{{timePosted}}<br/>{{datePosted}}</div>
-            <div class="datetime">{{timeCreated}}<br/>{{dateCreated}}</div>
+            <div class="datetime">{{#format}}{{articleDateTimePost}}{{/format}}</div>
+            <div class="datetime">{{#format}}{{dateCreated}}{{/format}}</div>
           </div>
           <div class="actions">
             <button class="btn show-case">Action</button>

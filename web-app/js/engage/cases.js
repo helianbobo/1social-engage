@@ -58,14 +58,12 @@ $(document.body).ready(function() {
         , render: function() {
             var data = this.model.toJSON()
 
-            // split date & time
-            function mapDatetime(obj, src, target) {
-                var dateTime = engage.formatDateTime(obj[src])
-                _.extend(obj, array2Object(target, dateTime.split(/[,]/)))
+            // format datetime
+            data.format = function() {
+              return function(text, render) {
+                return engage.formatDateTime(render(text), 'h:mm:ss tt<br/>MMM dd yyyy ddd')
+              }
             }
-
-            mapDatetime(data, 'articleDateTimePost', ['datePosted', 'timePosted'])
-            mapDatetime(data, 'dateCreated', ['dateCreated', 'timeCreated'])
 
             if (data.comment && data.comment.length > 0) {
               data.voiceName = data.comment[0].voiceName

@@ -49,7 +49,7 @@
               <div class="count">{{likeCount}}{{^likeCount}}-{{/likeCount}}</div>
               <div class="count">{{commentCount}}{{^commentCount}}-{{/commentCount}}</div>
               <!--<div class="count">-</div>-->
-              <div class="datetime"><p>{{time}}</p><p>{{date}}</p></div>
+              <div class="datetime">{{#format}}{{datetimePosted}}{{/format}}</div>
             </div>
             <div class="actions">
               <button class="btn show-case">Action</button>

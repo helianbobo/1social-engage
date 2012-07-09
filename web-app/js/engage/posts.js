@@ -65,6 +65,13 @@ $(document.body).ready(function() {
         , render : function() {
             var data = this.model.toJSON()
 
+            // format datetime
+            data.format = function() {
+              return function(text, render) {
+                return engage.formatDateTime(render(text), 'h:mm:ss tt<br/>MMM dd yyyy ddd')
+              }
+            }
+
             if (data.comment.length > 0) {
               _.extend(data, 
                   _.pick(
@@ -79,11 +86,6 @@ $(document.body).ready(function() {
             }
 
             data.read = data.readStatus == 'read' ? true : false
-            // split date & time
-            data.datetimePosted = engage.formatDateTime(data.datetimePosted);
-            var date = data.datetimePosted.split(/[,]/)
-            data.date = date[0]
-            data.time = date[1]
 
             var el = $(Mustache.render(this.li, data))
             if (this.$el.parent().length > 0) {

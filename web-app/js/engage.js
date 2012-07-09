@@ -9,9 +9,10 @@ var engage = {
 
         for (var i = 0; i < max; i++) ul.append(li.clone())
       }
-    , formatDateTime:function (dt) {
+    , formatDateTime:function (dt, format) {
+        if (!dt) return dt;
         dt = dt.replace('T', ' ').replace('Z', '') + ' GMT'
-        return Date.parse(dt).toString("MMM dd yyyy ddd, h:mm:ss tt")
+        return Date.parse(dt).toString(format || "MMM dd yyyy ddd, h:mm:ss tt")
       }
     }
 
