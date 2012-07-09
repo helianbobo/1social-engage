@@ -61,3 +61,32 @@
 .icon-read {
   background-position: -132px -22px;
 }
+
+.prioritys {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.prioritys > li {
+  display: inline-block;
+  float: left;
+  list-style: none;
+}
+.prioritys > li > a {
+  background: url(../images/icon-engage-posts.png) no-repeat -44px -44px;
+  display: inline-block;
+  outline: none;
+  .square(22px);
+  text-indent: -9999px;
+  vertical-align: text-top;
+}
+.prioritys > .active > a {
+  background-position: -66px -44px;
+}
+.prioritys-small > li > a {
+  background-position: 0 -44px;
+  .square(16px);
+}
+.prioritys-small > .active > a {
+  background-position: -22px -44px;
+}
