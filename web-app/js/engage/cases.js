@@ -60,7 +60,7 @@ $(document.body).ready(function() {
 
             // split date & time
             function mapDatetime(obj, src, target) {
-                var dateTime = engage.formatDateTime(obj[src]);
+                var dateTime = engage.formatDateTime(obj[src])
                 _.extend(obj, array2Object(target, dateTime.split(/[,]/)))
             }
 
