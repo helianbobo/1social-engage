@@ -88,9 +88,11 @@ class SocialEngageController {
         render '''{
   "url": "http://www.facebook.com/permalink.php?story_fbid=196710807123445&id=98685085344",
   "username": "Channel 8",
+  "dateTimePosted": "2012-06-23T11:21:13Z",
   "content": "ü£?ìÑ? debuts tomorrow!! Here's a look at the meet & greet we had at Eastpoint Mall last weekend!\\n Joys of Life ü£?ìÑ? - äÄâ¢?Øü? Meet & Greet at Eastpoint Mall!",
   "fbId": "98685085344_196710807123445",
   "likesCount": 109,
+  "commentCount": 0,
   "voiceId": "98685085344",
   "comments":
   [

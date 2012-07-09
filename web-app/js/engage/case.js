@@ -109,7 +109,14 @@
         var ctn = this.$('.conversation-inner')
           , data = model.toJSON()
 
-        function filterDate(obj) {
+        // format datetime
+        data.format = function() {
+          return function(text, render) {
+            return engage.formatDateTime(render(text), 'h:mm:ss tt MMM dd yyyy')
+          }
+        }
+
+        /*function filterDate(obj) {
           if (obj.dateTimePosted) {
             obj.dateTimePosted = engage.formatDateTime(obj.dateTimePosted);
             _.extend(obj, array2Object(['date', 'time'], obj.dateTimePosted.split(/[,]/)))
@@ -117,7 +124,7 @@
         }
 
         _.each(data.comments, filterDate)
-        filterDate(data)
+        filterDate(data)*/
         
         ctn.html(Mustache.render(this.tmpl, data))
         this.$('img').lazyload({ container: ctn, effect: "fadeIn" })
@@ -218,17 +225,20 @@
 
     , render: function(collection) {
         var li = this.li
+
+        function format() {
+          return function(text, render) {
+            return engage.formatDateTime(render(text), 'hh:mm:ss MMM dd yyyy')
+          }
+        }
         
         this.$('ul').html(
           collection.map(
             function(model) {
-              var obj = model.toJSON()
-                , datetime = engage.formatDateTime(obj.datetime).split(/[,]/)
+              var data = model.toJSON()
 
-              obj.date = datetime[0]
-              obj.time = datetime[1]
-
-              return Mustache.render(li, obj) 
+              data.format = format
+              return Mustache.render(li, data)
             }
           ).join('')
         )

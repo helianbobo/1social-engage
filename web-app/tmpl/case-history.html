@@ -1,9 +1,9 @@
 <div class="case-history-wrap">
   <ul class="case-history">
-    <li>
-      {{time}} {{date}}
+    <li class="case-record">
+      <span class="datetime">{{#format}}{{datetime}}{{/format}}</span>
       <span class="user-name">{{userName}}</span>
-      {{msg}}
+      <span class="content">{{msg}}</span>
     </li>
   </ul>
   <div class="case-history no-case-history hide">
