@@ -72,10 +72,10 @@ $(document.body).ready(function() {
                     , 'likeCount'
                     , 'commentCount'
                     , 'datetimePosted'
-                    , 'voiceName'
-                    , 'voicePic'
                     )
                 )
+              data.postVoiceName = data.comment[0].voiceName
+              data.postVoicePic = data.comment[0].voicePic
             }
 
             data.read = data.readStatus == 'read' ? true : false
