@@ -76,7 +76,7 @@ $(document.body).ready(function() {
             }
             data.read = (data.readStatus == 'read' ? true : false)
 
-            data.platformPic = joinPath($.contextPath, 'images/icon-' + data.type + '-32x32.png')
+            data.platformPic = absolutePath($.contextPath, 'images/icon-' + data.type + '-32x32.png')
 
             var el = $(Mustache.render(this.li, data))
             if (this.$el.parent().length > 0) {

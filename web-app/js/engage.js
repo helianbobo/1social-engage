@@ -86,7 +86,7 @@ function updatePriority(li) {
           }
 
         , url: function() {
-            return joinPath($.contextPath, 'socialAssets/getAllAssets')
+            return absolutePath($.contextPath, 'socialAssets/getAllAssets')
           }
         }
       )
@@ -121,7 +121,7 @@ function updatePriority(li) {
           }
 
         , url: function() {
-            return joinPath($.contextPath, 'socialEngage/case/' + (this.id || 'new'))
+            return absolutePath($.contextPath, 'socialEngage/case/' + (this.id || 'new'))
           }
         }
       , {
@@ -134,14 +134,14 @@ function updatePriority(li) {
         , Memo: Backbone.Model.extend(
             {
               url: function() {
-                return joinPath($.contextPath, 'socialEngage/addNotes')
+                return absolutePath($.contextPath, 'socialEngage/addNotes')
               }
             }
           )
         , Response: Backbone.Model.extend(
             {
               url: function() {
-                return joinPath($.contextPath, 'socialEngage/responseCase')
+                return absolutePath($.contextPath, 'socialEngage/responseCase')
               }
             }
           )
@@ -180,7 +180,7 @@ function updatePriority(li) {
           }
 
         , url: function() {
-            return joinPath($.contextPath, 'socialEngage/getAllCase')
+            return absolutePath($.contextPath, 'socialEngage/getAllCase')
           }
         }
       )
@@ -206,7 +206,7 @@ function updatePriority(li) {
           }
 
         , url: function() {
-            return joinPath($.contextPath, 'socialEngage/getCaseHistory')
+            return absolutePath($.contextPath, 'socialEngage/getCaseHistory')
           }
         }
       )
@@ -235,7 +235,7 @@ function updatePriority(li) {
           }
 
         , url: function() {
-            return joinPath($.contextPath, 'socialEngage/showConversation')
+            return absolutePath($.contextPath, 'socialEngage/showConversation')
           }
         }
       )
@@ -299,7 +299,7 @@ function updatePriority(li) {
           }
 
         , url: function() {
-            return joinPath($.contextPath, 'socialEngage/getAllPosts')
+            return absolutePath($.contextPath, 'socialEngage/getAllPosts')
           }
         }
       )
@@ -340,7 +340,7 @@ function updatePriority(li) {
           }
 
         , url: function() {
-            return joinPath($.contextPath, 'socialEngage/getVoiceProfile?voiceId=' + this.id)
+            return absolutePath($.contextPath, 'socialEngage/getVoiceProfile?voiceId=' + this.id)
           }
         }
       )
@@ -364,7 +364,7 @@ function updatePriority(li) {
   }
 
   function loadTemplate(el, callback) {
-    var url = joinPath($.contextPath, '/tmpl/' + getTemplatePath(el.attr('tmpl')))
+    var url = absolutePath($.contextPath, '/tmpl/' + getTemplatePath(el.attr('tmpl')))
 
     $.ajax({
       url: url,

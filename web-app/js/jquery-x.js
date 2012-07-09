@@ -65,6 +65,13 @@
 })(jQuery)
 
 /**
+ * Equals joinPath('/', p1, p2, ...)
+ */
+function absolutePath(p1, p2 /* [, px] */) {
+  return joinPath.apply(null, Array.prototype.concat.apply(['/'], arguments))
+}
+
+/**
  * array2Object(['a', 'b'], [0, 1]) 
  * // { a: 0, b: 1 }
  *
@@ -95,12 +102,12 @@ function capitalize(str) {
  */
 function joinPath(p1, p2 /* [, px] */) {
   return _.reduce(arguments, function(s1, s2) {
-        if (!s1) return s2
-        if (!s2) return s1
-        s1 = s1.replace(/\/$/, '')
+        var _s1 = s1.replace(/\/$/, '')
         s2 = s2.replace(/^\//, '')
+        if (!_s1 && s1 != '/') return s2
+        if (!s2) return s1
 
-        return s1.replace(/\/$/, '') + '/' + s2.replace(/^\//, '')
+        return _s1 + '/' + s2
       }
     )
 }

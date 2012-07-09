@@ -34,7 +34,7 @@ $(document.body).ready(function() {
 
             $.ajax(
               {
-                url: joinPath($.contextPath, 'socialEngage/markStatus')
+                url: absolutePath($.contextPath, 'socialEngage/markStatus')
               , data: params
               , dataType: 'json'
               , success: function(response) {

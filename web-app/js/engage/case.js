@@ -89,7 +89,7 @@
             if (_case.get('updateCount') > 0) {
               $.ajax(
                 {
-                  url: joinPath($.contextPath, 'socialEngage/markCaseRead')
+                  url: absolutePath($.contextPath, 'socialEngage/markCaseRead')
                 , data: { caseId: _case.id }
                 , dataType: 'json'
                 , success: function(response) {
@@ -317,7 +317,7 @@
 
         $.ajax(
           {
-            url: joinPath($.contextPath, 'socialEngage/updateVoiceDetails')
+            url: absolutePath($.contextPath, 'socialEngage/updateVoiceDetails')
           , data: data
           , dataType: 'json'
           , success: function(response) {
@@ -340,7 +340,7 @@
 
         $.ajax(
           {
-            url: joinPath($.contextPath, 'socialEngage/updateSocialProfile')
+            url: absolutePath($.contextPath, 'socialEngage/updateSocialProfile')
           , data: data
           , dataType: 'json'
           , success: function(response) {
