@@ -12,11 +12,14 @@ grails.project.dependency.resolution = {
         // uncomment to disable ehcache
         // excludes 'ehcache'
     }
-    log "error" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
+    log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
     checksums true // Whether to verify checksums on resolve
 
     repositories {
         inherits true // Whether to inherit repository definitions from plugins
+
+        mavenRepo "http://snapshots.repository.codehaus.org"
+
         grailsPlugins()
         grailsHome()
         grailsCentral()
@@ -25,7 +28,7 @@ grails.project.dependency.resolution = {
         // uncomment these to enable remote dependency resolution from public Maven repositories
 //        mavenCentral()
 //        mavenLocal()
-        //mavenRepo "http://snapshots.repository.codehaus.org"
+
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
@@ -39,11 +42,11 @@ grails.project.dependency.resolution = {
 //        runtime 'oauth.signpost:signpost-core:1.1'
 //        runtime 'commons-httpclient:commons-httpclient:3.1'
 
-        runtime 'redis.clients:jedis:2.1.0'
+//        runtime 'redis.clients:jedis:2.1.0'
 
 
         //Export PPT
-        runtime('org.apache.poi:poi-ooxml:3.8','org.apache.poi:poi-excelant:3.8','org.apache.poi:poi-scratchpad:3.8'){
+        /*runtime('org.apache.poi:poi-ooxml:3.8','org.apache.poi:poi-excelant:3.8','org.apache.poi:poi-scratchpad:3.8'){
             excludes ([group:'org.apache.xmlbeans', name:'xmlbeans'])
         }
 
@@ -58,7 +61,7 @@ grails.project.dependency.resolution = {
 
 
         runtime 'com.google.code.gson:gson:1.4'
-        runtime 'rhino:js:1.7R2'
+        runtime 'rhino:js:1.7R2'*/
     }
 
     plugins {
@@ -73,6 +76,6 @@ grails.project.dependency.resolution = {
 
         build ":tomcat:$grailsVersion"
 
-        runtime ":redis:1.3"
+//        runtime ":redis:1.3"
     }
 }
