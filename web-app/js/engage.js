@@ -9,10 +9,22 @@ var engage = {
 
         for (var i = 0; i < max; i++) ul.append(li.clone())
       }
-    , formatDateTime:function (dt, format) {
+
+    , formatDateTime: function (dt, format) {
         if (!dt) return dt;
         dt = dt.replace('T', ' ').replace('Z', '') + ' GMT'
         return Date.parse(dt).toString(format || "MMM dd yyyy ddd, h:mm:ss tt")
+      }
+
+    , showAjax: function() {
+        var html = '<div class="loading-wrap"><span class="loading">Loading...</span></div>'
+          , el = $(html).css('opacity', 0)
+
+        $(document.body).append(el).on('ajaxSend', function() {
+          el.stop().css('opacity', 1)
+        }).on('ajaxComplete', function() {
+          el.animate({ opacity: 0 }, 'slow')
+        })
       }
     }
 
@@ -169,7 +181,6 @@ function updatePriority(li) {
           }
 
         , fetch: function(options) {
-            this.trigger('fetch:started');
             options = options || {}
             options.data = _.extend(this.collectParams(), options.data)
             Backbone.Collection.prototype.fetch.apply(this, [options])
@@ -209,7 +220,6 @@ function updatePriority(li) {
           }
 
         , fetch: function(options) {
-            this.trigger('fetch:started');
             options = options || {}
             options.data = _.extend(this.collectParams(), options.data)
             Backbone.Model.prototype.fetch.apply(this, [options])
@@ -278,7 +288,6 @@ function updatePriority(li) {
           }
 
         , fetch: function(options) {
-            this.trigger('fetch:started');
             options = options || {}
             options.data = _.extend(this.collectParams(), options.data)
             Backbone.Collection.prototype.fetch.apply(this, [options])
