@@ -368,12 +368,15 @@ class SocialEngageController {
         def caseHistoryData = JSON.parse(caseHistoryDataJson)
         result.data = caseHistoryData.data.collect {caseHistoryEntry->
 
-            def args = [caseHistoryEntry.createDate, caseHistoryEntry.createdBy]
+            def args = []
             args.addAll(caseHistoryEntry.params.values() as List)
 
-            g.message(
-                    code: "brandtology.engage.case.history.CH${caseHistoryEntry.indicator}",
-                    args: args)
+            [
+                    createDate: caseHistoryEntry.createDate,
+                    createdBy: caseHistoryEntry.createdBy,
+                    message:g.message(code: "brandtology.engage.case.history.CH${caseHistoryEntry.indicator}",
+                        args: args)
+            ]
         }
 
         render result as JSON
