@@ -8,27 +8,66 @@ class SocialEngageController {
 
     def index() {redirect(action: 'posts')}
 
-    def getCaseById(){
-        /*
-        caseId=9691340959298765
-         */
+    def getCase(params, body) {
+      // the case model
+      def obj = [
+        caseId: '9691340959298765',
+        title: 'case 2',
+        priority: 2,
+        caseStatus: 1,
+        assetPic: "http://graph.facebook.com/28011986676/picture",
+        assetURL: "http://www.facebook.com/28011986676",
+        articleId: "28011986676_10151726285826677",
+        commentId: "0",
+        type: "facebook",
+        content: "Cant believe you all wrote/said to ST and said that 2G was available when the network outage occurred this morning. Its was a complete loss of both network mind you! the fact that ST tried to downplay the whole affair reflects on how much ST cant face up to the issue while playing taichi and asking the consumers to keep switching on and off their phone or worse trying to call into the nonexistent helplines and telling us to head to exeter to make a sim change. All this while the issue is on your end of the stick! Yes i am pissed. pissed with how you guys insult the users and trying to twist facts! ",
+        note: "just another note",
+        voicePic: "https://graph.facebook.com/665336665/picture",
+        voiceName: "Perry Teo",
+        voiceId: "9691341482695378.1341482695531",
+        voiceURL: "http://www.facebook.com/665336665"
+      ]
 
-        render '''{
-  "caseId": "''' + params.caseId + '''",
-  "title": "case1",
-  "priority": 2,
-  "caseStatus": 1,
-  "assetPic": "http://graph.facebook.com/28011986676/picture",
-  "assetURL": "http://www.facebook.com/28011986676",
-  "articleId": "28011986676_10151726285826677",
-  "commentId": "0",
-  "type": "facebook",
-  "content": "Cant believe you all wrote/said to ST and said that 2G was available when the network outage occurred this morning. Its was a complete loss of both network mind you! the fact that ST tried to downplay the whole affair reflects on how much ST cant face up to the issue while playing taichi and asking the consumers to keep switching on and off their phone or worse trying to call into the nonexistent helplines and telling us to head to exeter to make a sim change. All this while the issue is on your end of the stick! Yes i am pissed. pissed with how you guys insult the users and trying to twist facts! ",
-  "voicePic": "https://graph.facebook.com/665336665/picture",
-  "voiceName": "Perry Teo",
-  "voiceId": "9691341482695378.1341482695531",
-  "voiceURL": "http://www.facebook.com/665336665"
-}'''
+      if (params) obj.each{ k, v -> if (params.containsKey(k)) obj[k] = params[k] }
+      if (body) obj.each{ k, v -> if (body.containsKey(k)) obj[k] = body[k] }
+      return obj
+    }
+
+    def createCase() {
+      /*
+      articleId=98685085344_196710807123445&
+      type=facebook&
+      commentId=98685085344_196710807123445_518623&
+      name=hello&
+      priority=3&
+      assignTo=661&
+       */
+      params.remove('caseId')
+      render getCase(params, request.JSON) as JSON
+    }
+
+    def closeCase() {
+      /*
+      caseId=9691340714194928&
+      type=facebook&
+       */
+      render getCase(params, [ caseStatus: 0 ]) as JSON
+    }
+
+    def getCaseById(){
+      /*
+      caseId=9691340959298765
+       */
+      render getCase(params, null) as JSON
+    }
+
+    def updateCase(){
+      /*
+      caseId=9691340714194928&
+      type=facebook&
+      name=newTitle&
+       */
+      render getCase(params, request.JSON) as JSON
     }
 
 
@@ -223,33 +262,6 @@ class SocialEngageController {
         render '''{"response":"ok"}'''
     }
 
-    def createCase() {
-        /*
-        articleId=98685085344_196710807123445&
-        type=facebook&
-        commentId=98685085344_196710807123445_518623&
-        name=hello&
-        priority=3&
-        assignTo=661&
-         */
-
-        render '''{
-    "caseId": "9691341301184247",
-    "title": "case1",
-    "priority": 2,
-    "caseStatus": 1,
-    "assetPic": "http://graph.facebook.com/28011986676/picture",
-    "assetURL": "http://www.facebook.com/28011986676",
-    "articleId": "28011986676_10151726285826677",
-    "commentId": "0",
-    "type": "facebook",
-    "content": "Cant believe you all wrote/said to ST and said that 2G was available when the network outage occurred this morning. Its was a complete loss of both network mind you! the fact that ST tried to downplay the whole affair reflects on how much ST cant face up to the issue while playing taichi and asking the consumers to keep switching on and off their phone or worse trying to call into the nonexistent helplines and telling us to head to exeter to make a sim change. All this while the issue is on your end of the stick! Yes i am pissed. pissed with how you guys insult the users and trying to twist facts! ",
-    "voicePic": "https://graph.facebook.com/665336665/picture",
-    "voiceName": "Perry Teo",
-    "voiceURL": "http://www.facebook.com/665336665"
-}'''
-    }
-
     def addNotes(){
         /*
         caseId=9691340714194928&
@@ -272,29 +284,6 @@ class SocialEngageController {
     "voiceName": "Perry Teo",
     "voiceURL": "http://www.facebook.com/665336665"
 }'''
-    }
-
-    def updateCase(){
-        /*
-        caseId=9691340714194928&
-        type=facebook&
-        name=newTitle&
-         */
-        render """{
-    "caseId": "9691341301184247",
-    "title": "${params.title}",
-    "priority": 2,
-    "caseStatus": 2,
-    "assetPic": "http://graph.facebook.com/28011986676/picture",
-    "assetURL": "http://www.facebook.com/28011986676",
-    "articleId": "28011986676_10151726285826677",
-    "commentId": "0",
-    "type": "facebook",
-    "content": "Cant believe you all wrote/said to ST and said that 2G was available when the network outage occurred this morning. Its was a complete loss of both network mind you! the fact that ST tried to downplay the whole affair reflects on how much ST cant face up to the issue while playing taichi and asking the consumers to keep switching on and off their phone or worse trying to call into the nonexistent helplines and telling us to head to exeter to make a sim change. All this while the issue is on your end of the stick! Yes i am pissed. pissed with how you guys insult the users and trying to twist facts! ",
-    "voicePic": "https://graph.facebook.com/665336665/picture",
-    "voiceName": "Perry Teo",
-    "voiceURL": "http://www.facebook.com/665336665"
-}"""
     }
 
     def responseCase(){
@@ -385,29 +374,6 @@ class SocialEngageController {
 
         render result as JSON
 
-    }
-
-    def closeCase() {
-        /*
-        caseId=9691340714194928&
-        type=facebook&
-         */
-
-        render '''{
-    "caseId": "9691341301184247",
-    "title": "case1",
-    "priority": 2,
-    "caseStatus": 0,
-    "assetPic": "http://graph.facebook.com/28011986676/picture",
-    "assetURL": "http://www.facebook.com/28011986676",
-    "articleId": "28011986676_10151726285826677",
-    "commentId": "0",
-    "type": "facebook",
-    "content": "Cant believe you all wrote/said to ST and said that 2G was available when the network outage occurred this morning. Its was a complete loss of both network mind you! the fact that ST tried to downplay the whole affair reflects on how much ST cant face up to the issue while playing taichi and asking the consumers to keep switching on and off their phone or worse trying to call into the nonexistent helplines and telling us to head to exeter to make a sim change. All this while the issue is on your end of the stick! Yes i am pissed. pissed with how you guys insult the users and trying to twist facts! ",
-    "voicePic": "https://graph.facebook.com/665336665/picture",
-    "voiceName": "Perry Teo",
-    "voiceURL": "http://www.facebook.com/665336665"
-}'''
     }
 
     def updateVoiceDetails(){

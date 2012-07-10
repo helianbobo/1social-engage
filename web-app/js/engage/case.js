@@ -86,7 +86,7 @@
         conversation.on('change', this.render, this)
         conversation.on('sync', function() {
             var _case = engage.cases.get(options.parent.model.get('caseId'))
-            if (_case.get('updateCount') > 0) {
+            if (_case && _case.get('updateCount') > 0) {
               $.ajax(
                 {
                   url: absolutePath($.contextPath, 'socialEngage/markCaseRead')
@@ -116,16 +116,6 @@
           }
         }
 
-        /*function filterDate(obj) {
-          if (obj.dateTimePosted) {
-            obj.dateTimePosted = engage.formatDateTime(obj.dateTimePosted);
-            _.extend(obj, array2Object(['date', 'time'], obj.dateTimePosted.split(/[,]/)))
-          }
-        }
-
-        _.each(data.comments, filterDate)
-        filterDate(data)*/
-        
         ctn.html(Mustache.render(this.tmpl, data))
         this.$('img').lazyload({ container: ctn, effect: "fadeIn" })
 
@@ -384,9 +374,10 @@
         {
           initialize: function(options) {
             options.parent.on('display:add-memo', this.display, this)
-            this.refCase = this.model
-            this.resetModel()
-            this.switchMode(this.model == null ? 'create' : 'edit')
+            this.model.on('change:note', this.render, this)
+            // this.refCase = this.model
+            // this.resetModel()
+            this.switchMode(!this.model.id ? 'create' : 'edit')
           }
 
         , events: {
@@ -402,6 +393,10 @@
         , display: function(visiable) {
             if (visiable) this.$el.removeClass('hide')
             else this.$el.addClass('hide')
+          }
+
+        , render: function(model) {
+            this.$('[name=memo]').val(model.get('note'))
           }
 
         , resetModel: function() {
@@ -421,21 +416,11 @@
             var val = $.trim(input.val())
 
             if (val) {
-              if (!this.model) this.resetModel()
-
-              var _t = this
-
               this.model.save(
-                { 'memo': val }
+                { note: val }
               , {
-                  success: function(model, response) {
-
-                    if (response.caseId) {
-                      input.val('')
-                      _t.resetModel()
-                      if (evt) showMsg('Memo saved', $(evt.currentTarget).parent())
-                      _t.refCase.increase('version')
-                    }
+                  success: function() {
+                    if (evt) showMsg('Memo saved', $(evt.currentTarget).parent())
                   }
                 }
               )
@@ -708,8 +693,9 @@
             }
             this.model.save(data
               , {
-                  wait: true
-                , success: function() { _t.changeMode(evt) } 
+                  // the wait:true will make unexpected change events
+                  // wait: true
+                  success: function() { _t.changeMode(evt) } 
                 }
               )
           }
