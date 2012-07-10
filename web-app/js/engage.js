@@ -193,17 +193,7 @@ function updatePriority(li) {
           model: CaseRecord
 
         , parse: function(response) {
-            var attrs = ['datetime', 'userName', 'msg']
-            function toObject(keys, values) {
-              var obj = {}
-
-              _.each(keys, function(key, i) { obj[key] = values[i] })
-              return obj
-            }
-            return response.data.map(function(str) {
-                return toObject(attrs, str.split(/\s+\-\s+/, 3))
-              }
-            )
+            return response.data
           }
 
         , url: function() {
