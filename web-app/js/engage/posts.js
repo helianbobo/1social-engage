@@ -72,6 +72,9 @@ $(document.body).ready(function() {
               }
             }
 
+            data.postVoiceName = data.voiceName
+            data.postVoicePic = data.voicePic
+            
             if (data.comment.length > 0) {
               _.extend(data, 
                   _.pick(
