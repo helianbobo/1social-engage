@@ -15,13 +15,15 @@
         <ul class="post-list">
           <li class="post-item" fbid="{{fbId}}">
             <div class="content">
-              <a href="{{permalink}}" target="_blank" class="init-post {{#comment}}trim{{/comment}}">
-                <span class="user-name" href="">{{voiceName}}</span>
+              <div class="init-post {{#comment}}trim{{/comment}}">
+                <a data-url="{{voiceURL}}" target="_blank" class="user-name" href="javascript:;">{{voiceName}}</a>
                 {{content}}
-              </a>
+              </div>
               {{#comment}}
               <div class="comment">
-                <span class="user-name" href="">{{voiceName}}</span>
+                <a data-url="{{voiceURL}}" target="_blank" class="user-name" href="javascript:;">
+                  {{voiceName}}
+                </a>
                 {{content}}
               </div>
               {{/comment}}
@@ -42,14 +44,18 @@
               </span>
             </div>
             <span class="user-pic">
-              <img data-original="{{postVoicePic}}" width="50" height="50" alt="{{postVoiceName}}" title="{{postVoiceName}}">
+              <a href="javascript:;" data-url="{{postVoiceURL}}" target="_blank"><img data-original="{{postVoicePic}}" width="50" height="50" alt="{{postVoiceName}}" title="{{postVoiceName}}"></a>
             </span>
 
             <div class="meta">
               <div class="count">{{likeCount}}{{^likeCount}}-{{/likeCount}}</div>
               <div class="count">{{commentCount}}{{^commentCount}}-{{/commentCount}}</div>
               <!--<div class="count">-</div>-->
-              <div class="datetime">{{#format}}{{datetimePosted}}{{/format}}</div>
+              <div class="datetime">
+                <a href="javascript:;" data-url="{{permalink}}" target="_blank">
+                  {{#format}}{{datetimePosted}}{{/format}}
+                </a>
+              </div>
             </div>
             <div class="actions">
               <button class="btn show-case">Action</button>

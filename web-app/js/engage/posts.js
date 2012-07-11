@@ -74,6 +74,7 @@ $(document.body).ready(function() {
 
             data.postVoiceName = data.voiceName
             data.postVoicePic = data.voicePic
+            data.postVoiceURL = data.voiceURL
 
             if (data.comment.length > 0) {
               _.extend(data, 
@@ -85,6 +86,7 @@ $(document.body).ready(function() {
                 )
               data.postVoiceName = data.comment[0].voiceName
               data.postVoicePic = data.comment[0].voicePic
+              data.postVoiceURL = data.comment[0].voiceURL
               data.commentCount = '-'
             }
 
@@ -99,6 +101,12 @@ $(document.body).ready(function() {
                 }
               )
             }
+
+            el.find('a').each(function(i, it) {
+              var a = $(it)
+
+              if (a.attr('data-url')) a.attr('href', a.attr('data-url'))
+            })
 
             this.setElement(el)
           }
