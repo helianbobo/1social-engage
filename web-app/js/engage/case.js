@@ -364,7 +364,11 @@
       }
 
     , render: function() {
-        this.$el.html(Mustache.render(this.tmpl, this.model.toJSON()));
+        var data = this.model.toJSON()
+        if (data.comment && data.comment.length > 0) {
+          data.content = data.comment[0].content
+        }
+        this.$el.html(Mustache.render(this.tmpl, data))
         this.$('img').lazyload({ effect: "fadeIn" })
       }
     }
