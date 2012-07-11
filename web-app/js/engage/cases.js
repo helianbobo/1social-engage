@@ -29,6 +29,8 @@ $(document.body).ready(function() {
               if (!engage.posts.get(postId)) {
                 var post = {
                       'fbId': data.articleId
+                    , 'assetPic': data.assetPic
+                    , 'assetName': data.assetName
                     , 'caseId': data.caseId
                     , 'content': data.articleContent
                     , 'permalink': data.articleURL
