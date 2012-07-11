@@ -80,12 +80,12 @@ $(document.body).ready(function() {
                   _.pick(
                       data.comment[0]
                     , 'likeCount'
-                    , 'commentCount'
                     , 'datetimePosted'
                     )
                 )
               data.postVoiceName = data.comment[0].voiceName
               data.postVoicePic = data.comment[0].voicePic
+              data.commentCount = '-'
             }
 
             data.read = data.readStatus == 'read' ? true : false
