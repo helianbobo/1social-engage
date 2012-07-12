@@ -102,11 +102,7 @@ $(document.body).ready(function() {
               )
             }
 
-            el.find('a').each(function(i, it) {
-              var a = $(it)
-
-              if (a.attr('data-url')) a.attr('href', a.attr('data-url'))
-            })
+            el.find('a').copyAttr('data-url', 'href')
 
             this.setElement(el)
           }

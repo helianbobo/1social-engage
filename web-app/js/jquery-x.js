@@ -62,6 +62,14 @@
       }
       return { left: x, top: y }
   }
+
+  $.fn.copyAttr = function(from, to) {
+    return this.each(function(i, it) {
+      var el = $(it)
+
+      if (el.attr(from)) el.attr(to, el.attr(from))
+    })
+  }
 })(jQuery)
 
 /**

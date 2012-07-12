@@ -7,12 +7,12 @@
         <li class="case-item">
           <div class="content">
             <div class="init-post {{#comment}}trim{{/comment}}">
-              <span class="user-name" href="javascript:;">{{articleVoiceName}}</span>
+              <a class="user-name" href="javascript:;" data-url="{{articleVoiceURL}}">{{articleVoiceName}}</a>
               {{articleContent}}
             </div>
             {{#comment}}
             <div class="comment">
-              <span class="user-name" href="javascript:;">{{voiceName}}</span>
+              <a class="user-name" href="javascript:;" data-url="{{voiceURL}}">{{voiceName}}</a>
               {{content}}
             </div>
             {{/comment}}
@@ -38,7 +38,11 @@
                 <li><a href="javascript:;">5</a></li>
               </ul>
             </div>
-            <div class="datetime">{{#format}}{{articleDateTimePost}}{{/format}}</div>
+            <div class="datetime">
+              <a data-url="{{articlePermalink}}" href="javascript:;">
+                {{#format}}{{articleDateTimePost}}{{/format}}
+              </a>
+            </div>
             <div class="datetime">{{#format}}{{dateCreated}}{{/format}}</div>
           </div>
           <div class="actions">
