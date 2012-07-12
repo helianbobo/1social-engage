@@ -218,7 +218,7 @@
 
         function format() {
           return function(text, render) {
-            return engage.formatDateTime(render(text), 'hh:mm:ss MMM dd yyyy')
+            return engage.formatDateTime(render(text), 'HH:mm:ss MMM dd yyyy')
           }
         }
         

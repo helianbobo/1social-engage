@@ -525,7 +525,7 @@ class SocialEngageController {
                     offset: params.offset?params.offset:0,
                     sort: params.sort?params.sort:'datetimeSort',
                     order:  params.order?params.order:'desc',
-                    assetsId:params.assetsId?params.assetsId:'everything',
+                    assetId:params.assetId?params.assetId:'everything',
                     postType:params.postType?params.postType:'everything',
                     readStatus:params.readStatus?params.readStatus:'everything',
                     caseCreated:params.caseCreated?params.caseCreated:'everything']
