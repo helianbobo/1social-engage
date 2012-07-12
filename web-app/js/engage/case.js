@@ -748,7 +748,10 @@
       updatePriority(el.find('li:nth-child(' + value + ')'))
     }
 
-    el.on('enable', function(evt, value) { enable = !!value })
+    el.on('enable', function(evt, value) {
+      enable = !!value
+      el[enable ? 'removeClass': 'addClass']('disabled')
+    })
     el.on('change', reset)
 
     el.delegate('a', 'click', function() {
