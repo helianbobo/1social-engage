@@ -38,8 +38,8 @@ $(document.body).ready(function() {
               , data: params
               , dataType: 'json'
               , success: function(response) {
-                  if (response.response == 'ok') {
-                    model.set('readStatus', params.status)
+                  if (response.data) {
+                    model.set('readStatus', response.data.readStatus)
                   }
                 }
               }

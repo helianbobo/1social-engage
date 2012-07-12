@@ -254,7 +254,42 @@ class SocialEngageController {
         type=facebook
          */
 
-        render '''{"response":"ok"}'''
+        render '''{
+  "data": {
+    "content": "Dear Admin,\\nI have been a customer of WJ Bank for 15 years and am unhappy with the customer service. Recently I was asked to leave your branch because I was good looking. When I told them that I was not good looking,they ignored me and forcefully removed me from the bank. Please help.",
+    "voiceName": "Erwin Iriawan Seah",
+    "datetimePosted": "2012-07-12T04:21:17Z",
+    "fbId": "322058887863626_364033690332812",
+    "voicePic": "https://graph.facebook.com/580607408/picture",
+    "commentCount": 2,
+    "likeCount": 0,
+    "voiceId": "580607408",
+    "articleURL": "http://www.facebook.com/permalink.php?story_fbid=364033690332812&id=322058887863626",
+    "voiceURL": "http://www.facebook.com/580607408",
+    "caseId": "9691342079864534",
+    "caseCreated": true,
+    "readStatus": "unread",
+    "readBy": "Chao Liu",
+    "comment":
+    [
+      {
+        "content": "Yeah.. http://www.youtube.com/watch?v=MyGJXLxtVEo",
+        "voiceName": "Erwin Iriawan Seah",
+        "datetimePosted": "2012-07-12T04:36:16Z",
+        "likeCount": 0,
+        "relatedCase": null,
+        "voiceId": "580607408",
+        "voicePic": "https://graph.facebook.com/580607408/picture",
+        "voiceURL": "http://www.facebook.com/580607408",
+        "fbId": "322058887863626_364033690332812_3056431"
+      }
+    ],
+    "assetPic": "https://graph.facebook.com/322058887863626/picture",
+    "assetId": "322058887863626",
+    "assetURL": "https://www.facebook.com/322058887863626",
+    "assetName": "WJbank"
+  }
+}'''
     }
 
     def getAllCase() {
