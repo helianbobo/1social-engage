@@ -8,11 +8,13 @@
         </div>
         <div class="user">
           <div class="user-pic">
-            <img data-original="{{voicePic}}" width="50" height="50" alt="{{voiceName}}">
+            <a href="javascript:;" data-url="{{postVoiceURL}}">
+              <img data-original="{{postVoicePic}}" width="50" height="50" alt="{{postVoiceName}}" title="{{postVoiceName}}">
+            </a>
           </div>
-          <div class="user-name">{{voiceName}}</div>
+          <a href="javascript:;" data-url="{{postVoiceURL}}" class="user-name">{{postVoiceName}}</a>
         </div>
-        <a href="{{permalink}}" target="_blank" class="content">{{content}}</a>
+        <a href="javascript:;" data-url="{{permalink}}" target="_blank" class="content">{{postContent}}</a>
       </div>
 
       <div class="case-wrap">

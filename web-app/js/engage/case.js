@@ -365,11 +365,22 @@
 
     , render: function() {
         var data = this.model.toJSON()
+        console.log(data)
+        data.postContent = data.content
+        data.postVoiceId = data.voiceId
+        data.postVoiceName = data.voiceName
+        data.postVoicePic = data.voicePic
+        data.postVoiceURL = data.voiceURL
         if (data.comment && data.comment.length > 0) {
-          data.content = data.comment[0].content
+          data.postContent = data.comment[0].content
+          data.postVoiceId = data.comment[0].voiceId
+          data.postVoiceName = data.comment[0].voiceName
+          data.postVoicePic = data.comment[0].voicePic
+          data.postVoiceURL = data.comment[0].voiceURL
         }
         this.$el.html(Mustache.render(this.tmpl, data))
         this.$('img').lazyload({ effect: "fadeIn" })
+        this.$('a').copyAttr('data-url', 'href')
       }
     }
   )
