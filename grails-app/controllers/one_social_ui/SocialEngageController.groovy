@@ -372,7 +372,7 @@ class SocialEngageController {
         caseId=9691340720753581
          */
 
-        /*def caseHistoryDataJson = '''{
+        def caseHistoryDataJson = '''{
   "data":
   [
     {
@@ -413,8 +413,8 @@ class SocialEngageController {
       }
     }
   ]
-}'''*/
-        def caseHistoryDataJson =  brandtologyApiService.passThroughInvoke('SocialEngage/getCaseHistory', params)
+}'''
+        //def caseHistoryDataJson =  brandtologyApiService.passThroughInvoke('SocialEngage/getCaseHistory', params)
         def result = [:]
         def caseHistoryData = JSON.parse(caseHistoryDataJson)
         result.data = caseHistoryData.data.collect {caseHistoryEntry ->
