@@ -141,7 +141,7 @@ function updatePriority(li) {
           statusMap: {
             '0': 'Closed'
           , '1': 'Open'
-          , '2': 'Responsed'
+          , '2': 'Responded'
           }
 
         , Memo: Backbone.Model.extend(
