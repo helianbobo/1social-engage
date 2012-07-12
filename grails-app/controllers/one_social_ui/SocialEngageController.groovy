@@ -9,65 +9,87 @@ class SocialEngageController {
     def index() {redirect(action: 'posts')}
 
     def getCase(params, body) {
-      // the case model
-      def obj = [
-        caseId: '9691340959298765',
-        title: 'case 2',
-        priority: 2,
-        caseStatus: 1,
-        assetPic: "http://graph.facebook.com/28011986676/picture",
-        assetURL: "http://www.facebook.com/28011986676",
-        articleId: "28011986676_10151726285826677",
-        commentId: "0",
-        type: "facebook",
-        content: "Cant believe you all wrote/said to ST and said that 2G was available when the network outage occurred this morning. Its was a complete loss of both network mind you! the fact that ST tried to downplay the whole affair reflects on how much ST cant face up to the issue while playing taichi and asking the consumers to keep switching on and off their phone or worse trying to call into the nonexistent helplines and telling us to head to exeter to make a sim change. All this while the issue is on your end of the stick! Yes i am pissed. pissed with how you guys insult the users and trying to twist facts! ",
-        note: "just another note",
-        voicePic: "https://graph.facebook.com/665336665/picture",
-        voiceName: "Perry Teo",
-        voiceId: "9691341482695378.1341482695531",
-        voiceURL: "http://www.facebook.com/665336665"
-      ]
+        // the case model
+        def obj = [
+                caseId: '9691340959298765',
+                title: 'case 2',
+                priority: 2,
+                caseStatus: 1,
+                assetPic: "http://graph.facebook.com/28011986676/picture",
+                assetURL: "http://www.facebook.com/28011986676",
+                articleId: "28011986676_10151726285826677",
+                commentId: "0",
+                type: "facebook",
+                content: "Cant believe you all wrote/said to ST and said that 2G was available when the network outage occurred this morning. Its was a complete loss of both network mind you! the fact that ST tried to downplay the whole affair reflects on how much ST cant face up to the issue while playing taichi and asking the consumers to keep switching on and off their phone or worse trying to call into the nonexistent helplines and telling us to head to exeter to make a sim change. All this while the issue is on your end of the stick! Yes i am pissed. pissed with how you guys insult the users and trying to twist facts! ",
+                note: "just another note",
+                voicePic: "https://graph.facebook.com/665336665/picture",
+                voiceName: "Perry Teo",
+                voiceId: "9691341482695378.1341482695531",
+                voiceURL: "http://www.facebook.com/665336665"
+        ]
 
-      if (params) obj.each{ k, v -> if (params.containsKey(k)) obj[k] = params[k] }
-      if (body) obj.each{ k, v -> if (body.containsKey(k)) obj[k] = body[k] }
-      return obj
+        if (params) obj.each { k, v -> if (params.containsKey(k)) obj[k] = params[k] }
+        if (body) obj.each { k, v -> if (body.containsKey(k)) obj[k] = body[k] }
+        return obj
     }
 
     def createCase() {
-      /*
-      articleId=98685085344_196710807123445&
-      type=facebook&
-      commentId=98685085344_196710807123445_518623&
-      name=hello&
-      priority=3&
-      assignTo=661&
-       */
-      params.remove('caseId')
-      render getCase(params, request.JSON) as JSON
+        /*
+       articleId=98685085344_196710807123445&
+       type=facebook&
+       commentId=98685085344_196710807123445_518623&
+       name=hello&
+       priority=3&
+       assignTo=661&
+        */
+        params.remove('caseId')
+        render getCase(params, request.JSON) as JSON
     }
 
     def closeCase() {
-      /*
-      caseId=9691340714194928&
-      type=facebook&
-       */
-      render getCase(params, [ caseStatus: 0 ]) as JSON
+        /*
+       caseId=9691340714194928&
+       type=facebook&
+        */
+        render getCase(params, [caseStatus: 0]) as JSON
     }
 
-    def getCaseById(){
-      /*
-      caseId=9691340959298765
-       */
-      render getCase(params, null) as JSON
+    def getCaseById() {
+        /*
+       caseId=9691340959298765
+        */
+        render getCase(params, null) as JSON
     }
 
-    def updateCase(){
-      /*
-      caseId=9691340714194928&
-      type=facebook&
-      name=newTitle&
-       */
-      render getCase(params, request.JSON) as JSON
+    def updateCase() {
+        /*
+       caseId=9691340714194928&
+       type=facebook&
+       name=newTitle&
+        */
+        render getCase(params, request.JSON) as JSON
+    }
+
+
+
+    def createCaseReal() {
+        params.remoteAction = 'createCase'
+        forward(action: 'passThrough')
+    }
+
+    def closeCaseReal() {
+        params.remoteAction = 'closeCase'
+        forward(action: 'passThrough')
+    }
+
+    def getCaseByIdReal() {
+        params.remoteAction = 'getCaseById'
+        forward(action: 'passThrough')
+    }
+
+    def updateCaseReal() {
+        params.remoteAction = 'updateCase'
+        forward(action: 'passThrough')
     }
 
 
@@ -115,7 +137,7 @@ class SocialEngageController {
 
     }
 
-    def showConversation(){
+    def showConversation() {
 
         /*
         articleId=98685085344_196710807123445&
@@ -223,7 +245,7 @@ class SocialEngageController {
 }'''
     }
 
-    def markStatus(){
+    def markStatus() {
         /*
         commentId=98685085344_252834011497416_920663&
         articleId=98685085344_252834011497416&
@@ -258,11 +280,11 @@ class SocialEngageController {
 
     }
 
-    def markCaseRead(){
+    def markCaseRead() {
         render '''{"response":"ok"}'''
     }
 
-    def addNotes(){
+    def addNotes() {
         /*
         caseId=9691340714194928&
         type=facebook&
@@ -286,7 +308,7 @@ class SocialEngageController {
 }'''
     }
 
-    def responseCase(){
+    def responseCase() {
         /*
         caseId=9691340714194928&
         type=facebook&
@@ -315,7 +337,7 @@ class SocialEngageController {
         caseId=9691340720753581
          */
 
-        def caseHistoryDataJson = '''{
+        /*def caseHistoryDataJson = '''{
   "data":
   [
     {
@@ -356,19 +378,29 @@ class SocialEngageController {
       }
     }
   ]
-}'''
+}'''*/
+        def caseHistoryDataJson =  brandtologyApiService.passThroughInvoke('SocialEngage/getCaseHistory', params)
         def result = [:]
         def caseHistoryData = JSON.parse(caseHistoryDataJson)
-        result.data = caseHistoryData.data.collect {caseHistoryEntry->
+        result.data = caseHistoryData.data.collect {caseHistoryEntry ->
+
+            println caseHistoryEntry
 
             def args = []
-            args.addAll(caseHistoryEntry.params.values() as List)
+            args << caseHistoryEntry.params.caseId
+            caseHistoryEntry.params.remove('caseId')
+
+            if (caseHistoryEntry.indicator == 3){
+                args << g.message(code: "brandtology.engage.case.status.${caseHistoryEntry.params.caseState}")
+            }else
+                args.addAll(caseHistoryEntry.params.values() as List)
+
 
             [
                     createDate: caseHistoryEntry.createDate,
                     createdBy: caseHistoryEntry.createdBy,
-                    message:g.message(code: "brandtology.engage.case.history.CH${caseHistoryEntry.indicator}",
-                        args: args)
+                    message: g.message(code: "brandtology.engage.case.history.CH${caseHistoryEntry.indicator}",
+                            args: args)
             ]
         }
 
@@ -376,7 +408,7 @@ class SocialEngageController {
 
     }
 
-    def updateVoiceDetails(){
+    def updateVoiceDetails() {
         /*
         voiceId=9691340801140613.1340801141467&
         name=hello&
@@ -389,7 +421,7 @@ class SocialEngageController {
 
     }
 
-    def updateSocialProfile(){
+    def updateSocialProfile() {
         /*
         voiceId=9691340801140613.1340801141467&
         name=hi&
@@ -399,7 +431,7 @@ class SocialEngageController {
         render '''{"response":"ok"}'''
     }
 
-    def getVoiceProfile(){
+    def getVoiceProfile() {
         /*
         voiceId=9691340801140613.1340801141467
          */
@@ -442,5 +474,53 @@ class SocialEngageController {
         [currentSubModule: currentSubModule]
     }
 
+    def brandtologyApiService
 
+    def passThrough() {
+
+
+        def clientAccountId = '969'
+        def createdBy = '771'
+
+        def additionalParams = [clientAccountId: clientAccountId, createdBy: createdBy]
+
+        if (params.remoteAction == 'getAllPosts'){
+            params.remoteAction = 'getAllPost'
+            additionalParams += [
+                    offset: params.offset?params.offset:0,
+                    sort: params.sort?params.sort:'datetimeSort',
+                    order:  params.order?params.order:'desc',
+                    assetsId:params.assetsId?params.assetsId:'everything',
+                    postType:params.postType?params.postType:'everything',
+                    readStatus:params.readStatus?params.readStatus:'everything',
+                    caseCreated:params.caseCreated?params.caseCreated:'everything']
+        }else if (params.remoteAction == 'getAllCase'){
+            additionalParams += [
+                    clientAccountId: clientAccountId,
+                    offset: params.offset?params.offset:0,
+                    max: params.max?params.max:20,
+                    sort: params.sort?params.sort:'datetimePosted',
+                    order:  params.order?params.order:'desc',
+                    assetsId:params.assetsId?params.assetsId:'everything',
+                    postType: params.postType?params.postType:'everything',
+                    platform:params.platform?params.platform:'everything'
+
+            ]
+        }else if (params.remoteAction == 'markStatus'){
+            params.userId = createdBy
+        }else if (params.remoteAction == 'updateCase'){
+            additionalParams += [
+                    caseId:request.JSON.caseId,
+                    name:request.JSON.title]
+        }
+
+        def data = params + additionalParams + request.JSON
+
+        def url = "SocialEngage/${params.remoteAction}"
+
+        def json = brandtologyApiService.passThroughInvoke(url, data)
+        render json.toString()
+
+
+    }
 }

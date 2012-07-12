@@ -67,13 +67,11 @@ environments {
 
     development {
         grails.logging.jul.usebridge = true
-       // brandtology.api.host = "http://192.168.52.152:8080/1-Social_API/"
-          brandtology.api.host = "http://192.168.4.15:80/1-Social_API/"
-//        brandtology.api.host = "http://192.168.1.135:8080/1-Social_API/"
+          brandtology.api.host = "http://192.168.4.10:8080/1-Social_API/"
     }
     production {
         grails.logging.jul.usebridge = false
-        brandtology.api.host = "http://192.168.4.11:8080/1-Social_API/"
+        brandtology.api.host = "http://192.168.4.10:8080/1-Social_API/"
         // TODO: grails.serverURL = "http://www.changeme.com"
     }
 }
