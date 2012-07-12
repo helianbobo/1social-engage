@@ -87,6 +87,7 @@ $(document.body).ready(function() {
                 }
               )
             }
+            el.find('a').copyAttr('data-url', 'href')
 
             this.setElement(el)
             updatePriority(this.$('.prioritys-small li:nth-child(' + data.priority + ')'))
