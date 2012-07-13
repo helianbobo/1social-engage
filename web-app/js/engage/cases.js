@@ -33,7 +33,7 @@ $(document.body).ready(function() {
                     , 'assetName': data.assetName
                     , 'caseId': data.caseId
                     , 'content': data.articleContent
-                    , 'permalink': data.articleURL
+                    , 'articleURL': data.articleURL
                     , 'voiceId': data.voiceId
                     , 'voiceName': data.articleVoiceName
                     , 'voicePic': data.articleVoicePicture
