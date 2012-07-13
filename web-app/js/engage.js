@@ -19,11 +19,24 @@ var engage = {
     , showAjax: function() {
         var html = '<div class="loading-wrap"><span class="loading">Loading...</span></div>'
           , el = $(html).css('opacity', 0)
+          , queue = []
 
-        $(document.body).append(el).on('ajaxSend', function() {
+        function key(options) {
+          return options.type + ':' + options.url
+        }
+
+        $(document.body).append(el).on('ajaxSend', function(evt, xhr, options) {
+          queue.push(key(options))
           el.stop().css('opacity', 1)
-        }).on('ajaxComplete', function() {
-          el.animate({ opacity: 0 }, 'slow')
+        }).on('ajaxComplete', function(evt, xhr, options) {
+          var url = key(options)
+            , found = false
+
+          queue = _.reduce(queue, function(mem, it) {
+            if (found || !(found = (it === url))) mem.push(it)
+            return mem
+          }, [])
+          if (queue.length === 0) el.animate({ opacity: 0 }, 'slow')
         })
       }
     }
