@@ -41,19 +41,11 @@
       margin-left: 50%;
     }
     .caret-reverse {
-      display: inline-block;
-      width: 0;
-      height: 0;
+      border-bottom-color: @white;
       left: -4px;
-      vertical-align: top;
-      border-bottom:   4px solid @white;
-      border-right: 4px solid transparent;
-      border-left:  4px solid transparent;
-      content: "";
       margin-left: 50%;
       position: absolute;
       top: 3px;
-      .opacity(30);
     }
     .asc {
       .caret-reverse {
@@ -70,4 +62,16 @@
     display: inline-block;
     padding: 10px 4px;
   }
+}
+
+.caret-reverse {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: top;
+  border-bottom: 4px solid @black;
+  border-right:  4px solid transparent;
+  border-left:   4px solid transparent;
+  content: "";
+  .opacity(30);
 }
