@@ -105,6 +105,29 @@
         conversation.fetch()
       }
 
+    , events: {
+        'click [data-filter]': 'filter'
+      }
+
+    , filter: function(evt) {
+        var el = $(evt.currentTarget)
+          , type = el.attr('data-filter')
+
+        el.closest('ul').find('li').removeClass('active')
+        el.parent().addClass('active')
+
+        if (type == 'all') {
+          this.$('.comment').removeClass('hide')
+        } else {
+          var original = this.$('.original').parent().find('.user-name').attr('title')
+          this.$('.comment').each(function(i, it) {
+            if ($(it).find('.user-name').attr('title') != original) {
+              $(it).addClass('hide')
+            }
+          })
+        }
+      }
+
     , render: function(model, data) {
         var ctn = this.$('.conversation-inner')
           , data = model.toJSON()
@@ -365,7 +388,6 @@
 
     , render: function() {
         var data = this.model.toJSON()
-        console.log(data)
         data.postContent = data.content
         data.postVoiceId = data.voiceId
         data.postVoiceName = data.voiceName

@@ -1,9 +1,21 @@
 <div class="conversation-wrap">
   <div class="conversation">
-    <ul class="toolbar">
-      <li><a href="#">Show All Posts</a></li>
-      <li><a href="">Show Posts by User Only</a></li>
-    </ul>
+    <div class="toolbar">
+      <ul class="filter-actions">
+        <li class="active">
+          <a href="#" data-filter="all">
+            Show All Posts
+            <b class="caret-reverse"></b>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-filter="user-only">
+            Show Posts by User Only
+            <b class="caret-reverse"></b>
+          </a>
+        </li>
+      </ul>
+    </div>
 
     <div class="conversation-inner">
       <div class="post">
@@ -27,14 +39,14 @@
           {{#comments}}
           <li class="comment" comment-id="{{fbid}}">
             <div class="content">
-              <span class="user-name">{{userName}}</span>
+              <span class="user-name" title="{{userName}}">{{userName}}</span>
               {{{content}}}
             </div>
             {{#isOriginal}}
             <i class="original icon-chevron-right"></i>
             {{/isOriginal}}
             <div class="user-pic">
-              <img data-original="{{userpic}}" width="50" height="50" alt="{{userName}}">
+              <img data-original="{{userpic}}" width="50" height="50" alt="{{userName}}" title="{{userName}}">
             </div>
             <div class="meta">
               <span class="count"><i class="icon-like"></i> {{likesCount}}</span>

@@ -56,8 +56,6 @@
           }
 
       posts.add(new engage.model.Post(data))
-
-      console.log(posts.get('comment.fbId').toJSON())
       
       tmplLoader.one('load:case', function(el) {
           el.attr('post-id', 'comment.fbId')

@@ -225,10 +225,19 @@
 .conversation-wrap {
   padding: @panelPadding;
   .toolbar {
-    border-bottom: 1px solid @grayLight;
-    margin: 0;
-    padding: 0 6px;
-    text-align: right;
+    .filter-actions {
+      float: right;
+      margin: 0 6px 0 0;
+      padding: 0;
+      .caret-reverse {
+        .absolute-bottom-left(0, -4px);
+        border-bottom-color: @white;
+        margin-left: 50%;
+      }
+      .active .caret-reverse {
+        border-bottom-color: @black;
+      }
+    }
     li {
       display: inline-block;
       list-style: none;
@@ -236,11 +245,13 @@
     a {
       display: block;
       padding: 6px 10px;
+      position: relative;
       &:hover {
         background-color: @bodyBackground;
         text-decoration: none
       }
     }
+
   }
 }
 .case-history-wrap {
