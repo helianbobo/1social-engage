@@ -3,16 +3,6 @@ modules = {
         //resource url: 'js/application.js'
     }
 
-    backbone {
-        dependsOn 'jquery, underscore'
-
-        resource id: 'backbone', url: 'js/backbone.js'
-    }
-
-    underscore {
-        resource id: 'underscore', url: 'js/underscore-min.js', exclude:'minify'
-    }
-
     requirejs{
         //resource url: 'v1/js/require.min.js'
         //resource url: 'v1/js/text.js'
@@ -68,44 +58,29 @@ modules = {
     }
 
     engage {
-        dependsOn 'backbone'
 
         resource url: 'less/engage.less', attrs: [rel: "stylesheet/less", type: 'css']//, bundle: 'bundle_ui'
 
-        resource url: 'js/bootstrap-dropdown.js'
-        resource url: 'js/bootstrap-tab.js'
-        resource url: 'js/bootstrap-modal.js'
-        resource url: 'js/mustache.js'
-        resource url: 'js/jquery.lazyload.js'
-        resource url: 'js/jquery-x.js'
-
-        resource url: 'js/date.js'
-
-        resource url: 'js/engage.js'
+        resource url: 'js/lib/require.js'
+        resource url: 'js/config.js'
     }
 
     'engage-posts' {
         dependsOn 'engage'
         
         resource url: 'less/app-posts.less', attrs: [rel: "stylesheet/less", type: 'css']
-
-        resource url: 'js/engage/posts.js'
     }
 
     'engage-case' {
         dependsOn 'engage'
 
         resource url: 'less/app-case.less', attrs: [rel: "stylesheet/less", type: 'css']
-
-        resource url: 'js/engage/case.js'
     }
 
     'engage-cases' {
         dependsOn 'engage'
 
         resource url: 'less/app-cases.less', attrs: [rel: "stylesheet/less", type: 'css']
-
-        resource url: 'js/engage/cases.js'
     }
 
 }

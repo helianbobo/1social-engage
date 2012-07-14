@@ -26,6 +26,9 @@
         </div>
     </div>
 </div>
+<r:script>
+  requirejs(['engage/posts'], function() {})
+</r:script>
 
 </body>
 </html>
