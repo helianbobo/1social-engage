@@ -1,4 +1,5 @@
-$(document.body).ready(function() {
+define(['engage', 'engage/case'], function(engage) {
+
     
   // Views
   // -----
@@ -34,7 +35,7 @@ $(document.body).ready(function() {
 
             $.ajax(
               {
-                url: absolutePath($.contextPath, 'socialEngage/markStatus')
+                url: _.absolutePath($.contextPath, 'socialEngage/markStatus')
               , data: params
               , dataType: 'json'
               , success: function(response) {
@@ -172,7 +173,7 @@ $(document.body).ready(function() {
           }
 
         , createChild: function(name) {
-            var className = capitalize(toCamelCase(name))
+            var className = _.capitalize(_.toCamelCase(name))
 
             if (!/\-actions$/.test(name) || !Toolbar[className]) return;
             this.childs[name] = new Toolbar[className](
@@ -323,7 +324,7 @@ $(document.body).ready(function() {
   var ids = 0
     , assets = engage.assets = new engage.model.Assets()
     , cases = engage.cases = new engage.model.Cases()
-    , modalQueue = new ElementQueue({ max: 3 })
+    , modalQueue = new engage.model.ElementQueue({ max: 3 })
     , posts = engage.posts = new engage.model.Posts(null
       , { 
           order: 'desc'
@@ -409,9 +410,12 @@ $(document.body).ready(function() {
 
   // Page setup
   // -----
-  $(window).resize(updateListHeight)
-  engage.showAjax()
+  $(document.body).ready(function() {
+    $(window).resize(updateListHeight)
+    engage.showAjax()
   
-  tmplLoader.addListeners(templateListeners)
-  tmplLoader.load($('#page'))
+    tmplLoader.addListeners(templateListeners)
+    tmplLoader.load($('#page'))
+  })
+
 })

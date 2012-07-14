@@ -1,4 +1,6 @@
 // Case
+define(['engage'], function(engage) {
+
 
 // Models
 // -----
@@ -18,7 +20,7 @@
               , 'case-form': '.case-wrap'
               }
             , function(selector, name) {
-                return new CaseApp[capitalize(toCamelCase(name))](
+                return new CaseApp[_.capitalize(_.toCamelCase(name))](
                   {
                     el: _t.$(selector)
                   , parent: _t
@@ -31,7 +33,7 @@
               var tab = $(this)
                 , name = tab.attr('href').split('#')[1]
                 , loaded = function(el, placeholder) {
-                    _t.childs[name] = new CaseApp[capitalize(toCamelCase(name))](
+                    _t.childs[name] = new CaseApp[_.capitalize(_.toCamelCase(name))](
                       {
                         parent: _t
                       , el: el
@@ -89,7 +91,7 @@
             if (_case && _case.get('updateCount') > 0) {
               $.ajax(
                 {
-                  url: absolutePath($.contextPath, 'socialEngage/markCaseRead')
+                  url: _.absolutePath($.contextPath, 'socialEngage/markCaseRead')
                 , data: { caseId: _case.id }
                 , dataType: 'json'
                 , success: function(response) {
@@ -340,7 +342,7 @@
 
         $.ajax(
           {
-            url: absolutePath($.contextPath, 'socialEngage/updateVoiceDetails')
+            url: _.absolutePath($.contextPath, 'socialEngage/updateVoiceDetails')
           , data: data
           , dataType: 'json'
           , success: function(response) {
@@ -363,7 +365,7 @@
 
         $.ajax(
           {
-            url: absolutePath($.contextPath, 'socialEngage/updateSocialProfile')
+            url: _.absolutePath($.contextPath, 'socialEngage/updateSocialProfile')
           , data: data
           , dataType: 'json'
           , success: function(response) {
@@ -778,7 +780,7 @@
     function reset(evt, value) {
       if (typeof value == 'number') el.attr('data-prev', value)
       else value = el.attr('data-prev') || _default
-      updatePriority(el.find('li:nth-child(' + value + ')'))
+      engage.updatePriority(el.find('li:nth-child(' + value + ')'))
     }
 
     el.on('enable', function(evt, value) {
@@ -791,7 +793,9 @@
         enable && el.trigger('change', $(this).parent().index() + 1) 
       }
     )
-    el.delegate('a', 'mouseenter', function() { enable && updatePriority($(this).parent()) })
+    el.delegate('a', 'mouseenter', function() { 
+      enable && engage.updatePriority($(this).parent())
+    })
     el.delegate('a', 'mouseleave', function() { enable && reset() })
 
     reset()
@@ -817,3 +821,5 @@
     }
   )
 })()
+
+})

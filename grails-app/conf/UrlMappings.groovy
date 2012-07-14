@@ -6,10 +6,10 @@ class UrlMappings {
         "/socialEngage/cases"(controller: 'socialEngage', action: 'cases')
         "/socialEngage/getCaseHistory"(controller: 'socialEngage', action: 'getCaseHistory')
         "/socialEngage/case/$caseId"(controller: 'socialEngage') {
-            action = [GET: 'getCaseByIdReal', PUT: 'updateCaseReal', DELETE: 'closeCaseReal', POST: 'createCaseReal']
-//            action = [GET: 'getCaseById', PUT: 'updateCase', DELETE: 'closeCase', POST: 'createCase']
+//            action = [GET: 'getCaseByIdReal', PUT: 'updateCaseReal', DELETE: 'closeCaseReal', POST: 'createCaseReal']
+            action = [GET: 'getCaseById', PUT: 'updateCase', DELETE: 'closeCase', POST: 'createCase']
         }
-        "/socialEngage/$remoteAction"(controller: 'socialEngage', action: 'passThrough')
+//        "/socialEngage/$remoteAction"(controller: 'socialEngage', action: 'passThrough')
 
 
         "/$controller/$action?/$id?" {

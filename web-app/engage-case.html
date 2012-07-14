@@ -10,59 +10,50 @@
   <body>
     <div class="app-case container" tmpl="case"></div>
 
-    <script src="js/jquery-1.7.2.min.js"></script>
-    <script src="js/underscore-min.js"></script>
-    <script src="js/backbone.js"></script>
-    <script src="js/mustache.js"></script>
-    <script src="js/jquery.lazyload.js"></script>
-    <script src="js/date.js"></script>
-    <script src="js/jquery-x.js"></script>
     <script>
-      $.contextPath = ''
+      var CONTEXT_PATH = ''
     </script>
-    <script src="js/bootstrap-dropdown.js"></script>
-    <script src="js/bootstrap-modal.js"></script>
-    <script src="js/bootstrap-tab.js"></script>
-
-    <script src="js/engage.js"></script>
-    <script src="js/engage/case.js"></script>
+    <script src="js/lib/require.js"></script>
+    <script src="js/config.js"></script>
     <script>
-      var cases = engage.cases = new engage.model.Cases()
-        , posts = engage.posts = new engage.model.Posts()
-        , data = {
-            "content": "??ÊŠì€î€YOUTUBEÊ×Óðü£?ìÑ??£¿öáUPLOAD?£¡£¡Ê§Ê§£¡£¡???£¡:)",
-            "voiceName": "Diane Timothea Ng",
-            'voiceURL': 'http://diane.timothea.ng',
-            "datetimePosted": "2012-06-28T09:33:38Z",
-            "fbId": "98685085344_10150940547215345",
-            "voicePic": "https://graph.facebook.com/100001293120297/picture",
-            "commentCount": 10,
-            'comment': [{
-              'fbId': 'comment.fbId',
-              'voiceName': 'Comment Voice Name',
-              'voiceId': 'comment.voice.id',
-              'content': 'comment.content',
-              'voiceURL': 'http://comment.voice.url',
-              'voicePic': "https://graph.facebook.com/100001293120297/picture",
-            }],
-            "likeCount": 0,
-            "voiceId": "100001293120297",
-            "caseId": "12312312312312",
-            "readStatus": "unread",
-            "assetPic": "https://graph.facebook.com/98685085344/picture",
-            "assetId": "98685085344",
-            'assetName': 'Brandtology',
-            'permalink': 'https://graph.facebook.com/98685085344/picture'
-          }
+      requirejs(['engage', 'engage/case'], function(engage) {
+        var cases = engage.cases = new engage.model.Cases()
+          , posts = engage.posts = new engage.model.Posts()
+          , data = {
+              "content": "??ÊŠì€î€YOUTUBEÊ×Óðü£?ìÑ??£¿öáUPLOAD?£¡£¡Ê§Ê§£¡£¡???£¡:)",
+              "voiceName": "Diane Timothea Ng",
+              'voiceURL': 'http://diane.timothea.ng',
+              "datetimePosted": "2012-06-28T09:33:38Z",
+              "fbId": "98685085344_10150940547215345",
+              "voicePic": "https://graph.facebook.com/100001293120297/picture",
+              "commentCount": 10,
+              'comment': [{
+                'fbId': 'comment.fbId',
+                'voiceName': 'Comment Voice Name',
+                'voiceId': 'comment.voice.id',
+                'content': 'comment.content',
+                'voiceURL': 'http://comment.voice.url',
+                'voicePic': "https://graph.facebook.com/100001293120297/picture",
+              }],
+              "likeCount": 0,
+              "voiceId": "100001293120297",
+              "caseId": "12312312312312",
+              "readStatus": "unread",
+              "assetPic": "https://graph.facebook.com/98685085344/picture",
+              "assetId": "98685085344",
+              'assetName': 'Brandtology',
+              'permalink': 'https://graph.facebook.com/98685085344/picture'
+            }
 
-      posts.add(new engage.model.Post(data))
-      
-      tmplLoader.one('load:case', function(el) {
-          el.attr('post-id', 'comment.fbId')
-          new engage.CaseApp({ el: el })
-        }
-      )
-      tmplLoader.load($(document.body))
+        posts.add(new engage.model.Post(data))
+        
+        tmplLoader.one('load:case', function(el) {
+            el.attr('post-id', 'comment.fbId')
+            new engage.CaseApp({ el: el })
+          }
+        )
+        tmplLoader.load($(document.body))
+      })
     </script>
   </body>
 </html>

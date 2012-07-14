@@ -29,21 +29,13 @@ restart grails server.
       </div>
     </div>
 
-    <script src="js/jquery-1.7.2.min.js"></script>
-    <script src="js/underscore-min.js"></script>
-    <script src="js/backbone.js"></script>
-    <script src="js/mustache.js"></script>
-    <script src="js/jquery.lazyload.js"></script>
-    <script src="js/date.js"></script>
-    <script src="js/jquery-x.js"></script>
     <script>
-      $.contextPath = ''
+      var CONTEXT_PATH = ''
     </script>
-    <script src="js/bootstrap-dropdown.js"></script>
-    <script src="js/bootstrap-modal.js"></script>
-    <script src="js/bootstrap-tab.js"></script>
-    <script src="js/engage.js"></script>
-    <script src="js/engage/posts.js"></script>
-    <script src="js/engage/case.js"></script>
+    <script src="js/lib/require.js"></script>
+    <script src="js/config.js"></script>
+    <script>
+      requirejs(['engage/posts'], function() {})
+    </script>
   </body>
 </html>
