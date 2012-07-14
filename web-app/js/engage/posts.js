@@ -233,7 +233,9 @@ $(document.body).ready(function() {
           , key = menu.attr('data-name')
           , value = btn.attr('href').split('#')[1]
 
-        if (btn.parent().hasClass('active')) return;
+        if (btn.parent().hasClass('active')) {
+          return evt.preventDefault()
+        }
         if (value) { this.collection.params.set(key, value) }
         else { this.collection.params.unset(key) }
         this.collection.fetch()
