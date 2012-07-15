@@ -40,7 +40,7 @@ define(['engage', 'engage/case'], function(engage) {
               , dataType: 'json'
               , success: function(response) {
                   if (response.data) {
-                    model.set('readStatus', response.data.readStatus)
+                    model.set(_.pick(response.data, 'readStatus', 'readBy'))
                   }
                 }
               }
@@ -284,7 +284,7 @@ define(['engage', 'engage/case'], function(engage) {
   )
 
   function resetTitle(str) {
-    return str.replace(/^sort by /, '').replace(/ in (ascending|descending) order$/i, '')
+    return str.replace(/^sort by /i, '').replace(/ in (ascending|descending) order$/i, '')
   }
 
   Toolbar.SortActions = Backbone.View.extend(
@@ -313,8 +313,7 @@ define(['engage', 'engage/case'], function(engage) {
 
         this.reset()
         el.addClass(flag)
-        el.attr('title'
-          , resetTitle(el.attr('title')) + ' in ' + m[flag] + ' order')
+        el.attr('title', resetTitle(el.attr('title')) + ' in ' + m[flag] + ' order')
         this.collection.params.set(
             { 
               sort: el.attr('href').split('#')[1]

@@ -12,6 +12,7 @@
             </div>
             {{#comment}}
             <div class="comment">
+              <i class="icon-comment-arrow"></i>
               <a class="user-name" href="javascript:;" data-url="{{voiceURL}}">{{voiceName}}</a>
               {{content}}
             </div>
@@ -22,7 +23,9 @@
           <div class="pics">
             <img data-original="{{platformPic}}" alt="{{type}}" title="{{type}}" width="50" height="50">
             <img data-original="{{assetPic}}" alt="" width="50" height="50">
-            <img data-original="{{voicePic}}" alt="{{voiceName}}" title="{{voiceName}}" width="50" height="50">
+            <a href="javascript:;" data-url="{{voiceURL}}">
+              <img data-original="{{voicePic}}" alt="{{voiceName}}" title="{{voiceName}}" width="50" height="50">
+            </a>
             {{^read}}<span class="update-count">{{updateCount}}</span>{{/read}}
           </div>
 
