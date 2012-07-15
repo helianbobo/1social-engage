@@ -1,4 +1,5 @@
-$(document.body).ready(function() {
+;define(['engage', 'engage/case'], function(engage) {
+
   var CaseItem = Backbone.View.extend(
         {
           initialize: function(options) {
@@ -76,7 +77,7 @@ $(document.body).ready(function() {
             }
             data.read = (data.readStatus == 'read' ? true : false)
 
-            data.platformPic = absolutePath($.contextPath, 'images/icon-' + data.type + '-32x32.png')
+            data.platformPic = _.absolutePath($.contextPath, 'images/icon-' + data.type + '-32x32.png')
 
             var el = $(Mustache.render(this.li, data))
             if (this.$el.parent().length > 0) {
@@ -90,7 +91,7 @@ $(document.body).ready(function() {
             el.find('a').copyAttr('data-url', 'href')
 
             this.setElement(el)
-            updatePriority(this.$('.prioritys-small li:nth-child(' + data.priority + ')'))
+            engage.updatePriority(this.$('.prioritys-small li:nth-child(' + data.priority + ')'))
           }
         }
       )
@@ -149,7 +150,7 @@ $(document.body).ready(function() {
           }
 
         , createChild: function(name) {
-            var className = capitalize(toCamelCase(name))
+            var className = _.capitalize(_.toCamelCase(name))
 
             if (!/\-actions$/.test(name) || !Toolbar[className]) return;
             this.childs[name] = new Toolbar[className](
@@ -286,7 +287,7 @@ $(document.body).ready(function() {
         }
       )
     , ids = 0
-    , modalQueue = new ElementQueue({ max: 3 })
+    , modalQueue = new engage.model.ElementQueue({ max: 3 })
     , posts = engage.posts = new engage.model.Posts()
 
     , templateListeners = {
@@ -355,7 +356,11 @@ $(document.body).ready(function() {
     }
   })
 
-  engage.showAjax()
-  tmplLoader.addListeners(templateListeners)
-  tmplLoader.load($('#page'))
+  // Page setup
+  // -----
+  $(document.body).ready(function() {
+    engage.showAjax()
+    tmplLoader.addListeners(templateListeners)
+    tmplLoader.load($('#page'))
+  })
 })

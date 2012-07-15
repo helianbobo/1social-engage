@@ -20,5 +20,8 @@
         </div>
       </div>
     </div>
+    <r:script>
+      requirejs(['engage/cases'], function() {})
+    </r:script>
   </body>
 </html>

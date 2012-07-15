@@ -1,3 +1,18 @@
+// Module Engage
+
+define(
+  [
+    'lib/jquery-x'
+  , 'lib/date'
+  , 'jquery.lazyload'
+  , 'bootstrap.dropdown'
+  , 'bootstrap.modal'
+  , 'bootstrap.tab'
+  ]
+, function() {
+
+  $.contextPath = CONTEXT_PATH || ''
+
 // Namespaces
 var engage = {
       appFrame: _.extend({}, Backbone.Events)
@@ -39,6 +54,12 @@ var engage = {
           if (queue.length === 0) el.animate({ opacity: 0 }, 'slow')
         })
       }
+
+    , updatePriority: function(li) {
+        li.prevAll().addClass('active')
+        li.addClass('active')
+        li.nextAll().removeClass('active')
+      }
     }
 
 // Global Models
@@ -68,6 +89,12 @@ var ElementQueue = Backbone.Model.extend(
       }
     )
 
+_.extend(engage.model, {
+  'ElementQueue': ElementQueue
+, 'Parameters': Parameters
+, 'Pagination': Pagination
+})
+
 // Global Objects
 // -----
 
@@ -86,11 +113,7 @@ var tmplLoader = _.extend(
     , Backbone.Events
     )
 
-function updatePriority(li) {
-  li.prevAll().addClass('active')
-  li.addClass('active')
-  li.nextAll().removeClass('active')
-}
+window.tmplLoader = tmplLoader
 
 ;(function() {
   // constants
@@ -112,7 +135,7 @@ function updatePriority(li) {
           }
 
         , url: function() {
-            return absolutePath($.contextPath, 'socialAssets/getAllAssets')
+            return _.absolutePath($.contextPath, 'socialAssets/getAllAssets')
           }
         }
       )
@@ -147,7 +170,7 @@ function updatePriority(li) {
           }
 
         , url: function() {
-            return absolutePath($.contextPath, 'socialEngage/case/' + (this.id || 'new'))
+            return _.absolutePath($.contextPath, 'socialEngage/case/' + (this.id || 'new'))
           }
         }
       , {
@@ -160,14 +183,14 @@ function updatePriority(li) {
         , Memo: Backbone.Model.extend(
             {
               url: function() {
-                return absolutePath($.contextPath, 'socialEngage/addNotes')
+                return _.absolutePath($.contextPath, 'socialEngage/addNotes')
               }
             }
           )
         , Response: Backbone.Model.extend(
             {
               url: function() {
-                return absolutePath($.contextPath, 'socialEngage/responseCase')
+                return _.absolutePath($.contextPath, 'socialEngage/responseCase')
               }
             }
           )
@@ -205,7 +228,7 @@ function updatePriority(li) {
           }
 
         , url: function() {
-            return absolutePath($.contextPath, 'socialEngage/getAllCase')
+            return _.absolutePath($.contextPath, 'socialEngage/getAllCase')
           }
         }
       )
@@ -221,7 +244,7 @@ function updatePriority(li) {
           }
 
         , url: function() {
-            return absolutePath($.contextPath, 'socialEngage/getCaseHistory')
+            return _.absolutePath($.contextPath, 'socialEngage/getCaseHistory')
           }
         }
       )
@@ -249,7 +272,7 @@ function updatePriority(li) {
           }
 
         , url: function() {
-            return absolutePath($.contextPath, 'socialEngage/showConversation')
+            return _.absolutePath($.contextPath, 'socialEngage/showConversation')
           }
         }
       )
@@ -312,7 +335,7 @@ function updatePriority(li) {
           }
 
         , url: function() {
-            return absolutePath($.contextPath, 'socialEngage/getAllPosts')
+            return _.absolutePath($.contextPath, 'socialEngage/getAllPosts')
           }
         }
       )
@@ -353,7 +376,7 @@ function updatePriority(li) {
           }
 
         , url: function() {
-            return absolutePath($.contextPath, 'socialEngage/getVoiceProfile?voiceId=' + this.id)
+            return _.absolutePath($.contextPath, 'socialEngage/getVoiceProfile?voiceId=' + this.id)
           }
         }
       )
@@ -377,7 +400,7 @@ function updatePriority(li) {
   }
 
   function loadTemplate(el, callback) {
-    var url = absolutePath($.contextPath, '/tmpl/' + getTemplatePath(el.attr('tmpl')))
+    var url = _.absolutePath($.contextPath, '/tmpl/' + getTemplatePath(el.attr('tmpl')))
 
     $.ajax({
       url: url,
@@ -409,3 +432,6 @@ function updatePriority(li) {
 
   tmplLoader.load = loadTemplates
 })()
+
+  return engage
+})

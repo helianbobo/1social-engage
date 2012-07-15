@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 %{--<sec:ifLoggedIn>--}%
 <r:script disposition="defer">
-
+requirejs(['jquery'], function() {
     $(document).ready(function(){
         $.getJSON("${request.contextPath}/commonApi/getCurrentUserData", function (data) {
             $.brandtologyUserData = data;
@@ -42,11 +42,11 @@
         return options;
     };
 
-
+})
 </r:script>
 %{--</sec:ifLoggedIn>--}%
 <script type="text/javascript">
-    $.contextPath = '${request.contextPath}';
-    $.currentModule = '${currentModule}';
-    $.currentSubModule = '${currentSubModule}';
+  var CONTEXT_PATH = '${request.contextPath}'
+   , CURRENT_MODULE = '${currentModule}'
+   , CURRENT_SUB_MODULE = '${currentSubModule}'
 </script>

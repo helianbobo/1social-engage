@@ -15,10 +15,10 @@
 
 <body>
 
-	<%--
+	
     <g:render template="/share/header"
         	model="[subModules:['posts','cases'], currentModule: 'socialEngage', currentSubModule:currentSubModule]"/>
-    --%>
+    
 
 	<g:layoutBody/>
 

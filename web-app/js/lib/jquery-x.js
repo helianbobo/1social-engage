@@ -1,4 +1,5 @@
 // Extension for jQuery and more
+;define(['backbone', 'mustache'], function() {
 (function($) {
 
   $.pagination = function(el) {
@@ -72,61 +73,60 @@
   }
 })(jQuery)
 
-/**
- * Equals joinPath('/', p1, p2, ...)
- */
-function absolutePath(p1, p2 /* [, px] */) {
-  return joinPath.apply(null, Array.prototype.concat.apply(['/'], arguments))
-}
-
-/**
- * array2Object(['a', 'b'], [0, 1]) 
- * // { a: 0, b: 1 }
- *
- * array2Object(['a', 'b'], [0, 1], [2, 3]) 
- * // [{ a: 0, b: 1 }, { a: 2, b: 3 }]
- */
-function array2Object(keys, values) {
-  function map(keys, values) {
-    var obj = {}
-    _.each(keys, function(key, i) { obj[key] = values[i] })
-    return obj
+_.extend(_, {
+  /**
+   * Equals joinPath('/', p1, p2, ...)
+   */
+  absolutePath: function(p1, p2 /* [, px] */) {
+    return _.joinPath.apply(null, Array.prototype.concat.apply(['/'], arguments))
   }
-  if (arguments.length > 2) {
-    return _.map(_.rest(arguments), function(arr) { return map(keys, arr)})
-  } else return map(keys, values)
-}
+  
+  /**
+   * array2Object(['a', 'b'], [0, 1]) 
+   * // { a: 0, b: 1 }
+   *
+   * array2Object(['a', 'b'], [0, 1], [2, 3]) 
+   * // [{ a: 0, b: 1 }, { a: 2, b: 3 }]
+   */
+, array2Object: function(keys, values) {
+    function map(keys, values) {
+      var obj = {}
+      _.each(keys, function(key, i) { obj[key] = values[i] })
+      return obj
+    }
+    if (arguments.length > 2) {
+      return _.map(_.rest(arguments), function(arr) { return map(keys, arr)})
+    } else return map(keys, values)
+  }
 
-// -----
-function capitalize(str) {
-  return str.replace(/^[a-z]/, function(a) { return a.toUpperCase() })
-}
+, capitalize: function(str) {
+    return str.replace(/^[a-z]/, function(a) { return a.toUpperCase() })
+  }
+  
+  /**
+   * Examples:
+   * 
+   * joinPath('aaa/', '/bbb') // 'aaa/bbb'
+   * joinPath('aaa', 'bbb', '', 'ccc', '/', 'ddd') // 'aaa/bbb/ccc/ddd'
+   */
+, joinPath: function(p1, p2 /* [, px] */) {
+    return _.reduce(arguments, function(s1, s2) {
+          var _s1 = s1.replace(/\/$/, '')
+          s2 = s2.replace(/^\//, '')
+          if (!_s1 && s1 != '/') return s2
+          if (!s2) return s1
 
-/**
- * Examples:
- * 
- * joinPath('aaa/', '/bbb') // 'aaa/bbb'
- * joinPath('aaa', 'bbb', '', 'ccc', '/', 'ddd') // 'aaa/bbb/ccc/ddd'
- */
-function joinPath(p1, p2 /* [, px] */) {
-  return _.reduce(arguments, function(s1, s2) {
-        var _s1 = s1.replace(/\/$/, '')
-        s2 = s2.replace(/^\//, '')
-        if (!_s1 && s1 != '/') return s2
-        if (!s2) return s1
+          return _s1 + '/' + s2
+        })
+  }
 
-        return _s1 + '/' + s2
-      }
-    )
-}
-
-function toCamelCase(str) {
-  return str.replace(/\-([a-z])/g, function(a, b) { return b.toUpperCase() })
-}
-
+, toCamelCase: function(str) {
+    return str.replace(/\-([a-z])/g, function(a, b) { return b.toUpperCase() })
+  }
+})
 
 // Backbone extensions
-var Backbone
+var Backbone = window.Backbone
 
 if (Backbone) {
   var one = function(event, callback, context) {
@@ -160,3 +160,5 @@ if (Backbone) {
   viewExt.destroy = viewExt.reset
   _.extend(Backbone.View.prototype, viewExt)
 }
+
+})
