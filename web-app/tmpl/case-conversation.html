@@ -22,8 +22,8 @@
         <div class="user-pic">
           <img data-original="{{userpic}}" width="50" height="50" alt="{{userName}}">
         </div>
-        <div class="content">
-          <span class="user-name">{{userName}}</span>
+        <div class="content {{#isOriginal}}original{{/isOriginal}}">
+          <span class="user-name" title="{{userName}}">{{userName}}</span>
           {{{content}}}
         </div>
         <div class="meta">
