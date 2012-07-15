@@ -134,6 +134,8 @@ define(['engage'], function(engage) {
         var ctn = this.$('.conversation-inner')
           , data = model.toJSON()
 
+        data.commentCount = data.comments.length
+
         // format datetime
         data.format = function() {
           return function(text, render) {
