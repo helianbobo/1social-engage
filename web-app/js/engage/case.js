@@ -135,6 +135,9 @@ define(['engage'], function(engage) {
           , data = model.toJSON()
 
         data.commentCount = data.comments.length
+        _.each(data.comments, function(it) {
+          it.isOriginal = it.isOriginal || 0
+        })
 
         // format datetime
         data.format = function() {
