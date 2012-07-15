@@ -283,6 +283,10 @@ define(['engage', 'engage/case'], function(engage) {
     }
   )
 
+  function resetTitle(str) {
+    return str.replace(/^sort by /, '').replace(/ in (ascending|descending) order$/i, '')
+  }
+
   Toolbar.SortActions = Backbone.View.extend(
     {
       events: { 'click a': 'sort' }
@@ -292,7 +296,7 @@ define(['engage', 'engage/case'], function(engage) {
           var el = $(it)
 
           el.removeClass('asc desc')
-          el.attr('title', el.attr('title').replace(/ (asc|desc)$/i, ''))
+          el.attr('title', 'sort by ' + resetTitle(el.attr('title')))
         })
       }
 
@@ -305,9 +309,12 @@ define(['engage', 'engage/case'], function(engage) {
       }
 
     , updateStatus: function(el, flag) {
+        var m = { asc: 'ascending', desc: 'descending' }
+
         this.reset()
         el.addClass(flag)
-        el.attr('title', el.attr('title') + ' ' + flag.toUpperCase())
+        el.attr('title'
+          , resetTitle(el.attr('title')) + ' in ' + m[flag] + ' order')
         this.collection.params.set(
             { 
               sort: el.attr('href').split('#')[1]
