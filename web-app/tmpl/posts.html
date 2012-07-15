@@ -32,13 +32,18 @@
             <!--<input type="checkbox" class="input-item-selector" >-->
             <div class="type">
               <span class="type-item-1-1 {{^caseCreated}}inactive{{/caseCreated}}">
-                <i class="icon-case"></i>
+                <i class="icon-case" title="Case made"></i>
               </span>
-              <span class="type-item-1-2 {{#comment}}inactive{{/comment}}">
-                <i class="icon-page"></i>
+              <span class="type-item-1-2">
+                {{^comment}}
+                <i class="icon-article" title="article"></i>
+                {{/comment}}
+                {{#comment}}
+                <i class="icon-comment" title="comment"></i>
+                {{/comment}}
               </span>
-              <span class="type-item-2-1 {{^read}}inactive{{/read}}" title="{{#readBy}}Read by {{readBy}}{{/readBy}}">
-                <i class="icon-read"></i>
+              <span class="type-item-2-1 {{^read}}inactive{{/read}}">
+                <i class="icon-read" title="{{#readBy}}Read by {{readBy}}{{/readBy}}"></i>
               </span>
               <span class="type-item-2-2">
                 <img data-original="{{assetPic}}" width="24" height="24" alt="{{assetName}}" title="{{assetName}}">

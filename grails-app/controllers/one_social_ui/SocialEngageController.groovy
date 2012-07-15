@@ -268,7 +268,7 @@ class SocialEngageController {
     "voiceURL": "http://www.facebook.com/580607408",
     "caseId": "9691342079864534",
     "caseCreated": true,
-    "readStatus": "unread",
+    "readStatus": "read",
     "readBy": "Chao Liu",
     "comment":
     [

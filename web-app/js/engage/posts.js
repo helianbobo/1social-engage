@@ -40,7 +40,7 @@ define(['engage', 'engage/case'], function(engage) {
               , dataType: 'json'
               , success: function(response) {
                   if (response.data) {
-                    model.set('readStatus', response.data.readStatus)
+                    model.set(_.pick(response.data, 'readStatus', 'readBy'))
                   }
                 }
               }
