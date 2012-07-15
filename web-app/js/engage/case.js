@@ -538,7 +538,7 @@ define(['engage'], function(engage) {
                     if (response.caseId) {
                       input.val('')
                       _t.resetModel()
-                      if (evt) showMsg('Response saved', $(evt.currentTarget).parent())
+                      if (evt) showMsg('Response sent', $(evt.currentTarget).parent())
                       _t.refCase.increase('version')
                       _t.refCase.updateStatus(response.caseStatus || 2)
                     }
