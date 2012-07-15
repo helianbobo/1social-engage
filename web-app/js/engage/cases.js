@@ -71,9 +71,11 @@
             if (data.comment && data.comment.length > 0) {
               data.voiceName = data.comment[0].voiceName
               data.voicePic = data.comment[0].voicePicture
+              data.voiceURL = data.comment[0].voiceURL
             } else {
               data.voiceName = data.articleVoiceName
               data.voicePic = data.articleVoicePicture
+              data.voiceURL = data.articleVoiceURL
             }
             data.read = (data.readStatus == 'read' ? true : false)
 
