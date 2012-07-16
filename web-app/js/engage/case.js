@@ -426,6 +426,7 @@ define(['engage'], function(engage) {
 
         , events: {
             'click .btn-cancel': 'cancel'
+          , 'click .btn-ok': 'cancel'
           , 'click .btn-save': 'save'
           }
 
@@ -495,6 +496,7 @@ define(['engage'], function(engage) {
 
         , events: {
             'click .btn-cancel': 'cancel'
+          , 'click .btn-ok': 'cancel'
           , 'click .btn-save': 'save'
           , 'keydown [name=response]': 'editing'
           , 'keyup [name=response]': 'editing'
