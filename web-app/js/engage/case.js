@@ -514,7 +514,7 @@ define(['engage'], function(engage) {
 
         , editing: function(evt) {
             var el = $(evt.currentTarget)
-            this.$('.char-left').html(140 - el.val().length)
+            this.$('.char-left').html(300 - el.val().length)
           }
 
         , resetModel: function() {
