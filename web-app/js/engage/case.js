@@ -424,7 +424,7 @@ define(['engage'], function(engage) {
             this.model.on('change:caseId', function(model) {
               this.switchMode('edit').save()
             }, this)
-            this.model.on('change:note', this.render, this)
+            this.model.on('change:notes', this.render, this)
             this.switchMode(!this.model.id ? 'create' : 'edit')
             this.render(this.model)
           }
@@ -446,7 +446,7 @@ define(['engage'], function(engage) {
           }
 
         , render: function(model) {
-            this.$('[name=memo]').val(model.get('note'))
+            this.$('[name=memo]').val(model.get('notes'))
           }
 
         , save: function(evt) {
@@ -455,7 +455,7 @@ define(['engage'], function(engage) {
 
             if (val) {
               this.model.save(
-                { note: val }
+                { notes: val }
               , {
                   success: function() {
                     if (evt) showMsg('Memo saved', $(evt.currentTarget).parent())
