@@ -57,7 +57,9 @@
               
                 <div class="control-actions">
                   <button class="btn add-action" data-panel="add-response">Add Response</button>
+                  <!-- 
                   <button class="btn add-action" data-panel="add-memo">Case Memo</button>
+                  -->
                   <button class="btn btn-create-case">Create Case</button>
                 </div>
               </div>
@@ -103,7 +105,9 @@
                 <div class="control-actions">
                   <button class="btn btn-edit-case">Edit Case</button>
                   <button class="btn add-action" data-panel="add-response">Add Response</button>
+                  <!-- 
                   <button class="btn add-action" data-panel="add-memo">Case Memo</button>
+                  -->
                   <button class="btn btn-close-case">Close Case</button>
                 </div>
 
@@ -126,19 +130,6 @@
           </div>
         </form>
 
-        <form class="memo-wrap hide">
-          <span>Case Memo</span>
-          <textarea name="memo" id="" rows="3" class="memo" placeholder="Add Memo"></textarea>
-          <div class="form-actions" data-mode="create">
-            <button class="btn" type="reset">Reset</button>
-            <button class="btn btn-ok">Ok</button>
-          </div>
-          <div class="form-actions" data-mode="edit">
-            <button class="btn btn-cancel">Cancel</button>
-            <button class="btn btn-save">Save</button>
-          </div>
-        </form>
-
       </div>
     </div>
 
@@ -146,6 +137,7 @@
       <div class="case-details">
         <ul class="nav nav-tabs case-tabs">
           <li><a href="#case-conversation" data-toggle="tab">Conversation</a></li>
+          <li><a href="#case-memo" data-toggle="tab">Memo</a></li>
           <li><a href="#case-history" data-toggle="tab">Case History</a></li>
           <li><a href="#case-social-profile" data-toggle="tab">Social Profile</a></li>
         </ul>
@@ -153,6 +145,24 @@
         <div class="tab-content">
           <div class="tab-pane" name="case-conversation">
             <div class="conversation-wrap" tmpl="case-conversation" tmpl-load-timing="manual"></div>
+          </div>
+
+          <div class="tab-pane" name="case-memo">
+            <form class="case-memo-wrap">
+              <div class="case-memo">
+                <h3>Case Memo</h3>
+                <div class="controls">
+                  <textarea name="memo" id="" rows="3" class="memo" placeholder="Add Memo"></textarea>
+                </div>
+                <div class="form-actions" data-mode="create">
+                  <button class="btn" type="reset">Reset</button>
+                  <!-- <button class="btn btn-ok">Ok</button> -->
+                </div>
+                <div class="form-actions" data-mode="edit">
+                  <button class="btn btn-save">Save</button>
+                </div>
+              </div>
+            </form>
           </div>
 
           <div class="tab-pane" name="case-history">

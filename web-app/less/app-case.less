@@ -259,7 +259,8 @@
   padding: @panelPadding;
 }
 .conversation,
-.case-history {
+.case-history,
+.case-memo {
   background-color: @white;
   .border-radius(6px);
   .box-shadow(0 1px 2px rgba(0,0,0,.25));
@@ -325,6 +326,25 @@
   height: 355px;
   overflow: auto;
   position: relative;
+}
+
+.case-memo-wrap {
+  padding: @panelPadding;
+  h3 {
+    font-size: 12px;
+    margin: 0 0 6px 12px;
+    padding-top: 6px;
+  }
+  textarea {
+    .box-sizing(border-box);
+    .size(300px, 100%);
+  }
+  .controls {
+    padding: 0 6px;
+  }
+  .form-actions {
+    padding: 0 6px 6px;
+  }
 }
 
 .case-history {

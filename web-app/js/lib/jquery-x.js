@@ -120,6 +120,15 @@ _.extend(_, {
         })
   }
 
+, mapObject: function(obj, iterator) {
+    if (!obj) return obj;
+    var target = {}
+    _.each(obj, function(value, key, list) {
+      target[key] = iterator(value, key, list)
+    })
+    return target
+  }
+
 , toCamelCase: function(str) {
     return str.replace(/\-([a-z])/g, function(a, b) { return b.toUpperCase() })
   }

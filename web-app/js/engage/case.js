@@ -14,39 +14,42 @@ define(['engage'], function(engage) {
 
             this.model = engage.posts.get(this.$el.attr('post-id'))
 
-            this.childs = _.map(
+            function createChild(name, el) {
+              return new CaseApp[_.capitalize(_.toCamelCase(name))](
+                _.extend({ parent: _t, el: el }, getOptions(name)))
+            }
+
+            function getOptions(name) {
+              if (name === 'case-memo') return { model: _t.childs['case-form'].model }
+            }
+
+            this.childs = _.mapObject(
               {
                 'post-info': '.post-info'
               , 'case-form': '.case-wrap'
               }
             , function(selector, name) {
-                return new CaseApp[_.capitalize(_.toCamelCase(name))](
-                  {
-                    el: _t.$(selector)
-                  , parent: _t
-                  }
-                )
+                return createChild(name, _t.$(selector))
               }
             )
 
             details.find('.nav-tabs a').one('show', function() {
               var tab = $(this)
                 , name = tab.attr('href').split('#')[1]
-                , loaded = function(el, placeholder) {
-                    _t.childs[name] = new CaseApp[_.capitalize(_.toCamelCase(name))](
-                      {
-                        parent: _t
-                      , el: el
-                      }
-                    )
-                  }
+                , pane = _t.findPane(tab.attr('href'))
 
-              tmplLoader.one('load:' + name, loaded)
-              tmplLoader.load(_t.findPane(tab.attr('href')), function() { return true })
+              if (pane.find('[tmpl]').length > 0) {
+                tmplLoader.one('load:' + name
+                  , function(el, placeholder) { _t.childs[name] = createChild(name, el) })
+                tmplLoader.load(_t.findPane(tab.attr('href')), function() { return true })
+              } else {
+                _t.childs[name] = createChild(name, pane.children())
+              }
+
             })
 
             if (!this.model.get('caseId')) {
-              var el = details.find('.nav-tabs li:first')
+              var el = details.find('.nav-tabs li:nth-child(2)')
               el.nextAll().addClass('hide')
 
               this.model.on('change:caseId', function() { el.nextAll().removeClass('hide') })
@@ -165,12 +168,12 @@ define(['engage'], function(engage) {
 
             this.childs = {
               'add-response': this.createChild('AddResponse', '.reponse-wrap')
-            , 'add-memo': this.createChild('AddMemo', '.memo-wrap')
+            //, 'add-memo': this.createChild('AddMemo', '.memo-wrap')
             }
 
             model.one('change:caseId'
             , function(model) {
-                _.each(['add-response', 'add-memo'], function(it) {
+                _.each(['add-response'], function(it) {
                     this.childs[it].switchMode('edit').save()
                     this.trigger('display:'+ it, false)
                   }
@@ -414,14 +417,16 @@ define(['engage'], function(engage) {
     }
   )
 
-  var AddMemo = Backbone.View.extend(
+  var AddMemo = CaseApp.CaseMemo = Backbone.View.extend(
         {
           initialize: function(options) {
-            options.parent.on('display:add-memo', this.display, this)
+            // options.parent.on('display:add-memo', this.display, this)
+            this.model.on('change:caseId', function(model) {
+              this.switchMode('edit').save()
+            }, this)
             this.model.on('change:note', this.render, this)
-            // this.refCase = this.model
-            // this.resetModel()
             this.switchMode(!this.model.id ? 'create' : 'edit')
+            this.render(this.model)
           }
 
         , events: {
@@ -442,18 +447,6 @@ define(['engage'], function(engage) {
 
         , render: function(model) {
             this.$('[name=memo]').val(model.get('note'))
-          }
-
-        , resetModel: function() {
-            if (!this.refCase.id) {
-              return this.model = null
-            }
-            this.model = new engage.model.Case.Memo(
-              {
-                caseId: this.refCase.id
-              , type: 'facebook'
-              }
-            )
           }
 
         , save: function(evt) {
@@ -573,7 +566,7 @@ define(['engage'], function(engage) {
           initialize: function(options) {
             var _t = this
 
-            _.each(['add-memo', 'add-response'], function(it) {
+            _.each(['add-response'], function(it) {
                 options.parent.on('display:' + it, function(visiable) {
                     var method = visiable ? 'addClass' : 'removeClass'
 
@@ -622,7 +615,7 @@ define(['engage'], function(engage) {
           initialize: function(options) {
             var _t = this
 
-            _.each(['add-memo', 'add-response'], function(it) {
+            _.each(['add-response'], function(it) {
                 options.parent.on('display:' + it, function(visiable) {
                     var method = visiable ? 'addClass' : 'removeClass'
 
