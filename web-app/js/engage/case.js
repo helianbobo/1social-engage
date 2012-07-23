@@ -640,6 +640,17 @@ define(['engage'], function(engage) {
               }
             )
 
+            $.ajax({
+              url: _.absolutePath($.contextPath, 'socialEngage/emailCase')
+            , data: { caseId: this.model.id }
+            , dataType: 'json'
+            , success: function(data) {
+                if (data.email) {
+                  _t.$('.btn-email-case').attr('href', 'mailto:' + data.email)
+                }
+              }
+            })
+
             if (this.model.get('title')) this.render(this.model)
           }
 

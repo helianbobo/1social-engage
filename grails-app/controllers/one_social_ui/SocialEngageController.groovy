@@ -78,6 +78,26 @@ class SocialEngageController {
         render getCase(params, [caseStatus: 1]) as JSON
     }
 
+    def emailCase() {
+        /**
+         * caseId = 123
+         */
+        render """{
+"content": "I have a question, can i have the complete address of your bank please?",
+"articleURL": "http://www.facebook.com/permalink.php?story_fbid=366371263432388&id=322058887863626",
+"datetimePosted": "2012-07-19T07:27:50Z",
+"voiceName": "Priya Venkat",
+"notes": "null",
+"title": "CRD1232343",
+"name": "Priya",
+"phone": "89786756",
+"identifier": "S1232434",
+"email": "priya@gmail.com",
+"latestResponse": "It is located at Orchard Road",
+"latestResponseMadeBy": "Caroline Lee"
+}"""
+    }
+
 
 
     def createCaseReal() {
