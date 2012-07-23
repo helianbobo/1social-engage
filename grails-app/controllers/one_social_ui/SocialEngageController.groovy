@@ -70,6 +70,14 @@ class SocialEngageController {
         render getCase(params, request.JSON) as JSON
     }
 
+    def reOpenCase() {
+        /**
+         * caseId = 9691340714194928
+         * createBy = 456
+         */
+        render getCase(params, [caseStatus: 1]) as JSON
+    }
+
 
 
     def createCaseReal() {

@@ -645,9 +645,10 @@ define(['engage'], function(engage) {
 
         , events: {
             'click .add-action': 'displayPanel'
+          , 'click .btn-cancel': 'cancel'
           , 'click .btn-close-case': 'close'
           , 'click .btn-edit-case': 'changeMode'
-          , 'click .btn-cancel': 'cancel'
+          , 'click .btn-reopen-case': 'reopen'
           , 'click .btn-save-case': 'save'
           }
 
@@ -715,9 +716,29 @@ define(['engage'], function(engage) {
 
             this.$('.prioritys').trigger('change', model.get('priority'))
 
-            if (parseInt(model.get('caseStatus')) === 0) {
-              this.$('.control-actions').addClass('hide')
+            function getStatus() {
+              return model.get('caseStatus') === 0 ? 'close' : 'open'
             }
+
+            this.$('[data-status]').each(function(i, it) {
+              var el = $(it)
+                , method = el.attr('data-status') == getStatus() ? 'removeClass' : 'addClass'
+
+              el[method]('hide')
+            })
+          }
+
+        , reopen: function() {
+            var model = this.model
+
+            $.ajax({
+              url: _.absolutePath($.contextPath, 'socialEngage/reOpenCase')
+            , data: { caseId: model.id }
+            , dataType: 'json'
+            , success: function(data, status, xhr) {
+                model.set(model.parse(data))
+              }
+            })
           }
 
         , save: function(evt) {

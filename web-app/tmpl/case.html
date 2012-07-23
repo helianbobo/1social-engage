@@ -102,13 +102,14 @@
                   <button class="btn btn-save-case">Save</button>
                 </div>
               
-                <div class="control-actions">
+                <div class="control-actions" data-status="open">
                   <button class="btn btn-edit-case">Edit Case</button>
                   <button class="btn add-action" data-panel="add-response">Add Response</button>
-                  <!-- 
-                  <button class="btn add-action" data-panel="add-memo">Case Memo</button>
-                  -->
                   <button class="btn btn-close-case">Close Case</button>
+                </div>
+
+                <div class="control-actions" data-status="close">
+                  <button class="btn btn-reopen-case">Re-open Case</button>
                 </div>
 
               </div>
