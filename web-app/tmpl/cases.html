@@ -7,13 +7,13 @@
         <li class="case-item">
           <div class="content">
             <div class="init-post {{#comment}}trim{{/comment}}">
-              <a class="user-name" href="javascript:;" data-url="{{articleVoiceURL}}">{{articleVoiceName}}</a>
+              <a class="user-name" target="_blank" href="javascript:;" data-url="{{articleVoiceURL}}">{{articleVoiceName}}</a>
               {{articleContent}}
             </div>
             {{#comment}}
             <div class="comment">
               <i class="icon-comment-arrow"></i>
-              <a class="user-name" href="javascript:;" data-url="{{voiceURL}}">{{voiceName}}</a>
+              <a class="user-name" target="_blank" href="javascript:;" data-url="{{voiceURL}}">{{voiceName}}</a>
               {{content}}
             </div>
             {{/comment}}
@@ -22,10 +22,10 @@
           <!--<input type="checkbox" class="input-item-selector" >-->
           <div class="pics">
             <img data-original="{{platformPic}}" alt="{{type}}" title="{{type}}" width="50" height="50">
-            <a href="javascript:;" data-url="{{assetURL}}">
+            <a href="javascript:;" target="_blank" data-url="{{assetURL}}">
               <img data-original="{{assetPic}}" alt="{{assetName}}" title="{{assetName}}" width="50" height="50">
             </a>
-            <a href="javascript:;" data-url="{{voiceURL}}">
+            <a href="javascript:;" target="_blank" data-url="{{voiceURL}}">
               <img data-original="{{voicePic}}" alt="{{voiceName}}" title="{{voiceName}}" width="50" height="50">
             </a>
             {{^read}}<span class="update-count">{{updateCount}}</span>{{/read}}
