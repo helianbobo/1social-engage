@@ -178,6 +178,7 @@ window.tmplLoader = tmplLoader
             '0': 'Closed'
           , '1': 'Open'
           , '2': 'Responded'
+          , '3': 'Re-opened'
           }
 
         , Memo: Backbone.Model.extend(

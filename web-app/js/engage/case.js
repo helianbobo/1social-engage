@@ -645,9 +645,34 @@ define(['engage'], function(engage) {
             , data: { caseId: this.model.id }
             , dataType: 'json'
             , success: function(data) {
-                if (data.email) {
-                  _t.$('.btn-email-case').attr('href', 'mailto:' + data.email)
-                }
+                    /*var emailBody = 'Customer Type:<br/>Salutation:<br/>';
+                     emailBody += 'Name: {{name}}<br/>';
+                     emailBody += 'NRIC/FIN:<br/>';
+                     emailBody += 'Account Identifier: {{identifier}}<br/>';
+                     emailBody += 'Contact Number: {{phone}}<br/>';
+                     emailBody += 'Email Address: {{email}}<br/><hr/>';
+                     emailBody += 'Subject: {{title}}<br/>';
+                     emailBody += 'Contents:<br/>';
+                     emailBody += '<i>{{content}}</i><br/>';
+                     emailBody += 'by <a href="{{voiceURL}}">{{voiceName}}</a> | <a href="{{articleURL}}">{{datetimePosted}}</a><br/><br/>';
+                     emailBody += '<i>{{latestResponse}}</i><br/>';
+                     emailBody += 'response by {{latestResponseMadeBy}}<br/><hr/>';
+                     emailBody += 'Memo<br/>{{notes}}<br/><hr/>';
+                     */
+                    var emailBody = 'Customer Type:%0DSalutation:%0D';
+                    emailBody += 'Name: {{name}}%0D';
+                    emailBody += 'NRIC/FIN:%0D';
+                    emailBody += 'Account Identifier: {{identifier}}%0D';
+                    emailBody += 'Contact Number: {{phone}}%0D';
+                    emailBody += 'Email Address: {{email}}%0D';
+                    emailBody += 'Subject: {{title}}%0D';
+                    emailBody += 'Contents:%0D';
+                    emailBody += '{{content}}%0D';
+                    emailBody += 'by {{voiceName}} | {{datetimePosted}} %0D%0D';
+                    emailBody += '{{latestResponse}}%0D';
+                    emailBody += 'response by {{latestResponseMadeBy}}%0D';
+                    emailBody += 'Memo%0D{{notes}}%0D';
+                    _t.$('.btn-email-case').attr('href', Mustache.render('mailto:?subject={{title}}&body='+emailBody, data))
               }
             })
 
