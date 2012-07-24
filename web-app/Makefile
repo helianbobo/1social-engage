@@ -7,6 +7,7 @@ build:
 	lessc ${LESS_DIR}/app-posts.less > ${CSS_DIR}/app-posts.css
 	lessc ${LESS_DIR}/app-case.less > ${CSS_DIR}/app-case.css
 	lessc ${LESS_DIR}/app-cases.less > ${CSS_DIR}/app-cases.css
+	lessc ${LESS_DIR}/social-analytics.less > ${CSS_DIR}/social-analytics.css
 
 node:
 	mkdir -p css

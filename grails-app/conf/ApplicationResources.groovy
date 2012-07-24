@@ -3,9 +3,8 @@ modules = {
         //resource url: 'js/application.js'
     }
 
-    requirejs{
-        //resource url: 'v1/js/require.min.js'
-        //resource url: 'v1/js/text.js'
+    requirejs {
+        resource url: 'js/lib/require.js'
     }
 
     jsViews {
@@ -34,12 +33,12 @@ modules = {
         //resource url: 'v1/js/ajax.js'
         //resource url: 'js/json2.js'
 
-		//resource url: 'js/jquery.treeview.js'
+        //resource url: 'js/jquery.treeview.js'
         //resource url: 'js/jquery.ui.core.js'
         //resource url: 'js/jquery.ui.widget.js'
         //resource url: 'js/jquery.ui.tabs.js'
 
-		//resource url: 'css/accordion.css'
+        //resource url: 'css/accordion.css'
         //resource url: 'css/redmond/jquery-ui-1.7.1.custom.css'
         //resource url: 'css/jquery.treeview.css'
 
@@ -57,11 +56,19 @@ modules = {
         //resource url: 'v1/css/tipTip.css'
     }
 
+    analytics {
+        dependsOn 'requirejs'
+
+        resource url: 'less/social-analytics.less', attrs: [rel: "stylesheet/less", type: 'css']
+
+        resource url: 'js/config.js'
+    }
+
     engage {
+        dependsOn 'requirejs'
 
-        resource url: 'less/engage.less', attrs: [rel: "stylesheet/less", type: 'css']//, bundle: 'bundle_ui'
+        resource url: 'less/engage.less', attrs: [rel: "stylesheet/less", type: 'css']
 
-        resource url: 'js/lib/require.js'
         resource url: 'js/config.js'
     }
 
