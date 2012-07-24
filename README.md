@@ -13,6 +13,7 @@ Using:
 * [LESS](http://lesscss.org)
 * [Lesscss-java](https://github.com/marceloverdijk/lesscss-java)
 * [Bootstrap](http://twitter.github.com/bootstrap/)
+* [RequireJS](http://requirejs.org/)
 * FP + OO
 
 With these grails plugins:
