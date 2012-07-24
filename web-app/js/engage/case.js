@@ -108,6 +108,33 @@ define(['engage'], function(engage) {
           }
         )
         conversation.fetch()
+
+        function onResponded(post, id) {
+          var obj = engage.cases.get(id)
+
+          function bind(_case) {
+            _case.on('responded', function() {
+              conversation.fetch()
+            })
+          }
+
+          function whenCaseAdded(id, fn) {
+            engage.cases.one('add', function(_case) {
+              if (_case.id == id) fn(_case)
+              else whenCaseAdded(id, fn)
+            })
+          }
+
+          if (obj) bind(obj)
+          else whenCaseAdded(id, bind)
+        }
+
+        function checkCaseId(post, fn) {
+          if (post.get('caseId')) fn(post, post.get('caseId'))
+          else post.one('change:caseId', fn)
+        }
+
+        checkCaseId(options.parent.model, onResponded)
       }
 
     , events: {
@@ -541,6 +568,7 @@ define(['engage'], function(engage) {
                       if (evt) showMsg('Response sent', $(evt.currentTarget).parent())
                       _t.refCase.increase('version')
                       _t.refCase.updateStatus(response.caseStatus || 2)
+                      _t.refCase.trigger('responded')
                     }
                   }
                 }
