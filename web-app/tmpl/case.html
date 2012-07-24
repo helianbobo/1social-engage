@@ -113,6 +113,24 @@
                   <button class="btn btn-reopen-case">Re-open Case</button>
                 </div>
 
+                <!-- DO NOT Format .email-tmpl as usual -->
+                <pre class="email-tmpl hide">Customer Type:
+Salutation:
+Name: {{name}}
+NRIC/FIN:
+Account Identifier: {{identifier}}
+Contact Number: {{phone}}
+Email Address: {{email}}
+Subject: {{title}}
+Contents:
+{{content}}
+by {{voiceName}} | {{datetimePosted}} 
+
+{{latestResponse}}
+response by {{latestResponseMadeBy}}
+Memo
+{{notes}}</pre>
+
               </div>
             </div>
           </div>
