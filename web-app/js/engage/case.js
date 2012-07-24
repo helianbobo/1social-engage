@@ -259,7 +259,8 @@ define(['engage'], function(engage) {
 
         var _case = this.model._case = 
             engage.cases.get(options.parent.model.get('caseId'))
-        _case.on('change', this.refresh, this)
+        _case.on('change:version', this.refresh, this)
+        _case.on('sync', this.refresh, this)
 
         this.model.on('sync', this.render, this)
         this.refresh()
@@ -724,6 +725,7 @@ define(['engage'], function(engage) {
 
         , close: function() {
             if (this.editable) this.$('.btn-edit-case').click()
+            this.options.parent.trigger('display:add-response', false)
             this.model.destroy(
                 {
                   success: function(model, response) {
