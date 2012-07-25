@@ -295,7 +295,7 @@ window.tmplLoader = tmplLoader
 
             if (data.comment && data.comment.length > 0) {
               obj.commentId = data.comment[0].fbId
-            }else{
+            } else {
               obj.commentId = 0;
             }
             return obj
@@ -377,7 +377,7 @@ window.tmplLoader = tmplLoader
           }
 
         , url: function() {
-            return _.absolutePath($.contextPath, 'socialEngage/getVoiceProfile?voiceId=' + this.id)
+            return _.absolutePath($.contextPath, 'socialEngage/getVoiceProfile?type=facebook&queryId=' + this.id)
           }
         }
       )

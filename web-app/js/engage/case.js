@@ -49,7 +49,7 @@ define(['engage'], function(engage) {
             })
 
             if (!this.model.get('caseId')) {
-              var el = details.find('.nav-tabs li:nth-child(2)')
+              var el = details.find('.nav-tabs li:nth-child(3)')
               el.nextAll().addClass('hide')
 
               this.model.on('change:caseId', function() { el.nextAll().removeClass('hide') })
@@ -311,8 +311,10 @@ define(['engage'], function(engage) {
           }
         )
         
+        var ids = options.parent.model.getIds()
+
         this.model = new engage.model.Profile({
-          id: engage.cases.get(options.parent.model.get('caseId')).get('voiceId')
+          id: ids.commentId || ids.articleId
         })
 
         this.model.on('sync', this.render, this)

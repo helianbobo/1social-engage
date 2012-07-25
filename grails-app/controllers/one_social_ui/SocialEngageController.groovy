@@ -496,7 +496,8 @@ class SocialEngageController {
 
     def getVoiceProfile() {
         /*
-        voiceId=9691340801140613.1340801141467
+        type    = facebook
+        queryId = 9691340801140613.1340801141467
          */
         render '''{
   "data": {
