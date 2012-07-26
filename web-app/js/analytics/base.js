@@ -4,9 +4,13 @@ define(
   , 'jquery.views'
   , 'jquery.ui.datepicker'
   , 'jquery.ui.tabs'
+  , 'jquery.treeview'
   , 'jquery.uniform'
   ]
 , function() {
+  // env setup
+  $.contextPath = CONTEXT_PATH || ''
+
   $(document).ready(function() {
     var percentBtn = $('#chartOption #percent');
     var barBtn = $('#chartOption #bar');
@@ -750,7 +754,7 @@ define(
         changeMonth: true,
         numberOfMonths: 1,
         showOn: "button",
-        buttonImage: "${resource(dir: 'images', file: 'icon_calendar.gif')}",
+        buttonImage: _.absolutePath($.contextPath, '/images/icon_calendar.gif'),
         buttonImageOnly: true,
         onSelect: function( selectedDate ) {
           var option = this.id == "from_date" ? "minDate" : "maxDate",
@@ -946,18 +950,17 @@ define(
    var openAccordion = '';
 
 
-   function runAccordion(index)
-   {
-     var nID = "Accordion" + index + "Content";
-     if(openAccordion == nID)
-     nID = '';
+  function runAccordion(index) {
+    var nID = "Accordion" + index + "Content";
+    if(openAccordion == nID)
+    nID = '';
 
-     ContentHeight = document.getElementById("Accordion" + index + "Content"+"_").offsetHeight;
-     setTimeout("animate(" + new Date().getTime() + "," + TimeToSlide + ",'"
-       + openAccordion + "','" + nID + "')", 33);
+    ContentHeight = document.getElementById("Accordion" + index + "Content"+"_").offsetHeight;
+    setTimeout("animate(" + new Date().getTime() + "," + TimeToSlide + ",'"
+      + openAccordion + "','" + nID + "')", 33);
 
-     openAccordion = nID;
-   }
+    openAccordion = nID;
+  }
 
   function animate(lastTick, timeLeft, closingId, openingId) {
     var curTick = new Date().getTime();
@@ -1016,6 +1019,7 @@ define(
     });
   });
 
+  window.runAccordion = runAccordion
 
     /* adding this code to ensured that Popup datepicker moves relative to the content not the window size */
     $(window).resize(function() {
@@ -1024,4 +1028,5 @@ define(
           field.datepicker('hide').datepicker('show');
       }
     });
+
 })

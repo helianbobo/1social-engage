@@ -8,6 +8,7 @@ requirejs.config({
   , mustache: 'lib/mustache'
   , 'jquery.lazyload': 'lib/jquery.lazyload'
   , 'jquery.observable': 'lib/jquery.observable'
+  , 'jquery.treeview': 'lib/jquery.treeview'
   , 'jquery.ui': 'lib/jquery.ui.core'
   , 'jquery.ui.datepicker': 'lib/jquery.ui.datepicker'
   , 'jquery.ui.tabs': 'lib/jquery.ui.tabs'
@@ -24,11 +25,13 @@ requirejs.config({
     , exports: 'Backbone'
     }
   , 'jquery.lazyload': ['jquery']
+  , 'jquery.observable': ['jquery']
+  , 'jquery.treeview': ['jquery']
   , 'jquery.uniform': ['jquery']
   , 'jquery.ui.datepicker': ['jquery.ui.widget']
   , 'jquery.ui.tabs': ['jquery.ui.widget']
   , 'jquery.ui.widget': ['jquery.ui']
-  , 'jquery.views': ['jquery', 'jsrender', 'jquery.observable']
+  , 'jquery.views': ['jquery.observable', 'jsrender']
   , 'bootstrap.dropdown': ['jquery']
   , 'bootstrap.modal': ['jquery']
   , 'bootstrap.tab': ['jquery']

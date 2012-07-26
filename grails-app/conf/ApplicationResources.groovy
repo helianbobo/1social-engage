@@ -38,9 +38,6 @@ modules = {
         //resource url: 'js/jquery.ui.widget.js'
         //resource url: 'js/jquery.ui.tabs.js'
 
-        //resource url: 'css/accordion.css'
-        //resource url: 'css/redmond/jquery-ui-1.7.1.custom.css'
-        //resource url: 'css/jquery.treeview.css'
 
         //resource url: 'v1/css/fontface.less', attrs: [rel: "stylesheet/less", type: 'css']
         //resource url: 'v1/css/layout.less', attrs: [rel: "stylesheet/less", type: 'css']
@@ -50,7 +47,6 @@ modules = {
         //resource url: 'v1/js/date.js'
         
         //resource url: 'v1/js/jquery.uniform.min.js'
-        //resource url: 'v1/css/uniform.default.css'
         
         //resource url: 'v1/js/jquery.tipTip.minified.js'
         //resource url: 'v1/css/tipTip.css'
@@ -60,6 +56,9 @@ modules = {
         dependsOn 'requirejs'
 
         resource url: 'less/social-analytics.less', attrs: [rel: "stylesheet/less", type: 'css']
+        resource url: 'css/redmond/jquery-ui-1.8.16.custom.css'
+        resource url: 'css/accordion.css'
+        resource url: 'css/jquery.treeview.css'
         resource url: 'css/uniform.default.css'
 
         resource url: 'js/config.js'

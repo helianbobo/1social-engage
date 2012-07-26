@@ -34,7 +34,10 @@ class CommonApiController {
     "dateStart":"2012-06-10",
     "type":"DEMO",
     "clientId":969,
-    "clientDateStart":"2012-04-26"
+    "clientDateStart":"2012-04-26",
+    "client_details": {
+        "topicSubjectDetails": []
+    }
 }
 '''
     }
