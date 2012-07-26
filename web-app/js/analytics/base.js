@@ -1,4 +1,12 @@
-define(['lib/jquery-x', 'jquery.views', 'jquery.uniform'], function() {
+define(
+  [
+    'lib/jquery-x'
+  , 'jquery.views'
+  , 'jquery.ui.datepicker'
+  , 'jquery.ui.tabs'
+  , 'jquery.uniform'
+  ]
+, function() {
   $(document).ready(function() {
     var percentBtn = $('#chartOption #percent');
     var barBtn = $('#chartOption #bar');

@@ -8,6 +8,10 @@ requirejs.config({
   , mustache: 'lib/mustache'
   , 'jquery.lazyload': 'lib/jquery.lazyload'
   , 'jquery.observable': 'lib/jquery.observable'
+  , 'jquery.ui': 'lib/jquery.ui.core'
+  , 'jquery.ui.datepicker': 'lib/jquery.ui.datepicker'
+  , 'jquery.ui.tabs': 'lib/jquery.ui.tabs'
+  , 'jquery.ui.widget': 'lib/jquery.ui.widget'
   , 'jquery.uniform': 'lib/jquery.uniform.min'
   , 'jquery.views': 'lib/jquery.views'
   , 'bootstrap.dropdown': 'lib/bootstrap-dropdown'
@@ -21,6 +25,9 @@ requirejs.config({
     }
   , 'jquery.lazyload': ['jquery']
   , 'jquery.uniform': ['jquery']
+  , 'jquery.ui.datepicker': ['jquery.ui.widget']
+  , 'jquery.ui.tabs': ['jquery.ui.widget']
+  , 'jquery.ui.widget': ['jquery.ui']
   , 'jquery.views': ['jquery', 'jsrender', 'jquery.observable']
   , 'bootstrap.dropdown': ['jquery']
   , 'bootstrap.modal': ['jquery']
