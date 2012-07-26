@@ -12,55 +12,6 @@
     <r:layoutResources/>
     <g:render template="/share/session" model="[currentModule: 'socialAnalytics', currentSubModule: currentSubModule]"/>
 
-	<script type="text/javascript">
-	    $(document).ready(function() {
-	        var percentBtn = $('#chartOption #percent');
-	        var barBtn = $('#chartOption #bar');
-	        var stackedBtn = $('#chartOption #stacked');
-	        var pieBtn = $('#chartOption #pie');
-
-	        percentBtn.click(function() {
-	            percentBtn.addClass('active');
-	            stackedBtn.removeClass('active');
-	            barBtn.removeClass('active');
-	            pieBtn.removeClass('active');
-
-	            $(document).trigger('percent');
-	        });
-	
-	        stackedBtn.click(function() {
-	            stackedBtn.addClass('active');
-	            percentBtn.removeClass('active');
-	            barBtn.removeClass('active');
-	            pieBtn.removeClass('active');
-
-	            $(document).trigger('stacked');
-	        });
-	
-	        barBtn.click(function() {
-	            barBtn.addClass('active');
-	            percentBtn.removeClass('active');
-	            stackedBtn.removeClass('active');
-	            pieBtn.removeClass('active');
-
-	            $(document).trigger('bar');
-	        });
-
-            pieBtn.click(function() {
-                pieBtn.addClass('active');
-                percentBtn.removeClass('active');
-                stackedBtn.removeClass('active');
-                barBtn.removeClass('active');
-
-                $(document).trigger('pie');
-            });
-	
-			$('#menuItem select').uniform({useID: true});
-	        $('#menuItem select').change(function () {
-	        	$(document).trigger($(this).val());
-	        });
-	    });
-	</script>
 </head>
 
 <body>

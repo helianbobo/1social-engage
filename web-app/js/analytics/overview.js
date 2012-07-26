@@ -1,4 +1,4 @@
-define('analytics/overview', ['jquery'], function() {
+define('analytics/overview', ['base'], function() {
   var chartData;
   var currentChart = 'stacked';
 
@@ -218,13 +218,14 @@ define('analytics/overview', ['jquery'], function() {
       });
     }
 
-     function renderChart() {
-       $(document).trigger('showPreloader', [{places:['chartContainer']}]);
+    function renderChart() {
+      $(document).trigger('showPreloader', [{places:['chartContainer']}]);
        var params = $.getSearchOptions();
 
-       $.getJSON('${resource(dir: 'socialAnalytics/overviewData')}',
-        params,
-        function (data) {
+      $.getJSON(
+        _.absolutePath($.contextPath, 'socialAnalytics/overviewData')
+      , params
+      , function (data) {
           chartData = data;
           $(document).trigger(currentChart);
           spinner.hide();
