@@ -1,4 +1,4 @@
-define('analytics/overview', ['base'], function() {
+define('analytics/overview', ['analytics/base'], function() {
   var chartData;
   var currentChart = 'stacked';
 

@@ -1,4 +1,4 @@
-define(['jquery-x'], function() {
+define(['lib/jquery-x'], function() {
   $(document).ready(function() {
     var percentBtn = $('#chartOption #percent');
     var barBtn = $('#chartOption #bar');
@@ -69,9 +69,9 @@ define(['jquery-x'], function() {
     var url = "";
 
     function renderChannelDetails(options){
-       url = '${request.contextPath}/socialAnalytics/getCumulativeChannel';
+       url = _.absolutePath($.contextPath, '/socialAnalytics/getCumulativeChannel');
       if(options.type == "New Channels"){
-        url = '${request.contextPath}/socialAnalytics/getNewChannel';
+        url = _.absolutePath($.contextPath, '/socialAnalytics/getNewChannel');
       }
 
       if(currentChannelSearchOption.type != options.type){
@@ -229,9 +229,9 @@ define(['jquery-x'], function() {
     var url = ""
 
     function renderVoiceDetails(options){
-      url = '${request.contextPath}/socialAnalytics/getCumulativeVoice';
+      url = _.absolutePath($.contextPath, '/socialAnalytics/getCumulativeVoice');
       if(options.type == "New Voices"){
-        url = '${request.contextPath}/socialAnalytics/getNewVoice';
+        url = _.absolutePath($.contextPath, '/socialAnalytics/getNewVoice');
       }
 
       if(currentVoiceSearchOption.type != options.type){
@@ -464,7 +464,7 @@ define(['jquery-x'], function() {
 
       };
       $.ajax({
-        url:  '${request.contextPath}/commonApi/getPosts',
+        url:  _.absolutePath($.contextPath, '/commonApi/getPosts'),
         type: "POST",
         data: currentPostSearchOption,
         dataType: "json"
@@ -475,7 +475,7 @@ define(['jquery-x'], function() {
     $('#export').live('click', function () {
       var params = $.extend({}, currentPostSearchOption);
       delete params.max;
-      $.download('${request.contextPath}/commonApi/getPosts' + '.csv', params);
+      $.download(_.absolutePath($.contextPath, '/commonApi/getPosts' + '.csv'), params);
     });
 
     function renderPostContext(data){
@@ -485,7 +485,7 @@ define(['jquery-x'], function() {
 
       currentContextSearchOption = $.extend(defaultContextPaginationOptions, data);
 
-      $.getJSON('${resource(dir: 'commonApi/getPostContext')}',
+      $.getJSON(_.absolutePath($.contextPath, 'commonApi/getPostContext'),
           currentContextSearchOption,
           function (data) {
 
@@ -904,7 +904,7 @@ define(['jquery-x'], function() {
       });
 
     $.ajax({
-      url:  '${request.contextPath}/commonApi/updateUserData',
+      url:  _.absolutePath($.contextPath, '/commonApi/updateUserData'),
       type: "POST",
       data: {
         from_date:from_date,
