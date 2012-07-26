@@ -56,7 +56,7 @@ modules = {
         dependsOn 'requirejs'
 
         resource url: 'less/social-analytics.less', attrs: [rel: "stylesheet/less", type: 'css']
-        resource url: 'css/redmond/jquery-ui-1.8.16.custom.css'
+        resource url: 'css/redmond/jquery-ui-1.7.1.custom.css'
         resource url: 'css/accordion.css'
         resource url: 'css/jquery.treeview.css'
         resource url: 'css/uniform.default.css'

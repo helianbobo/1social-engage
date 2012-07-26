@@ -1019,14 +1019,16 @@ define(
     });
   });
 
-  window.runAccordion = runAccordion
+  _.extend(window, {
+    animate: animate
+  , runAccordion: runAccordion
+  })
 
-    /* adding this code to ensured that Popup datepicker moves relative to the content not the window size */
-    $(window).resize(function() {
-      var field = $(document.activeElement);
-      if (field.is('.hasDatepicker')) {
-          field.datepicker('hide').datepicker('show');
-      }
-    });
-
+  /* adding this code to ensured that Popup datepicker moves relative to the content not the window size */
+  $(window).resize(function() {
+    var field = $(document.activeElement);
+    if (field.is('.hasDatepicker')) {
+        field.datepicker('hide').datepicker('show');
+    }
+  });
 })
