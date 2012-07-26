@@ -1,4 +1,4 @@
-define(['lib/jquery-x', 'jquery.uniform'], function() {
+define(['lib/jquery-x', 'jquery.views', 'jquery.uniform'], function() {
   $(document).ready(function() {
     var percentBtn = $('#chartOption #percent');
     var barBtn = $('#chartOption #bar');
