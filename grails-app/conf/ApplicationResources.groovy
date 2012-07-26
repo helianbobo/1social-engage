@@ -60,6 +60,7 @@ modules = {
         dependsOn 'requirejs'
 
         resource url: 'less/social-analytics.less', attrs: [rel: "stylesheet/less", type: 'css']
+        resource url: 'css/uniform.default.css'
 
         resource url: 'js/config.js'
     }
