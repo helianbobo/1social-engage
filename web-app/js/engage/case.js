@@ -314,7 +314,7 @@ define(['engage'], function(engage) {
         var ids = options.parent.model.getIds()
 
         this.model = new engage.model.Profile({
-          id: ids.commentId || ids.articleId
+          id: ids.voiceId
         })
 
         this.model.on('sync', this.render, this)

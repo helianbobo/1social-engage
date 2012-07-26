@@ -291,10 +291,11 @@ window.tmplLoader = tmplLoader
 
         , getIds: function() {
             var data = this.toJSON()
-              , obj = { articleId: data.fbId }
+              , obj = { articleId: data.fbId, voiceId: data.voiceId }
 
             if (data.comment && data.comment.length > 0) {
-              obj.commentId = data.comment[0].fbId
+              obj.commentId = data.comment[0].fbId;
+              obj.voiceId = data.comment[0].voiceId;
             } else {
               obj.commentId = 0;
             }

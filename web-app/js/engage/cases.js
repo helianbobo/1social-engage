@@ -35,7 +35,7 @@
                     , 'caseId': data.caseId
                     , 'content': data.articleContent
                     , 'articleURL': data.articleURL
-                    , 'voiceId': data.voiceId
+                    , 'voiceId': data.articleVoiceId
                     , 'voiceName': data.articleVoiceName
                     , 'voicePic': data.articleVoicePicture
                     , 'comment': []
@@ -46,6 +46,7 @@
                       'content': data.comment[0].content
                     , 'fbId': data.commentId
                     , 'voiceName': data.comment[0].voiceName
+                    , 'voiceId': data.comment[0].voiceId
                     , 'voicePic': data.comment[0].voicePicture
                     }
                   )
