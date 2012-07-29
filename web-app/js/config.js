@@ -6,6 +6,9 @@ requirejs.config({
   , backbone: 'lib/backbone'
   , mustache: 'lib/mustache'
   , 'jquery.lazyload': 'lib/jquery.lazyload'
+  , 'jquery-ui': 'lib/jquery.ui.core'
+  , 'jquery-ui.widget': 'lib/jquery.ui.widget'
+  , 'jquery-ui.datepicker': 'lib/jquery.ui.datepicker'
   , 'bootstrap.dropdown': 'lib/bootstrap-dropdown'
   , 'bootstrap.modal': 'lib/bootstrap-modal'
   , 'bootstrap.tab': 'lib/bootstrap-tab'
@@ -20,6 +23,9 @@ requirejs.config({
     , exports: 'Backbone'
     }
   , 'jquery.lazyload': ['jquery']
+  , 'jquery-ui': ['jquery']
+  , 'jquery-ui.widget': ['jquery-ui']
+  , 'jquery-ui.datepicker': ['jquery-ui.widget']
   , 'bootstrap.dropdown': ['jquery']
   , 'bootstrap.modal': ['jquery']
   , 'bootstrap.tab': ['jquery']

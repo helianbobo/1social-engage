@@ -65,6 +65,13 @@ modules = {
         resource url: 'js/config.js'
     }
 
+    'engage-overview' {
+        dependsOn 'engage'
+
+        resource url: 'css/redmond/jquery-ui-1.7.1.custom.css'
+        resource url: 'less/engage/overview.less', attrs: [rel: "stylesheet/less", type: 'css']
+    }
+
     'engage-posts' {
         dependsOn 'engage'
         
