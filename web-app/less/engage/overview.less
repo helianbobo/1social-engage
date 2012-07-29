@@ -1,0 +1,48 @@
+@import "../variables.less";
+@import "../mixins.less";
+
+.app-engage-overview {
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.app-tabs {
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+  padding-top: 8px;
+}
+.app-tabs > li {
+  margin-bottom: -1px;
+}
+.app-tabs > li > a {
+  background-color: #fafafa;
+  border: 1px solid transparent;
+  border-color: @grayLighter @grayLighter #ddd;
+  color: @grayLight;
+  line-height: 20px;
+  padding: 6px 35px;
+  &:hover {
+    background-color: @grayLighter;
+    color: @gray;
+  }
+  i {
+    padding-right: 6px;
+  }
+}
+.app-tabs > .active > a,
+.app-tabs > .active > a:hover {
+  background-color: @white;
+}
+.app-tabs > .disabled > a,
+.app-tabs > .disabled > a:hover {
+  background-color: @grayLighter;
+  color: @grayLight;
+  cursor: default;
+}
+
+// content
+.tab-content {
+  background-color: @white;
+  
+}
