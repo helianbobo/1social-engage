@@ -1,3 +1,5 @@
+define(['highcharts-exporting', 'highcharts-theme'], function() {
+
 Highcharts.setOptions({
     xAxis: {
         labels: {
@@ -397,3 +399,5 @@ Highcharts.Renderer.prototype.symbols.pptIcon = function (x, y, width, height) {
         'Z'
     ]);
 };
+
+})

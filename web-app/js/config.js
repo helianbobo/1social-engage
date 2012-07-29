@@ -9,6 +9,10 @@ requirejs.config({
   , 'bootstrap.dropdown': 'lib/bootstrap-dropdown'
   , 'bootstrap.modal': 'lib/bootstrap-modal'
   , 'bootstrap.tab': 'lib/bootstrap-tab'
+  , 'highcharts': 'lib/highcharts/2.2.5/highcharts'
+  , 'highcharts-more': 'lib/highcharts/2.2.5/highcharts-more'
+  , 'highcharts-exporting': 'lib/highcharts/2.2.5/modules/exporting.src'
+  , 'highcharts-theme': 'lib/highcharts/theme-brandtology'
   }
 , shim: {
     backbone: {
@@ -19,5 +23,8 @@ requirejs.config({
   , 'bootstrap.dropdown': ['jquery']
   , 'bootstrap.modal': ['jquery']
   , 'bootstrap.tab': ['jquery']
+  , 'highcharts-more': ['highcharts']
+  , 'highcharts-exporting': ['highcharts-more']
+  , 'highcharts-theme': ['highcharts-more']
   }
 })
