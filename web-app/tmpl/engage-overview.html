@@ -10,16 +10,16 @@
       <div class="asset-item">
         <div class="asset-item-header">
           <div class="asset-title">
-            <img src="" alt="" width="20" height="20">
-            <h2>WJ Bank</h2>
+            <img data-original="{{imageURL}}" alt="" width="20" height="20">
+            <h2>{{name}}</h2>
           </div>
         </div>
         <div class="asset-item-body">
           <div class="toolbar">
             <span class="text">From</span>
-            <div class="date-dropdown"><input type="" class="date"><b class="caret"></b></div>
+            <div class="date-dropdown"><input name="fromDate" type="date" class="date"><b class="caret"></b></div>
             <span class="text">To</span>
-            <div class="date-dropdown"><input type="" class="date"><b class="caret"></b></div>
+            <div class="date-dropdown"><input name="toDate" type="date" class="date"><b class="caret"></b></div>
           </div>
 
           <div class="stats">
@@ -30,10 +30,29 @@
             </ul>
             <div class="tab-content">
               <div class="tab-pane asset-stats active" name="read-stats">
+                <div class="article-read">
+                  <div class="pie"></div>
+                  <div class="title">Article</div>
+                </div>
+                <div class="comment-read">
+                  <div class="pie"></div>
+                  <div class="title">Comment</div>
+                </div>
               </div>
               <div class="tab-pane asset-stats" name="case-stats">
+                <div class="article-case">
+                  <div class="pie"></div>
+                  <div class="title">Article</div>
+                </div>
+                <div class="comment-case">
+                  <div class="pie"></div>
+                  <div class="title">Comment</div>
+                </div>
               </div>
               <div class="tab-pane asset-stats" name="case-breakdown">
+                <div class="case-breakdown">
+                  <div class="stack"></div>
+                </div>
               </div>
             </div>
           </div>

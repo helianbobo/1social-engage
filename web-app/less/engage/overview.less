@@ -4,7 +4,7 @@
 .app-engage-overview {
   height: 100%;
   width: 100%;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  //box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 .app-tabs {
@@ -78,7 +78,7 @@
 }
 
 .toolbar {
-  .absolute-top-left(0, 0);
+  .absolute-top-left(0, 20px);
   border-bottom: 0;
   .date-dropdown {
     display: inline-block;
@@ -140,4 +140,27 @@
 }
 .stats > .tab-content {
   clear: both;
+}
+
+.article-read,
+.comment-read,
+.article-case,
+.comment-case {
+  float: left;
+  width: 40%;
+  margin-left: 5%;
+  margin-bottom: 20px;
+  .title {
+    text-align: center;
+  }
+}
+.case-breakdown {
+  width: 90%;
+  margin-left: 5%;
+}
+
+// keep the jquery-ui style
+.ui-datepicker select {
+  height: 20px;
+  line-height: 20px;
 }
