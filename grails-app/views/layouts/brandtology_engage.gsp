@@ -17,7 +17,7 @@
 
 	
     <g:render template="/share/header"
-        	model="[subModules:['posts','cases'], currentModule: 'socialEngage', currentSubModule:currentSubModule]"/>
+        	model="[subModules:['overview', 'posts','cases'], currentModule: 'socialEngage', currentSubModule:currentSubModule]"/>
     
 
 	<g:layoutBody/>

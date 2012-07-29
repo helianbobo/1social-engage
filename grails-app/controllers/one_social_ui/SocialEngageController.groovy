@@ -6,7 +6,7 @@ import grails.converters.JSON
 class SocialEngageController {
 
 
-    def index() {redirect(action: 'posts')}
+    def index() {redirect(action: 'overview')}
 
     def getCase(params, body) {
         // the case model
@@ -534,6 +534,12 @@ class SocialEngageController {
 
     def posts() {
         def currentSubModule = 'posts'
+
+        [currentSubModule: currentSubModule]
+    }
+
+    def overview() {
+        def currentSubModule = 'overview'
 
         [currentSubModule: currentSubModule]
     }
