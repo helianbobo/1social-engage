@@ -15,7 +15,7 @@
       <div class="app-engage-overview" tmpl="engage-overview"></div>
     </div>
 <r:script>
-  requirejs(['engage/overview'], function() {})
+  requirejs(['engage/overview-single'], function() {})
 </r:script>
 
 </body>
