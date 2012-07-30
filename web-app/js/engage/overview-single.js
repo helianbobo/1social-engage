@@ -30,7 +30,7 @@
 
     , Overview = Backbone.View.extend({
         initialize: function(options) {
-          this.childs = {}
+          this.child = null
 
           this.tmpls = {
             header: this.extractTemplate(this.$('.asset-title'))
@@ -43,20 +43,34 @@
           }
         }
 
+      , events: {
+          'click .asset': 'refresh'
+        }
+
+      , refresh: function(evt) {
+          var el = evt ? $(evt.currentTarget) : this.$('.dropdown-menu li a:first')
+            , toggle = this.$('.dropdown-toggle')
+
+          toggle.find('.caret').prevAll().remove()
+          el.children().clone().insertBefore(toggle.find('.caret'))
+          el.closest('ul').find('li').removeClass('active')
+          el.parent().addClass('active')
+
+          if (this.child) {
+            this.child.destroy()
+            this.child = null
+          }
+
+          var asset = this.model.get(el.attr('data-id'))
+            , body = $(Mustache.render(this.tmpls.body, asset.toJSON()))
+
+          this.$('.asset-item').append(body)
+          this.child = new OverviewItem({el: body, model: asset})
+        }
+
       , render: function(model) {
-          var _t = this
-
-          //_.each(this.childs, function(it) { it.destroy() })
-          return this.$('.asset-item-header').append(Mustache.render(this.tmpls.header, {assets: model.toJSON()}))
-
-          model.map(function(asset) {
-            var el = $(Mustache.render(tmpl, asset.toJSON()))
-
-            _t.$('#facebook').append(el)
-            
-            var item = new OverviewItem({ el: el, model: asset})
-            _t.childs[asset.id] = item
-          })
+          this.$('.asset-item-header').append(Mustache.render(this.tmpls.header, {assets: model.toJSON()}))
+          this.refresh()
         }
       })
 
