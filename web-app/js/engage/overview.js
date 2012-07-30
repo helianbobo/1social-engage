@@ -90,7 +90,10 @@
           })
 
           this.$('.nav-tabs a').on('show', function(evt) {
-            _t.refresh($(evt.target).attr('href'))
+            var target = $(evt.target).attr('href')
+
+            _t.$('.toolbar')[target == '#case-breakdown' ? 'addClass' : 'removeClass']('hide')
+            _t.refresh(target)
           })
 
           this.$el.delegate('.date-dropdown', 'click', function() {
@@ -130,10 +133,10 @@
           var assetId = this.model.id
           $.ajax({
             url: _.absolutePath($.contextPath, 'socialEngage/getCaseBreakDown')
-          , data: _.extend({
+          , data: {
               clientAccountId: 969
             , assetsId: assetId
-            }, this.range.toJSON())
+            }
           , dataType: 'json'
           , success: function(data) {
               createStack(ctn, data)
