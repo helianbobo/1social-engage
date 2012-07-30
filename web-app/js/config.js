@@ -11,7 +11,9 @@ requirejs.config({
   , 'jquery-ui.datepicker': 'lib/jquery.ui.datepicker'
   , 'bootstrap.dropdown': 'lib/bootstrap-dropdown'
   , 'bootstrap.modal': 'lib/bootstrap-modal'
+  , 'bootstrap.popover': 'lib/bootstrap-popover'
   , 'bootstrap.tab': 'lib/bootstrap-tab'
+  , 'bootstrap.tooltip': 'lib/bootstrap-tooltip'
   , 'highcharts': 'lib/highcharts/2.2.5/highcharts'
   , 'highcharts-more': 'lib/highcharts/2.2.5/highcharts-more'
   , 'highcharts-exporting': 'lib/highcharts/2.2.5/modules/exporting.src'
@@ -28,7 +30,9 @@ requirejs.config({
   , 'jquery-ui.datepicker': ['jquery-ui.widget']
   , 'bootstrap.dropdown': ['jquery']
   , 'bootstrap.modal': ['jquery']
+  , 'bootstrap.popover': ['bootstrap.tooltip']
   , 'bootstrap.tab': ['jquery']
+  , 'bootstrap.tooltip': ['jquery']
   , 'highcharts-more': ['highcharts']
   , 'highcharts-exporting': ['highcharts-more']
   , 'highcharts-theme': ['highcharts-more']
