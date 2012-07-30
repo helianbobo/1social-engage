@@ -7,6 +7,7 @@ define(
   , 'jquery.lazyload'
   , 'bootstrap.dropdown'
   , 'bootstrap.modal'
+  , 'bootstrap.popover'
   , 'bootstrap.tab'
   ]
 , function() {

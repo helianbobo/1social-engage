@@ -104,6 +104,13 @@ define(['engage', 'engage/case'], function(engage) {
             }
 
             el.find('a').copyAttr('data-url', 'href')
+            var img = el.find('.icon-image').popover({
+                  placement: 'bottom'
+                //, trigger: 'manual'
+                //, title: 'image preview'
+                , content: '<img src="' + data.imageURL + '" />'
+                })
+            //setTimeout(function() { img.popover('show') }, 500);
 
             this.setElement(el)
           }
