@@ -178,6 +178,12 @@ define(['engage'], function(engage) {
 
         ctn.html(Mustache.render(this.tmpl, data))
         this.$('img').lazyload({ container: ctn, effect: "fadeIn" })
+        this.$('.icon-image').popover({
+          placement: 'bottom'
+        //, trigger: 'manual'
+        //, title: 'image preview'
+        , content: '<img src="' + data.imageURL + '" />'
+        })
 
         var original = ctn.find('.original:first').closest('li')
         if (original.length > 0) {
