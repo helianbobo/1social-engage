@@ -9,9 +9,20 @@
 
       <div class="asset-item">
         <div class="asset-item-header">
-          <div class="asset-title">
-            <img data-original="{{imageURL}}" alt="" width="20" height="20">
-            <h2>{{name}}</h2>
+          <div class="asset-title dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              {{#assets}}
+              <li>
+                <a href="javascript:;">
+                  <img data-original="{{imageURL}}" alt="" width="20" height="20">
+                  <span>{{name}}</span>
+                </a>
+              </li>
+              {{/assets}}
+            </ul>
           </div>
         </div>
         <div class="asset-item-body">
