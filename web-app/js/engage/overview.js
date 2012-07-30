@@ -12,20 +12,14 @@
             return Date.parse(a).getTime() - Date.parse(b).getTime()
           }
 
-          var today = new Date().toString('yyyy-MM-dd')
           if (name == 'toDate') {
-            if (diff(value, today) > 0) {
-              console.log(this.get('toDate'))
-              set.apply(this, [{toDate: today}])
-            } else if (diff(value, this.get('fromDate')) > 0) {
+            if (diff(value, this.get('fromDate')) > 0) {
               set.apply(this, arguments)
             } else {
               set.apply(this, [{fromDate: value, toDate : value}])
             }
           } else {
-            if (diff(value, today) > 0) {
-              set.apply(this, [{fromDate: today, toDate: today}])
-            } else if (diff(this.get('toDate'), value) > 0) {
+            if (diff(this.get('toDate'), value) > 0) {
               set.apply(this, arguments)
             } else {
               set.apply(this, [{ fromDate: value, toDate: value }])
@@ -88,6 +82,7 @@
           this.$el.find('.date-dropdown input').datepicker({
             dateFormat: 'yy-mm-dd'
           , changeMonth: true
+          , maxDate: 0
           , numberOfMonths: 1
           , onSelect: function(txt, evt) {
               range.set($(evt.input).attr('name'), txt)
