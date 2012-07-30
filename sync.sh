@@ -9,3 +9,4 @@ cp -rf  web-app/tmpl/* $UI_PROJECT_HOME/web-app/tmpl/
 
 cp grails-app/views/socialEngage/cases.gsp $UI_PROJECT_HOME/grails-app/views/socialEngage/cases.gsp
 cp grails-app/views/socialEngage/posts.gsp $UI_PROJECT_HOME/grails-app/views/socialEngage/posts.gsp
+cp grails-app/views/socialEngage/overview.gsp $UI_PROJECT_HOME/grails-app/views/socialEngage/overview.gsp

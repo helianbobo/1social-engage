@@ -270,7 +270,9 @@
     //$(window).resize(updateListHeight)
     engage.showAjax()
 
-    assets.fetch()
+    assets.fetch({
+        data:{type:'facebook'}
+    })
   
     tmplLoader.addListeners(templateListeners)
     tmplLoader.load($('#page'))
