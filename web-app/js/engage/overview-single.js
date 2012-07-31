@@ -1,5 +1,24 @@
 ;define(['engage', 'jquery-ui.datepicker', 'lib/highcharts/brandtology'], function(engage) {
 
+
+  Highcharts.setOptions({
+      exporting:{
+          width:null,
+          buttons:{
+
+              pptButton:{
+                  enabled: false
+              },
+              exportButton: {
+                  enabled: false
+              },
+              printButton: {
+                  enabled: false
+              }
+          }
+      }
+  });
+
   var DateRange = Backbone.Model.extend({
         set: function(name, value) {
           var set = Backbone.Model.prototype.set
@@ -286,7 +305,9 @@
     //$(window).resize(updateListHeight)
     engage.showAjax()
 
-    assets.fetch()
+    assets.fetch({
+        data:{type:'facebook'}
+    })
   
     tmplLoader.addListeners(templateListeners)
     tmplLoader.load($('#page'))
