@@ -89,6 +89,9 @@
 
       , render: function(model) {
           this.$('.asset-item-header').append(Mustache.render(this.tmpls.header, {assets: model.toJSON()}))
+          this.$('img').each(function(i, it) { 
+            $(it).attr('src', $(it).attr('data-original'))
+          })
           this.refresh()
         }
       })
