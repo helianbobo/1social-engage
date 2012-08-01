@@ -1,5 +1,5 @@
 // Case
-define(['engage'], function(engage) {
+define(['engage/base'], function(engage) {
 
 
 // Models

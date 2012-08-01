@@ -1,4 +1,4 @@
-;define(['engage', 'engage/case'], function(engage) {
+;define(['engage/base', 'engage/case'], function(engage) {
 
   var CaseItem = Backbone.View.extend(
         {

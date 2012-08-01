@@ -1,4 +1,4 @@
-;define(['engage', 'jquery-ui.datepicker', 'lib/highcharts/brandtology'], function(engage) {
+;define(['engage/base', 'jquery-ui.datepicker', 'lib/highcharts/brandtology'], function(engage) {
 
 
   Highcharts.setOptions({
