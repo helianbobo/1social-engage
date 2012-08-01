@@ -35,7 +35,9 @@ restart grails server.
     <script src="js/lib/require.js"></script>
     <script src="js/config.js"></script>
     <script>
-      requirejs(['engage/posts'], function() {})
+      requirejs(['security', 'engage/posts'], function(sec) {
+        sec.setup(['ROLE_ENGAGE_READ', 'ROLE_ENGAGE_WRITE'])
+      })
     </script>
   </body>
 </html>

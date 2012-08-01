@@ -1,4 +1,4 @@
-define(['engage/base', 'engage/case'], function(engage) {
+define(['security', 'engage/base', 'engage/case'], function(sec, engage) {
 
     
   // Views
@@ -92,6 +92,7 @@ define(['engage/base', 'engage/case'], function(engage) {
             }
 
             data.read = data.readStatus == 'read' ? true : false
+            data.editable = sec.ifAllGranted('ROLE_ENGAGE_WRITE')
 
             var el = $(Mustache.render(this.li, data))
             if (this.$el.parent().length > 0) {
@@ -423,14 +424,15 @@ define(['engage/base', 'engage/case'], function(engage) {
     }
   })
 
-  // Page setup
-  // -----
-  $(document.body).ready(function() {
-    $(window).resize(updateListHeight)
-    engage.showAjax()
-  
-    tmplLoader.addListeners(templateListeners)
-    tmplLoader.load($('#page'))
-  })
-
+  sec.on('ready', function() {
+      if (sec.ifAllGranted('ROLE_ENGAGE_READ')) {
+        $(document.body).ready(function() {
+          $(window).resize(updateListHeight)
+          engage.showAjax()
+        
+          tmplLoader.addListeners(templateListeners)
+          tmplLoader.load($('#page'))
+        })
+      }
+    })
 })
