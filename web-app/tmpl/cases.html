@@ -51,7 +51,7 @@
             <div class="datetime">{{#format}}{{dateCreated}}{{/format}}</div>
           </div>
           <div class="actions">
-            <button class="btn show-case">Action</button>
+            {{#editable}}<button class="btn show-case">Action</button>{{/editable}}
           </div>
         </li>
       </ul>

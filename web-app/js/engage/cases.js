@@ -1,4 +1,4 @@
-;define(['engage/base', 'engage/case'], function(engage) {
+;define(['security', 'engage/base', 'engage/case'], function(sec, engage) {
 
   var CaseItem = Backbone.View.extend(
         {
@@ -79,6 +79,7 @@
               data.voiceURL = data.articleVoiceURL
             }
             data.read = (data.readStatus == 'read' ? true : false)
+            data.editable = sec.ifAllGranted('ROLE_ENGAGE_WRITE')
 
             data.platformPic = _.absolutePath($.contextPath, 'images/icon-' + data.type + '-32x32.png')
 
@@ -365,11 +366,13 @@
     }
   })
 
-  // Page setup
-  // -----
-  $(document.body).ready(function() {
-    engage.showAjax()
-    tmplLoader.addListeners(templateListeners)
-    tmplLoader.load($('#page'))
-  })
+  sec.on('ready', function() {
+      if (sec.ifAllGranted('ROLE_ENGAGE_READ')) {
+        $(document.body).ready(function() {
+          engage.showAjax()
+          tmplLoader.addListeners(templateListeners)
+          tmplLoader.load($('#page'))
+        })
+      }
+    })
 })
