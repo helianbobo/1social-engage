@@ -13,7 +13,7 @@ class CommonApiController {
         render '''{
     "isClientAdmin":0,
     "username":"Chao Liu",
-    "accessRights":["accessEngage"],
+    "accessRights":["ROLE_ENGAGE_READ", "ROLE_ENGAGE_WRITE"],
     "clientAccountId":null,
     "profilePicture":"371902_1138236818_1870452111_n.jpg",
     "userid":771,
@@ -34,7 +34,8 @@ class CommonApiController {
     "dateStart":"2012-06-10",
     "type":"DEMO",
     "clientId":969,
-    "clientDateStart":"2012-04-26"
+    "clientDateStart":"2012-04-26",
+    "client_details": []
 }
 '''
     }

@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 %{--<sec:ifLoggedIn>--}%
 <r:script disposition="defer">
-requirejs(['jquery'], function() {
+requirejs(['jquery', 'security'], function(jQuery, sec) {
     $(document).ready(function(){
         $.getJSON("${request.contextPath}/commonApi/getCurrentUserData", function (data) {
             $.brandtologyUserData = data;
@@ -13,6 +13,8 @@ requirejs(['jquery'], function() {
                     $.brandtologyUserData.subjectMap[subject.id] = subject.name;
                 });
             });
+            sec.setup(data.accessRights)
+
             $(document).trigger('sessionReady');
         });
     });

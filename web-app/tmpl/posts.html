@@ -66,8 +66,10 @@
               </div>
             </div>
             <div class="actions">
-              {{#editable}}<button class="btn show-case">Action</button>{{/editable}}
+              {{#editable}}
+              <button class="btn show-case">Action</button>
               <button class="btn mark" data-read-status="{{readStatus}}">Mark as {{#read}}unread{{/read}}{{^read}}read{{/read}}</button>
+              {{/editable}}
             </div>
           </li>
         </ul>
