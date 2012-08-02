@@ -132,7 +132,7 @@
           this.$('.nav-tabs a').on('show', function(evt) {
             var target = $(evt.target).attr('href')
 
-            _t.$('.toolbar')[target == '#case-breakdown' ? 'addClass' : 'removeClass']('hide')
+            // _t.$('.toolbar')[target == '#case-breakdown' ? 'addClass' : 'removeClass']('hide')
             _t.refresh(target)
           })
 
@@ -173,10 +173,10 @@
           var assetId = this.model.id
           $.ajax({
             url: _.absolutePath($.contextPath, 'socialEngage/getCaseBreakDown')
-          , data: {
+          , data: _.extend({
               clientAccountId: 969
             , assetsId: assetId
-            }
+            }, this.range.toJSON())
           , dataType: 'json'
           , success: function(data) {
               createStack(ctn, data)
