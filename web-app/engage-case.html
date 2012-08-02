@@ -16,7 +16,7 @@
     <script src="js/lib/require.js"></script>
     <script src="js/config.js"></script>
     <script>
-      requirejs(['engage', 'engage/case'], function(engage) {
+      requirejs(['engage/base', 'engage/case'], function(engage) {
         var cases = engage.cases = new engage.model.Cases()
           , posts = engage.posts = new engage.model.Posts()
           , data = {
