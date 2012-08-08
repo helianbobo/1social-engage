@@ -1,0 +1,4316 @@
+{
+  "buzzChart": {
+    "dayCount": 27,
+    "series": 
+    [
+      {
+        "name": "Cards",
+        "id": 878,
+        "data": 
+        [
+          27,
+          40,
+          31,
+          128,
+          77,
+          87,
+          22,
+          18,
+          20,
+          62,
+          46,
+          116,
+          56,
+          15,
+          22,
+          60,
+          55,
+          31,
+          73,
+          28,
+          7,
+          34,
+          34,
+          52,
+          21,
+          36,
+          75,
+          23
+        ],
+        "pointStart": 1341100800000,
+        "pointInterval": 86400000
+      }
+    ]
+  },
+  "conversationGrowthChart": {
+    "dayCount": 27,
+    "series": 
+    [
+      {
+        "name": "Cumulative Conversations",
+        "data": 
+        [
+          8,
+          26,
+          36,
+          57,
+          72,
+          97,
+          99,
+          101,
+          107,
+          116,
+          133,
+          196,
+          216,
+          227,
+          236,
+          256,
+          268,
+          274,
+          292,
+          306,
+          310,
+          317,
+          327,
+          350,
+          364,
+          384,
+          402,
+          412
+        ],
+        "pointStart": 1341100800000,
+        "pointInterval": 86400000
+      },
+      {
+        "name": "New Conversations",
+        "data": 
+        [
+          8,
+          18,
+          10,
+          21,
+          15,
+          25,
+          2,
+          2,
+          6,
+          9,
+          17,
+          63,
+          20,
+          11,
+          9,
+          20,
+          12,
+          6,
+          18,
+          14,
+          4,
+          7,
+          10,
+          23,
+          14,
+          20,
+          18,
+          10
+        ],
+        "pointStart": 1341100800000,
+        "pointInterval": 86400000
+      }
+    ]
+  },
+  "topicShareOfVoiceChart": {
+    "series": 
+    [
+      {
+        "type": "pie",
+        "data": 
+        [
+          [
+            "Bank Insurance",
+            95
+          ],
+          [
+            "Cards",
+            1296
+          ],
+          [
+            "Internet Banking",
+            120
+          ],
+          [
+            "Investments",
+            544
+          ],
+          [
+            "Loans",
+            403
+          ],
+          [
+            "Deposits",
+            503
+          ],
+          [
+            "Crisis Management",
+            55
+          ],
+          [
+            "General Mentions",
+            3640
+          ],
+          [
+            "Priority Banking",
+            0
+          ],
+          [
+            "Stock Mentions",
+            0
+          ],
+          [
+            "Securities",
+            651
+          ],
+          [
+            "Archived",
+            0
+          ],
+          [
+            "Twitter - INTL",
+            889
+          ],
+          [
+            "Twitter-SG",
+            1302
+          ]
+        ]
+      }
+    ]
+  },
+  "subjectShareOfVoiceChart": {
+    "series": 
+    [
+      {
+        "type": "pie",
+        "data": 
+        [
+          [
+            "DBS - Cards",
+            259
+          ],
+          [
+            "OCBC - Cards",
+            89
+          ],
+          [
+            "UOB - Cards",
+            230
+          ],
+          [
+            "Standard Chartered - Cards",
+            193
+          ],
+          [
+            "Citibank - Cards",
+            236
+          ],
+          [
+            "POSB - Cards",
+            121
+          ],
+          [
+            "HSBC - Cards",
+            168
+          ]
+        ]
+      }
+    ]
+  },
+  "buzzByChannelTypeChart": {
+    "xAxis": 
+    [
+      "FORUM",
+      "BLOG",
+      "SOCIAL_NETWORKING_SITE",
+      "NEWS"
+    ],
+    "series": 
+    [
+      {
+        "name": "Buzz",
+        "data": 
+        [
+          954,
+          231,
+          82,
+          29
+        ]
+      }
+    ]
+  },
+  "topXChannelBuzzChart": {
+    "xAxis": 
+    [
+      "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "MyCarForum Forum - Lite & EZ",
+      "Singapore Jobs Market Forum",
+      "Facebook - DBS Cards - Wall",
+      "Hardwarezone Forum - Cars & Cars",
+      "ChannelNewsAsia Forum - MarketTalk",
+      "Hardwarezone Forum - Money Mind",
+      "Lioney - Buying Selling Portal Online - Singapore ",
+      "Real Estate News India",
+      "Others"
+    ],
+    "series": 
+    [
+      {
+        "name": "Buzz",
+        "data": 
+        [
+          449,
+          246,
+          133,
+          61,
+          58,
+          32,
+          23,
+          18,
+          17,
+          13,
+          246
+        ]
+      }
+    ]
+  },
+  "overallCategoryChange": 
+  [
+    {
+      "name": "Bank Insurance",
+      "id": 877,
+      "posts": "95",
+      "prePosts": "46",
+      "increment": 49,
+      "SubjectData": 
+      [
+        {
+          "increment": 4,
+          "prePosts": 14,
+          "posts": 18,
+          "id": 3760,
+          "name": "DBS - Bank Insurance"
+        },
+        {
+          "increment": -5,
+          "prePosts": 7,
+          "posts": 2,
+          "id": 3761,
+          "name": "POSB - Bank Insurance"
+        },
+        {
+          "increment": 20,
+          "prePosts": 8,
+          "posts": 28,
+          "id": 3762,
+          "name": "OCBC - Bank Insurance"
+        },
+        {
+          "increment": 14,
+          "prePosts": 3,
+          "posts": 17,
+          "id": 3763,
+          "name": "UOB - Bank Insurance"
+        },
+        {
+          "increment": 8,
+          "prePosts": 1,
+          "posts": 9,
+          "id": 3764,
+          "name": "Standard Chartered - Bank Insurance"
+        },
+        {
+          "increment": 11,
+          "prePosts": 3,
+          "posts": 14,
+          "id": 3765,
+          "name": "Citibank - Bank Insurance"
+        },
+        {
+          "increment": -3,
+          "prePosts": 10,
+          "posts": 7,
+          "id": 3766,
+          "name": "HSBC - Bank Insurance"
+        }
+      ]
+    },
+    {
+      "name": "Cards",
+      "id": 878,
+      "posts": "1296",
+      "prePosts": "851",
+      "increment": 445,
+      "SubjectData": 
+      [
+        {
+          "increment": 53,
+          "prePosts": 206,
+          "posts": 259,
+          "id": 3767,
+          "name": "DBS - Cards"
+        },
+        {
+          "increment": -1,
+          "prePosts": 90,
+          "posts": 89,
+          "id": 3768,
+          "name": "OCBC - Cards"
+        },
+        {
+          "increment": 109,
+          "prePosts": 121,
+          "posts": 230,
+          "id": 3769,
+          "name": "UOB - Cards"
+        },
+        {
+          "increment": 117,
+          "prePosts": 76,
+          "posts": 193,
+          "id": 3770,
+          "name": "Standard Chartered - Cards"
+        },
+        {
+          "increment": 104,
+          "prePosts": 132,
+          "posts": 236,
+          "id": 3771,
+          "name": "Citibank - Cards"
+        },
+        {
+          "increment": -15,
+          "prePosts": 136,
+          "posts": 121,
+          "id": 3772,
+          "name": "POSB - Cards"
+        },
+        {
+          "increment": 78,
+          "prePosts": 90,
+          "posts": 168,
+          "id": 3773,
+          "name": "HSBC - Cards"
+        }
+      ]
+    },
+    {
+      "name": "Internet Banking",
+      "id": 879,
+      "posts": "120",
+      "prePosts": "114",
+      "increment": 6,
+      "SubjectData": 
+      [
+        {
+          "increment": 12,
+          "prePosts": 43,
+          "posts": 55,
+          "id": 3774,
+          "name": "DBS - Internet Banking"
+        },
+        {
+          "increment": -7,
+          "prePosts": 11,
+          "posts": 4,
+          "id": 3775,
+          "name": "POSB - Internet Banking"
+        },
+        {
+          "increment": 10,
+          "prePosts": 23,
+          "posts": 33,
+          "id": 3776,
+          "name": "OCBC - Internet Banking"
+        },
+        {
+          "increment": -3,
+          "prePosts": 7,
+          "posts": 4,
+          "id": 3777,
+          "name": "UOB - Internet Banking"
+        },
+        {
+          "increment": -11,
+          "prePosts": 20,
+          "posts": 9,
+          "id": 3778,
+          "name": "Citibank - Internet Banking"
+        },
+        {
+          "increment": 9,
+          "prePosts": 4,
+          "posts": 13,
+          "id": 3779,
+          "name": "Standard Chartered - Internet Banking"
+        },
+        {
+          "increment": -4,
+          "prePosts": 6,
+          "posts": 2,
+          "id": 3780,
+          "name": "HSBC  - Internet Banking"
+        }
+      ]
+    },
+    {
+      "name": "Investments",
+      "id": 880,
+      "posts": "544",
+      "prePosts": "431",
+      "increment": 113,
+      "SubjectData": 
+      [
+        {
+          "increment": 30,
+          "prePosts": 348,
+          "posts": 378,
+          "id": 3781,
+          "name": "DBS - Investments"
+        },
+        {
+          "increment": 6,
+          "prePosts": 7,
+          "posts": 13,
+          "id": 3782,
+          "name": "OCBC - Investments"
+        },
+        {
+          "increment": 2,
+          "prePosts": 14,
+          "posts": 16,
+          "id": 3783,
+          "name": "UOB - Investments"
+        },
+        {
+          "increment": 3,
+          "prePosts": 16,
+          "posts": 19,
+          "id": 3784,
+          "name": "Standard Chartered - Investments"
+        },
+        {
+          "increment": 34,
+          "prePosts": 17,
+          "posts": 51,
+          "id": 3785,
+          "name": "Citibank - Investments"
+        },
+        {
+          "increment": 32,
+          "prePosts": 28,
+          "posts": 60,
+          "id": 3786,
+          "name": "HSBC - Investments"
+        },
+        {
+          "increment": 6,
+          "prePosts": 1,
+          "posts": 7,
+          "id": 3787,
+          "name": "POSB - Investments"
+        }
+      ]
+    },
+    {
+      "name": "Loans",
+      "id": 881,
+      "posts": "403",
+      "prePosts": "179",
+      "increment": 224,
+      "SubjectData": 
+      [
+        {
+          "increment": 47,
+          "prePosts": 52,
+          "posts": 99,
+          "id": 3788,
+          "name": "DBS - Loans"
+        },
+        {
+          "increment": 15,
+          "prePosts": 1,
+          "posts": 16,
+          "id": 3789,
+          "name": "POSB - Loans"
+        },
+        {
+          "increment": 33,
+          "prePosts": 42,
+          "posts": 75,
+          "id": 3790,
+          "name": "OCBC - Loans"
+        },
+        {
+          "increment": 92,
+          "prePosts": 18,
+          "posts": 110,
+          "id": 3791,
+          "name": "UOB - Loans"
+        },
+        {
+          "increment": 19,
+          "prePosts": 24,
+          "posts": 43,
+          "id": 3792,
+          "name": "Standard Chartered - Loans"
+        },
+        {
+          "increment": 11,
+          "prePosts": 15,
+          "posts": 26,
+          "id": 3793,
+          "name": "Citibank - Loans"
+        },
+        {
+          "increment": 7,
+          "prePosts": 27,
+          "posts": 34,
+          "id": 3794,
+          "name": "HSBC - Loans"
+        }
+      ]
+    },
+    {
+      "name": "Deposits",
+      "id": 882,
+      "posts": "503",
+      "prePosts": "438",
+      "increment": 65,
+      "SubjectData": 
+      [
+        {
+          "increment": -33,
+          "prePosts": 145,
+          "posts": 112,
+          "id": 3795,
+          "name": "DBS - Deposits"
+        },
+        {
+          "increment": -12,
+          "prePosts": 97,
+          "posts": 85,
+          "id": 3796,
+          "name": "POSB - Deposits"
+        },
+        {
+          "increment": 17,
+          "prePosts": 49,
+          "posts": 66,
+          "id": 3797,
+          "name": "OCBC - Deposits"
+        },
+        {
+          "increment": 16,
+          "prePosts": 48,
+          "posts": 64,
+          "id": 3798,
+          "name": "UOB - Deposits"
+        },
+        {
+          "increment": 10,
+          "prePosts": 28,
+          "posts": 38,
+          "id": 3799,
+          "name": "Standard Chartered - Deposits"
+        },
+        {
+          "increment": 33,
+          "prePosts": 36,
+          "posts": 69,
+          "id": 3800,
+          "name": "Citibank - Deposits"
+        },
+        {
+          "increment": 34,
+          "prePosts": 35,
+          "posts": 69,
+          "id": 3801,
+          "name": "HSBC - Deposits"
+        }
+      ]
+    },
+    {
+      "name": "Crisis Management",
+      "id": 883,
+      "posts": "55",
+      "prePosts": "51",
+      "increment": 4,
+      "SubjectData": 
+      [
+        {
+          "increment": 4,
+          "prePosts": 51,
+          "posts": 55,
+          "id": 34162,
+          "name": "DBS ATM Fraud Case"
+        }
+      ]
+    },
+    {
+      "name": "General Mentions",
+      "id": 884,
+      "posts": "3640",
+      "prePosts": "3044",
+      "increment": 596,
+      "SubjectData": 
+      [
+        {
+          "increment": -94,
+          "prePosts": 946,
+          "posts": 852,
+          "id": 3803,
+          "name": "DBS - General Mentions"
+        },
+        {
+          "increment": -28,
+          "prePosts": 566,
+          "posts": 538,
+          "id": 3804,
+          "name": "POSB - General Mentions"
+        },
+        {
+          "increment": 194,
+          "prePosts": 364,
+          "posts": 558,
+          "id": 3805,
+          "name": "OCBC - General Mentions"
+        },
+        {
+          "increment": 278,
+          "prePosts": 340,
+          "posts": 618,
+          "id": 3806,
+          "name": "UOB - General Mentions"
+        },
+        {
+          "increment": 70,
+          "prePosts": 265,
+          "posts": 335,
+          "id": 3807,
+          "name": "Citibank - General Mentions"
+        },
+        {
+          "increment": 137,
+          "prePosts": 200,
+          "posts": 337,
+          "id": 3808,
+          "name": "Standard Chartered - General Mentions"
+        },
+        {
+          "increment": 172,
+          "prePosts": 230,
+          "posts": 402,
+          "id": 3809,
+          "name": "HSBC - General Mentions"
+        },
+        {
+          "increment": -133,
+          "prePosts": 133,
+          "posts": 0,
+          "id": 38424,
+          "name": "Customer Service"
+        }
+      ]
+    },
+    {
+      "name": "Priority Banking",
+      "id": 914,
+      "posts": "0",
+      "prePosts": "0",
+      "increment": 0,
+      "SubjectData": 
+      [
+        {
+          "increment": 0,
+          "prePosts": 0,
+          "posts": 0,
+          "id": 4010,
+          "name": "DBS - Priority Banking"
+        },
+        {
+          "increment": 0,
+          "prePosts": 0,
+          "posts": 0,
+          "id": 4011,
+          "name": "POSB - Priority Banking"
+        },
+        {
+          "increment": 0,
+          "prePosts": 0,
+          "posts": 0,
+          "id": 4012,
+          "name": "OCBC - Priority Banking"
+        },
+        {
+          "increment": 0,
+          "prePosts": 0,
+          "posts": 0,
+          "id": 4013,
+          "name": "UOB - Priority Banking"
+        },
+        {
+          "increment": 0,
+          "prePosts": 0,
+          "posts": 0,
+          "id": 4014,
+          "name": "Standard Chartered - Priority Banking"
+        },
+        {
+          "increment": 0,
+          "prePosts": 0,
+          "posts": 0,
+          "id": 4015,
+          "name": "Citibank - Priority Banking"
+        },
+        {
+          "increment": 0,
+          "prePosts": 0,
+          "posts": 0,
+          "id": 4016,
+          "name": "HSBC - Priority Banking"
+        }
+      ]
+    },
+    {
+      "name": "Stock Mentions",
+      "id": 1041,
+      "posts": "0",
+      "prePosts": "0",
+      "increment": 0,
+      "SubjectData": 
+      [
+        {
+          "increment": 0,
+          "prePosts": 0,
+          "posts": 0,
+          "id": 4888,
+          "name": "DBS Stock"
+        }
+      ]
+    },
+    {
+      "name": "Securities",
+      "id": 5642,
+      "posts": "651",
+      "prePosts": "624",
+      "increment": 27,
+      "SubjectData": 
+      [
+        {
+          "increment": -7,
+          "prePosts": 34,
+          "posts": 27,
+          "id": 31666,
+          "name": "Phillip - Securities"
+        },
+        {
+          "increment": 6,
+          "prePosts": 13,
+          "posts": 19,
+          "id": 31667,
+          "name": "OCBC - Securities"
+        },
+        {
+          "increment": 30,
+          "prePosts": 62,
+          "posts": 92,
+          "id": 31668,
+          "name": "Kim Eng - Securities"
+        },
+        {
+          "increment": -18,
+          "prePosts": 316,
+          "posts": 298,
+          "id": 31669,
+          "name": "CIMB - Securities"
+        },
+        {
+          "increment": 40,
+          "prePosts": 41,
+          "posts": 81,
+          "id": 31670,
+          "name": "UOB - Securities"
+        },
+        {
+          "increment": -24,
+          "prePosts": 158,
+          "posts": 134,
+          "id": 31671,
+          "name": "DBS - Securities"
+        }
+      ]
+    },
+    {
+      "name": "Archived",
+      "id": 5869,
+      "posts": "0",
+      "prePosts": "0",
+      "increment": 0,
+      "SubjectData": 
+      [
+        {
+          "increment": 0,
+          "prePosts": 0,
+          "posts": 0,
+          "id": 3802,
+          "name": "DBS Sued Over High Notes 5 2012-05-31"
+        },
+        {
+          "increment": 0,
+          "prePosts": 0,
+          "posts": 0,
+          "id": 13281,
+          "name": "System Downtime Incident 2011-12-23"
+        },
+        {
+          "increment": 0,
+          "prePosts": 0,
+          "posts": 0,
+          "id": 20209,
+          "name": "Asia Heartbeat 2011-11-21"
+        },
+        {
+          "increment": 0,
+          "prePosts": 0,
+          "posts": 0,
+          "id": 20210,
+          "name": "Asian insights 2011-11-21"
+        },
+        {
+          "increment": 0,
+          "prePosts": 0,
+          "posts": 0,
+          "id": 20211,
+          "name": "Campaign - General Mentions 2011-11-21"
+        },
+        {
+          "increment": 0,
+          "prePosts": 0,
+          "posts": 0,
+          "id": 20212,
+          "name": "Countries 2011-11-21"
+        },
+        {
+          "increment": 0,
+          "prePosts": 0,
+          "posts": 0,
+          "id": 20213,
+          "name": "Media Channels 2011-11-21"
+        },
+        {
+          "increment": 0,
+          "prePosts": 0,
+          "posts": 0,
+          "id": 30448,
+          "name": "DBS Facebook Check-in Campaign 2012-03-29"
+        },
+        {
+          "increment": 0,
+          "prePosts": 0,
+          "posts": 0,
+          "id": 36205,
+          "name": "DBS Marina Regatta - Campaign 2012-05-31"
+        }
+      ]
+    },
+    {
+      "name": "Twitter - INTL",
+      "id": 6354,
+      "posts": "889",
+      "prePosts": "895",
+      "increment": -6,
+      "SubjectData": 
+      [
+        {
+          "increment": 71,
+          "prePosts": 703,
+          "posts": 774,
+          "id": 4889,
+          "name": "DBS - Twitter - INTL"
+        },
+        {
+          "increment": -77,
+          "prePosts": 192,
+          "posts": 115,
+          "id": 35875,
+          "name": "POSB - Twitter - INTL"
+        }
+      ]
+    },
+    {
+      "name": "Twitter-SG",
+      "id": 6355,
+      "posts": "1302",
+      "prePosts": "1256",
+      "increment": 46,
+      "SubjectData": 
+      [
+        {
+          "increment": 34,
+          "prePosts": 702,
+          "posts": 736,
+          "id": 4890,
+          "name": "POSB - Twitter - SG"
+        },
+        {
+          "increment": 12,
+          "prePosts": 554,
+          "posts": 566,
+          "id": 35824,
+          "name": "DBS - Twitter - SG"
+        }
+      ]
+    }
+  ],
+  "top3Conversation": 
+  [
+    {
+      "id": 925048919,
+      "content": "Hi ladies and Gentlemens, Whoever studied law before.. i seeking for an advice to take legal action on CPF and NTUC Income.. below is my case 4 yrs ago, my 46k in CPF Balance is gone without my knowledge i called CPF, CPF say NTUC income deducted it. i remember i dont have any NTUC income for insurance. all along im covered by AIA, Prudential . i told Ntuc Income why they deduct, they say they did send me an acknowledge letter for signing up for the insurance, during tat time i ignore the letter (neither sign or reply back) they say they never receive so will enroll automatically.. i asking for cancel the policy and refund me back. THEY SAY UNREFUNDABLE! im still looking for source and solution for legal action to CPF and NTUC Income i believe that the $46k in CPF, is MY OWN MONEY.. not under CPF or NTUC Income. Everyone, Please check is your CPF Balance have deduct before for the stupid NTUC income. other forum: Seeking an advice to take legal action to CPF and NTUC Income \n",
+      "datetimePosted": "2012-07-22T14:58:00Z",
+      "title": "HELP: Seeking an advice to take legal action to CPF and NTUC Income",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "commentCount": 184,
+      "articleId": 1346482762,
+      "url": "http://forums.hardwarezone.com.sg/eat-drink-man-woman-16/help-seeking-advice-take-legal-action-cpf-ntuc-income-3826572.html"
+    },
+    {
+      "id": 929267392,
+      "content": "tdy meet my fren for lunch i use UOB card to pay....den he ask 'u got no AMEX card ah?' i say 'no la UOB gd enuff for me' he: 'HA HA HA pls la get AMEX bro. more atas leh. ur UOB card very pathetic' \n",
+      "datetimePosted": "2012-07-23T09:26:00Z",
+      "title": "AMEX  card  very satki meh ?",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "commentCount": 68,
+      "articleId": 1347237926,
+      "url": "http://forums.hardwarezone.com.sg/eat-drink-man-woman-16/amex-card-very-satki-meh-3827548.html"
+    },
+    {
+      "id": 947838246,
+      "content": "I was informed through SMS that a transaction of GBP 285.50 had been made in the UK, so I called customer service and cancelled my card . I am just curious about the dispute. Apparently they cannot block the transaction, and I can only dispute it with the retailer once it is reflected in my transaction history. Does anyone have any experience with this? How do I go about it, and what are the chances of winning? It sounds so ridiculous because the bank obviously knows I didn't use my card , yet they cannot stop the money from going through. \n",
+      "datetimePosted": "2012-07-27T07:04:00Z",
+      "title": "Just had my  DBS   debit   card  compromised...",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "commentCount": 52,
+      "articleId": 1351861549,
+      "url": "http://forums.hardwarezone.com.sg/eat-drink-man-woman-16/just-had-my-dbs-debit-card-compromised-3832682.html"
+    }
+  ],
+  "top20Influencer": 
+  [
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/182450/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "Suleyman",
+      "influenceScore": 0,
+      "buzz": 66
+    },
+    {
+      "voiceUrl": "http://www.singaporejobsmarket.com/forum",
+      "channelName": "Singapore Jobs Market Forum",
+      "voiceName": "Singapore Jobs Market Forum",
+      "influenceScore": 40.0328,
+      "buzz": 61
+    },
+    {
+      "voiceUrl": "http://www.facebook.com/197290440319470",
+      "channelName": "Facebook - DBS Cards - Wall",
+      "voiceName": "DBS Cards",
+      "influenceScore": 16,
+      "buzz": 50
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/454564/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "tildveryn",
+      "influenceScore": 7,
+      "buzz": 31
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/19024/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "fufan",
+      "influenceScore": 7,
+      "buzz": 30
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=15577",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Shull",
+      "influenceScore": 3,
+      "buzz": 30
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/401696/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "naruto13",
+      "influenceScore": 0,
+      "buzz": 24
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/522908/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "Handsome_guy",
+      "influenceScore": 74.1667,
+      "buzz": 24
+    },
+    {
+      "voiceUrl": "http://www.lioney.sg",
+      "channelName": "Lioney - Buying Selling Portal Online - Singapore ",
+      "voiceName": "Lioney - Buying Selling Portal Online - Singapore Classified Portal",
+      "influenceScore": 40.0588,
+      "buzz": 17
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/211374/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "anfielder",
+      "influenceScore": 0,
+      "buzz": 16
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/320147/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "dark_flan",
+      "influenceScore": 6.1429,
+      "buzz": 14
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/269514/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "goenitz33",
+      "influenceScore": 0,
+      "buzz": 13
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/162354/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "LittleCummi",
+      "influenceScore": 0,
+      "buzz": 12
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=4207",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Lala81",
+      "influenceScore": 11,
+      "buzz": 12
+    },
+    {
+      "voiceUrl": "http://www.petrolwatch.com.sg/petrolwatch.com.sg editor",
+      "channelName": "Petrolwatch Singapore - News",
+      "voiceName": "petrolwatch.com.sg editor",
+      "influenceScore": 100,
+      "buzz": 12
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/",
+      "channelName": "www.hardwarezone.com.sg",
+      "voiceName": "www.hardwarezone.com.sg",
+      "influenceScore": 40.1,
+      "buzz": 10
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/220537/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "reddevil0728",
+      "influenceScore": 0,
+      "buzz": 10
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/550164/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "takashi",
+      "influenceScore": 7,
+      "buzz": 10
+    },
+    {
+      "voiceUrl": "http://realtynewsindia.blogspot.com/2012/07/e-filing-of-income-tax-returns.html",
+      "channelName": "Real Estate News India",
+      "voiceName": "Real Estate News India",
+      "influenceScore": 40,
+      "buzz": 10
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=90182",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Steptronic",
+      "influenceScore": 3,
+      "buzz": 10
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/55903/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "dokapsm",
+      "influenceScore": 0,
+      "buzz": 9
+    },
+    {
+      "voiceUrl": "http://sg.everydayonsales.com",
+      "channelName": "Singapore Everyday On Sales",
+      "voiceName": "Singapore Everyday On Sales",
+      "influenceScore": 40.1111,
+      "buzz": 9
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=1661",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Acemundo",
+      "influenceScore": 3,
+      "buzz": 9
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/14583/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "MoDiE",
+      "influenceScore": 92,
+      "buzz": 8
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/227801/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "leogeo",
+      "influenceScore": 0,
+      "buzz": 8
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/58418/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "danielkok",
+      "influenceScore": 7,
+      "buzz": 8
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=11534",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Mazdaowner",
+      "influenceScore": 100,
+      "buzz": 8
+    },
+    {
+      "voiceUrl": "http://forum.channelnewsasia.com/member.php?663-CSY",
+      "channelName": "ChannelNewsAsia Forum - MarketTalk",
+      "voiceName": "CSY",
+      "influenceScore": 31,
+      "buzz": 7
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/132337/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "nicholaslee",
+      "influenceScore": 7,
+      "buzz": 7
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/226757/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "arigatoast",
+      "influenceScore": 0,
+      "buzz": 7
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/294715/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "zjjx1977",
+      "influenceScore": 0,
+      "buzz": 7
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/344916/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "foreseer",
+      "influenceScore": 7,
+      "buzz": 7
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=18199",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Bavarian",
+      "influenceScore": 3,
+      "buzz": 7
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=56464",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Ah_cow",
+      "influenceScore": 3,
+      "buzz": 7
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=75167",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "13177",
+      "influenceScore": 3,
+      "buzz": 7
+    },
+    {
+      "voiceUrl": "http://business.asiaone.com/digitalone.com.sg editor",
+      "channelName": "Asiaone News - Business",
+      "voiceName": "digitalone.com.sg editor",
+      "influenceScore": 100,
+      "buzz": 6
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/234905/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "arrayboy",
+      "influenceScore": 0,
+      "buzz": 6
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/240180/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "itsme220",
+      "influenceScore": 7,
+      "buzz": 6
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/365453/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "agndessy",
+      "influenceScore": 39,
+      "buzz": 6
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/508548/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "avsquare",
+      "influenceScore": 50,
+      "buzz": 6
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/557025/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "lainm07",
+      "influenceScore": 0,
+      "buzz": 6
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/56204/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "o0KelviN0o",
+      "influenceScore": 5,
+      "buzz": 6
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/94498/",
+      "channelName": "Hardwarezone Forum - Money Mind",
+      "voiceName": "vaxvms",
+      "influenceScore": 3.5,
+      "buzz": 6
+    },
+    {
+      "voiceUrl": "http://www.facebook.com/144644142260425",
+      "channelName": "Facebook - POSBkids",
+      "voiceName": "POSBkids",
+      "influenceScore": 16,
+      "buzz": 6
+    },
+    {
+      "voiceUrl": "http://www.flyertalk.com/forum",
+      "channelName": "FlyerTalk Forums",
+      "voiceName": "FlyerTalk Forums",
+      "influenceScore": 40,
+      "buzz": 6
+    },
+    {
+      "voiceUrl": "http://bizdaily.com.sg/newsite",
+      "channelName": "Biz DailyBiz Daily | Biz Daily",
+      "voiceName": "Biz Daily",
+      "influenceScore": 40,
+      "buzz": 5
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/140014/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "hclee01",
+      "influenceScore": 7,
+      "buzz": 5
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/215525/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Laguna123",
+      "influenceScore": 48,
+      "buzz": 5
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/403635/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Laneige",
+      "influenceScore": 42.4,
+      "buzz": 5
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/7097/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "alanjw55",
+      "influenceScore": 68.6,
+      "buzz": 5
+    },
+    {
+      "voiceUrl": "http://www.mrlobang.com",
+      "channelName": "Mr Lobang - Singapore's very own",
+      "voiceName": "Mr Lobang - Singapore's very own",
+      "influenceScore": 40,
+      "buzz": 5
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/402165/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "haydentan",
+      "influenceScore": 7,
+      "buzz": 4
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/4157/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Vulpix",
+      "influenceScore": 100,
+      "buzz": 4
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/99010/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "alwaysnforever",
+      "influenceScore": 0,
+      "buzz": 4
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/99500/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "jazdrive",
+      "influenceScore": 0,
+      "buzz": 4
+    },
+    {
+      "voiceUrl": "http://www.facebook.com/116202608427634",
+      "channelName": "Facebook - Multi-tude by DBS - Wall",
+      "voiceName": "Multi-tude by POSB",
+      "influenceScore": 33,
+      "buzz": 4
+    },
+    {
+      "voiceUrl": "http://www.facebook.com/165749170123273",
+      "channelName": "Facebook - DBS Black Card - Wall",
+      "voiceName": "DBS Black Card",
+      "influenceScore": 16,
+      "buzz": 4
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=2857",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Vidz",
+      "influenceScore": 3,
+      "buzz": 4
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=31826",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Yattokame",
+      "influenceScore": 3,
+      "buzz": 4
+    },
+    {
+      "voiceUrl": "http://forum.channelnewsasia.com/member.php?43702-DreamyTheDinosaur",
+      "channelName": "ChannelNewsAsia Forum - MarketTalk",
+      "voiceName": "DreamyTheDinosaur",
+      "influenceScore": 31,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forum.channelnewsasia.com/member.php?49455-advent",
+      "channelName": "ChannelNewsAsia Forum - MarketTalk",
+      "voiceName": "advent",
+      "influenceScore": 0,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/108522/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Carnage",
+      "influenceScore": 3.6667,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/131927/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "dreamyboy",
+      "influenceScore": 0,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/136238/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "mangomilkshake",
+      "influenceScore": 0,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/138130/",
+      "channelName": "Hardwarezone Forum - Money Mind",
+      "voiceName": "wakao82",
+      "influenceScore": 0,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/162170/",
+      "channelName": "Hardwarezone Forum - Cars & Cars",
+      "voiceName": "christian2004",
+      "influenceScore": 0.6667,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/162778/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "compro_1975",
+      "influenceScore": 75,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/176781/",
+      "channelName": "Hardwarezone Forum - Stocks  Shares and Indices",
+      "voiceName": "digitalguy",
+      "influenceScore": 11,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/185705/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "Hyphos",
+      "influenceScore": 7,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/220283/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "thechariot",
+      "influenceScore": 0,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/223741/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "timberland",
+      "influenceScore": 0,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/229872/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "ahgong_hippo",
+      "influenceScore": 100,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/231412/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "ki_123",
+      "influenceScore": 7,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/256916/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "tommielmo",
+      "influenceScore": 0,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/259998/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Campbellsoup",
+      "influenceScore": 0,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/29002/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "unwanted",
+      "influenceScore": 7,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/31865/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "cybercom8",
+      "influenceScore": 0,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/334492/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "iPhonefan",
+      "influenceScore": 0,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/348086/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "kokchoong",
+      "influenceScore": 0,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/362122/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "paurusu",
+      "influenceScore": 0,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/406512/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "zenlon",
+      "influenceScore": 0,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/410482/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "QQfufa",
+      "influenceScore": 0,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/463136/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "IronMan123",
+      "influenceScore": 0,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/485522/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "citaro",
+      "influenceScore": 0,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/541367/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "stuckintinysg",
+      "influenceScore": 0,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/541757/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "happygal2011",
+      "influenceScore": 0,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/551620/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "kalasala",
+      "influenceScore": 7,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/7609/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "Fraser",
+      "influenceScore": 7,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://moremorecash.com/blog",
+      "channelName": "More More Cash",
+      "voiceName": "More More Cash",
+      "influenceScore": 40,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://realtynewsindia.blogspot.com/2012/07/travel-should-not-exhaust-your-savings.html",
+      "channelName": "Real Estate News India",
+      "voiceName": "Real Estate News India",
+      "influenceScore": 40,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://thenewageparents.com",
+      "channelName": "The New Age Parents",
+      "voiceName": "The New Age Parents",
+      "influenceScore": 40,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://www.channelnewsasia.com/channelnewsasia.com editor",
+      "channelName": "ChannelNewsAsia",
+      "voiceName": "channelnewsasia.com editor",
+      "influenceScore": 100,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://www.facebook.com/119664901247",
+      "channelName": "Facebook - Live Fresh by DBS - Wall",
+      "voiceName": "Live Fresh by DBS",
+      "influenceScore": 100,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://www.facebook.com/551564039",
+      "channelName": "Facebook - DBS Cards - Wall",
+      "voiceName": "Melvin Emmanuel Chan",
+      "influenceScore": 16,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=113263",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "FocusWagon",
+      "influenceScore": 3,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=31459",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Magnifique",
+      "influenceScore": 3,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://www.vagsg.com/forums/member.php?u=1840",
+      "channelName": "Vagsg Forum - Tok Cok Sing Song",
+      "voiceName": "junchen",
+      "influenceScore": 1,
+      "buzz": 3
+    },
+    {
+      "voiceUrl": "http://1for1buffet.blogspot.com/",
+      "channelName": "1 for 1 Dining promotions Singapore",
+      "voiceName": "1 for 1 Dining promotions Singapore",
+      "influenceScore": 40.5,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://allthedeals.sg",
+      "channelName": "All The Deals Singapore",
+      "voiceName": "All The Deals Singapore",
+      "influenceScore": 40,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://e27.sg/2012/07/13/vietnam-sees-first-ever-open-game-development-conference/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=vietnam-sees-first-ever-open-game-development-conference",
+      "channelName": "e27",
+      "voiceName": "e27",
+      "influenceScore": 40,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forum.channelnewsasia.com/member.php?47506-sohard4me",
+      "channelName": "ChannelNewsAsia Forum - MarketTalk",
+      "voiceName": "sohard4me",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forum.channelnewsasia.com/member.php?50153-PinoyIndiaPRCforeignScums",
+      "channelName": "ChannelNewsAsia Forum - MarketTalk",
+      "voiceName": "PinoyIndiaPRCforeignScums",
+      "influenceScore": 31,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/104347/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "Nakedtoes",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/114488/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "InsaneClownPosse",
+      "influenceScore": 53,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/13923/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "starbugs",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/145350/",
+      "channelName": "Hardwarezone Forum - Cars & Cars",
+      "voiceName": "NovJoe",
+      "influenceScore": 1,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/14862/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "administrator88",
+      "influenceScore": 93,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/152701/",
+      "channelName": "Hardwarezone Forum - Cars & Cars",
+      "voiceName": "yuichiroyt",
+      "influenceScore": 10,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/160663/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "Soon__",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/163725/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "tazzycorner",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/165647/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "louist",
+      "influenceScore": 98,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/166479/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "tt32003",
+      "influenceScore": 54,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/172683/",
+      "channelName": "Hardwarezone Forum - Cars & Cars",
+      "voiceName": "sagiluck",
+      "influenceScore": 1,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/173854/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "chengsun",
+      "influenceScore": 7,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/179571/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Droicut",
+      "influenceScore": 36,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/187038/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "tsetze",
+      "influenceScore": 61,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/197378/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "CrimsonP",
+      "influenceScore": 48,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/204574/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "lim_ryu",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/21291/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "twtan14",
+      "influenceScore": 87,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/213298/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "Thanatos_Wraiths",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/222456/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "innumerabilis",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/226256/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "JAson1980",
+      "influenceScore": 45,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/232810/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "wuga98",
+      "influenceScore": 7,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/240532/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "the_ed",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/240612/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "danguard",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/250350/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "chesterqw",
+      "influenceScore": 62,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/252916/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "HKSHONDA",
+      "influenceScore": 47,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/25642/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "jq75",
+      "influenceScore": 100,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/259711/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "boxtab",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/262562/",
+      "channelName": "Hardwarezone Forum - Stocks  Shares and Indices",
+      "voiceName": "Kinetic88",
+      "influenceScore": 5.5,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/285633/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "K|muRa^84",
+      "influenceScore": 85,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/288532/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "Yorixz",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/294849/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "cheekeong_7",
+      "influenceScore": 100,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/301436/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "xiao_bear_bear",
+      "influenceScore": 100,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/301692/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "garpew",
+      "influenceScore": 98,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/309783/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "Froggyman",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/309810/",
+      "channelName": "Hardwarezone Forum - Money Mind",
+      "voiceName": "curse154",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/314530/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Gixxerfied",
+      "influenceScore": 53,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/317243/",
+      "channelName": "Hardwarezone Forum - Stocks  Shares and Indices",
+      "voiceName": "maisatomai",
+      "influenceScore": 5.5,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/319993/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "imnuts-",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/333066/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "FakePicture",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/335908/",
+      "channelName": "Hardwarezone Forum - Cars & Cars",
+      "voiceName": "ZhuTou!",
+      "influenceScore": 1,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/340175/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "lockks",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/344748/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Charlie_Zhang",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/35264/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "fredrick",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/3586/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "rAcEr",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/389305/",
+      "channelName": "Hardwarezone Forum - Money Mind",
+      "voiceName": "GenuineSeller",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/402513/",
+      "channelName": "Hardwarezone Forum - Money Mind",
+      "voiceName": "Shiny Things",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/404203/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "mattmms",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/410018/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "s-ghost",
+      "influenceScore": 60,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/415666/",
+      "channelName": "Hardwarezone Forum - Cars & Cars",
+      "voiceName": "APMGXB",
+      "influenceScore": 1,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/421366/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Blue Blood",
+      "influenceScore": 44,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/424953/",
+      "channelName": "Hardwarezone Forum - Cars & Cars",
+      "voiceName": "linzw00",
+      "influenceScore": 1,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/431034/",
+      "channelName": "Hardwarezone Forum - Cars & Cars",
+      "voiceName": "Bernielee",
+      "influenceScore": 1,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/44486/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "WussRedXLi",
+      "influenceScore": 65,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/451724/",
+      "channelName": "Hardwarezone Forum - Money Mind",
+      "voiceName": "lzydata",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/45256/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "es0teric",
+      "influenceScore": 91,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/459269/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "YsoUgly",
+      "influenceScore": 85,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/471909/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Yangchern",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/477589/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "zhooge",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/477923/",
+      "channelName": "Hardwarezone Forum - Money Mind",
+      "voiceName": "SMLeir",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/484429/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "FappingKing",
+      "influenceScore": 57,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/493916/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "razorlala",
+      "influenceScore": 46,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/494068/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "tidess",
+      "influenceScore": 83,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/509179/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "3G SAINT",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/514716/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "netzach",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/544147/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "sogoofy1203",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/545628/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Cactus Boy",
+      "influenceScore": 36,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/74802/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "BossQ",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/79137/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "d3fc0n",
+      "influenceScore": 100,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/7931/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "lionelow",
+      "influenceScore": 0,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/80720/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "luvaaron",
+      "influenceScore": 7,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.vr-zone.com/members/coralred.html",
+      "channelName": "VR Zone Forum - Chit-chatting",
+      "voiceName": "CoralRed",
+      "influenceScore": 100,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://forums.vr-zone.com/members/etegration.html",
+      "channelName": "VR Zone Forum - Chit-chatting",
+      "voiceName": "etegration",
+      "influenceScore": 36,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://livinginsingaporetoday.com",
+      "channelName": "Living In Singapore Today",
+      "voiceName": "Living In Singapore Today",
+      "influenceScore": 40,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://netizens.sg/activity/feed",
+      "channelName": "Netizens - Singapore Netizens Community | Site Wid",
+      "voiceName": "Netizens - Singapore Netizens Community | Site Wide Activity",
+      "influenceScore": 40,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://openrice-singapore.blogspot.com/",
+      "channelName": "OpenRice Singapore Blog",
+      "voiceName": "OpenRice Singapore Blog",
+      "influenceScore": 40,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://sglinks.com/sites/livinginsingaporetoday.com",
+      "channelName": "SG Links Blog",
+      "voiceName": "livinginsingaporetoday.com",
+      "influenceScore": 40,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://sglinks.com/sites/sgrate.com",
+      "channelName": "SG Links Blog",
+      "voiceName": "sgrate.com",
+      "influenceScore": 40,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://singapore.alltop.com",
+      "channelName": "Alltop RSS",
+      "voiceName": "Alltop RSS",
+      "influenceScore": 40,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://talkback.stomp.com.sg/forums/member.php?u=102938",
+      "channelName": "Stomp Forum - Yummy Tummy",
+      "voiceName": "angel_devoursin",
+      "influenceScore": 10,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://timesofnews.co",
+      "channelName": "Times of News",
+      "voiceName": "Times of News",
+      "influenceScore": 40,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://undertheangsanatree.blogspot.com/",
+      "channelName": "Under The Angsana Tree",
+      "voiceName": "Under The Angsana Tree",
+      "influenceScore": 40,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.edirectory.sg",
+      "channelName": "EDIRECTORY.SG",
+      "voiceName": "EDIRECTORY.SG",
+      "influenceScore": 40,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.europeanbracelets.org",
+      "channelName": "Blogs on European Bracelets European Beads Europea",
+      "voiceName": "Blogs on European Bracelets European Beads European Charms European Jewelry - Cheap European Beads -",
+      "influenceScore": 40,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.facebook.com/195664423805025",
+      "channelName": "Facebook - DBS Cards - Wall",
+      "voiceName": "Taratata Bistrot",
+      "influenceScore": 16,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.facebook.com/661723154",
+      "channelName": "Facebook - DBS Bank. Leaving, Breathing Asia. - Wall",
+      "voiceName": "Mohd Faizal",
+      "influenceScore": 16,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.financecritics.com",
+      "channelName": "FinanceCritics",
+      "voiceName": "FinanceCritics",
+      "influenceScore": 40.5,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.in2sharetrading.com",
+      "channelName": "Share Trading",
+      "voiceName": "Share Trading",
+      "influenceScore": 40,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=10053",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Spidercool",
+      "influenceScore": 3,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=1109",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Jman888",
+      "influenceScore": 3,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=13488",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Grix17",
+      "influenceScore": 3,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=13684",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Kwchan",
+      "influenceScore": 3,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=1414",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Axela525",
+      "influenceScore": 3,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=2854",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Ysc3",
+      "influenceScore": 3,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=32027",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Kangadrool",
+      "influenceScore": 3,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=3608",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Sofarsogood",
+      "influenceScore": 3,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=55342",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "WTF",
+      "influenceScore": 3,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=74845",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Timex1441",
+      "influenceScore": 3,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=7848",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Mingsect",
+      "influenceScore": 3,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.sammyboy.com/member.php?7790-kingrant",
+      "channelName": "Sammyboy Forum - Friendly Coffee Shop Talk",
+      "voiceName": "kingrant",
+      "influenceScore": 36,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.vagsg.com/forums/member.php?u=26952",
+      "channelName": "Vagsg Forum - Tok Cok Sing Song",
+      "voiceName": "fi5hbone",
+      "influenceScore": 30,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.vagsg.com/forums/member.php?u=45",
+      "channelName": "Vagsg Forum - Tok Cok Sing Song",
+      "voiceName": "sammy",
+      "influenceScore": 1,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.valuebuddies.com/user-1150.html",
+      "channelName": "Value Buddies Forum - Personal Finance",
+      "voiceName": "Muck",
+      "influenceScore": 50,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://www.valuebuddies.com/user-612.html",
+      "channelName": "Value Buddies Forum - Personal Finance",
+      "voiceName": "Temperament",
+      "influenceScore": 16,
+      "buzz": 2
+    },
+    {
+      "voiceUrl": "http://128fx.com",
+      "channelName": "Hedge Fund Business Plan",
+      "voiceName": "Hedge Fund Business Plan",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://1christians.blogspot.com/",
+      "channelName": "1Christians Malaysia",
+      "voiceName": "1Christians Malaysia",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://aceh-lowongan.blogspot.com/",
+      "channelName": "Lowongan Kerja",
+      "voiceName": "Lowongan Kerja Aceh",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://amoc.over-blog.com/",
+      "channelName": "AMOC Ile de France",
+      "voiceName": "AMOC Ile de France",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://asianbankingandfinance.net/taxonomy/term/21/all",
+      "channelName": "More News",
+      "voiceName": "More News",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://auntiefufu.blogspot.com/",
+      "channelName": "Auntiefufu",
+      "voiceName": "Auntiefufu",
+      "influenceScore": 41,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://blog.alldealsasia.com/2012/07/food-review-chicken-hotpot-at-bedok-point/",
+      "channelName": "All Deals Asia Fun Blog",
+      "voiceName": "All Deals Asia Fun Blog",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://bmw.cosmomate.com/wordpress",
+      "channelName": "BMW Reviews",
+      "voiceName": "BMW Reviews",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://boxing.beststrategies.info",
+      "channelName": "All About Boxing",
+      "voiceName": "All About Boxing",
+      "influenceScore": 41,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://chanwesley.wordpress.com",
+      "channelName": "Wesley Chan",
+      "voiceName": "Wesley Chan",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://classy.sg/deals/sites/tualobang.blogspot.com",
+      "channelName": "SG Links Blog",
+      "voiceName": "tualobang.blogspot.com",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://classy.sg/sites/tangs.com.sg",
+      "channelName": "SG Links Blog",
+      "voiceName": "tangs.com.sg",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://confessionkitty.blogspot.com/",
+      "channelName": "dionneee†",
+      "voiceName": "dionneee†",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://cta-saham.blogspot.com/",
+      "channelName": "The Combination of Technical-Analysis &amp; Astrol",
+      "voiceName": "The Combination of Technical-Analysis &amp; Astrolo9y",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://daype.com",
+      "channelName": "Daype / Los Angeles",
+      "voiceName": "Daype / Los Angeles",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forum.channelnewsasia.com/member.php?18446-mrpig85",
+      "channelName": "ChannelNewsAsia Forum - MarketTalk",
+      "voiceName": "mrpig85",
+      "influenceScore": 31,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forum.channelnewsasia.com/member.php?33508-Mr5TI",
+      "channelName": "ChannelNewsAsia Forum - MarketTalk",
+      "voiceName": "Mr5TI",
+      "influenceScore": 31,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forum.channelnewsasia.com/member.php?34589-EXBB",
+      "channelName": "ChannelNewsAsia Forum - MarketTalk",
+      "voiceName": "EXBB",
+      "influenceScore": 31,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forum.channelnewsasia.com/member.php?44665-Jeff",
+      "channelName": "ChannelNewsAsia Forum - MarketTalk",
+      "voiceName": "Jeff",
+      "influenceScore": 31,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forum.channelnewsasia.com/member.php?48931-liyang",
+      "channelName": "ChannelNewsAsia Forum - MarketTalk",
+      "voiceName": "liyang",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forum.channelnewsasia.com/member.php?592-hybridvestor",
+      "channelName": "ChannelNewsAsia Forum - MarketTalk",
+      "voiceName": "hybridvestor",
+      "influenceScore": 31,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/104771/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "badkham07",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/118187/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "chopra",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/12138/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "dao",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/124838/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "limpoop",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/131458/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "d3n",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/132147/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Arsenal85",
+      "influenceScore": 60,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/133078/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Beta_Tester",
+      "influenceScore": 100,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/141765/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "yixiang1",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/143188/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "hello8985",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/145748/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Guan084",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/146636/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "Kirakun83",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/147068/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "ziggyy",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/147558/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "kazaf99",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/151927/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "ragnarok95",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/155635/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "gigigigi",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/1563/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "therat",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/156912/",
+      "channelName": "Hardwarezone Forum - Cars & Cars",
+      "voiceName": "Wataru",
+      "influenceScore": 1,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/15705/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "vangelis",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/162301/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "bliTzs",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/16719/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "zippy79",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/180834/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "blues7",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/191662/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "EveMuffins",
+      "influenceScore": 100,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/195859/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "rerear",
+      "influenceScore": 7,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/202342/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "IDevil",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/2033/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Moonlight",
+      "influenceScore": 63,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/205765/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "ashethen",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/207788/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Panzerf",
+      "influenceScore": 45,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/210163/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "planetshaker",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/214688/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "exxondus",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/214869/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "smallbaosg",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/2159/",
+      "channelName": "Hardwarezone Forum - Stocks  Shares and Indices",
+      "voiceName": "Some-one",
+      "influenceScore": 11,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/227267/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "evilerniex",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/230175/",
+      "channelName": "Hardwarezone Forum - Cars & Cars",
+      "voiceName": "MR_CHENG",
+      "influenceScore": 1,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/233342/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "Bowyer_Lee",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/237377/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "bakasa2002",
+      "influenceScore": 42,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/242977/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "xavilee",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/246862/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "doody_",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/251097/",
+      "channelName": "Hardwarezone Forum - Cars & Cars",
+      "voiceName": "k3vvie",
+      "influenceScore": 1,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/253214/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "demongod",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/253606/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "sephira",
+      "influenceScore": 7,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/254252/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "matchy",
+      "influenceScore": 99,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/256042/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Dkwj14",
+      "influenceScore": 47,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/257427/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "falconic",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/258987/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "BigMonkey",
+      "influenceScore": 69,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/259289/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "b0neclinkz",
+      "influenceScore": 48,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/261137/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "swordspirit",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/262661/",
+      "channelName": "Hardwarezone Forum - Cars & Cars",
+      "voiceName": "jarred1223",
+      "influenceScore": 10,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/264907/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "Dallen",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/278473/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "chickhunt89",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/278875/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "goldrain",
+      "influenceScore": 7,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/279550/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "poneglyph",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/284999/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "idiotnoob",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/287079/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "summer_dell",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/2896/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "lohwj",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/289945/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "itsmee",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/290466/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "nikomesh",
+      "influenceScore": 37,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/291676/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "camoguysg",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/299876/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Kazana_Chris",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/300006/",
+      "channelName": "Hardwarezone Forum - Cars & Cars",
+      "voiceName": "q w e r t ii",
+      "influenceScore": 1,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/301699/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "wwh5210",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/303114/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Melimtingnian",
+      "influenceScore": 39,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/312889/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "DorumonSG",
+      "influenceScore": 100,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/31675/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "ralliart_ray",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/318744/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "ccssgm",
+      "influenceScore": 7,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/318806/",
+      "channelName": "Hardwarezone Forum - Cars & Cars",
+      "voiceName": "CNGpicnic",
+      "influenceScore": 1,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/326254/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "nickurey",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/326751/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Gabriel_23",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/331378/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "blade007",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/333345/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "malcom90",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/335815/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Koonz82",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/339328/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "AceyourMaths",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/346153/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "shalome",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/348797/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Rambu_Tan",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/355113/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "airtroopers",
+      "influenceScore": 7,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/355693/",
+      "channelName": "Hardwarezone Forum - Cars & Cars",
+      "voiceName": "scope18",
+      "influenceScore": 1,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/359767/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "eatoofull",
+      "influenceScore": 100,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/364042/",
+      "channelName": "Hardwarezone Forum - Cars & Cars",
+      "voiceName": "lousydk",
+      "influenceScore": 10,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/365/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "Cen",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/366436/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "elysdeon55",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/370342/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "HKS_Hippo",
+      "influenceScore": 67,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/371682/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "gypsyzz",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/371708/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Milo-Dino",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/37967/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "arcturuz",
+      "influenceScore": 100,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/383200/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "AWholeNewWorld",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/390293/",
+      "channelName": "Hardwarezone Forum - The iphone chat room",
+      "voiceName": "Delusion22",
+      "influenceScore": 22,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/395664/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "yoongmy",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/40539/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "shanhz",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/40542/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "aptget",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/406290/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Bayplay",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/4098/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "TopGun",
+      "influenceScore": 36,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/414745/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "mommyboiboi",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/438130/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "MrCoolStoryBro",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/443271/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "siaokia2806",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/449463/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "CjieTehAwesome",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/449555/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Keyboard Warrior",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/451138/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "SgAhBui",
+      "influenceScore": 90,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/456149/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "jimmy_0",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/458255/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "flyersummer",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/463941/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "spidey00",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/464769/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "gumbokins",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/467909/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Devilcloud",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/470990/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Kronuslee",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/47168/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "takuyazzz",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/472616/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "BBClone",
+      "influenceScore": 36,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/478673/",
+      "channelName": "Hardwarezone Forum - Money Mind",
+      "voiceName": "PolaroidFan",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/482233/",
+      "channelName": "Hardwarezone Forum - Stocks  Shares and Indices",
+      "voiceName": "mollys",
+      "influenceScore": 11,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/483120/",
+      "channelName": "Hardwarezone Forum - Cars & Cars",
+      "voiceName": "Kkkaaaiii Mark II",
+      "influenceScore": 1,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/488129/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "kosongice",
+      "influenceScore": 41,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/488725/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "SparksFly",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/492960/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "justmeasures",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/503119/",
+      "channelName": "Hardwarezone Forum - Cars & Cars",
+      "voiceName": "teerance85",
+      "influenceScore": 1,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/5055/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "bornfree",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/505529/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "amiWul",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/509978/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "[[ForeverAlone]]",
+      "influenceScore": 100,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/513737/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "buttbERry",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/515781/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "junnjun25",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/5166/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Leeson",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/524023/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "mobiletaurus",
+      "influenceScore": 7,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/530454/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "mirukuboi",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/530910/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "johnterrible",
+      "influenceScore": 49,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/537703/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Audiology93",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/538622/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Kiton12345",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/53866/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "blackie83",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/540291/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Alex.hero",
+      "influenceScore": 44,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/541442/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "invisible999",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/543007/",
+      "channelName": "Hardwarezone Forum - Stocks  Shares and Indices",
+      "voiceName": "tradesec",
+      "influenceScore": 11,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/544150/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "solikethat2290",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/544153/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "thatssome2255",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/546786/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "loveplaysmile4903",
+      "influenceScore": 39,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/548429/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "ChaoTurbanKia",
+      "influenceScore": 58,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/548796/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Shinji Kagawa",
+      "influenceScore": 38,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/551176/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "SomebodyThatIUsedToKnow",
+      "influenceScore": 62,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/552036/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "wwj2011",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/552867/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "Kriegfare",
+      "influenceScore": 49,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/55550/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "swatchie",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/557185/",
+      "channelName": "Hardwarezone Forum - Money Mind",
+      "voiceName": "dezang",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/58268/",
+      "channelName": "Hardwarezone Forum - Cars & Cars",
+      "voiceName": "IIIUSION",
+      "influenceScore": 1,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/65875/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "lkong",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/662/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "derrickgoh",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/73897/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "IKillButterflies",
+      "influenceScore": 39,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/74872/",
+      "channelName": "Hardwarezone Forum - Stocks  Shares and Indices",
+      "voiceName": "addict951",
+      "influenceScore": 22,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/76955/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "yantao",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/78275/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "IsenGrim",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/8135/",
+      "channelName": "Hardwarezone Forum - The iphone chat room",
+      "voiceName": "Deavenger",
+      "influenceScore": 1,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/95092/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "carey",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/98168/",
+      "channelName": "Hardwarezone Forum - Eat-Drink-Man-Woman",
+      "voiceName": "FeNgZhEnG",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.hardwarezone.com.sg/users/99403/",
+      "channelName": "Hardwarezone Forum - Credit Cards & Line of Credit facilities",
+      "voiceName": "doran_lum",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.singapore-promotions.com/",
+      "channelName": "Singapore Promotions Talk",
+      "voiceName": "Singapore Promotions Talk",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.vr-zone.com/members/hkspower.html",
+      "channelName": "VR Zone Forum - Chit-chatting",
+      "voiceName": "HKSPower",
+      "influenceScore": 36,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.vr-zone.com/members/pchmj.html",
+      "channelName": "VR Zone Forum - Chit-chatting",
+      "voiceName": "pchmj",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.vr-zone.com/members/proyb2.html",
+      "channelName": "VR Zone Forum - Chit-chatting",
+      "voiceName": "proyb2",
+      "influenceScore": 36,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://forums.vr-zone.com/members/reddevil0728.html",
+      "channelName": "VR Zone Forum - Chit-chatting",
+      "voiceName": "reddevil0728",
+      "influenceScore": 36,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://goldnsilverprices.com",
+      "channelName": "Gold N Silver Prices",
+      "voiceName": "Gold N Silver Prices",
+      "influenceScore": 41,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://i8maragretdy7j4.idiya.me",
+      "channelName": "Garland Groft",
+      "voiceName": "Garland Groft",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://ideasforyou.zeuspar.com",
+      "channelName": "Ideas For You",
+      "voiceName": "Ideas For You",
+      "influenceScore": 41,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://job-search.jobstreet.com.sg/singapore/job-opening.php?area=1&amp;option=1&amp;industry=7&amp;job-source=1%2C64&amp;classified=1&amp;job-posted=0&amp;pg=1&amp;sort=1&amp;order=0",
+      "channelName": "jobs @ JobStreet.com",
+      "voiceName": "jobs @ JobStreet.com",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://makitafinishingsander.alltoolssale.com",
+      "channelName": "Makita Finishing Sander",
+      "voiceName": "Makita Finishing Sander",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://mkbisnis.blogspot.com/",
+      "channelName": "Mata Kompas Bisnis Keuangan",
+      "voiceName": "Mata Kompas Bisnis Keuangan",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://nabanitasingharoy.blogspot.com/",
+      "channelName": "nabanitasingharoy",
+      "voiceName": "nabanitasingharoy",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://news.asiaone.com/AsiaOne",
+      "channelName": "AsiaOne - News",
+      "voiceName": "AsiaOne",
+      "influenceScore": 100,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://ownasupercar.com/astonmartin",
+      "channelName": "I Want An Aston Martin",
+      "voiceName": "I Want An Aston Martin",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://parkinsonsjourney.com",
+      "channelName": "Parkinson's Journey",
+      "voiceName": "Parkinson's Journey",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://philipchua.com/Blog",
+      "channelName": "Philip Chua Business Blog",
+      "voiceName": "Philip Chua Business Blog",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://phoenixmedical.sg",
+      "channelName": "Phoenix Medical Group",
+      "voiceName": "Phoenix Medical Group",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://profile.yahoo.com/KVIVSZQA34TBZJ2JAQI7PUJBX4",
+      "channelName": "Yahoo! News SG News - Singapore",
+      "voiceName": "calvin",
+      "influenceScore": 16,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://profile.yahoo.com/P33SUOJ3CQ45AKXBPMVRITELIA",
+      "channelName": "Yahoo! News SG News - Singapore",
+      "voiceName": "jian",
+      "influenceScore": 16,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://purple-eats.blogspot.com/",
+      "channelName": "Purple Taste",
+      "voiceName": "Purple Taste",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://rkwittem.blogspot.com/",
+      "channelName": "Witt-ioms",
+      "voiceName": "Witt-ioms",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://sgentrepreneurs.com/feed/ - SGE",
+      "channelName": "SGEntrepreneurs",
+      "voiceName": "SGE",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://sggreatdeals.com",
+      "channelName": "Singapore Great Deals",
+      "voiceName": "Singapore Great Deals",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://sglinks.com/sites/ocbc.com.sg",
+      "channelName": "SG Links Blog",
+      "voiceName": "ocbc.com.sg",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://sgx-market-news.blogspot.com/blogspot.com editor",
+      "channelName": "SGX Market News Blog",
+      "voiceName": "blogspot.com editor",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://showwatcher.com",
+      "channelName": "Showwatcher Entertainment News &#38; Opinion",
+      "voiceName": "Showwatcher Entertainment News &#38; Opinion",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://singaporebizex.blogspot.com/",
+      "channelName": "Singapore Business Express",
+      "voiceName": "Singapore Business Express",
+      "influenceScore": 41,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://singaporemind.blogspot.com/ - noreply@blogger.com (Anonymous)",
+      "channelName": "Diary of A Singaporean Mind",
+      "voiceName": "noreply@blogger.com (Anonymous)",
+      "influenceScore": 16,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://spbuzz.sp.edu.sg",
+      "channelName": "SP Buzz",
+      "voiceName": "SP Buzz",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://straits-times.alltop.com",
+      "channelName": "Alltop RSS",
+      "voiceName": "Alltop RSS",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://supercarspotted.com",
+      "channelName": "Supercar Spotted",
+      "voiceName": "Supercar Spotted",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://talkback.stomp.com.sg/forums/member.php?u=44930",
+      "channelName": "Stomp Forum - Yummy Tummy",
+      "voiceName": "mervyn07",
+      "influenceScore": 10,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://tangeemist.wordpress.com",
+      "channelName": "(tangee)mist",
+      "voiceName": "(tangee)mist",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://tankinlian.blogspot.com/",
+      "channelName": "Tan Kin Lian's Blog",
+      "voiceName": "Mr Tan Kin Lian",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://tauransekolah.blogspot.com/",
+      "channelName": "Tauran sekolah",
+      "voiceName": "Tauran sekolah",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://thediningtable.sg",
+      "channelName": "The Dining Table &#124; Singapore Food Blog &#124;",
+      "voiceName": "The Dining Table &#124; Singapore Food Blog &#124; Best Food in Singapore &#124; Best Restaurants in",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://theedgesingapore.com/Reuters",
+      "channelName": "The Edge Singapore News - The Daily Edge - Business",
+      "voiceName": "Reuters",
+      "influenceScore": 100,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://thefinance.sg/ - Patrick Lim",
+      "channelName": "TheFinance.sg Blog",
+      "voiceName": "Patrick Lim",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://toptensingapore.com",
+      "channelName": "Top Ten Singapore",
+      "voiceName": "Top Ten Singapore",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://wikicarshow.com",
+      "channelName": "Wiki Car Show",
+      "voiceName": "Wiki Car Show",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.24h-en-asie.com/2012/07/lundi-16-juillet.html",
+      "channelName": "24h en Asie",
+      "voiceName": "24h en Asie",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.24h-en-asie.com/2012/07/mercredi-18-juillet.html",
+      "channelName": "24h en Asie",
+      "voiceName": "24h en Asie",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.alittlemei.net/",
+      "channelName": "a.little.mei",
+      "voiceName": "a.little.mei",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.bmw-sg.com/forums/",
+      "channelName": "BMW-SG - The BMW Singapore Community",
+      "voiceName": "BMW-SG - The BMW Singapore Community",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.bodrumhotels.me",
+      "channelName": "Travel Accomodations",
+      "voiceName": "Travel Accomodations",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.channelnewsasia.com/Linette Lim |",
+      "channelName": "ChannelNewsAsia",
+      "voiceName": "Linette Lim |",
+      "influenceScore": 100,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.channelnewsasia.com/Millet Enriquez |",
+      "channelName": "ChannelNewsAsia",
+      "voiceName": "Millet Enriquez |",
+      "influenceScore": 100,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.channelnewsasia.com/Sim Ping Khuan |",
+      "channelName": "ChannelNewsAsia",
+      "voiceName": "Sim Ping Khuan |",
+      "influenceScore": 100,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.channelsingapore.com",
+      "channelName": "Channel Singapore",
+      "voiceName": "Channel Singapore",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.cheekiemonkie.net/",
+      "channelName": "Cheekiemonkies: Triple the fun. Triple the Trouble",
+      "voiceName": "Cheekiemonkies: Triple the fun. Triple the Trouble.",
+      "influenceScore": 41,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.citicommercial.com.sg",
+      "channelName": "Citi Commercial Pte Ltd",
+      "voiceName": "Citi Commercial Pte Ltd",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.crossfitadaptation.com",
+      "channelName": "CrossfitAdaptation",
+      "voiceName": "CrossfitAdaptation",
+      "influenceScore": 41,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.dandiemer.com",
+      "channelName": "Dan Diemer",
+      "voiceName": "Dan Diemer",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.druckbleistifte.eu",
+      "channelName": "druckbleistifte.eu",
+      "voiceName": "druckbleistifte.eu",
+      "influenceScore": 41,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.dynamikbass.com/machine",
+      "channelName": "Dynamik Bass System – The Mighty Machine",
+      "voiceName": "Dynamik Bass System – The Mighty Machine",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.eguide.sg",
+      "channelName": "Singapore Free Classified",
+      "voiceName": "Singapore Free Classified",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.facebook.com/100000102932233",
+      "channelName": "Facebook - DBS Bank. Leaving, Breathing Asia. - Wall",
+      "voiceName": "Thomas Cheong",
+      "influenceScore": 16,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.facebook.com/100002045913765",
+      "channelName": "Facebook - DBS Cards - Wall",
+      "voiceName": "Macy Chong",
+      "influenceScore": 16,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.facebook.com/100003665042907",
+      "channelName": "Facebook - HSBC Singapore Fanpage - Wall",
+      "voiceName": "Kylie Alipio",
+      "influenceScore": 16,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.facebook.com/1018970358",
+      "channelName": "Facebook - POSBkids",
+      "voiceName": "Hubert LovesKoi",
+      "influenceScore": 16,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.facebook.com/1051947415",
+      "channelName": "Facebook - DBS Cards - Wall",
+      "voiceName": "Zahira Ad",
+      "influenceScore": 16,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.facebook.com/116510905057483",
+      "channelName": "Facebook - DBS Remix - Wall",
+      "voiceName": "DBS Remix",
+      "influenceScore": 16,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.facebook.com/21282830280",
+      "channelName": "Facebook - DBS Bank. Leaving, Breathing Asia. - Wall",
+      "voiceName": "DBS Bank. Living, Breathing Asia",
+      "influenceScore": 16,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.facebook.com/599963137",
+      "channelName": "Facebook - DBS Cards - Wall",
+      "voiceName": "Quilksilverz Surfboyz",
+      "influenceScore": 16,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.fitnesssutra.com",
+      "channelName": "Fitness Sutra",
+      "voiceName": "Fitness Sutra",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.freelanceemploymentjobs.com",
+      "channelName": "Freelance Employment Jobs",
+      "voiceName": "Freelance Employment Jobs",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.indonesian-job.com",
+      "channelName": "Informasi lowongan pekerjaan &#38; karir",
+      "voiceName": "Informasi lowongan pekerjaan &#38; karir",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.kiasuparents.com/kiasu/forum/memberlist.php?mode=viewprofile&u=49773",
+      "channelName": "Kiasu Parents Forum - Chit Chat",
+      "voiceName": "chenwj",
+      "influenceScore": 6,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.meetmii.net",
+      "channelName": "Meet Mii",
+      "voiceName": "Meet Mii",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.misterleaf.com/2696/approve-ocbc-titanium-master-card-in-hand/",
+      "channelName": "Mister Leaf",
+      "voiceName": "Mister Leaf",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=20956",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Nlatio",
+      "influenceScore": 3,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=28957",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Donut",
+      "influenceScore": 3,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=30579",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Robo",
+      "influenceScore": 3,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=31639",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Darthrevan",
+      "influenceScore": 11,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=547",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "RadX",
+      "influenceScore": 3,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=7510",
+      "channelName": "MyCarForum Forum - General Car Discussion",
+      "voiceName": "Dafansu",
+      "influenceScore": 14,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=83985",
+      "channelName": "MyCarForum Forum - General Car Discussion",
+      "voiceName": "Tarquin",
+      "influenceScore": 14,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=86100",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Calvin79",
+      "influenceScore": 3,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.mycarforum.com/index.php?showuser=87160",
+      "channelName": "MyCarForum Forum - Lite & EZ",
+      "voiceName": "Raymondism",
+      "influenceScore": 3,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.qompete.com/sg",
+      "channelName": "Qompete Singapore",
+      "voiceName": "Qompete Singapore",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.sammyboy.com/member.php?13226-BuiKia",
+      "channelName": "Sammyboy Forum - Friendly Coffee Shop Talk",
+      "voiceName": "BuiKia",
+      "influenceScore": 36,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.sammyboy.com/member.php?6271-jixiaolan",
+      "channelName": "Sammyboy Forum - Friendly Coffee Shop Talk",
+      "voiceName": "jixiaolan",
+      "influenceScore": 36,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.sammyboy.com/member.php?6957-cocobobo",
+      "channelName": "Sammyboy Forum - Friendly Coffee Shop Talk",
+      "voiceName": "cocobobo",
+      "influenceScore": 0,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.sgrate.com/forum/space-uid-5477.html",
+      "channelName": "SgRate Forum Forum - Credit Card",
+      "voiceName": "zimlim",
+      "influenceScore": 50,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.sgstockforum.com/singaporestockforum/",
+      "channelName": "Sg Stock Forums: No. 1 Singapore Stock Forums - Al",
+      "voiceName": "Sg Stock Forums: No. 1 Singapore Stock Forums - All Forums",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.sharejunction.com/sanuks",
+      "channelName": "ShareJunction Forum",
+      "voiceName": "sanuks",
+      "influenceScore": 12,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.singapore-forum.com/forum/memberlist.php?mode=viewprofile&u=67",
+      "channelName": "The Singaporum Forum - Rant Room",
+      "voiceName": "slinky",
+      "influenceScore": 50,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.singaporebikes.com/forums/member.php/69165-Vulcano",
+      "channelName": "SingaporeBikes Forum - Chatter Box",
+      "voiceName": "Vulcano",
+      "influenceScore": 1,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.thatplatinumsound.com",
+      "channelName": "That Platinum Sound",
+      "voiceName": "That Platinum Sound",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.todayonline.com/todayonlineEditor",
+      "channelName": "Todayonline - News",
+      "voiceName": "todayonlineEditor",
+      "influenceScore": 100,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.vagsg.com/forums/member.php?u=11182",
+      "channelName": "Vagsg Forum - Tok Cok Sing Song",
+      "voiceName": "Cipher",
+      "influenceScore": 1,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.vagsg.com/forums/member.php?u=11980",
+      "channelName": "Vagsg Forum - Tok Cok Sing Song",
+      "voiceName": "j-sho",
+      "influenceScore": 1,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.vagsg.com/forums/member.php?u=14830",
+      "channelName": "Vagsg Forum - Tok Cok Sing Song",
+      "voiceName": "jet-sju",
+      "influenceScore": 1,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.vagsg.com/forums/member.php?u=16586",
+      "channelName": "Vagsg Forum - Tok Cok Sing Song",
+      "voiceName": "Alter_Ego",
+      "influenceScore": 1,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.vagsg.com/forums/member.php?u=7802",
+      "channelName": "Vagsg Forum - Tok Cok Sing Song",
+      "voiceName": "mannwai",
+      "influenceScore": 30,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.valuebuddies.com/user-2.html",
+      "channelName": "Value Buddies Forum - Personal Finance",
+      "voiceName": "Musicwhiz",
+      "influenceScore": 50,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://www.valuebuddies.com/user-751.html",
+      "channelName": "Value Buddies Forum - Personal Finance",
+      "voiceName": "funman168",
+      "influenceScore": 16,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://yesvirginiajan.blogspot.com/",
+      "channelName": "Yes, Virginia...",
+      "voiceName": "Yes, Virginia...",
+      "influenceScore": 40,
+      "buzz": 1
+    },
+    {
+      "voiceUrl": "http://yummychitchat.com",
+      "channelName": "Yummy ChitChat",
+      "voiceName": "Yummy ChitChat",
+      "influenceScore": 40,
+      "buzz": 1
+    }
+  ]
+}
