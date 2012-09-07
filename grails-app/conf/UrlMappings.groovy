@@ -10,7 +10,7 @@ class UrlMappings {
             action = [GET: 'getCaseById', PUT: 'updateCase', DELETE: 'closeCase', POST: 'createCase']
         }
 //        "/socialEngage/$remoteAction"(controller: 'socialEngage', action: 'passThrough')
-
+        "/socialReport/$action"(controller: 'socialReport')
 
         "/$controller/$action?/$id?" {
             constraints {
