@@ -776,4 +776,90 @@ class SocialAssetsController {
     }]}'''
     }
 
+    def getAdminActivity() {
+      render '''{
+  "startDate": 1346284800000,
+  "dayCount": 7,
+  "categories": 
+  [
+    "2012-08-30",
+    "2012-08-31",
+    "2012-09-01",
+    "2012-09-02",
+    "2012-09-03",
+    "2012-09-04",
+    "2012-09-05",
+    "2012-09-06"
+  ],
+  "postSum": 
+  [
+    0,
+    10,
+    26,
+    34,
+    14,
+    12,
+    8,
+    0
+  ],
+  "likeSum": 
+  [
+    0,
+    10,
+    10,
+    20,
+    30,
+    20,
+    10,
+    0
+  ],
+  "commentSum": 
+  [
+    0,
+    9,
+    11,
+    7,
+    4,
+    2,
+    1,
+    0
+  ]
+}'''
+    }
+
+    def getAllFacebookPost() {
+      render '''{
+  "data": 
+  [
+    {
+      "username": "WJ Bank",
+      "articleURL": "http://www.facebook.com/permalink.php?story_fbid=382662921803222&id=322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "profileURL": "http://www.facebook.com/322058887863626",
+      "content": "\\"Please do not put nonsense on...\\" on Alvin Chan\'s post on WJ Bank\'s wall.",
+      "id": "322058887863626_382662921803222",
+      "likesCount": 0,
+      "commentCount": 0,
+      "datetimePost": "2012-09-04T08:37:59Z",
+      "userPic": "https://graph.facebook.com/322058887863626/picture",
+      "comLastDate": "2012-09-04T08:37:59Z"
+    },
+    {
+      "username": "Alvin Chan",
+      "articleURL": "http://www.facebook.com/permalink.php?story_fbid=379773918758789&id=322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "profileURL": "http://www.facebook.com/567870958",
+      "content": "sentia sentia... double sentia...",
+      "id": "322058887863626_379773918758789",
+      "likesCount": 0,
+      "commentCount": 1,
+      "datetimePost": "2012-08-27T08:47:23Z",
+      "userPic": "https://graph.facebook.com/567870958/picture",
+      "comLastDate": "2012-09-04T08:37:59Z"
+    }
+  ]
+}'''
+    }
 }
