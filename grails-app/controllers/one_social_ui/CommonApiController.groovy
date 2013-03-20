@@ -40,5 +40,9 @@ class CommonApiController {
 '''
     }
 
+    def updateUserData() {
+        render '''{"data": "ok"}'''
+    }
+
 
 }
