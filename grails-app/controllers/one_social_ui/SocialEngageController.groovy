@@ -11,9 +11,10 @@ class SocialEngageController {
     def getCase(params, body) {
         // the case model
         def obj = [
-                caseId: '9691340959298765',
+                caseId: "969134095929876${Math.round(Math.random()*1000)}",
                 title: 'case 2',
                 priority: 2,
+                assignTo: 79,
                 caseStatus: 1,
                 assetPic: "http://graph.facebook.com/28011986676/picture",
                 assetURL: "http://www.facebook.com/28011986676",
@@ -33,6 +34,472 @@ class SocialEngageController {
         return obj
     }
 
+    def getAllFacebookPost() {
+      def str = params.scrollTo ? ', "page": 2' : ', "page":null'
+
+      render """{
+        "total": 31
+        ${str}
+  , "data": 
+  [
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "assignName": "Cass Goh - Brandtology R&D",
+      "assignNotes": "Take Note of this Carefully",
+      "assignTo": "590",
+      "url": "http://www.facebook.com/permalink.php?story_fbid=407608369308677&id=322058887863626",
+      "content": "\\"Test\\" on Wei Jian\'s post on WJ Bank\'s wall.",
+      "datetimePost": "2012-11-09T10:17:38Z",
+      "userId": "322058887863626",
+      "username": "WJ Bank",
+      "userPic": "https://graph.facebook.com/322058887863626/picture",
+      "userURL": "http://www.facebook.com/322058887863626",
+      "lCount": 0,
+      "cCount": 0,
+      "sCount": 0,
+      "isArticle": 1,
+      "fbid": "322058887863626_407608369308677",
+      "readStatus": "unread",
+      "caseCreated": "true",
+      "caseId": "9691341302369330"
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "y senorita goh, por favor deja de gritar. podemos oír perfectamente bien. gracias.",
+      "datetimePost": "2012-11-26T18:43:09Z",
+      "userId": "322058887863626",
+      "username": "WJ Bank",
+      "userPic": "https://graph.facebook.com/322058887863626/picture",
+      "lCount": 0,
+      "userURL": "http://www.facebook.com/322058887863626",
+      "isArticle": 0,
+      "fbid": "322058887863626_412497998819714_3559603",
+      "readStatus": "unread",
+      "caseCreated": "false",
+      "url": "http://www.facebook.com/permalink.php?story_fbid=412497998819714&id=322058887863626",
+      "article": {
+        "content": "WHEN ARE YOU OPENING A BRANCH IN ESPANA? ",
+        "userId": "517557078",
+        "username": "Cassandra Goh",
+        "userPic": "https://graph.facebook.com/517557078/picture",
+        "userURL": "http://www.facebook.com/517557078",
+        "fbid": "322058887863626_412497998819714",
+        "lCount": 100,
+        "sCount": 99,
+        "cCount": 98
+      }
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "y senorita goh, por favor deja de gritar. podemos oír perfectamente bien. gracias.",
+      "datetimePost": "2012-11-26T18:43:09Z",
+      "userId": "322058887863626",
+      "username": "WJ Bank",
+      "userPic": "https://graph.facebook.com/322058887863626/picture",
+      "lCount": 0,
+      "userURL": "http://www.facebook.com/322058887863626",
+      "isArticle": 0,
+      "fbid": "322058887863626_412497998819714_1",
+      "readStatus": "unread",
+      "caseCreated": "false",
+      "url": "http://www.facebook.com/permalink.php?story_fbid=412497998819714&id=322058887863626"
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "y senorita goh, por favor deja de gritar. podemos oír perfectamente bien. gracias.",
+      "datetimePost": "2012-11-26T18:43:09Z",
+      "userId": "322058887863626",
+      "username": "WJ Bank",
+      "userPic": "https://graph.facebook.com/322058887863626/picture",
+      "lCount": 0,
+      "userURL": "http://www.facebook.com/322058887863626",
+      "isArticle": 0,
+      "fbid": "322058887863626_412497998819714_2",
+      "readStatus": "unread",
+      "caseCreated": "false",
+      "url": "http://www.facebook.com/permalink.php?story_fbid=412497998819714&id=322058887863626",
+      "article": {
+        "content": "WHEN ARE YOU OPENING A BRANCH IN ESPANA? ",
+        "userId": "517557078",
+        "username": "Cassandra Goh",
+        "userPic": "https://graph.facebook.com/517557078/picture",
+        "userURL": "http://www.facebook.com/517557078",
+        "fbid": "322058887863626_412497998819714"
+      }
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "y senorita goh, por favor deja de gritar. podemos oír perfectamente bien. gracias.",
+      "datetimePost": "2012-11-26T18:43:09Z",
+      "userId": "322058887863626",
+      "username": "WJ Bank",
+      "userPic": "https://graph.facebook.com/322058887863626/picture",
+      "lCount": 0,
+      "userURL": "http://www.facebook.com/322058887863626",
+      "isArticle": 0,
+      "fbid": "322058887863626_412497998819714_3",
+      "readStatus": "unread",
+      "caseCreated": "false",
+      "url": "http://www.facebook.com/permalink.php?story_fbid=412497998819714&id=322058887863626",
+      "article": {
+        "content": "WHEN ARE YOU OPENING A BRANCH IN ESPANA? ",
+        "userId": "517557078",
+        "username": "Cassandra Goh",
+        "userPic": "https://graph.facebook.com/517557078/picture",
+        "userURL": "http://www.facebook.com/517557078",
+        "fbid": "322058887863626_412497998819714"
+      }
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "y senorita goh, por favor deja de gritar. podemos oír perfectamente bien. gracias.",
+      "datetimePost": "2012-11-26T18:43:09Z",
+      "userId": "322058887863626",
+      "username": "WJ Bank",
+      "userPic": "https://graph.facebook.com/322058887863626/picture",
+      "lCount": 0,
+      "userURL": "http://www.facebook.com/322058887863626",
+      "isArticle": 0,
+      "fbid": "322058887863626_412497998819714_4",
+      "readStatus": "unread",
+      "caseCreated": "false",
+      "url": "http://www.facebook.com/permalink.php?story_fbid=412497998819714&id=322058887863626",
+      "article": {
+        "content": "WHEN ARE YOU OPENING A BRANCH IN ESPANA? ",
+        "userId": "517557078",
+        "username": "Cassandra Goh",
+        "userPic": "https://graph.facebook.com/517557078/picture",
+        "userURL": "http://www.facebook.com/517557078",
+        "fbid": "322058887863626_412497998819714"
+      }
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "y senorita goh, por favor deja de gritar. podemos oír perfectamente bien. gracias.",
+      "datetimePost": "2012-11-26T18:43:09Z",
+      "userId": "322058887863626",
+      "username": "WJ Bank",
+      "userPic": "https://graph.facebook.com/322058887863626/picture",
+      "lCount": 0,
+      "userURL": "http://www.facebook.com/322058887863626",
+      "isArticle": 0,
+      "fbid": "322058887863626_412497998819714_5",
+      "readStatus": "unread",
+      "caseCreated": "false",
+      "url": "http://www.facebook.com/permalink.php?story_fbid=412497998819714&id=322058887863626",
+      "article": {
+        "content": "WHEN ARE YOU OPENING A BRANCH IN ESPANA? ",
+        "userId": "517557078",
+        "username": "Cassandra Goh",
+        "userPic": "https://graph.facebook.com/517557078/picture",
+        "userURL": "http://www.facebook.com/517557078",
+        "fbid": "322058887863626_412497998819714"
+      }
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "y senorita goh, por favor deja de gritar. podemos oír perfectamente bien. gracias.",
+      "datetimePost": "2012-11-26T18:43:09Z",
+      "userId": "322058887863626",
+      "username": "WJ Bank",
+      "userPic": "https://graph.facebook.com/322058887863626/picture",
+      "lCount": 0,
+      "userURL": "http://www.facebook.com/322058887863626",
+      "isArticle": 0,
+      "fbid": "322058887863626_412497998819714_6",
+      "readStatus": "unread",
+      "caseCreated": "false",
+      "url": "http://www.facebook.com/permalink.php?story_fbid=412497998819714&id=322058887863626",
+      "article": {
+        "content": "WHEN ARE YOU OPENING A BRANCH IN ESPANA? ",
+        "userId": "517557078",
+        "username": "Cassandra Goh",
+        "userPic": "https://graph.facebook.com/517557078/picture",
+        "userURL": "http://www.facebook.com/517557078",
+        "fbid": "322058887863626_412497998819714"
+      }
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "y senorita goh, por favor deja de gritar. podemos oír perfectamente bien. gracias.",
+      "datetimePost": "2012-11-26T18:43:09Z",
+      "userId": "322058887863626",
+      "username": "WJ Bank",
+      "userPic": "https://graph.facebook.com/322058887863626/picture",
+      "lCount": 0,
+      "userURL": "http://www.facebook.com/322058887863626",
+      "isArticle": 0,
+      "fbid": "322058887863626_412497998819714_355960309",
+      "readStatus": "read",
+      "caseCreated": "false",
+      "url": "http://www.facebook.com/permalink.php?story_fbid=412497998819714&id=322058887863626",
+      "article": {
+        "content": "WHEN ARE YOU OPENING A BRANCH IN ESPANA? ",
+        "userId": "517557078",
+        "username": "Cassandra Goh",
+        "userPic": "https://graph.facebook.com/517557078/picture",
+        "userURL": "http://www.facebook.com/517557078",
+        "fbid": "322058887863626_412497998819714"
+      }
+    }
+  ]
+}"""
+    }
+
+    def getAllFacebookDM() {
+      render '''{
+  "data": 
+  [
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "好 Yup, its time to find out what happen in this morning you can say everything you want",
+      "datetimePost": "2012-12-04T06:05:11Z",
+      "userId": "689247620",
+      "username": "Liu Qiang",
+      "userPic": "http://graph.facebook.com/689247620/picture",
+      "responseId": "322058887863626",
+      "fromName": "WJ Bank",
+      "fromURL": "http://graph.facebook.com/322058887863626",
+      "fromPic": "http://graph.facebook.com/322058887863626/picture",
+      "toId": "689247620",
+      "toName": "Wei Jian",
+      "toURL": "http://graph.facebook.com/689247620",
+      "toPic": "http://graph.facebook.com/689247620/picture",
+      "readStatus": "unread",
+      "caseCreated": "false",
+      "cCount": 10
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "hello",
+      "datetimePost": "2012-12-04T03:08:36Z",
+      "userId": "689247620",
+      "username": "Wei Jian2",
+      "userPic": "http://graph.facebook.com/689247620/picture",
+      "responseId": "689247620",
+      "fromName": "Wei Jian",
+      "fromURL": "http://graph.facebook.com/689247620",
+      "fromPic": "http://graph.facebook.com/689247620/picture",
+      "toId": "322058887863626",
+      "toName": "WJ Bank",
+      "toURL": "http://graph.facebook.com/322058887863626",
+      "toPic": "http://graph.facebook.com/322058887863626/picture",
+      "readStatus": "read",
+      "caseCreated": "false"
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "test",
+      "datetimePost": "2012-12-04T02:52:52Z",
+      "userId": "689247620",
+      "username": "Wei Jian3",
+      "userPic": "http://graph.facebook.com/689247620/picture",
+      "responseId": "689247620-1",
+      "fromName": "Wei Jian",
+      "fromURL": "http://graph.facebook.com/689247620",
+      "fromPic": "http://graph.facebook.com/689247620/picture",
+      "toId": "322058887863626",
+      "toName": "WJ Bank",
+      "toURL": "http://graph.facebook.com/322058887863626",
+      "toPic": "http://graph.facebook.com/322058887863626/picture",
+      "readStatus": "unread",
+      "caseCreated": "false"
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": ":P",
+      "datetimePost": "2012-12-03T09:44:45Z",
+      "userId": "689247620",
+      "username": "Wei Jian",
+      "userPic": "http://graph.facebook.com/689247620/picture",
+      "responseId": "689247620-2",
+      "fromName": "Wei Jian",
+      "fromURL": "http://graph.facebook.com/689247620",
+      "fromPic": "http://graph.facebook.com/689247620/picture",
+      "toId": "322058887863626",
+      "toName": "WJ Bank",
+      "toURL": "http://graph.facebook.com/322058887863626",
+      "toPic": "http://graph.facebook.com/322058887863626/picture",
+      "readStatus": "unread",
+      "caseCreated": "false"
+    }
+  ]
+}'''
+    }
+
+    def getAllFacebookVoices() {
+      render '''{
+  "data": 
+  [
+    {
+      "userId": "322058887863626",
+      "profileURL": "http://www.facebook.com/322058887863626",
+      "userPic": "http://graph.facebook.com/322058887863626/picture",
+      "username": "WJ Bank",
+      "commentCount": 19,
+      "postCount": 8,
+      "dmCount": 3
+    },
+    {
+      "userId": "506417801",
+      "profileURL": "http://www.facebook.com/506417801",
+      "userPic": "http://graph.facebook.com/506417801/picture",
+      "username": "Callum Feasby",
+      "commentCount": 0,
+      "postCount": 1,
+      "dmCount": 0
+    },
+    {
+      "userId": "517557078",
+      "profileURL": "http://www.facebook.com/517557078",
+      "userPic": "http://graph.facebook.com/517557078/picture",
+      "username": "Cassandra Goh",
+      "commentCount": 1,
+      "postCount": 2,
+      "dmCount": 0
+    },
+    {
+      "userId": "526890270",
+      "profileURL": "http://www.facebook.com/526890270",
+      "userPic": "http://graph.facebook.com/526890270/picture",
+      "username": "Yuan Shan Lee",
+      "commentCount": 0,
+      "postCount": 1,
+      "dmCount": 0
+    },
+    {
+      "userId": "672895093",
+      "profileURL": "http://www.facebook.com/672895093",
+      "userPic": "http://graph.facebook.com/672895093/picture",
+      "username": "Jonathan See",
+      "commentCount": 1,
+      "postCount": 1,
+      "dmCount": 0
+    },
+    {
+      "userId": "639105596",
+      "profileURL": "http://www.facebook.com/639105596",
+      "userPic": "http://graph.facebook.com/639105596/picture",
+      "username": "Chern Chieh",
+      "commentCount": 0,
+      "postCount": 1,
+      "dmCount": 0
+    },
+    {
+      "userId": "501293712",
+      "profileURL": "http://www.facebook.com/501293712",
+      "userPic": "http://graph.facebook.com/501293712/picture",
+      "username": "Danial Smurthwaite",
+      "commentCount": 1,
+      "postCount": 1,
+      "dmCount": 0
+    },
+    {
+      "userId": "705262535",
+      "profileURL": "http://www.facebook.com/705262535",
+      "userPic": "http://graph.facebook.com/705262535/picture",
+      "username": "Jon Ngin",
+      "commentCount": 1,
+      "postCount": 0,
+      "dmCount": 0
+    },
+    {
+      "userId": "604892779",
+      "profileURL": "http://www.facebook.com/604892779",
+      "userPic": "http://graph.facebook.com/604892779/picture",
+      "username": "Hani Bani",
+      "commentCount": 1,
+      "postCount": 0,
+      "dmCount": 0
+    },
+    {
+      "userId": "609490972",
+      "profileURL": "http://www.facebook.com/609490972",
+      "userPic": "http://graph.facebook.com/609490972/picture",
+      "username": "Jonathan James",
+      "commentCount": 1,
+      "postCount": 0,
+      "dmCount": 0
+    },
+    {
+      "userId": "689247620",
+      "profileURL": "http://www.facebook.com/689247620",
+      "userPic": "http://graph.facebook.com/689247620/picture",
+      "username": "Wei Jian",
+      "commentCount": 0,
+      "postCount": 0,
+      "dmCount": 10
+    }
+  ]
+}'''
+    }
+
+    def getAllFacebookCase() {
+      render '''{
+  "data": 
+  [
+    {
+      "caseId": "4261353458587692",
+      "title": "",
+      "priority": 3,
+      "dateCreated": "2012-11-21T00:43:07Z",
+      "articleId": "28011986676_10151949726736677",
+      "commentId": "0",
+      "caseStatus": 0,
+      "assignTo": "Buvaneswaran Gunasegran\\n",
+      "createdBy": "Buvaneswaran Gunasegran\\n",
+      "type": "facebook",
+      "updateCount": 0,
+      "readStatus": "read",
+      "voiceId": "4261353458587692.1353458587771",
+      "notes": null,
+      "notesUpdateDate": null,
+      "notesUpdateBy": "",
+      "datetimeUpdated": "2012-11-21T00:52:33Z",
+      "articleContent": "I have a complaint about 3G Reception around Dover road. I seem to get 3-5 bars on both my phone and friends yet the 3G is terrible when sending iMessages,surfing the internet etc. This started to happen a few months ago while it was good before. Please sort this out.",
+      "articleVoiceName": "Patrick Combe",
+      "articleVoicePicture": "https://graph.facebook.com/1015175280/picture",
+      "articleDateTimePost": "2012-11-20T13:08:02Z",
+      "articleVoiceId": "1015175280",
+      "assetId": "28011986676",
+      "assetPic": "http://graph.facebook.com/28011986676/picture",
+      "assetURL": "http://www.facebook.com/28011986676",
+      "articleURL": "http://www.facebook.com/permalink.php?story_fbid=10151949726736677&id=28011986676",
+      "articleVoiceURL": "http://www.facebook.com/1015175280",
+      "comment": 
+      [
+      ]
+    }
+ ]
+}'''
+    }
+
     def createCase() {
         /*
        articleId=98685085344_196710807123445&
@@ -42,6 +509,7 @@ class SocialEngageController {
        priority=3&
        assignTo=661&
         */
+        print params
         params.remove('caseId')
         render getCase(params, request.JSON) as JSON
     }
@@ -82,20 +550,35 @@ class SocialEngageController {
         /**
          * caseId = 123
          */
-        render """{
-"content": "I have a question, can i have the complete address of your bank please?",
-"articleURL": "http://www.facebook.com/permalink.php?story_fbid=366371263432388&id=322058887863626",
-"datetimePosted": "2012-07-19T07:27:50Z",
-"voiceName": "Priya Venkat",
-"notes": "null",
-"title": "CRD1232343",
-"name": "Priya",
-"phone": "89786756",
-"identifier": "S1232434",
-"email": "priya@gmail.com",
-"latestResponse": "It is located at Orchard Road",
-"latestResponseMadeBy": "Caroline Lee"
-}"""
+        render '''{
+  "name": "Mr Tan",
+  "phone": "91234567",
+  "identifier": "0123456789",
+  "email": "mr.tan@wjbank.com",
+  "notes": "VIP customer",
+  "title": "Rewards",
+  "articleURL": "http://www.facebook.com/permalink.php?story_fbid=388362207899960&id=322058887863626",
+  "history": 
+  [
+    {
+      "content": "what is upcoming for WJBank?",
+      "datetimePosted": "2012-09-20T06:13:25Z",
+      "voiceName": "Wei Jian",
+      "voiceURL": "http://www.facebook.com/689247620",
+      "voiceId": "689247620",
+      "voicePic": "https://graph.facebook.com/689247620/picture"
+    },
+    {
+      "content": "Thanks All",
+      "agentName": "Joshua Troy - Brandtology R&D",
+      "datetimePosted": "2012-09-20T06:22:52Z",
+      "voiceId": "322058887863626",
+      "voicePic": "https://graph.facebook.com/322058887863626/picture",
+      "voiceURL": "http://www.facebook.com/322058887863626",
+      "voiceName": "WJ Bank"
+    }
+  ]
+}'''
     }
 
 
@@ -192,7 +675,7 @@ class SocialEngageController {
   "likesCount": 109,
   "commentCount": 0,
   "voiceId": "98685085344",
-  "imageURL": "http://a2.sphotos.ak.fbcdn.net/hphotos-ak-ash4/s480x480/482021_10151279023744017_1947373084_n.jpg",
+  "imageURL": "https://graph.facebook.com/719707536/picture",
   "comments":
   [
     {
@@ -201,6 +684,7 @@ class SocialEngageController {
       "isUser": 1,
       "dateTimePosted": "2012-06-25T10:19:40Z",
       "fbid": "98685085344_196710807123445_518623",
+      "messageId": "98685085344_196710807123445_518623",
       "userName": "Xavienne Chew Lah Sia",
       "userpic": "https://graph.facebook.com/719707536/picture",
       "likesCount": 0,
@@ -211,6 +695,7 @@ class SocialEngageController {
       "isUser": 1,
       "dateTimePosted": "2012-06-25T10:20:13Z",
       "fbid": "98685085344_196710807123445_518624",
+      "messageId": "98685085344_196710807123445_518624",
       "userName": "Xavienne Chew Lah Sia",
       "userpic": "https://graph.facebook.com/719707536/picture",
       "likesCount": 0,
@@ -220,6 +705,7 @@ class SocialEngageController {
       "content": "26hrs 35mins more to #joysoflife",
       "dateTimePosted": "2012-06-25T10:24:23Z",
       "fbid": "98685085344_196710807123445_518630",
+      "messageId": "98685085344_196710807123445_518630",
       "userName": "Swee Heng Tan",
       "userpic": "https://graph.facebook.com/100002676015109/picture",
       "likesCount": 1,
@@ -229,6 +715,7 @@ class SocialEngageController {
       "content": "Let's trend #joysoflife tmr at 9pm on twitter! :)",
       "dateTimePosted": "2012-06-25T10:42:35Z",
       "fbid": "98685085344_196710807123445_518683",
+      "messageId": "98685085344_196710807123445_518683",
       "userName": "Joys of Life ü£?ìÑ?",
       "userpic": "https://graph.facebook.com/345262218830470/picture",
       "likesCount": 3,
@@ -238,6 +725,7 @@ class SocialEngageController {
       "content": "Xiao gui acting skills is real good. 2 thumps up for him..",
       "dateTimePosted": "2012-06-25T10:55:48Z",
       "fbid": "98685085344_196710807123445_518704",
+      "messageId": "98685085344_196710807123445_518704",
       "userName": "Kitty Catty",
       "userpic": "https://graph.facebook.com/624748319/picture",
       "likesCount": 2,
@@ -247,6 +735,7 @@ class SocialEngageController {
       "content": "I love XiaoGui ^^ ",
       "dateTimePosted": "2012-06-25T11:00:48Z",
       "fbid": "98685085344_196710807123445_518714",
+      "messageId": "98685085344_196710807123445_518714",
       "userName": "Jesslyn Tu",
       "userpic": "https://graph.facebook.com/100000140890216/picture",
       "likesCount": 0,
@@ -256,6 +745,7 @@ class SocialEngageController {
       "content": "Where is Xiao Gui now ? Singapore or Taiwan ?",
       "dateTimePosted": "2012-06-25T12:01:14Z",
       "fbid": "98685085344_196710807123445_518888",
+      "messageId": "98685085344_196710807123445_518888",
       "userName": "Xian Ning",
       "userpic": "https://graph.facebook.com/100000066130303/picture",
       "likesCount": 0,
@@ -265,6 +755,7 @@ class SocialEngageController {
       "content": "I Love Rui En,:)\\nepisode 1 last part the somebody cutting Rui En hairs i think:)",
       "dateTimePosted": "2012-06-25T14:00:46Z",
       "fbid": "98685085344_196710807123445_519311",
+      "messageId": "98685085344_196710807123445_519311",
       "userName": "Heng XinYing",
       "userpic": "https://graph.facebook.com/100001907864504/picture",
       "likesCount": 0,
@@ -274,10 +765,12 @@ class SocialEngageController {
       "content": "^^ One more day!",
       "dateTimePosted": "2012-06-25T10:17:52Z",
       "fbid": "98685085344_196710807123445_518620",
+      "messageId": "98685085344_196710807123445_518620",
       "userName": "Joys of Life ü£?ìÑ?",
       "userpic": "https://graph.facebook.com/345262218830470/picture",
       "likesCount": 4,
-      "voiceId": "345262218830470"
+      "voiceId": "345262218830470",
+      "assignNotes": "just a note"
     }
   ]
 }'''
@@ -292,7 +785,7 @@ class SocialEngageController {
         type=facebook
          */
 
-        render '''{
+        render """{
   "data": {
     "content": "Dear Admin,\\nI have been a customer of WJ Bank for 15 years and am unhappy with the customer service. Recently I was asked to leave your branch because I was good looking. When I told them that I was not good looking,they ignored me and forcefully removed me from the bank. Please help.",
     "voiceName": "Erwin Iriawan Seah",
@@ -306,7 +799,7 @@ class SocialEngageController {
     "voiceURL": "http://www.facebook.com/580607408",
     "caseId": "9691342079864534",
     "caseCreated": true,
-    "readStatus": "read",
+    "readStatus": "${params.status}",
     "readBy": "Chao Liu",
     "comment":
     [
@@ -327,7 +820,12 @@ class SocialEngageController {
     "assetURL": "https://www.facebook.com/322058887863626",
     "assetName": "WJbank"
   }
-}'''
+}"""
+    }
+
+    def markStatusInBatch() {
+      print request.JSON
+      render '{"data":"ok"}'
     }
 
     def getAllCase() {
@@ -602,5 +1100,12 @@ class SocialEngageController {
         render json.toString()
 
 
+    }
+
+    def getStreamUnreadCount() {
+      render """{
+  "fbStream": 85,
+  "fbMessage": 11
+}"""
     }
 }
