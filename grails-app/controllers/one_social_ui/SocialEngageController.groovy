@@ -35,6 +35,7 @@ class SocialEngageController {
     }
 
     def getAllFacebookPost() {
+      //if (1+1 == 2) return render('''{"data":[],"total": 0}''')
       def str = params.scrollTo ? ', "page": 2' : ', "page":null'
 
       render """{
@@ -59,6 +60,7 @@ class SocialEngageController {
       "lCount": 0,
       "cCount": 0,
       "sCount": 0,
+      "nCount": 1,
       "isArticle": 1,
       "fbid": "322058887863626_407608369308677",
       "readStatus": "unread",
@@ -264,7 +266,240 @@ class SocialEngageController {
 }"""
     }
 
+    def getAllTwitterPost() {
+      //if (1+1 == 2) return render('''{"data":[],"total":0}''')
+      def str = params.scrollTo ? ', "page": 2' : ', "page":null'
+
+      render """{
+        "total": 31
+        ${str}
+  , "data": 
+  [
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "assignName": "Cass Goh - Brandtology R&D",
+      "assignNotes": "Take Note of this Carefully",
+      "assignTo": "590",
+      "url": "http://www.facebook.com/permalink.php?story_fbid=407608369308677&id=322058887863626",
+      "content": "\\"Test\\" on Wei Jian\'s post on WJ Bank\'s wall.",
+      "datetimePost": "2012-11-09T10:17:38Z",
+      "userId": "322058887863626",
+      "username": "WJ Bank",
+      "userPic": "https://graph.facebook.com/322058887863626/picture",
+      "userURL": "http://www.facebook.com/322058887863626",
+      "rCount": 100,
+      "cCount": 27,
+      "sCount": 0,
+      "nCount": 1,
+      "isArticle": 1,
+      "postId": "322058887863626_407608369308677",
+      "readStatus": "unread",
+      "caseCreated": "true",
+      "caseId": "9691341302369330"
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "y senorita goh, por favor deja de gritar. podemos oír perfectamente bien. gracias.",
+      "datetimePost": "2012-11-26T18:43:09Z",
+      "userId": "322058887863626",
+      "username": "WJ Bank",
+      "userPic": "https://graph.facebook.com/322058887863626/picture",
+      "rCount": 0,
+      "userURL": "http://www.facebook.com/322058887863626",
+      "isArticle": 0,
+      "postId": "322058887863626_412497998819714_3559603",
+      "readStatus": "unread",
+      "caseCreated": "false",
+      "url": "http://www.facebook.com/permalink.php?story_fbid=412497998819714&id=322058887863626",
+      "article": {
+        "content": "WHEN ARE YOU OPENING A BRANCH IN ESPANA? ",
+        "userId": "517557078",
+        "username": "Cassandra Goh",
+        "userPic": "https://graph.facebook.com/517557078/picture",
+        "userURL": "http://www.facebook.com/517557078",
+        "postId": "322058887863626_412497998819714",
+        "rCount": 100,
+        "sCount": 99,
+        "cCount": 98
+      }
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "y senorita goh, por favor deja de gritar. podemos oír perfectamente bien. gracias.",
+      "datetimePost": "2012-11-26T18:43:09Z",
+      "userId": "322058887863626",
+      "username": "WJ Bank",
+      "userPic": "https://graph.facebook.com/322058887863626/picture",
+      "rCount": 0,
+      "userURL": "http://www.facebook.com/322058887863626",
+      "isArticle": 0,
+      "postId": "322058887863626_412497998819714_1",
+      "readStatus": "unread",
+      "caseCreated": "false",
+      "url": "http://www.facebook.com/permalink.php?story_fbid=412497998819714&id=322058887863626"
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "y senorita goh, por favor deja de gritar. podemos oír perfectamente bien. gracias.",
+      "datetimePost": "2012-11-26T18:43:09Z",
+      "userId": "322058887863626",
+      "username": "WJ Bank",
+      "userPic": "https://graph.facebook.com/322058887863626/picture",
+      "rCount": 0,
+      "userURL": "http://www.facebook.com/322058887863626",
+      "isArticle": 0,
+      "postId": "322058887863626_412497998819714_2",
+      "readStatus": "unread",
+      "caseCreated": "false",
+      "url": "http://www.facebook.com/permalink.php?story_fbid=412497998819714&id=322058887863626",
+      "article": {
+        "content": "WHEN ARE YOU OPENING A BRANCH IN ESPANA? ",
+        "userId": "517557078",
+        "username": "Cassandra Goh",
+        "userPic": "https://graph.facebook.com/517557078/picture",
+        "userURL": "http://www.facebook.com/517557078",
+        "postId": "322058887863626_412497998819714"
+      }
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "y senorita goh, por favor deja de gritar. podemos oír perfectamente bien. gracias.",
+      "datetimePost": "2012-11-26T18:43:09Z",
+      "userId": "322058887863626",
+      "username": "WJ Bank",
+      "userPic": "https://graph.facebook.com/322058887863626/picture",
+      "rCount": 0,
+      "userURL": "http://www.facebook.com/322058887863626",
+      "isArticle": 0,
+      "postId": "322058887863626_412497998819714_3",
+      "readStatus": "unread",
+      "caseCreated": "false",
+      "url": "http://www.facebook.com/permalink.php?story_fbid=412497998819714&id=322058887863626",
+      "article": {
+        "content": "WHEN ARE YOU OPENING A BRANCH IN ESPANA? ",
+        "userId": "517557078",
+        "username": "Cassandra Goh",
+        "userPic": "https://graph.facebook.com/517557078/picture",
+        "userURL": "http://www.facebook.com/517557078",
+        "postId": "322058887863626_412497998819714"
+      }
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "y senorita goh, por favor deja de gritar. podemos oír perfectamente bien. gracias.",
+      "datetimePost": "2012-11-26T18:43:09Z",
+      "userId": "322058887863626",
+      "username": "WJ Bank",
+      "userPic": "https://graph.facebook.com/322058887863626/picture",
+      "rCount": 0,
+      "userURL": "http://www.facebook.com/322058887863626",
+      "isArticle": 0,
+      "postId": "322058887863626_412497998819714_4",
+      "readStatus": "unread",
+      "caseCreated": "false",
+      "url": "http://www.facebook.com/permalink.php?story_fbid=412497998819714&id=322058887863626",
+      "article": {
+        "content": "WHEN ARE YOU OPENING A BRANCH IN ESPANA? ",
+        "userId": "517557078",
+        "username": "Cassandra Goh",
+        "userPic": "https://graph.facebook.com/517557078/picture",
+        "userURL": "http://www.facebook.com/517557078",
+        "postId": "322058887863626_412497998819714"
+      }
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "y senorita goh, por favor deja de gritar. podemos oír perfectamente bien. gracias.",
+      "datetimePost": "2012-11-26T18:43:09Z",
+      "userId": "322058887863626",
+      "username": "WJ Bank",
+      "userPic": "https://graph.facebook.com/322058887863626/picture",
+      "rCount": 0,
+      "userURL": "http://www.facebook.com/322058887863626",
+      "isArticle": 0,
+      "postId": "322058887863626_412497998819714_5",
+      "readStatus": "unread",
+      "caseCreated": "false",
+      "url": "http://www.facebook.com/permalink.php?story_fbid=412497998819714&id=322058887863626",
+      "article": {
+        "content": "WHEN ARE YOU OPENING A BRANCH IN ESPANA? ",
+        "userId": "517557078",
+        "username": "Cassandra Goh",
+        "userPic": "https://graph.facebook.com/517557078/picture",
+        "userURL": "http://www.facebook.com/517557078",
+        "postId": "322058887863626_412497998819714"
+      }
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "y senorita goh, por favor deja de gritar. podemos oír perfectamente bien. gracias.",
+      "datetimePost": "2012-11-26T18:43:09Z",
+      "userId": "322058887863626",
+      "username": "WJ Bank",
+      "userPic": "https://graph.facebook.com/322058887863626/picture",
+      "rCount": 0,
+      "userURL": "http://www.facebook.com/322058887863626",
+      "isArticle": 0,
+      "postId": "322058887863626_412497998819714_6",
+      "readStatus": "unread",
+      "caseCreated": "false",
+      "url": "http://www.facebook.com/permalink.php?story_fbid=412497998819714&id=322058887863626",
+      "article": {
+        "content": "WHEN ARE YOU OPENING A BRANCH IN ESPANA? ",
+        "userId": "517557078",
+        "username": "Cassandra Goh",
+        "userPic": "https://graph.facebook.com/517557078/picture",
+        "userURL": "http://www.facebook.com/517557078",
+        "postId": "322058887863626_412497998819714"
+      }
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "y senorita goh, por favor deja de gritar. podemos oír perfectamente bien. gracias.",
+      "datetimePost": "2012-11-26T18:43:09Z",
+      "userId": "322058887863626",
+      "username": "WJ Bank",
+      "userPic": "https://graph.facebook.com/322058887863626/picture",
+      "rCount": 0,
+      "userURL": "http://www.facebook.com/322058887863626",
+      "isArticle": 0,
+      "postId": "322058887863626_412497998819714_355960309",
+      "readStatus": "read",
+      "caseCreated": "false",
+      "url": "http://www.facebook.com/permalink.php?story_fbid=412497998819714&id=322058887863626",
+      "article": {
+        "content": "WHEN ARE YOU OPENING A BRANCH IN ESPANA? ",
+        "userId": "517557078",
+        "username": "Cassandra Goh",
+        "userPic": "https://graph.facebook.com/517557078/picture",
+        "userURL": "http://www.facebook.com/517557078",
+        "postId": "322058887863626_412497998819714"
+      }
+    }
+  ]
+}"""
+    }
+
     def getAllFacebookDM() {
+      // if (1+1 == 2) return render('''{"data":[],"total": 0}''')
       render '''{
   "data": 
   [
@@ -347,7 +582,98 @@ class SocialEngageController {
       "toURL": "http://graph.facebook.com/322058887863626",
       "toPic": "http://graph.facebook.com/322058887863626/picture",
       "readStatus": "unread",
+      "caseCreated": "false",
+      "nCount": 1
+    }
+  ]
+}'''
+    }
+
+    def getAllTwitterDM() {
+      render '''{
+  "data": 
+  [
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "好 Yup, its time to find out what happen in this morning you can say everything you want",
+      "datetimePost": "2012-12-04T06:05:11Z",
+      "userId": "689247620",
+      "username": "Liu Qiang",
+      "userPic": "http://graph.facebook.com/689247620/picture",
+      "responseId": "322058887863626",
+      "fromName": "WJ Bank",
+      "fromURL": "http://graph.facebook.com/322058887863626",
+      "fromPic": "http://graph.facebook.com/322058887863626/picture",
+      "toId": "689247620",
+      "toName": "Wei Jian",
+      "toURL": "http://graph.facebook.com/689247620",
+      "toPic": "http://graph.facebook.com/689247620/picture",
+      "readStatus": "unread",
+      "caseCreated": "false",
+      "cCount": 10
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "hello",
+      "datetimePost": "2012-12-04T03:08:36Z",
+      "userId": "689247620",
+      "username": "Wei Jian2",
+      "userPic": "http://graph.facebook.com/689247620/picture",
+      "responseId": "689247620",
+      "fromName": "Wei Jian",
+      "fromURL": "http://graph.facebook.com/689247620",
+      "fromPic": "http://graph.facebook.com/689247620/picture",
+      "toId": "322058887863626",
+      "toName": "WJ Bank",
+      "toURL": "http://graph.facebook.com/322058887863626",
+      "toPic": "http://graph.facebook.com/322058887863626/picture",
+      "readStatus": "read",
       "caseCreated": "false"
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "test",
+      "datetimePost": "2012-12-04T02:52:52Z",
+      "userId": "689247620",
+      "username": "Wei Jian3",
+      "userPic": "http://graph.facebook.com/689247620/picture",
+      "responseId": "689247620-1",
+      "fromName": "Wei Jian",
+      "fromURL": "http://graph.facebook.com/689247620",
+      "fromPic": "http://graph.facebook.com/689247620/picture",
+      "toId": "322058887863626",
+      "toName": "WJ Bank",
+      "toURL": "http://graph.facebook.com/322058887863626",
+      "toPic": "http://graph.facebook.com/322058887863626/picture",
+      "readStatus": "unread",
+      "caseCreated": "false"
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": ":P",
+      "datetimePost": "2012-12-03T09:44:45Z",
+      "userId": "689247620",
+      "username": "Wei Jian",
+      "userPic": "http://graph.facebook.com/689247620/picture",
+      "responseId": "689247620-2",
+      "fromName": "Wei Jian",
+      "fromURL": "http://graph.facebook.com/689247620",
+      "fromPic": "http://graph.facebook.com/689247620/picture",
+      "toId": "322058887863626",
+      "toName": "WJ Bank",
+      "toURL": "http://graph.facebook.com/322058887863626",
+      "toPic": "http://graph.facebook.com/322058887863626/picture",
+      "readStatus": "unread",
+      "caseCreated": "false",
+      "nCount": 1
     }
   ]
 }'''
@@ -364,6 +690,7 @@ class SocialEngageController {
       "username": "WJ Bank",
       "commentCount": 19,
       "postCount": 8,
+      "caseCount": 6,
       "dmCount": 3
     },
     {
@@ -456,16 +783,334 @@ class SocialEngageController {
       "postCount": 0,
       "dmCount": 10
     }
-  ]
+  ],
+  "total": 36
+}'''
+    }
+
+    def getAllTwitterVoices() {
+      render '''{
+  "data": 
+  [
+    {
+      "userId": "322058887863626",
+      "profileURL": "http://www.facebook.com/322058887863626",
+      "userPic": "http://graph.facebook.com/322058887863626/picture",
+      "username": "WJ Bank",
+      "commentCount": 19,
+      "postCount": 8,
+      "caseCount": 6,
+      "dmCount": 3
+    },
+    {
+      "userId": "506417801",
+      "profileURL": "http://www.facebook.com/506417801",
+      "userPic": "http://graph.facebook.com/506417801/picture",
+      "username": "Callum Feasby",
+      "commentCount": 0,
+      "postCount": 1,
+      "dmCount": 0
+    },
+    {
+      "userId": "517557078",
+      "profileURL": "http://www.facebook.com/517557078",
+      "userPic": "http://graph.facebook.com/517557078/picture",
+      "username": "Cassandra Goh",
+      "commentCount": 1,
+      "postCount": 2,
+      "dmCount": 0
+    },
+    {
+      "userId": "526890270",
+      "profileURL": "http://www.facebook.com/526890270",
+      "userPic": "http://graph.facebook.com/526890270/picture",
+      "username": "Yuan Shan Lee",
+      "commentCount": 0,
+      "postCount": 1,
+      "dmCount": 0
+    },
+    {
+      "userId": "672895093",
+      "profileURL": "http://www.facebook.com/672895093",
+      "userPic": "http://graph.facebook.com/672895093/picture",
+      "username": "Jonathan See",
+      "commentCount": 1,
+      "postCount": 1,
+      "dmCount": 0
+    },
+    {
+      "userId": "639105596",
+      "profileURL": "http://www.facebook.com/639105596",
+      "userPic": "http://graph.facebook.com/639105596/picture",
+      "username": "Chern Chieh",
+      "commentCount": 0,
+      "postCount": 1,
+      "dmCount": 0
+    },
+    {
+      "userId": "501293712",
+      "profileURL": "http://www.facebook.com/501293712",
+      "userPic": "http://graph.facebook.com/501293712/picture",
+      "username": "Danial Smurthwaite",
+      "commentCount": 1,
+      "postCount": 1,
+      "dmCount": 0
+    },
+    {
+      "userId": "705262535",
+      "profileURL": "http://www.facebook.com/705262535",
+      "userPic": "http://graph.facebook.com/705262535/picture",
+      "username": "Jon Ngin",
+      "commentCount": 1,
+      "postCount": 0,
+      "dmCount": 0
+    },
+    {
+      "userId": "604892779",
+      "profileURL": "http://www.facebook.com/604892779",
+      "userPic": "http://graph.facebook.com/604892779/picture",
+      "username": "Hani Bani",
+      "commentCount": 1,
+      "postCount": 0,
+      "dmCount": 0
+    },
+    {
+      "userId": "609490972",
+      "profileURL": "http://www.facebook.com/609490972",
+      "userPic": "http://graph.facebook.com/609490972/picture",
+      "username": "Jonathan James",
+      "commentCount": 1,
+      "postCount": 0,
+      "dmCount": 0
+    },
+    {
+      "userId": "689247620",
+      "profileURL": "http://www.facebook.com/689247620",
+      "userPic": "http://graph.facebook.com/689247620/picture",
+      "username": "Wei Jian",
+      "commentCount": 0,
+      "postCount": 0,
+      "dmCount": 10
+    }
+  ],
+  "total": 36
 }'''
     }
 
     def getAllFacebookCase() {
+      //if (1+1==2) return render('''{"data":[], "total":0,"page":null}''')
+      if (params.streamType == "stream") {
+        render '''{
+          "data":[
+          {"assignNotes":null,"assignTo":"478","assetsURL":"http://www.facebook.com/322058887863626","userPic":"https://graph.facebook.com/322058887863626/picture","assetsId":"322058887863626","caseStatus":1,"url":"http://www.facebook.com/permalink.php?story_fbid=476953039040876&id=322058887863626","content":"好","username":"WJ Bank","nCount":1,"article":{"assetsURL":"http://www.facebook.com/322058887863626","userPic":"https://graph.facebook.com/689247620/picture","assetsId":"322058887863626","content":"why like that?","username":"Wei Jian","lCount":0,"sCount":0,"userId":"689247620","fbid":"322058887863626_476953039040876","assetsPic":"http://graph.facebook.com/322058887863626/picture","userURL":"http://www.facebook.com/689247620","cCount":7,"datetimePost":"2013-03-27T07:15:14Z"},"sCount":0,"lCount":0,"caseId":"9691366622732312","userId":"322058887863626","assignName":"Joshua Troy - R&D","redisId":"FacebookPost|322058887863626_476953039040876_3984613","fbid":"322058887863626_476953039040876_3984613","assetsPic":"http://graph.facebook.com/322058887863626/picture","userURL":"http://www.facebook.com/322058887863626","cCount":0,"datetimePost":"2013-03-27T08:11:25Z"}
+        , {"assignNotes":null,"assignTo":"478","assetsURL":"http://www.facebook.com/322058887863626","userPic":"https://graph.facebook.com/322058887863626/picture","assetsId":"322058887863626","caseStatus":1,"url":"http://www.facebook.com/permalink.php?story_fbid=476953039040876&id=322058887863626","content":"好","username":"WJ Bank","nCount":0,"article":{"assetsURL":"http://www.facebook.com/322058887863626","userPic":"https://graph.facebook.com/689247620/picture","assetsId":"322058887863626","content":"why like that?","username":"Wei Jian","lCount":0,"sCount":0,"userId":"689247620","fbid":"322058887863626_476953039040876vv","assetsPic":"http://graph.facebook.com/322058887863626/picture","userURL":"http://www.facebook.com/689247620","cCount":7,"datetimePost":"2013-03-27T07:15:14Z"},"sCount":0,"lCount":0,"caseId":"9691366622732312-333","userId":"322058887863626","assignName":"Joshua Troy - R&D","redisId":"FacebookPost|322058887863626_476953039040876_3984613","fbid":"322058887863626_476953039040876_3984613","assetsPic":"http://graph.facebook.com/322058887863626/picture","userURL":"http://www.facebook.com/322058887863626","cCount":0,"datetimePost":"2013-03-27T08:11:25Z"}
+        , {"assignNotes":null,"assignTo":"478","assetsURL":"http://www.facebook.com/322058887863626","userPic":"https://graph.facebook.com/322058887863626/picture","assetsId":"322058887863626","caseStatus":1,"url":"http://www.facebook.com/permalink.php?story_fbid=476953039040876&id=322058887863626","content":"好","username":"WJ Bank","nCount":0,"article":{"assetsURL":"http://www.facebook.com/322058887863626","userPic":"https://graph.facebook.com/689247620/picture","assetsId":"322058887863626","content":"why like that?","username":"Wei Jian","lCount":0,"sCount":0,"userId":"689247620","fbid":"322058887863626_476953039040876vv","assetsPic":"http://graph.facebook.com/322058887863626/picture","userURL":"http://www.facebook.com/689247620","cCount":7,"datetimePost":"2013-03-27T07:15:14Z"},"sCount":0,"lCount":0,"caseId":"9691366622732312-344","userId":"322058887863626","assignName":"Joshua Troy - R&D","redisId":"FacebookPost|322058887863626_476953039040876_3984613","fbid":"322058887863626_476953039040876_3984613","assetsPic":"http://graph.facebook.com/322058887863626/picture","userURL":"http://www.facebook.com/322058887863626","cCount":0,"datetimePost":"2013-03-27T08:11:25Z"}
+          ],
+          "total": "1",
+          "page": null,
+          "selectAllIds": ["null"]
+        }'''
+      } else if (params.streamType == "message") {
+        render '''{
+  "data": 
+  [
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "好 Yup, its time to find out what happen in this morning you can say everything you want",
+      "datetimePost": "2012-12-04T06:05:11Z",
+      "userId": "689247620",
+      "username": "Liu Qiang",
+      "userPic": "http://graph.facebook.com/689247620/picture",
+      "responseId": "322058887863626",
+      "fromName": "WJ Bank",
+      "fromURL": "http://graph.facebook.com/322058887863626",
+      "fromPic": "http://graph.facebook.com/322058887863626/picture",
+      "toId": "689247620",
+      "toName": "Wei Jian",
+      "toURL": "http://graph.facebook.com/689247620",
+      "toPic": "http://graph.facebook.com/689247620/picture",
+      "caseStatus": "1",
+      "caseCreated": "false",
+      "cCount": 10
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "hello",
+      "datetimePost": "2012-12-04T03:08:36Z",
+      "userId": "689247620",
+      "username": "Wei Jian2",
+      "userPic": "http://graph.facebook.com/689247620/picture",
+      "responseId": "689247620",
+      "fromName": "Wei Jian",
+      "fromURL": "http://graph.facebook.com/689247620",
+      "fromPic": "http://graph.facebook.com/689247620/picture",
+      "toId": "322058887863626",
+      "toName": "WJ Bank",
+      "toURL": "http://graph.facebook.com/322058887863626",
+      "toPic": "http://graph.facebook.com/322058887863626/picture",
+      "caseStatus": "0",
+      "caseCreated": "false"
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": "test",
+      "datetimePost": "2012-12-04T02:52:52Z",
+      "userId": "689247620",
+      "username": "Wei Jian3",
+      "userPic": "http://graph.facebook.com/689247620/picture",
+      "responseId": "689247620-1",
+      "fromName": "Wei Jian",
+      "fromURL": "http://graph.facebook.com/689247620",
+      "fromPic": "http://graph.facebook.com/689247620/picture",
+      "toId": "322058887863626",
+      "toName": "WJ Bank",
+      "toURL": "http://graph.facebook.com/322058887863626",
+      "toPic": "http://graph.facebook.com/322058887863626/picture",
+      "caseStatus": "1",
+      "caseCreated": "false"
+    },
+    {
+      "assetsId": "322058887863626",
+      "assetsURL": "http://www.facebook.com/322058887863626",
+      "assetsPic": "http://graph.facebook.com/322058887863626/picture",
+      "content": ":P",
+      "datetimePost": "2012-12-03T09:44:45Z",
+      "userId": "689247620",
+      "username": "Wei Jian",
+      "userPic": "http://graph.facebook.com/689247620/picture",
+      "responseId": "689247620-2",
+      "fromName": "Wei Jian",
+      "fromURL": "http://graph.facebook.com/689247620",
+      "fromPic": "http://graph.facebook.com/689247620/picture",
+      "toId": "322058887863626",
+      "toName": "WJ Bank",
+      "toURL": "http://graph.facebook.com/322058887863626",
+      "toPic": "http://graph.facebook.com/322058887863626/picture",
+      "caseStatus": "1",
+      "caseCreated": "false",
+      "nCount": 1
+    }
+  ]
+}'''
+      } else {
+        render '''{
+          "data":[
+          {"assignTo":"Liu Chao - Test","notesUpdateDate":null,"caseStatus":1,"articleURL":"http://www.facebook.com/permalink.php?story_fbid=476953039040876&id=322058887863626","datetimeUpdated":"2013-04-10T08:21:54Z","articleDateTimePost":"2013-03-27T07:15:14Z","type":"facebook","commentId":"322058887863626_476953039040876_3984613","articleId":"322058887863626_476953039040876","readStatus":"unread","title":"9691365582113850","assetId":"322058887863626","priority":3,"articleVoicePicture":"https://graph.facebook.com/689247620/picture","articleVoiceName":"Wei Jian","notesUpdateBy":"","voiceId":"9691344409339213.1344409339233","assetURL":"http://www.facebook.com/322058887863626","articleVoiceId":"689247620","assetPic":"http://graph.facebook.com/322058887863626/picture","articleContent":"why like that?","createdBy":"Alvin Chan - SG","caseId":"9691365582113850","dateCreated":"2013-04-10T08:21:53Z","comment":[{"voiceURL":"http://www.facebook.com/322058887863626","content":"好","voiceName":"WJ Bank","voiceId":"322058887863626","voicePicture":"https://graph.facebook.com/322058887863626/picture","datetimePost":"2013-03-27T08:11:25Z"}],"updateCount":0,"notes":null,"articleVoiceURL":"http://www.facebook.com/689247620"},{"assignTo":"Joshua Troy - R&D","notesUpdateDate":null,"caseStatus":1,"articleURL":null,"datetimeUpdated":"2013-03-25T01:53:28Z","articleDateTimePost":null,"type":"facebook","commentId":"0","articleId":null,"readStatus":"unread","title":"9691364176407805","assetId":"322058887863626","priority":3,"articleVoicePicture":null,"articleVoiceName":null,"notesUpdateBy":"","voiceId":"9691346316520721.1346316520767","assetURL":"http://www.facebook.com/322058887863626","articleVoiceId":null,"assetPic":"http://graph.facebook.com/322058887863626/picture","articleContent":null,"createdBy":"Tan Wei Jian - SG","caseId":"9691364176407805","dateCreated":"2013-03-25T01:53:27Z","comment":[],"updateCount":0,"notes":null,"articleVoiceURL":"http://www.facebook.com/null"},{"assignTo":"Liu Qiang - SG","notesUpdateDate":null,"caseStatus":1,"articleURL":"http://www.facebook.com/permalink.php?story_fbid=468167326586114&id=322058887863626","datetimeUpdated":"2013-03-21T08:38:14Z","articleDateTimePost":"2013-03-13T06:57:36Z","type":"facebook","commentId":"322058887863626_468167326586114_3944707","articleId":"322058887863626_468167326586114","readStatus":"unread","title":"9691363855093685","assetId":"322058887863626","priority":3,"articleVoicePicture":"https://graph.facebook.com/689247620/picture","articleVoiceName":"Wei Jian","notesUpdateBy":"","voiceId":"9691344409339213.1344409339233","assetURL":"http://www.facebook.com/322058887863626","articleVoiceId":"689247620","assetPic":"http://graph.facebook.com/322058887863626/picture","articleContent":"woohooo","createdBy":"Tan Wei Jian - SG","caseId":"9691363855093685","dateCreated":"2013-03-21T08:38:13Z","comment":[{"voiceURL":"http://www.facebook.com/322058887863626","content":"hello","voiceName":"WJ Bank","voiceId":"322058887863626","voicePicture":"https://graph.facebook.com/322058887863626/picture","datetimePost":"2013-03-15T02:46:42Z"}],"updateCount":0,"notes":"vbbbbb","articleVoiceURL":"http://www.facebook.com/689247620"},{"assignTo":"Liu Qiang - SG","notesUpdateDate":null,"caseStatus":1,"articleURL":"http://www.facebook.com/permalink.php?story_fbid=468167326586114&id=322058887863626","datetimeUpdated":"2013-03-21T07:22:33Z","articleDateTimePost":"2013-03-13T06:57:36Z","type":"facebook","commentId":"322058887863626_468167326586114_3944602","articleId":"322058887863626_468167326586114","readStatus":"unread","title":"9691363850553616","assetId":"322058887863626","priority":3,"articleVoicePicture":"https://graph.facebook.com/689247620/picture","articleVoiceName":"Wei Jian","notesUpdateBy":"","voiceId":"9691344409339213.1344409339233","assetURL":"http://www.facebook.com/322058887863626","articleVoiceId":"689247620","assetPic":"http://graph.facebook.com/322058887863626/picture","articleContent":"woohooo","createdBy":"Tan Wei Jian - SG","caseId":"9691363850553616","dateCreated":"2013-03-21T07:22:33Z","comment":[{"voiceURL":"http://www.facebook.com/322058887863626","content":"good","voiceName":"WJ Bank","voiceId":"322058887863626","voicePicture":"https://graph.facebook.com/322058887863626/picture","datetimePost":"2013-03-15T02:09:07Z"}],"updateCount":0,"notes":null,"articleVoiceURL":"http://www.facebook.com/689247620"},{"assignTo":"Liu Qiang - SG","notesUpdateDate":null,"caseStatus":1,"articleURL":"http://www.facebook.com/permalink.php?story_fbid=471763846226462&id=322058887863626","datetimeUpdated":"2013-03-21T01:50:07Z","articleDateTimePost":"2013-03-19T06:37:09Z","type":"facebook","commentId":"322058887863626_471763846226462_3961518","articleId":"322058887863626_471763846226462","readStatus":"unread","title":"9691363830607228","assetId":"322058887863626","priority":3,"articleVoicePicture":"https://graph.facebook.com/689247620/picture","articleVoiceName":"Wei Jian","notesUpdateBy":"","voiceId":"9691344409339213.1344409339233","assetURL":"http://www.facebook.com/322058887863626","articleVoiceId":"689247620","assetPic":"http://graph.facebook.com/322058887863626/picture","articleContent":"Enquiringly about the bank interest","createdBy":"Tan Wei Jian - SG","caseId":"9691363830607228","dateCreated":"2013-03-21T01:50:07Z","comment":[{"voiceURL":"http://www.facebook.com/322058887863626","content":"Can i get a response from you?","voiceName":"WJ Bank","voiceId":"322058887863626","voicePicture":"https://graph.facebook.com/322058887863626/picture","datetimePost":"2013-03-20T10:08:05Z"}],"updateCount":0,"notes":"notes test","articleVoiceURL":"http://www.facebook.com/689247620"},{"assignTo":"Tan Wei Jian - SG","notesUpdateDate":null,"caseStatus":2,"articleURL":null,"datetimeUpdated":"2013-03-20T10:07:48Z","articleDateTimePost":null,"type":"facebook","commentId":"0","articleId":null,"readStatus":"unread","title":"9691363774064936","assetId":"322058887863626","priority":3,"articleVoicePicture":null,"articleVoiceName":null,"notesUpdateBy":"","voiceId":"9691346316520721.1346316520767","assetURL":"http://www.facebook.com/322058887863626","articleVoiceId":null,"assetPic":"http://graph.facebook.com/322058887863626/picture","articleContent":null,"createdBy":"Tan Wei Jian - SG","caseId":"9691363774064936","dateCreated":"2013-03-20T10:07:44Z","comment":[],"updateCount":0,"notes":null,"articleVoiceURL":"http://www.facebook.com/null"},{"assignTo":"Joshua Troy - R&D","notesUpdateDate":null,"caseStatus":2,"articleURL":"http://www.facebook.com/permalink.php?story_fbid=471763846226462&id=322058887863626","datetimeUpdated":"2013-03-20T10:08:06Z","articleDateTimePost":"2013-03-19T06:37:09Z","type":"facebook","commentId":"322058887863626_471763846226462_3961423","articleId":"322058887863626_471763846226462","readStatus":"unread","title":"9691363772375290","assetId":"322058887863626","priority":3,"articleVoicePicture":"https://graph.facebook.com/689247620/picture","articleVoiceName":"Wei Jian","notesUpdateBy":"","voiceId":"9691344409339213.1344409339233","assetURL":"http://www.facebook.com/322058887863626","articleVoiceId":"689247620","assetPic":"http://graph.facebook.com/322058887863626/picture","articleContent":"Enquiringly about the bank interest","createdBy":"Tan Wei Jian - SG","caseId":"9691363772375290","dateCreated":"2013-03-20T09:39:35Z","comment":[{"voiceURL":"http://www.facebook.com/322058887863626","content":"Any updates?","voiceName":"WJ Bank","voiceId":"322058887863626","voicePicture":"https://graph.facebook.com/322058887863626/picture","datetimePost":"2013-03-20T09:37:18Z"}],"updateCount":0,"notes":"dddd","articleVoiceURL":"http://www.facebook.com/689247620"},{"assignTo":"Tan Wei Jian - SG","notesUpdateDate":null,"caseStatus":2,"articleURL":null,"datetimeUpdated":"2013-03-20T09:36:51Z","articleDateTimePost":null,"type":"facebook","commentId":"0","articleId":null,"readStatus":"unread","title":"9691363772206742","assetId":"322058887863626","priority":3,"articleVoicePicture":null,"articleVoiceName":null,"notesUpdateBy":"","voiceId":"9691346316520721.1346316520767","assetURL":"http://www.facebook.com/322058887863626","articleVoiceId":null,"assetPic":"http://graph.facebook.com/322058887863626/picture","articleContent":null,"createdBy":"Tan Wei Jian - SG","caseId":"9691363772206742","dateCreated":"2013-03-20T09:36:46Z","comment":[],"updateCount":0,"notes":null,"articleVoiceURL":"http://www.facebook.com/null"},{"assignTo":"Tan Wei Jian - SG","notesUpdateDate":null,"caseStatus":1,"articleURL":null,"datetimeUpdated":"2013-03-20T07:30:06Z","articleDateTimePost":null,"type":"facebook","commentId":"0","articleId":null,"readStatus":"unread","title":"9691363764606359","assetId":"322058887863626","priority":3,"articleVoicePicture":null,"articleVoiceName":null,"notesUpdateBy":"","voiceId":"9691363748865322.1363748865557","assetURL":"http://www.facebook.com/322058887863626","articleVoiceId":null,"assetPic":"http://graph.facebook.com/322058887863626/picture","articleContent":null,"createdBy":"Tan Wei Jian - SG","caseId":"9691363764606359","dateCreated":"2013-03-20T07:30:06Z","comment":[],"updateCount":0,"notes":null,"articleVoiceURL":"http://www.facebook.com/null"},{"assignTo":"Tan Wei Jian - SG","notesUpdateDate":null,"caseStatus":2,"articleURL":null,"datetimeUpdated":"2013-03-20T07:28:23Z","articleDateTimePost":null,"type":"facebook","commentId":"0","articleId":null,"readStatus":"unread","title":"9691363764501083","assetId":"322058887863626","priority":3,"articleVoicePicture":null,"articleVoiceName":null,"notesUpdateBy":"","voiceId":"9691363748865322.1363748865557","assetURL":"http://www.facebook.com/322058887863626","articleVoiceId":null,"assetPic":"http://graph.facebook.com/322058887863626/picture","articleContent":null,"createdBy":"Tan Wei Jian - SG","caseId":"9691363764501083","dateCreated":"2013-03-20T07:28:21Z","comment":[],"updateCount":0,"notes":null,"articleVoiceURL":"http://www.facebook.com/null"},{"assignTo":"Randy Globot SG-3","notesUpdateDate":null,"caseStatus":2,"articleURL":null,"datetimeUpdated":"2013-03-20T07:27:50Z","articleDateTimePost":null,"type":"facebook","commentId":"0","articleId":null,"readStatus":"unread","title":"9691363748865322","assetId":"322058887863626","priority":3,"articleVoicePicture":null,"articleVoiceName":null,"notesUpdateBy":"","voiceId":"9691363748865322.1363748865557","assetURL":"http://www.facebook.com/322058887863626","articleVoiceId":null,"assetPic":"http://graph.facebook.com/322058887863626/picture","articleContent":null,"createdBy":"Lee Gowing","caseId":"9691363748865322","dateCreated":"2013-03-20T03:07:45Z","comment":[],"updateCount":0,"notes":"note","articleVoiceURL":"http://www.facebook.com/null"},{"assignTo":"Liu Qiang - SG","notesUpdateDate":null,"caseStatus":2,"articleURL":"http://www.facebook.com/permalink.php?story_fbid=471763846226462&id=322058887863626","datetimeUpdated":"2013-03-20T09:37:29Z","articleDateTimePost":"2013-03-19T06:37:09Z","type":"facebook","commentId":"322058887863626_471763846226462_3957816","articleId":"322058887863626_471763846226462","readStatus":"unread","title":"9691363683055868","assetId":"322058887863626","priority":3,"articleVoicePicture":"https://graph.facebook.com/689247620/picture","articleVoiceName":"Wei Jian","notesUpdateBy":"","voiceId":"9691344409339213.1344409339233","assetURL":"http://www.facebook.com/322058887863626","articleVoiceId":"689247620","assetPic":"http://graph.facebook.com/322058887863626/picture","articleContent":"Enquiringly about the bank interest","createdBy":"Tan Wei Jian - SG","caseId":"9691363683055868","dateCreated":"2013-03-19T08:50:55Z","comment":[{"voiceURL":"http://www.facebook.com/322058887863626","content":"Which kind of interest are you talking about?","voiceName":"WJ Bank","voiceId":"322058887863626","voicePicture":"https://graph.facebook.com/322058887863626/picture","datetimePost":"2013-03-19T07:15:22Z"}],"updateCount":0,"notes":null,"articleVoiceURL":"http://www.facebook.com/689247620"},{"assignTo":"Tan Wei Jian - SG","notesUpdateDate":null,"caseStatus":2,"articleURL":"http://www.facebook.com/permalink.php?story_fbid=471763846226462&id=322058887863626","datetimeUpdated":"2013-03-19T07:14:25Z","articleDateTimePost":"2013-03-19T06:37:09Z","type":"facebook","commentId":"0","articleId":"322058887863626_471763846226462","readStatus":"unread","title":"9691363677254419","assetId":"322058887863626","priority":3,"articleVoicePicture":"https://graph.facebook.com/689247620/picture","articleVoiceName":"Wei Jian","notesUpdateBy":"","voiceId":"9691346316520721.1346316520767","assetURL":"http://www.facebook.com/322058887863626","articleVoiceId":"689247620","assetPic":"http://graph.facebook.com/322058887863626/picture","articleContent":"Enquiringly about the bank interest","createdBy":"Tan Wei Jian - SG","caseId":"9691363677254419","dateCreated":"2013-03-19T07:14:14Z","comment":[],"updateCount":0,"notes":null,"articleVoiceURL":"http://www.facebook.com/689247620"},{"assignTo":"Joshua Troy - R&D","notesUpdateDate":null,"caseStatus":2,"articleURL":"http://www.facebook.com/permalink.php?story_fbid=468167326586114&id=322058887863626","datetimeUpdated":"2013-03-15T02:45:53Z","articleDateTimePost":"2013-03-13T06:57:36Z","type":"facebook","commentId":"322058887863626_468167326586114_3944605","articleId":"322058887863626_468167326586114","readStatus":"unread","title":"9691363315304027","assetId":"322058887863626","priority":3,"articleVoicePicture":"https://graph.facebook.com/689247620/picture","articleVoiceName":"Wei Jian","notesUpdateBy":"","voiceId":"9691344409339213.1344409339233","assetURL":"http://www.facebook.com/322058887863626","articleVoiceId":"689247620","assetPic":"http://graph.facebook.com/322058887863626/picture","articleContent":"woohooo","createdBy":"Tan Wei Jian - SG","caseId":"9691363315304027","dateCreated":"2013-03-15T02:41:44Z","comment":[{"voiceURL":"http://www.facebook.com/322058887863626","content":"ok","voiceName":"WJ Bank","voiceId":"322058887863626","voicePicture":"https://graph.facebook.com/322058887863626/picture","datetimePost":"2013-03-15T02:09:28Z"}],"updateCount":0,"notes":null,"articleVoiceURL":"http://www.facebook.com/689247620"},{"assignTo":"James Neal","notesUpdateDate":null,"caseStatus":2,"articleURL":"http://www.facebook.com/permalink.php?story_fbid=468167326586114&id=322058887863626","datetimeUpdated":"2013-03-15T02:09:28Z","articleDateTimePost":"2013-03-13T06:57:36Z","type":"facebook","commentId":"322058887863626_468167326586114_3942133","articleId":"322058887863626_468167326586114","readStatus":"unread","title":"9691363313237956","assetId":"322058887863626","priority":3,"articleVoicePicture":"https://graph.facebook.com/689247620/picture","articleVoiceName":"Wei Jian","notesUpdateBy":"","voiceId":"9691344409339213.1344409339233","assetURL":"http://www.facebook.com/322058887863626","articleVoiceId":"689247620","assetPic":"http://graph.facebook.com/322058887863626/picture","articleContent":"woohooo","createdBy":"Tan Wei Jian - SG","caseId":"9691363313237956","dateCreated":"2013-03-15T02:07:18Z","comment":[{"voiceURL":"http://www.facebook.com/322058887863626","content":"whats up","voiceName":"WJ Bank","voiceId":"322058887863626","voicePicture":"https://graph.facebook.com/322058887863626/picture","datetimePost":"2013-03-14T10:41:10Z"}],"updateCount":0,"notes":"Take Care","articleVoiceURL":"http://www.facebook.com/689247620"},{"assignTo":"Tan Wei Jian - SG","notesUpdateDate":null,"caseStatus":2,"articleURL":"http://www.facebook.com/permalink.php?story_fbid=468167326586114&id=322058887863626","datetimeUpdated":"2013-03-14T10:41:10Z","articleDateTimePost":"2013-03-13T06:57:36Z","type":"facebook","commentId":"322058887863626_468167326586114_3938526","articleId":"322058887863626_468167326586114","readStatus":"unread","title":"9691363257668153","assetId":"322058887863626","priority":3,"articleVoicePicture":"https://graph.facebook.com/689247620/picture","articleVoiceName":"Wei Jian","notesUpdateBy":"","voiceId":"9691344409339213.1344409339233","assetURL":"http://www.facebook.com/322058887863626","articleVoiceId":"689247620","assetPic":"http://graph.facebook.com/322058887863626/picture","articleContent":"woohooo","createdBy":"Tan Wei Jian - SG","caseId":"9691363257668153","dateCreated":"2013-03-14T10:41:08Z","comment":[{"voiceURL":"http://www.facebook.com/322058887863626","content":"yes?","voiceName":"WJ Bank","voiceId":"322058887863626","voicePicture":"https://graph.facebook.com/322058887863626/picture","datetimePost":"2013-03-13T07:38:43Z"}],"updateCount":0,"notes":null,"articleVoiceURL":"http://www.facebook.com/689247620"},{"assignTo":"James Neal","notesUpdateDate":null,"caseStatus":2,"articleURL":"http://www.facebook.com/permalink.php?story_fbid=468167326586114&id=322058887863626","datetimeUpdated":"2013-03-13T07:37:57Z","articleDateTimePost":"2013-03-13T06:57:36Z","type":"facebook","commentId":"0","articleId":"322058887863626_468167326586114","readStatus":"unread","title":"9691363159946000","assetId":"322058887863626","priority":3,"articleVoicePicture":"https://graph.facebook.com/689247620/picture","articleVoiceName":"Wei Jian","notesUpdateBy":"","voiceId":"9691346316520721.1346316520767","assetURL":"http://www.facebook.com/322058887863626","articleVoiceId":"689247620","assetPic":"http://graph.facebook.com/322058887863626/picture","articleContent":"woohooo","createdBy":"Tan Wei Jian - SG","caseId":"9691363159946000","dateCreated":"2013-03-13T07:32:26Z","comment":[],"updateCount":0,"notes":"Take Note of this Carefully","articleVoiceURL":"http://www.facebook.com/689247620"},{"assignTo":"Randy Globot SG-1","notesUpdateDate":null,"caseStatus":1,"articleURL":"http://www.facebook.com/permalink.php?story_fbid=467623973307116&id=322058887863626","datetimeUpdated":"2013-03-13T07:08:11Z","articleDateTimePost":"2013-03-12T07:08:13Z","type":"facebook","commentId":"322058887863626_467623973307116_3938468","articleId":"322058887863626_467623973307116","readStatus":"unread","title":"9691363158490757","assetId":"322058887863626","priority":3,"articleVoicePicture":"https://graph.facebook.com/322058887863626/picture","articleVoiceName":"WJ Bank","notesUpdateBy":"","voiceId":"9691344409339213.1344409339233","assetURL":"http://www.facebook.com/322058887863626","articleVoiceId":"322058887863626","assetPic":"http://graph.facebook.com/322058887863626/picture","articleContent":"good day","createdBy":"Tan Wei Jian - SG","caseId":"9691363158490757","dateCreated":"2013-03-13T07:08:10Z","comment":[{"voiceURL":"http://www.facebook.com/322058887863626","content":"good","voiceName":"WJ Bank","voiceId":"322058887863626","voicePicture":"https://graph.facebook.com/322058887863626/picture","datetimePost":"2013-03-13T06:30:16Z"}],"updateCount":0,"notes":"Take Note of this Carefully","articleVoiceURL":"http://www.facebook.com/322058887863626"},{"assignTo":"James Neal","notesUpdateDate":null,"caseStatus":2,"articleURL":"http://www.facebook.com/permalink.php?story_fbid=467623973307116&id=322058887863626","datetimeUpdated":"2013-03-13T06:29:33Z","articleDateTimePost":"2013-03-12T07:08:13Z","type":"facebook","commentId":"322058887863626_467623973307116_3935768","articleId":"322058887863626_467623973307116","readStatus":"unread","title":"9691363138963667","assetId":"322058887863626","priority":3,"articleVoicePicture":"https://graph.facebook.com/322058887863626/picture","articleVoiceName":"WJ Bank","notesUpdateBy":"","voiceId":"9691344409339213.1344409339233","assetURL":"http://www.facebook.com/322058887863626","articleVoiceId":"322058887863626","assetPic":"http://graph.facebook.com/322058887863626/picture","articleContent":"good day","createdBy":"Tan Wei Jian - SG","caseId":"9691363138963667","dateCreated":"2013-03-13T01:42:43Z","comment":[{"voiceURL":"http://www.facebook.com/322058887863626","content":"ok good","voiceName":"WJ Bank","voiceId":"322058887863626","voicePicture":"https://graph.facebook.com/322058887863626/picture","datetimePost":"2013-03-12T12:01:41Z"}],"updateCount":0,"notes":"kkkk","articleVoiceURL":"http://www.facebook.com/322058887863626"},{"assignTo":"Tan Wei Jian - SG","notesUpdateDate":null,"caseStatus":2,"articleURL":"http://www.facebook.com/permalink.php?story_fbid=467623973307116&id=322058887863626","datetimeUpdated":"2013-03-12T12:00:56Z","articleDateTimePost":"2013-03-12T07:08:13Z","type":"facebook","commentId":"322058887863626_467623973307116_3935728","articleId":"322058887863626_467623973307116","readStatus":"unread","title":"9691363089654714","assetId":"322058887863626","priority":3,"articleVoicePicture":"https://graph.facebook.com/322058887863626/picture","articleVoiceName":"WJ Bank","notesUpdateBy":"","voiceId":"9691344409339213.1344409339233","assetURL":"http://www.facebook.com/322058887863626","articleVoiceId":"322058887863626","assetPic":"http://graph.facebook.com/322058887863626/picture","articleContent":"good day","createdBy":"Tan Wei Jian - SG","caseId":"9691363089654714","dateCreated":"2013-03-12T12:00:54Z","comment":[{"voiceURL":"http://www.facebook.com/322058887863626","content":"rrrrr","voiceName":"WJ Bank","voiceId":"322058887863626","voicePicture":"https://graph.facebook.com/322058887863626/picture","datetimePost":"2013-03-12T11:46:50Z"}],"updateCount":0,"notes":null,"articleVoiceURL":"http://www.facebook.com/322058887863626"}
+          ],
+          "total": "23",
+          "page": null,
+          "selectAllIds": ["2013-04-10T08:21:53Z","2013-03-25T01:53:27Z","2013-03-21T08:38:13Z","2013-03-21T07:22:33Z","2013-03-21T01:50:07Z","2013-03-20T10:07:44Z","2013-03-20T09:39:35Z","2013-03-20T09:36:46Z","2013-03-20T07:30:06Z","2013-03-20T07:28:21Z","2013-03-20T03:07:45Z","2013-03-19T08:50:55Z","2013-03-19T07:14:14Z","2013-03-15T02:41:44Z","2013-03-15T02:07:18Z","2013-03-14T10:41:08Z","2013-03-13T07:32:26Z","2013-03-13T07:08:10Z","2013-03-13T01:42:43Z","2013-03-12T12:00:54Z","2013-03-12T11:46:02Z","2013-03-12T08:37:29Z","2013-03-11T03:50:22Z"]
+        }'''
+      }
+    }
+    def getAllTwitterCase() {
       render '''{
   "data": 
   [
     {
       "caseId": "4261353458587692",
+      "title": "",
+      "priority": 3,
+      "dateCreated": "2012-11-21T00:43:07Z",
+      "articleId": "28011986676_10151949726736677",
+      "commentId": "0",
+      "caseStatus": 0,
+      "assignTo": "Buvaneswaran Gunasegran\\n",
+      "createdBy": "Buvaneswaran Gunasegran\\n",
+      "type": "facebook",
+      "updateCount": 0,
+      "readStatus": "read",
+      "voiceId": "4261353458587692.1353458587771",
+      "notes": null,
+      "notesUpdateDate": null,
+      "notesUpdateBy": "",
+      "datetimeUpdated": "2012-11-21T00:52:33Z",
+      "articleContent": "I have a complaint about 3G Reception around Dover road. I seem to get 3-5 bars on both my phone and friends yet the 3G is terrible when sending iMessages,surfing the internet etc. This started to happen a few months ago while it was good before. Please sort this out.",
+      "articleVoiceName": "Patrick Combe",
+      "articleVoicePicture": "https://graph.facebook.com/1015175280/picture",
+      "articleDateTimePost": "2012-11-20T13:08:02Z",
+      "articleVoiceId": "1015175280",
+      "assetId": "28011986676",
+      "assetPic": "http://graph.facebook.com/28011986676/picture",
+      "assetURL": "http://www.facebook.com/28011986676",
+      "articleURL": "http://www.facebook.com/permalink.php?story_fbid=10151949726736677&id=28011986676",
+      "articleVoiceURL": "http://www.facebook.com/1015175280",
+      "comment": 
+      [
+      ]
+    },
+    {
+      "caseId": "4261353458587693",
+      "title": "",
+      "priority": 3,
+      "dateCreated": "2012-11-21T00:43:07Z",
+      "articleId": "28011986676_10151949726736677",
+      "commentId": "0",
+      "caseStatus": 0,
+      "assignTo": "Buvaneswaran Gunasegran\\n",
+      "createdBy": "Buvaneswaran Gunasegran\\n",
+      "type": "facebook",
+      "updateCount": 0,
+      "readStatus": "read",
+      "voiceId": "4261353458587692.1353458587771",
+      "notes": null,
+      "notesUpdateDate": null,
+      "notesUpdateBy": "",
+      "datetimeUpdated": "2012-11-21T00:52:33Z",
+      "articleContent": "I have a complaint about 3G Reception around Dover road. I seem to get 3-5 bars on both my phone and friends yet the 3G is terrible when sending iMessages,surfing the internet etc. This started to happen a few months ago while it was good before. Please sort this out.",
+      "articleVoiceName": "Patrick Combe",
+      "articleVoicePicture": "https://graph.facebook.com/1015175280/picture",
+      "articleDateTimePost": "2012-11-20T13:08:02Z",
+      "articleVoiceId": "1015175280",
+      "assetId": "28011986676",
+      "assetPic": "http://graph.facebook.com/28011986676/picture",
+      "assetURL": "http://www.facebook.com/28011986676",
+      "articleURL": "http://www.facebook.com/permalink.php?story_fbid=10151949726736677&id=28011986676",
+      "articleVoiceURL": "http://www.facebook.com/1015175280",
+      "comment": 
+      [
+      ]
+    },
+    {
+      "caseId": "4261353458587694",
+      "title": "",
+      "priority": 3,
+      "dateCreated": "2012-11-21T00:43:07Z",
+      "articleId": "28011986676_10151949726736677",
+      "commentId": "0",
+      "caseStatus": 0,
+      "assignTo": "Buvaneswaran Gunasegran\\n",
+      "createdBy": "Buvaneswaran Gunasegran\\n",
+      "type": "facebook",
+      "updateCount": 0,
+      "readStatus": "read",
+      "voiceId": "4261353458587692.1353458587771",
+      "notes": null,
+      "notesUpdateDate": null,
+      "notesUpdateBy": "",
+      "datetimeUpdated": "2012-11-21T00:52:33Z",
+      "articleContent": "I have a complaint about 3G Reception around Dover road. I seem to get 3-5 bars on both my phone and friends yet the 3G is terrible when sending iMessages,surfing the internet etc. This started to happen a few months ago while it was good before. Please sort this out.",
+      "articleVoiceName": "Patrick Combe",
+      "articleVoicePicture": "https://graph.facebook.com/1015175280/picture",
+      "articleDateTimePost": "2012-11-20T13:08:02Z",
+      "articleVoiceId": "1015175280",
+      "assetId": "28011986676",
+      "assetPic": "http://graph.facebook.com/28011986676/picture",
+      "assetURL": "http://www.facebook.com/28011986676",
+      "articleURL": "http://www.facebook.com/permalink.php?story_fbid=10151949726736677&id=28011986676",
+      "articleVoiceURL": "http://www.facebook.com/1015175280",
+      "comment": 
+      [
+      ]
+    },
+    {
+      "caseId": "4261353458587695",
       "title": "",
       "priority": 3,
       "dateCreated": "2012-11-21T00:43:07Z",
@@ -657,6 +1302,10 @@ class SocialEngageController {
 
     }
 
+    def showConversationForTwitter() {
+      showConversation()
+    }
+
     def showConversation() {
 
         /*
@@ -677,6 +1326,108 @@ class SocialEngageController {
   "voiceId": "98685085344",
   "imageURL": "https://graph.facebook.com/719707536/picture",
   "comments":
+  [
+    {
+      "content": "yes finally can watch it",
+      "isOriginal": 1,
+      "isUser": 1,
+      "dateTimePosted": "2012-06-25T10:19:40Z",
+      "fbid": "98685085344_196710807123445_518623",
+      "messageId": "98685085344_196710807123445_518623",
+      "userName": "Xavienne Chew Lah Sia",
+      "userpic": "https://graph.facebook.com/719707536/picture",
+      "likesCount": 0,
+      "caseStatus": 1,
+      "voiceId": "719707536"
+    },
+    {
+      "content": "episode 1 last part the somebody cutting Rui En hairs i think",
+      "isUser": 1,
+      "dateTimePosted": "2012-06-25T10:20:13Z",
+      "fbid": "98685085344_196710807123445_518624",
+      "messageId": "98685085344_196710807123445_518624",
+      "userName": "Xavienne Chew Lah Sia",
+      "userpic": "https://graph.facebook.com/719707536/picture",
+      "likesCount": 0,
+      "caseStatus": 1,
+      "voiceId": "719707536"
+    },
+    {
+      "content": "26hrs 35mins more to #joysoflife",
+      "dateTimePosted": "2012-06-25T10:24:23Z",
+      "fbid": "98685085344_196710807123445_518630",
+      "messageId": "98685085344_196710807123445_518630",
+      "userName": "Swee Heng Tan",
+      "userpic": "https://graph.facebook.com/100002676015109/picture",
+      "likesCount": 1,
+      "caseStatus": 1,
+      "voiceId": "100002676015109"
+    },
+    {
+      "content": "Let's trend #joysoflife tmr at 9pm on twitter! :)",
+      "dateTimePosted": "2012-06-25T10:42:35Z",
+      "fbid": "98685085344_196710807123445_518683",
+      "messageId": "98685085344_196710807123445_518683",
+      "userName": "Joys of Life ü£?ìÑ?",
+      "userpic": "https://graph.facebook.com/345262218830470/picture",
+      "likesCount": 3,
+      "voiceId": "345262218830470"
+    },
+    {
+      "content": "Xiao gui acting skills is real good. 2 thumps up for him..",
+      "dateTimePosted": "2012-06-25T10:55:48Z",
+      "fbid": "98685085344_196710807123445_518704",
+      "messageId": "98685085344_196710807123445_518704",
+      "userName": "Kitty Catty",
+      "userpic": "https://graph.facebook.com/624748319/picture",
+      "likesCount": 2,
+      "voiceId": "624748319"
+    },
+    {
+      "content": "I love XiaoGui ^^ ",
+      "dateTimePosted": "2012-06-25T11:00:48Z",
+      "fbid": "98685085344_196710807123445_518714",
+      "messageId": "98685085344_196710807123445_518714",
+      "userName": "Jesslyn Tu",
+      "userpic": "https://graph.facebook.com/100000140890216/picture",
+      "likesCount": 0,
+      "voiceId": "100000140890216"
+    },
+    {
+      "content": "Where is Xiao Gui now ? Singapore or Taiwan ?",
+      "dateTimePosted": "2012-06-25T12:01:14Z",
+      "fbid": "98685085344_196710807123445_518888",
+      "messageId": "98685085344_196710807123445_518888",
+      "userName": "Xian Ning",
+      "userpic": "https://graph.facebook.com/100000066130303/picture",
+      "likesCount": 0,
+      "voiceId": "100000066130303"
+    },
+    {
+      "content": "I Love Rui En,:)\\nepisode 1 last part the somebody cutting Rui En hairs i think:)",
+      "dateTimePosted": "2012-06-25T14:00:46Z",
+      "fbid": "98685085344_196710807123445_519311",
+      "messageId": "98685085344_196710807123445_519311",
+      "userName": "Heng XinYing",
+      "userpic": "https://graph.facebook.com/100001907864504/picture",
+      "likesCount": 0,
+      "voiceId": "100001907864504"
+    },
+    {
+      "content": "^^ One more day!",
+      "dateTimePosted": "2012-06-25T10:17:52Z",
+      "fbid": "98685085344_196710807123445_518620",
+      "messageId": "98685085344_196710807123445_518620",
+      "userName": "Joys of Life ü£?ìÑ?",
+      "userpic": "https://graph.facebook.com/345262218830470/picture",
+      "likesCount": 4,
+      "nCount": 1,
+      "voiceId": "345262218830470",
+      "assignNotes": "just a note",
+      "caseId": "12312312341234-12341234"
+    }
+  ],
+  "retweets":
   [
     {
       "content": "yes finally can watch it",
@@ -760,17 +1511,6 @@ class SocialEngageController {
       "userpic": "https://graph.facebook.com/100001907864504/picture",
       "likesCount": 0,
       "voiceId": "100001907864504"
-    },
-    {
-      "content": "^^ One more day!",
-      "dateTimePosted": "2012-06-25T10:17:52Z",
-      "fbid": "98685085344_196710807123445_518620",
-      "messageId": "98685085344_196710807123445_518620",
-      "userName": "Joys of Life ü£?ìÑ?",
-      "userpic": "https://graph.facebook.com/345262218830470/picture",
-      "likesCount": 4,
-      "voiceId": "345262218830470",
-      "assignNotes": "just a note"
     }
   ]
 }'''
@@ -824,7 +1564,11 @@ class SocialEngageController {
     }
 
     def markStatusInBatch() {
-      print request.JSON
+      // print request.JSON
+      render '{"data":"ok"}'
+    }
+
+    def markCaseStatusInBatch() {
       render '{"data":"ok"}'
     }
 
@@ -1103,9 +1847,40 @@ class SocialEngageController {
     }
 
     def getStreamUnreadCount() {
+      if (params.platform == "facebook") {
+        render """{
+    "stream": 85,
+    "message": 11,
+    "casesStream": 9
+  }"""
+      } else {
+        render """{
+    "stream": 99,
+    "messages": 22
+  }"""
+      }
+    }
+
+    def showNotesHistory() {
       render """{
-  "fbStream": 85,
-  "fbMessage": 11
+  "data": 
+  [
+    {
+      "notes": "ppppp",
+      "datetimePost": "2013-03-21T08:41:51Z",
+      "userName": "Tan Wei Jian - SG",
+      "profilePic": "Photo_6517A1BB-3682-CF64-4CC6-8901A5778D23.jpg",
+      "emailAddress": "weijian.tan@brandtology.com"
+    },
+    {
+      "notes": "vbbbbb",
+      "datetimePost": "2013-03-21T08:44:51Z",
+      "userName": "Tan Wei Jian - SG",
+      "profilePic": "Photo_6517A1BB-3682-CF64-4CC6-8901A5778D23.jpg",
+      "emailAddress": "weijian.tan@brandtology.com"
+    }
+  ]
 }"""
     }
+
 }
