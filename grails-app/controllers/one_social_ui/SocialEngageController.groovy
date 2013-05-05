@@ -1883,4 +1883,90 @@ class SocialEngageController {
 }"""
     }
 
+    def getOverallCount() {
+      render '''{
+  "data": 
+  [
+    {
+      "assetId": "322058887863626",
+      "assetURL": "http://www.facebook.com/322058887863626",
+      "assetPic": "https://graph.facebook.com/322058887863626/picture",
+      "assetName": "WJ Bank",
+      "postCount": 5,
+      "postUnreadCount": 4,
+      "commentCount": 6,
+      "commentUnreadCount": 6,
+      "totalMessageCount": 6,
+      "totalMessageUnreadCount": 3,
+      "closeCases": 0,
+      "closeCasesResponded": 0,
+      "openCasesCount": 2,
+      "openCasesResponded": 1,
+      "openMessageCases": 4,
+      "openMessageCasesResponded": 0,
+      "closeMessageCases": 0,
+      "closeMessageCasesResponded": 0
+    }
+  , {
+      "assetId": "322058887863627",
+      "assetURL": "http://www.facebook.com/322058887863626",
+      "assetPic": "https://graph.facebook.com/322058887863626/picture",
+      "assetName": "WJ Bank22",
+      "postCount": 51,
+      "postUnreadCount": 40,
+      "commentCount": 60,
+      "commentUnreadCount": 1600,
+      "totalMessageCount": 160,
+      "totalMessageUnreadCount": 130,
+      "closeCases": 100,
+      "closeCasesResponded": 1000,
+      "openCasesCount": 120,
+      "openCasesResponded": 1010,
+      "openMessageCases": 140,
+      "openMessageCasesResponded": 100,
+      "closeMessageCases": 1000,
+      "closeMessageCasesResponded": 90
+    }
+  ]
+}'''
+    }
+
+    def getOverallUserCount() {
+      render '''{
+  "data": 
+  [
+        {
+      "userId": 478,
+      "userName": "Joshua Troy - R&D",
+      "userPic": null,
+      "closeCases": 0,
+      "closeCasesResponded": 0,
+      "openCasesCount": 2,
+      "openCasesResponded": 1,
+      "openMessageCases": 2,
+      "openMessageCasesResponded": 0,
+      "closeMessageCases": 0,
+      "closeMessageCasesResponded": 0,
+      "averageResponseTime": 0,
+      "averageMessageResponseTime": 0
+    },
+    {
+      "userId": 174,
+      "userName": "Tan Wei Jian - SG",
+      "userPic": "Photo_6517A1BB-3682-CF64-4CC6-8901A5778D23.jpg",
+      "closeCases": 0,
+      "closeCasesResponded": 0,
+      "openCasesCount": 1,
+      "openCasesResponded": 1,
+      "openMessageCases": 0,
+      "openMessageCasesResponded": 0,
+      "closeMessageCases": 0,
+      "closeMessageCasesResponded": 0,
+      "averageResponseTime": 1440,
+      "averageMessageResponseTime": 0
+    }
+]
+}'''
+    }
+
 }
